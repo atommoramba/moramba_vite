@@ -1,0 +1,240 @@
+.addnewBtn {
+  color: var(--backgroundColor);
+  border: none;
+  padding: 10px !important;
+  border-radius: var(--ButtonBorderRadius);
+  width: max-content;
+  min-width: 120px;
+  height: 40px;
+  background: #6d9886;
+}
+
+.inventoryinput {
+  width: 280px;
+  height: 40px;
+  border-radius: 6px;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.popup {
+  height: max-content;
+  width: 35%;
+  bottom: 40%;
+  background-color: #f0f0f0;
+  position: fixed;
+  right: 34%;
+  border-radius: 20px;
+  align-items: center;
+  padding: 1%;
+  color: #000000;
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: 0px 2px 2px 2px;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+  font-size: 1.2em !important;
+  margin-top: 7px !important;
+}
+
+.categorytext {
+  margin-top: -25px;
+}
+
+.css-d9oaum-MuiSelect-select-MuiInputBase-input-MuiFilledInput-input {
+  padding-top: 0% !important;
+  background-color: #ffffff !important;
+  border: none;
+  border-radius: 6px !important;
+  min-width: 200px !important;
+  padding: 9px !important;
+  border-bottom: 3px solid #6d9886 !important;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+.sperrtext {
+  color: red;
+}
+.bgblur1 {
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+}
+
+.sampleTemplateSTy2 {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .sampleTemplateSTy {
+    margin-top: 0px;
+  }
+
+  .sampleTemplateSTy2 {
+    margin-top: 0px;
+  }
+}
+
+.tableheader_invent {
+  text-align: center;
+  background-color: #6d9886;
+  color: #ffffff !important;
+}
+
+.inventory_color {
+  background-color: #6d9886;
+}
+
+.td_invent_color {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.table_invoice {
+  width: 100%;
+}
+
+.temp_font {
+  font-weight: normal;
+}
+
+.Btngoback {
+  background-color: #f14668;
+  width: 141px;
+  height: 40px;
+  border-radius: 8px;
+  color: #ffffff;
+  border: none;
+}
+
+.tableheader {
+  text-align: center;
+  color: #ffffff;
+}
+
+.popup-input-adjustment {
+  margin-top: 8px;
+  height: 43px;
+  border-radius: 5px;
+}
+.create-iv-popup-select {
+  height: 40px;
+}
+.create-sub-select {
+  height: 40px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .responsive-popup {
+    width: 90%;
+    left: 5%;
+    padding: 15px;
+    top: 25%;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .responsive-popup {
+    width: 90%;
+    left: 5%;
+    padding: 15px;
+    top: 25%;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .responsive-popup {
+    width: 70%;
+    left: 15%;
+    padding: 15px;
+    top: 25%;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  .responsive-popup {
+    width: 60%;
+    left: 20%;
+    padding: 15px;
+    top: 25%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .responsive-popup {
+    width: 50%;
+    left: 25%;
+    padding: 15px;
+    top: 25%;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .create-inventory-temp-popup {
+    width: 90%;
+    left: 5%;
+    padding: 15px 15px 0px 15px;
+    top: 30%;
+  }
+  .create-sub-responsive-popup {
+    width: 90%;
+    left: 5%;
+    padding: 15px 15px 0px 15px;
+    top: 34%;
+  }
+  .create-sub-pop-datatype {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .create-sub-responsive-popup {
+    width: 62%;
+    left: 18%;
+    padding: 15px 15px 0px 15px;
+    top: 25%;
+  }
+  .create-inventory-temp-popup {
+    width: 66%;
+    left: 17%;
+    padding: 15px 15px 0px 15px;
+    top: 30%;
+  }
+  .popup-cat-adj {
+    display: flex;
+    flex-direction: column;
+  }
+  .create-sub-popup-row {
+    display: flex;
+    flex-direction: column;
+  }
+  .popup-input-adjustment {
+    min-width: 80px;
+  }
+  .inv-temp-date-input-div {
+    margin-left: 90px;
+  }
+  .create-sub-temp-date-div {
+    margin-left: 90px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .create-sub-responsive-popup {
+    width: 70%;
+    left: 15%;
+    padding: 15px;
+    top: 25%;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  .create-sub-responsive-popup {
+    width: 60%;
+    left: 20%;
+    padding: 15px;
+    top: 25%;
+  }
+}

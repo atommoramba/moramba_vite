@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
+
+.headerText {
+  color: var(--TextDarkColor) !important;
+  text-decoration: none !important;
+  font-family: "Poppins", sans-serif;
+  font-size: larger !important;
+}
+.headerImage {
+  width: 80px;
+}
+.headerBtn {
+  color: var(--TextDarkColor) !important;
+  text-decoration: none !important;
+  font-family: "Poppins", sans-serif;
+  font-size: medium !important;
+}
+@media only screen and (max-width: 768px) {
+  .LangBox {
+    display: none;
+  }
+}
+.menu_button {
+  font-family: "Poppins", sans-serif;
+  font-size: medium !important;
+  color: #393e46 !important;
+  text-transform: uppercase !important;
+  font-weight: 400 !important;
+  cursor: pointer !important;
+}
+.item_list {
+  transition: 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  color: #393e46 !important;
+  font-size: 24px;
+  text-decoration: none !important;
+}
+.item_list:hover {
+  color: #4c535e !important;
+  margin-left: 14px !important;
+  opacity: 3 !important;
+  width: max-content;
+}
+.editpopupheader {
+  height: max-content;
+  width: max-content;
+  bottom: 35%;
+  background-color: #f0f0f0;
+  position: fixed;
+  right: 35%;
+  border-radius: 20px;
+  align-items: center;
+  padding: 1%;
+  color: #000000;
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: 0px 2px 2px 2px;
+}
+.saveedit {
+  border: none;
+  background-color: #019267;
+  padding: 6px;
+  width: 50px;
+  border-radius: 5px;
+  color: white;
+}
+.saveedit,
+.savecancel:hover {
+  cursor: pointer;
+}
+.savecancel {
+  border: none;
+  background-color: #ff9292;
+  padding: 6px;
+  width: 50px;
+  border-radius: 5px;
+  color: white;
+}
+.homesignupbtn{
+  background-color: #d9d9d9 !important;
+  color: #000000 !important;
+  padding: 8px !important;
+  border: none !important;
+  width: 40% !important;
+  font-size: medium !important;
+  margin-inline-end: 20px !important;
+}
+#homesignupmob{
+  margin-inline-end: 10px !important;
+  margin-block: 8px;
+  /* padding: 0% !important; */
+  /* width: 0% !important; */
+}
+@media only screen and (min-width: 481px) and (max-width: 600px) {
+  
+}
+.homesigninbtn{
+  background-color: #6D9886 !important;
+  color: #ffffff !important;
+  padding: 8px !important;
+  border: none !important;
+  width: 40% !important;
+  font-size: medium !important;
+  margin-inline-end: 120px !important;
+}
+#homesigninmob{
+  margin-inline-end: 0px !important;
+  margin-block: 8px;
+
+  /* padding: 1% !important; */
+}
+.blurBg{
+  filter: blur(3px);
+}
+.supportpopup{
+  z-index: 1000;
+  height: max-content;
+  width: 36%;
+  bottom: 23%;
+  background-color: #f0f0f0;
+  position: fixed;
+  right: 32%;
+  border-radius: 20px;
+  align-items: center;
+  padding: 1%;
+  color: #000000;
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: 0px 2px 2px 2px;
+}
+@media only screen and (min-width: 460px) and (max-width: 1280px) {
+  .supportpopup {
+    top: 30%;
+    width: 44%;
+    scale: 0.8;
+  }
+}
+.supportsuccess{
+  color:green;
+  text-align: center;
+  margin-bottom: -10px;
+  /* margin-top: 8px; */
+  font-weight: 500;
+  font-size:30px;
+}
+.suppoetdialog{
+  /* scale: 1.8; */
+}
+.badgenotification {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 0px 10px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  scale: 0.7;
+}
+.badgenotificationresponsiv{
+  position: absolute;
+  /* top: 0px; */
+  right: 20%;
+  padding: 0px 10px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  scale: 0.6;
+}

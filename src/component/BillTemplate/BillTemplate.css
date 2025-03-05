@@ -1,0 +1,243 @@
+.sampleTemplateSTy {
+  border: 1px solid black;
+  margin-top: -100px;
+  border-radius: 10px;
+  width: 40rem;
+}
+
+.Paybilltopclr {
+  background-color: #6d9886;
+}
+
+.head_clr_bill {
+  color: #6d9886;
+}
+
+.table_invoice {
+  width: 100%;
+  margin-top: 30px;
+}
+.table_invoice td,
+th {
+  border-top: 1px solid #ecf0f1;
+  border-bottom: 1px solid #ecf0f1;
+  border-left: 1px solid #ecf0f1;
+  padding: 7px;
+}
+
+.table_invoice td {
+  border-left: 1px solid #ecf0f1;
+  border-right: 1px solid #ecf0f1;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.table_invoice th {
+  background-color: #6d9886;
+  color: #ffffff;
+}
+.billtableheader {
+  text-align: center;
+  background-color: #6d9886;
+  color: white !important;
+}
+
+.sampleTemplateSTyinvoice {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 40rem;
+}
+
+.input_position {
+  margin-right: 3px;
+}
+
+.billtable-datatable {
+  padding: 0px 15px 0px 15px;
+}
+
+.viewbilltital {
+  margin-top: -35px;
+}
+
+.create-bill-temp-right {
+  width: 48%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.create-bill-temp-left {
+  width: 48%;
+  margin-left: 1%;
+  margin-right: 1%;
+  padding-left: 15px;
+}
+
+.create-bill-temp-main {
+  display: flex;
+  align-items: flex-start;
+  margin-top: -35px;
+}
+
+.createbilltemp-addcat-err {
+  margin-top: 10px;
+}
+
+.createbilltemp-addcat-input {
+  margin-top: 10px;
+}
+
+.createbilltemp-addcat-err {
+  width: 100%;
+}
+
+.billtext {
+  font-weight: bold !important;
+}
+
+.dividerline {
+  margin-top: -13px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .billtable-datatable {
+    padding: 0px 7px 0px 7px;
+  }
+
+  .billtable-searchbox-btn {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 15px;
+  }
+
+  .billtable-create-btn {
+    margin-top: -10px;
+  }
+
+  .billtable-searchbox {
+    margin-bottom: -5px;
+  }
+
+  .create-bill-temp-main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .create-bill-temp-left {
+    width: 100%;
+    margin-left: 0px;
+  }
+
+  .create-bill-temp-right {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 15px !important;
+  }
+
+  .createbilltemp-addcat-err {
+    width: 100%;
+    margin-left: 40px;
+  }
+
+  .createbilltemp-catinput {
+    width: 80%;
+  }
+
+  .billinput {
+    width: 50%;
+  }
+
+  .billmobileinput {
+    margin-top: 13px;
+  }
+  .sampleTemplateSTy {
+    width: 110%;
+  }
+  .sampleTemplateSTyinvoice {
+    width: 110%;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .billtable-datatable {
+    padding: 0px 10px 0px 10px;
+  }
+
+  .create-bill-temp-main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .create-bill-temp-left {
+    width: 100%;
+    margin-left: 0px;
+    padding-left: 10px;
+  }
+
+  .create-bill-temp-right {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 15px !important;
+  }
+
+  .createbilltemp-addcat-err {
+    width: 100%;
+  }
+
+  .billinput {
+    width: 50%;
+  }
+}
+
+.amountalign {
+  margin-right: 20px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .create-bill-temp-main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .create-bill-temp-left {
+    width: 100%;
+    margin-left: 0px;
+    padding-left: 15px;
+  }
+
+  .create-bill-temp-right {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 25px !important;
+  }
+
+  .createbilltemp-addcat-err {
+    width: 100%;
+  }
+
+  .createbilltemp-addcat {
+    padding-left: 0;
+  }
+
+  .createbilltemp-addcat-input {
+    margin-top: 20px;
+  }
+
+  .createbilltemp-catinput {
+    width: 85%;
+  }
+
+  .billinput {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  .createbilltemp-addcat-input {
+    margin-top: 20px;
+  }
+
+  .createbilltemp-addcat-err {
+    width: 100%;
+  }
+}

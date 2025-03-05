@@ -1,0 +1,132 @@
+.MenuBtn {
+  border: none;
+  background-color: transparent;
+}
+
+@media (min-width: 576px) {
+  .MobileMenuView {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .MobileManuIcon {
+    display: none;
+  }
+}
+.EmployeeProfilePhoto {
+  width: 160px;
+  height: 160px;
+  border-radius: 9999px !important;
+  outline-style: solid !important;
+  margin-inline-end: 30px;
+}
+.MainProfileBox {
+  display: flex;
+}
+@media (max-width: 576px) {
+  .MainProfileBox {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+  }
+  .EmployeeDetails {
+    margin-top: 20px;
+  }
+  .EmployeeProfilePhoto {
+    margin-inline-end: 0px;
+    margin: auto;
+  }
+  .ShiftBreakupImage {
+    display: none;
+  }
+  .scrollTable {
+    overflow-x: scroll;
+  }
+}
+.ShiftBreakupImage {
+  margin-top: 5%;
+  width: 40%;
+  height: 50%;
+}
+
+.ShiftEndBtn {
+  background-color: var(--CancleButtonColor);
+  color: var(--backgroundColor);
+  border: none;
+  padding: 8px;
+  border-radius: var(--ButtonBorderRadius);
+  width: max-content;
+  min-width: 100px;
+}
+.ShiftEndBtn:hover {
+  background-color: var(--TextDarkColor);
+}
+.EmpActiveBtn,
+.EmpEditBtn {
+  border: none;
+  padding: 6px;
+  border-radius: var(--ButtonBorderRadius);
+  width: max-content;
+  min-width: 100px;
+}
+.EmpDeactiveBtn {
+  border: none;
+  padding: 6px;
+  border-radius: var(--ButtonBorderRadius);
+  width: max-content;
+  min-width: 100px;
+}
+.EmpActiveBtn {
+  background-color: var(--CreateButtonColor);
+  color: var(--backgroundColor);
+}
+.EmpDeactiveBtn {
+  background-color: var(--CancleButtonColor);
+  color: var(--backgroundColor);
+}
+.EmpEditBtn {
+  background: #495464;
+  color: var(--backgroundColor);
+}
+.EmpActiveBtn:hover,
+.EmpDeactiveBtn:hover {
+  background: #495464;
+  color: #ffffff;
+}
+.EmpEditBtn:hover {
+  color: #ffffff;
+  background-color: #ffabab;
+}
+
+.ErrorTextEmpdetails {
+  color: red;
+  animation: animate 3.5s linear infinite;
+}
+@keyframes animate {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.errtext {
+  margin-top: 175px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .empdetail-img {
+    display: none;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 1000px) {
+  .empdetail-img {
+    display: none;
+  }
+}

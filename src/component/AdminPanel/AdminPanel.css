@@ -1,0 +1,64 @@
+.adminerr {
+  margin-top: 10px;
+  display: none;
+}
+.adminlogin {
+  background-color: #c5d8c6;
+  width: 500px;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  border-radius: 20px;
+  -webkit-box-shadow: 6px 5px 10px 2px rgba(128, 128, 128, 0.5);
+  -moz-box-shadow: 6px 5px 10px 2px rgba(128, 128, 128, 0.5);
+  box-shadow: 6px 5px 10px 2px rgba(128, 128, 128, 0.5);
+}
+.adminloginbtn {
+  margin-top: 50px;
+}
+.adminloginbtninner {
+  height: 50px;
+  background-color: red !important;
+  width: 50px !important;
+}
+.adminlogint {
+  text-align: center;
+}
+.adminloginemailinput {
+  width: 350px !important;
+}
+
+/* dashboard */
+.admindatatable {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.admindashboarduser {
+  margin-top: 25px;
+}
+.admindashboardmain {
+  padding: 20px;
+}
+.adminloginBtn {
+  background-color: #f16a54 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 5px !important;
+  font-weight: 500px !important;
+  font-size: medium !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  margin-top: 20px;
+}
+
+.adminloginBtn:hover {
+  background-color: #fff !important;
+  color: #000 !important;
+  border: 2px solid #f16a54 !important;
+  font-weight: 500px !important;
+  font-size: medium !important;
+}

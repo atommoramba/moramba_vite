@@ -1,0 +1,345 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
+
+:root {
+  --BodyBackgroundColor: #ffffff;
+  --backgroundColor: #ffffff;
+  --ContainerColor: #f0fbff;
+  --TextDarkColor: #393e46;
+  --TextColor: #ffffff;
+  --PopupBackGroundColor: #495464;
+  --PopupTextColor: #ffffff;
+  --GlobalBorderRadius: 10px;
+  --ButtonBorderRadius: 5px;
+  --HeaderText: 36px;
+  --SubHeaderText: 24px;
+  --ButtonText: 20px;
+  --SaveButtonColor: #019267;
+  --CancleButtonColor: #ff9292;
+  --CreateButtonColor: #6d9886;
+  --ActiveButtonColor: #ecfdf3;
+  --DeactiveButtonColor: #fdecec;
+  --DeactiveBtnTextColor: #7a0202;
+  --ActiveBtnTextColor: #207a48;
+  --Shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  --SelectCompanyBox: #d6e4e5;
+  --CmpText: #000;
+}
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--BodyBackgroundColor);
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  color: var(--TextDarkColor);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.present-statusa {
+  background-color: #68b984 !important;
+  color: rgb(24, 23, 23) !important;
+  padding: 4px !important;
+  font-weight: lighter !important;
+}
+
+.absent-status {
+  background-color: #ff6464;
+  color: rgb(24, 23, 23);
+  padding: 4px !important;
+  font-weight: lighter;
+}
+
+.halfday-status {
+  background-color: #ffd24c;
+  color: rgb(24, 23, 23);
+  padding: 4px !important;
+  font-weight: lighter;
+}
+
+.vacation-status {
+  background-color: #acdcee;
+  color: rgb(24, 23, 23);
+  padding: 4px !important;
+  font-weight: lighter;
+}
+
+/* TO remove 12a from FUll calender */
+.fc-event-time {
+  display: none;
+}
+
+.Star {
+  color: red;
+  margin-inline-start: 2px;
+}
+
+input[type="checkbox"] {
+  min-width: 0px;
+  box-shadow: none;
+}
+
+input,
+textarea {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  min-width: 150px;
+  padding: 6px;
+  border-bottom: 3px solid #6d9886;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #89919e;
+}
+
+.CreateBtn {
+  background-color: var(--CreateButtonColor);
+  color: var(--backgroundColor);
+  border: none;
+  padding: 8px;
+  border-radius: var(--ButtonBorderRadius);
+  width: max-content;
+  min-width: 100px;
+}
+
+.CreateBtn:hover {
+  background-color: var(--TextDarkColor);
+}
+
+.btnsave {
+  border: none;
+  border-radius: var(--ButtonBorderRadius);
+  background: var(--SaveButtonColor);
+  min-width: 100px;
+  padding: 8px;
+  color: var(--backgroundColor);
+}
+
+.btncancel {
+  border: none;
+  background: var(--CancleButtonColor);
+  border-radius: var(--ButtonBorderRadius);
+  min-width: 100px;
+  padding: 8px;
+  color: var(--backgroundColor);
+}
+
+input::placeholder {
+  font-size: 14px;
+}
+
+.RemoveBtnStyle {
+  border: none;
+  background-color: transparent;
+}
+
+.HeadingText {
+  font-size: 32px;
+  color: var(--TextDarkColor);
+  text-decoration: underline;
+}
+
+.containerBox {
+  background: var(--ContainerColor);
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  min-height: 700px;
+  padding: 5px;
+}
+
+.ActiveBtn {
+  background-color: var(--ActiveButtonColor);
+  color: var(--ActiveBtnTextColor);
+  border: none;
+  border-radius: var(--ButtonBorderRadius);
+  padding: 7px;
+}
+
+.DeactiveBtn {
+  background-color: var(--DeactiveButtonColor);
+  color: var(--DeactiveBtnTextColor);
+  border: none;
+  border-radius: var(--ButtonBorderRadius);
+  padding: 7px;
+}
+
+.EditBtn {
+  background: #ffabab;
+  color: var(--backgroundColor);
+  border: none;
+  padding: 3px;
+  border-radius: var(--ButtonBorderRadius);
+  width: max-content;
+  min-width: 80px;
+  font-size: medium;
+}
+
+.ViewBtn {
+  background: #495464;
+  color: var(--backgroundColor);
+  border: none;
+  padding: 3px;
+  border-radius: var(--ButtonBorderRadius);
+  width: max-content;
+  min-width: 80px;
+  font-size: medium;
+}
+
+.EditBtn:hover {
+  background: #495464;
+  color: #ffffff;
+}
+
+.ViewBtn:hover {
+  color: #ffffff;
+  background-color: #ffabab;
+}
+
+/* Horizontal Scroll - Starts */
+.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.react-horizontal-scrolling-menu--scroll-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.left-right-arrows {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Horizontal Scroll - Ends */
+.selectInputSty {
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  min-width: 140px;
+  padding: 6px;
+  border-bottom: 3px solid #6d9886;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+.selectInputSty:focus {
+  outline: none;
+}
+
+/* CreateCustomer.jsx starts*/
+.create-customer-state-dropdown {
+  height: 40px;
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .create-customer-bankname {
+    margin-top: 20px;
+  }
+}
+
+/* CreateCustomer.jsx ends*/
+
+/* Tab MUI style */
+.css-1aquho2-MuiTabs-indicator {
+  background-color: #f16a54 !important;
+}
+
+.css-ttwr4n {
+  background-color: #f16a54 !important;
+}
+
+.css-1q2h7u5.Mui-selected {
+  color: #000 !important;
+  font-weight: 700 !important;
+}
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: #000 !important;
+  font-weight: 700 !important;
+}
+.tab_bar {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid rgb(148, 138, 138);
+}
+.Login_text {
+  font-size: medium !important;
+  font-weight: 600 !important;
+  color: #9da8abf1 !important;
+}
+.tabs.login_left_main {
+  padding: 3.125em 0 0 0;
+}
+.login_background {
+  max-width: 100%;
+}
+.passbar {
+  min-width: 350px;
+  border-radius: var(--ButtonBorderRadius);
+  background-color: #fcfcfc;
+}
+.login_title_info {
+  padding-top: 1.2em;
+  padding-bottom: 0.9375em;
+}
+
+.login_title_info .welcome_text {
+  font-weight: 600;
+  font-size: 1.875em;
+  line-height: 1.5;
+  color: #000000 !important;
+}
+
+.login_title_info .para {
+  font-size: 1.3em;
+  line-height: 1.5;
+  color: #777171;
+  opacity: 0.5;
+}
+.ErrorColor {
+  color: red;
+}
+@media only screen and (min-width: 481px) and (max-width: 1000px) {
+  #EmpCountry {
+    margin-left: -4px;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  #EmpCountry {
+    margin-left: -4px;
+  }
+}
+
+.tableBorder {
+  border: 1px solid lightgray;
+}
+.logoimg {
+  margin-top: 2%;
+  margin-left: 15%;
+  height: 35%;
+  width: 40%;
+}
+.add-btn-customer {
+  height: 35px;
+  padding: 3px !important;
+  min-width: 80px !important;
+}

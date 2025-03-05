@@ -1,0 +1,41 @@
+.PresentClass {
+  background-color: #a7d9b8;
+}
+.AbsentClass {
+  background-color: #ff6464;
+}
+.leaveClass {
+  background-color: #9e7bff;
+}
+.paidLeaveClass {
+  background-color: #ffd24c;
+}
+.fullattentable {
+  width: 40px !important;
+}
+
+.FullAttendanceTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.FullAttendanceTable td,
+th {
+  border-top: 1px solid #ecf0f1;
+  border-bottom: 1px solid #ecf0f1;
+  border-left: 1px solid #ecf0f1;
+  padding: 7px;
+}
+
+.FullAttendanceTable td {
+  border-left: 1px solid #ecf0f1;
+  border-right: 1px solid #ecf0f1;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.FullAttendanceTable th {
+  background-color: #6d9886;
+  color: #ffffff;
+  text-transform: uppercase;
+}

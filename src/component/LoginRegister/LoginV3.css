@@ -1,0 +1,268 @@
+.login-main {
+  background-color: #d2f4f2;
+  height: 100vh;
+  width: 100vw;
+  padding-inline: 20px;
+}
+.logo_text {
+  color: var(--CreateButtonColor);
+}
+.sign-up-btn {
+  background-color: var(--CreateButtonColor);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  min-width: 40px;
+  font-size: larger;
+  font-weight: 500;
+  border: 0.5px solid #3f3f44;
+}
+.sign-up-btn:hover {
+  background-color: #fff;
+  color: #3f3f44;
+  border-radius: 6px;
+  padding: 10px;
+  width: 40px;
+  font-size: larger;
+  border: 0.5px solid #3f3f44;
+}
+.mobile-sign-up-btn {
+  background-color: #fff;
+  color: #3f3f44;
+  border-radius: 6px;
+  padding: 10px;
+  min-width: 120px;
+  font-size: larger;
+  font-weight: 500;
+  border: 0.5px solid #3f3f44;
+}
+.mobile-sign-up-btn:hover {
+  background-color: var(--CreateButtonColor);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  min-width: 120px;
+  font-size: larger;
+  font-weight: 500;
+}
+.login-main-box {
+  background-color: #fff;
+  border-radius: 15px;
+  height: max-content;
+  width: 500px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.Login-input {
+  background-color: #fff;
+  border-radius: 5px;
+  min-width: 420px;
+  width: 20px;
+  height: 50px;
+  border: none;
+  padding-inline-start: 15px;
+}
+.login-form {
+  margin-top: 30px;
+}
+.or-line {
+  height: 1px;
+  flex: 1;
+  background-color: #8f8f8f;
+}
+
+.loginPromotext {
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+}
+#eye {
+  justify-content: center;
+  min-width: 228px !important;
+  margin-left: -6px;
+}
+.eyebtn {
+  border: none;
+  background-color: transparent;
+  margin-left: -50px;
+}
+.forgot_password .forgot_text {
+  text-decoration: none;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #0085e4;
+  margin-inline-end: 15px;
+}
+.forgot_text_btn {
+  border: none;
+  background-color: transparent;
+  color: #6c757d !important;
+  font-weight: 500;
+}
+.forgot_password:hover {
+  text-decoration: underline;
+  text-decoration-color: #0085e4;
+}
+.register_input .input_box_sty {
+  box-shadow: 0px 0px 0.9375em rgba(0, 0, 0, 11%);
+  height: 3em;
+  width: 150%;
+  border: 0;
+  padding: 0 1.25em;
+}
+.login_input {
+  width: 60%;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  padding-bottom: 0.9375em;
+}
+.login_input .input_box_sty {
+  box-shadow: 0px 0px 0.9375em rgba(0, 0, 0, 11%);
+  height: 3.1em;
+  width: 100%;
+  border: 0;
+  padding: 0 1.25em;
+}
+.login_input .title {
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #000000;
+  padding-bottom: 0.625em;
+  margin: 0;
+}
+.RememberForgotBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .login-main {
+    height: max-content !important;
+  }
+  .login-main-box {
+    margin-top: 0px;
+    scale: 1;
+  }
+  .logo_text {
+    scale: 0.8;
+  }
+  .sign-up-btn {
+    scale: 0.9;
+  }
+  .mobile-sign-up-btn {
+    scale: 0.9;
+  }
+  .RememberForgotBox {
+    display: block;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 600px) {
+  .login-main {
+    height: max-content !important;
+  }
+  .login-main-box {
+    margin-top: 0px;
+    scale: 1;
+  }
+  .RememberForgotBox {
+    display: block;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .login-main {
+    height: max-content !important;
+  }
+  .login-main-box {
+    margin-top: 0px;
+    scale: 1;
+    max-width: 550px !important;
+  }
+  .RememberForgotBox {
+    display: block;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1000px) {
+  .login-main {
+    height: max-content !important;
+  }
+  .login-main-box {
+    margin-top: 0px;
+    scale: 1;
+    max-width: 600px !important;
+  }
+  .loginPromotext {
+    position: relative;
+    left: 0;
+  }
+}
+@media only screen and (min-width: 1001px) and (max-width: 1200px) {
+  .login-main {
+    height: max-content !important;
+  }
+  .login-main-box {
+    margin-top: 0px;
+    scale: 1;
+    max-width: 700px !important;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  #login-bg {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #login-bg {
+    display: none;
+  }
+  .Login-input {
+    min-width: 100%;
+  }
+  .Input-phn {
+    min-width: 90% !important;
+    width: 20px !important;
+    margin-inline-start: 0px !important;
+  }
+  .loginPromotext {
+    position: relative;
+    left: 0;
+  }
+}
+.text-remembar {
+  text-align: initial;
+}
+.text_account {
+  color: #0085e4;
+}
+.text_account:hover {
+  text-decoration: underline;
+  color: #0085e4;
+}
+.tooltipinfo {
+  font-size: 12px;
+}
+.title-sty{
+  margin-left: 13%;
+}
+.Email-icon{
+  height: 55px;
+  width: 55px;
+}
+@media only screen and (max-width: 1700px) and (max-width: 2000px) {
+  #login-bg {
+      display: none !important;
+  }
+  .loginPromotext {
+    position: relative;
+    left: 0;
+  }
+  .login-main-box{
+    margin-top: -50px;
+  height: max-content;
+
+  }
+}

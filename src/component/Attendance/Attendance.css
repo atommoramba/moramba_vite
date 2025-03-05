@@ -1,0 +1,73 @@
+.mor-search {
+  padding: 20px;
+}
+.attendance-moramba-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: pink;
+}
+.attendance-search {
+  display: flex;
+  background-color: lightblue;
+  justify-content: flex-end;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.attendance-btn {
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: var(--ButtonBorderRadius);
+  box-shadow: var(--Shadow);
+  color: black;
+  font-weight: 600;
+  letter-spacing: 1px;
+  width: 80px;
+  height: 30px;
+  background: transparent;
+  border: 2px solid var(--SaveButtonColor);
+}
+.attendance-btn:hover {
+  background-color: var(--SaveButtonColor);
+  color: white;
+}
+.att-below-title {
+  display: flex;
+  align-items: center;
+}
+.att-calender {
+  z-index: 999;
+}
+.salary_fetch {
+  justify-content: end;
+}
+.groupatten {
+  margin-left: -45px;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .att-below-title {
+    margin-top: 20px;
+  }
+  .salary_fetch {
+    justify-content: center;
+  }
+  .mark-attendance {
+    justify-content: center;
+    display: flex;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .att-below-title {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+  }
+  .hi4 {
+    margin-top: 15px;
+  }
+}
+@media (max-width: 875px) {
+}

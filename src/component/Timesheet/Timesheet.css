@@ -1,0 +1,25 @@
+.containerBox_timesheet {
+  background: #f0fbff;
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  min-height: 700px;
+  width: 80%;
+  padding: 5px;
+  margin-top: 2%;
+  padding-left: 10px;
+  margin-bottom: 10px ;
+}
+.tabBG {
+  background: transparent !important;
+}
+
+@media (max-width: 600px) {
+  #searchmob {
+    width: 65% !important;
+    font-size: smaller;
+    padding: 0.5%;
+  }
+  .iconTS {
+    width: 14px !important;
+  }
+}

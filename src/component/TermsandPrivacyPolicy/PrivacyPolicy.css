@@ -1,0 +1,111 @@
+.backBtn {
+  background-color: #6d9886;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  /* width: 5%; */
+}
+.termsbox {
+  background-color: white;
+  width: 90%;
+  /* margin-top: 3%; */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  text-align: justify;
+  padding: 2%;
+  padding-left: 3%;
+  padding-right: 3%;
+  text-align: justify;
+}
+.termsheadbox {
+  background-color: #b8d0c6;
+}
+.connsumertextstyle {
+  color: black;
+  font-size: large;
+}
+.privacyliststyle {
+  padding: 8px;
+  padding-left: 16px;
+}
+.privacylinkstyle {
+  color: #0d6efd;
+  text-decoration: underline;
+}
+/* GoToTop button */
+.gototop-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top-btn {
+  width: 55px;
+  height: 55px;
+  color: #fff;
+  background-color: #6d9886;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 35px;
+  right: 35px;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.top-btn-icon {
+  -webkit-animation: mover 1s infinite alternate-reverse;
+  animation: mover 0.7s infinite alternate-reverse;
+}
+@-webkit-keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
+}
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
+}
+.top-btn-icon {
+  scale: 1.2;
+}
+
+@media only screen and (max-width: 1200px) {
+  .top-btn {
+    scale: 0.8;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+.consumertablesize {
+  width: 100%;
+}
+.consumertableSty {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.facttext {
+  font-size: 23px;
+}
+.termsparastyle {
+  font: italic normal 18px monospace;
+}
+.accessparastyle {
+  text-indent: 80px;
+  text-align: justify;
+}
+.conditionliststy {
+  list-style-type: lower-alpha;
+}
+.liststyle {
+  padding: 8px;
+  padding-left: 22px;
+}

@@ -1,0 +1,65 @@
+.faqbox {
+  width: 100%;
+  /* border: 1px solid lightgray;
+    padding: 50px;
+    margin: 20px; */
+  margin-top: 50px;
+  margin-left: 12%;
+}
+
+.accordion {
+  background-color: #fff;
+  border: 1px solid #e2eef1;
+  border-radius: 10px;
+  outline: none !important;
+  overflow: hidden;
+}
+
+.accordion .accordion-desc {
+  /* color: #575d8d; */
+  border: none;
+  border-top: 1px solid #e2eef1;
+  /* padding: 25px 0 0; */
+  /* margin-top: 25px; */
+  padding: 20px;
+}
+
+.accordion .accordion-header {
+  padding: 0;
+  margin-bottom: 0;
+  border: none;
+}
+
+.accordionbutton {
+  width: 100%;
+  text-align: left;
+  border: none;
+  height: 60px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.plus-btn {
+  margin-left: 90%;
+  margin-top: -30px;
+}
+
+.fadhead {
+  color: var(--CreateButtonColor);
+  margin-top: 50px;
+}
+
+@media (max-width: 600px) {
+  .faqbox {
+    margin-left: 0px;
+  }
+}
+.Searchbarfaq {
+  border: 1px solid #e5e5e5;
+  border-radius: var(--ButtonBorderRadius);
+  padding: 3px;
+  /* width: max-content; */
+  align-items: center;
+  width: 20%;
+  /* margin-left: 80%; */
+}

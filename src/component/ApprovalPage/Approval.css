@@ -1,0 +1,36 @@
+.MainFrame {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.ApprovalBox {
+  background-color: white;
+  min-width: 100px;
+  max-height: max-content;
+  border-radius: 5px;
+  border-left: 5px solid #68b984;
+  box-shadow: var(--Shadow);
+  margin: 10px;
+  max-width: 500px;
+}
+.StatusBox {
+  max-width: 120px;
+  background-color: #68b984;
+}
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .MainFrame {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
+.text-pending{
+  color: #e79c12;
+  font-weight: 600;
+}
+.text-approved{
+  color:#38b563;
+  font-weight: 600;
+}
+.text-rejected{
+  color:red;
+  font-weight: 600;
+}

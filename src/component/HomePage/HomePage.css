@@ -1,0 +1,82 @@
+.homepageimg {
+  width: 90%;
+  height: 100%;
+  padding: 10px;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .homepageimg {
+  display: none;
+  }
+}
+.homepara {
+  margin-top: 3%;
+}
+.homeBtn {
+  background-color: #6d9886;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+.main-div-card{
+  justify-content: start !important;
+}
+@media only screen and (min-width: 320px) and (max-width: 900px) {
+  .main-div-card{
+    justify-content: center !important;
+  }
+}
+.homecard {
+  width: 298px;
+  height: 450px;
+  background-color: #ffffff;
+  box-shadow: var(--Shadow);
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .homecard {
+    width: 350px !important;
+    text-align: justify !important;
+    /* height: 500px !important; */
+   
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 900px) {
+  .homecard {
+    width: 450px !important;
+    text-align: justify !important;
+    /* height: 500px !important; */
+   
+  }
+}
+.homeiconsty {
+  width: 30%;
+  height: 30%;
+}
+.morefeabox{
+    margin-top: 100px;
+}
+.plansection {
+  background-color: #e5efe8;
+  width: 100%;
+  height: 214px;
+  position: absolute;
+}
+.seeplanBtn {
+  background-color: transparent;
+  border: 3px solid #6d9886;
+  padding: 8px;
+  width: 10%;
+  margin-top: 30px;
+}
+@media only screen and (min-width: 320px) and (max-width: 900px) {
+  .seeplanBtn {
+    padding: 3px;
+    width: 30%;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1000px) {
+    .seeplanBtn {
+        padding: 3px;
+        width: 20%;
+      }
+}

@@ -1,0 +1,283 @@
+#popupmobile_expense {
+  width: 30%;
+  left: 35%;
+  top: 21%;
+}
+
+.expense-adddata-popup-date {
+  height: 40px;
+  margin-bottom: -20px;
+  margin-top: 5px;
+  width: 90%;
+}
+
+@media only screen and (min-width: 460px) and (max-width: 1280px) {
+  #popupmobile_expense {
+    top: 3rem;
+    scale: 0.8;
+    padding: -1rem;
+    width: 38%;
+    left: 30%;
+  }
+
+  .sub-create-popup {
+    top: 20px !important;
+    scale: 0.85;
+  }
+
+  .addstaffpopupsubsc {
+    top: 12% !important;
+    scale: 0.75;
+  }
+}
+
+@media (max-width: 600px) {
+  #popupmobile_expense {
+    width: 89%;
+    scale: 0.85;
+    bottom: 35%;
+    background-color: #f0f0f0;
+    position: fixed;
+    color: #000000;
+    left: 5%;
+  }
+}
+
+.inventorypopup {
+  top: 33%;
+  height: max-content;
+  width: 30%;
+  bottom: 20%;
+  background-color: #f0f0f0;
+  position: fixed;
+  right: 36%;
+  border-radius: 20px;
+  align-items: center;
+  padding: 1%;
+  color: #000000;
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: 0px 2px 2px 2px;
+}
+
+.PopupInput {
+  width: 200px;
+}
+
+.btn-edit {
+  width: 35px;
+  height: 20px;
+  font-weight: 200;
+}
+
+.exp-create-inputfields-1 {
+  margin-top: 20px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .sub-create-fields {
+    margin-top: 18px;
+  }
+
+  .sub-list-searchbar-btn {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .sub-list-btn {
+    margin-top: 10px;
+  }
+
+  .sub-list-searchbar {
+    margin-top: -5px;
+  }
+
+  .inve-create-fields {
+    margin-top: 15px;
+  }
+
+  .inve-searchbar-btn {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .inve-list-view-btn {
+    scale: 0.9;
+  }
+
+  .exp-create-view-popup {
+    width: 90%;
+    left: 5%;
+  }
+
+  .exp-create-view-popup-btn {
+    margin-bottom: -25px;
+    margin-top: 5px;
+  }
+
+  .exp-create-view-btn {
+    margin-top: 15px;
+  }
+
+  .exp-create-inputfields {
+    margin-top: 15px;
+  }
+
+  .exp-create-inputfields-2 {
+    margin-top: -15px;
+  }
+
+  .exp-create-inputfields-1 {
+    margin-top: 0px;
+  }
+
+  #popupmobile_expense {
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+
+  .expense-adddata-popup-date {
+    height: 40px;
+    margin-bottom: -20px;
+    margin-top: 5px;
+    width: 90%;
+  }
+
+  .expense-adddata-popup-content {
+    margin-top: 20px;
+  }
+
+  .expense-adddata-popup-btns {
+    margin-bottom: 10px;
+  }
+
+  .inventory-create-popup-name {
+    margin-bottom: -50px;
+    margin-top: 5px;
+  }
+
+  .sub-create-popup {
+    top: 13%;
+    padding-bottom: 5px;
+    position: fixed;
+    padding: 4%;
+  }
+
+  .sub-create-popup-price {
+    width: 98%;
+    margin-top: 5px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1000px) {
+  .exp-create-view-popup-btn {
+    margin-bottom: -55px;
+    margin-top: 20px;
+  }
+
+  .exp-create-view-popup-content {
+    margin-top: -5px !important;
+  }
+
+  #popupmobile_expense {
+    top: 25%;
+    width: 50%;
+    left: 25%;
+    padding: 15px 15px 5px 15px;
+  }
+
+  .expense-adddata-popup-content-1 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .expense-adddata-popup-date {
+    height: 40px;
+    margin-bottom: -20px;
+    margin-top: 5px;
+  }
+
+  .inve-create-popup-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .sub-create-popup {
+    top: 25%;
+    width: 46%;
+    left: 27%;
+  }
+
+  .sub-create-popup-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .sub-create-popup-btns {
+    margin-bottom: -50px;
+  }
+}
+
+@media (min-width: 1001px) {
+  .sub-create-popup {
+    top: 21%;
+    width: 30%;
+    left: 35%;
+  }
+
+  .sub-create-popup-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .sub-create-popup-btns {
+    margin-bottom: 10px;
+  }
+}
+
+.scrollbarexpense {
+  margin-left: 30px;
+  background: transparent;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-bottom: 25px;
+  border-radius: 10px;
+}
+
+.force-overflow {
+  max-height: 450px;
+}
+
+.addstaffpopupsubsc {
+  top: 18%;
+  height: max-content;
+  width: 30%;
+  background-color: #f0f0f0;
+  position: fixed;
+  right: 35%;
+  border-radius: 20px;
+  align-items: center;
+  padding: 1%;
+  color: #000000;
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: 0px 2px 2px 2px;
+}
+.create-expense-view {
+  background: #495464;
+  color: var(--backgroundColor);
+  border: none;
+  padding: 5px 15px 5px 15px;
+  cursor: pointer;
+  border-radius: var(--ButtonBorderRadius);
+  width: max-content;
+  min-width: 90px;
+  font-size: medium;
+}
+.create-expense-view:hover {
+  color: #ffffff;
+  background-color: #ffabab;
+}

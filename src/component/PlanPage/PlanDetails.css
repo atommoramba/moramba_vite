@@ -1,0 +1,140 @@
+.plan_main {
+  background-image: url("../../assets/img/planbg.svg");
+  background-size: cover;
+  min-height: 93vh;
+  background-repeat: no-repeat;
+}
+
+.plancard-box {
+  position: relative;
+  background-color: #fff;
+  /* height: 480px; */
+  width: 347px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: rgba(99, 99, 99, 0.6) 0px 2px 8px 0px;
+}
+.tableStyPlan {
+  /* border: 1px solid black; */
+  margin: 10px;
+  width: 95%;
+}
+.tableHeadStyplan {
+  border: 1px solid black;
+  background-color: #6d9886;
+  color: white;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.tableHeadSty2plan {
+  border: 1px solid black;
+  background-color: #fff;
+  color: black;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.currentplan-box{
+  background-color: #b2edd2;
+}
+.plancard-box:hover {
+  scale: 1.03;
+  cursor: pointer;
+}
+
+.plan_icon {
+  width: 50px;
+  height: 50px;
+}
+
+.discount_text {
+  background-color: #6d9886;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 14px;
+  padding: 3px;
+  padding-inline: 10px;
+}
+
+.plan_btn {
+  background-color: #6d9886;
+  height: 50px;
+  width: 75%;
+  border: none;
+  border-radius: 99px;
+  color: #fff;
+}
+
+.plan_btn:hover {
+  background-color: white;
+  border: 1px solid #aaaaaa;
+  color: black;
+}
+
+.currentPlanBtn {
+  background-color: #198754;
+  height: 50px;
+  width: 75%;
+  border: none;
+  border-radius: 99px;
+  color: #fff;
+}
+
+.plancard-box > ul > li {
+  list-style-type: none;
+  /* padding-inline-start: 1ch; */
+}
+
+.ribbon-2 {
+  --f: 10px;
+  /* control the folded part*/
+  --r: 15px;
+  /* control the ribbon shape */
+  --t: 10px;
+  /* the top offset */
+
+  position: absolute;
+  inset: var(--t) calc(-1 * var(--f)) auto auto;
+  padding: 0 10px var(--f) calc(10px + var(--r));
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--f)),
+    calc(100% - var(--f)) 100%,
+    calc(100% - var(--f)) calc(100% - var(--f)),
+    0 calc(100% - var(--f)),
+    var(--r) calc(50% - var(--f) / 2)
+  );
+  background: #bd1550;
+  box-shadow: 0 calc(-1 * var(--f)) 0 inset #0005;
+  color: white;
+  font-size: 12px;
+}
+@media only screen and (min-width: 320px) and (max-width: 500px) {
+  .plancard-box {
+    width: 320px;
+  }
+}
+
+.PlanpopupMainBox {
+  z-index: 999;
+  background-color: pink;
+  width: max-content;
+  padding: 30px;
+}
+.NoAccess {
+  z-index: 999;
+  height: max-content;
+  width: 40%;
+  bottom: 40%;
+  background-color: #f0f0f0;
+  position: fixed;
+  right: 30%;
+  border-radius: 20px;
+  align-items: center;
+  padding: 30px;
+  color: #000000;
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: 0px 2px 2px 2px;
+}
+

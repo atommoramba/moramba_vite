@@ -1,0 +1,43 @@
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .create-exp-popup {
+    width: 90%;
+    left: 5%;
+    padding: 15px 15px 0px 15px;
+    top: 35%;
+  }
+  .create-exp-popup-select {
+    height: 40px;
+  }
+  .create-exp-popup-input {
+    width: 70%;
+    margin-top: 5px;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .create-exp-popup {
+    width: 66%;
+    left: 17%;
+    padding: 15px;
+    top: 35%;
+  }
+  .create-exp-popup-select {
+    height: 40px;
+    width: 158%;
+    margin-top: 5px;
+  }
+  .create-exp-popup-input {
+    width: 90%;
+    margin-top: 5px;
+  }
+  .create-exp-popup-btns {
+    margin-top: 8px;
+    margin-bottom: -22px;
+  }
+  .create-exp-temp-date-div {
+    margin-left: 90px;
+  }
+}
+
+.search_temp {
+  width: 210px;
+}

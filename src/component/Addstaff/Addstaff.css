@@ -1,0 +1,502 @@
+.popupinp {
+  padding-top: 8px;
+  display: flex;
+  width: 350px;
+  gap: 5px;
+}
+@media only screen and (min-width: 320px) and (max-width: 500px) {
+  .addstaffwippopup {
+    width: 96% !important;
+    left: 2% !important;
+    right: 2% !important;
+    top: 5% !important;
+    padding-top: 15px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+  .addstaffwippopupm1 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px !important;
+    text-align: left !important;
+  }
+  .addstaffwippopupm2 {
+    height: 500px !important;
+  }
+  .addstaffwippopupm3 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px !important;
+  }
+  .popupinp {
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between;
+  }
+  .addstaffwippopupm4 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px !important;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1000px) {
+  .popupinp {
+    display: flex;
+    gap: 7px !important;
+    justify-content: flex-start !important;
+  }
+}
+@media only screen and (min-width: 501px) and (max-width: 1000px) {
+  .addstaffwippopup {
+    width: 70% !important;
+    left: 15%;
+    right: 15%;
+    top: 5% !important;
+    padding-top: 15px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  .addstaffwippopupm1 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px !important;
+    text-align: left !important;
+  }
+  .addstaffwippopupm2 {
+    height: 500px !important;
+  }
+  .addstaffwippopupm3 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px !important;
+  }
+  .addstaffwippopupm4 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px !important;
+  }
+  .popupinp {
+    width: 100%;
+    display: flex !important;
+    gap: 5px !important;
+    justify-content: space-between;
+  }
+  .popupinp2 {
+    width: 60%;
+  }
+}
+@media only screen and (min-width: 1001px) and (max-width: 1200px) {
+  .addstaffwippopup {
+    width: 50% !important;
+    left: 25%;
+    right: 25%;
+    top: 5% !important;
+    padding-top: 15px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  .addstaffwippopupm3 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px !important;
+  }
+  .popupinp2 {
+    width: 50%;
+  }
+}
+
+/* --------------- */
+
+.addstaffpopup {
+  height: max-content;
+  width: 30%;
+  bottom: 20%;
+  background-color: #f0f0f0;
+  position: fixed;
+  right: 35%;
+  border-radius: 20px;
+  align-items: center;
+  padding: 1%;
+  color: #000000;
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: 0px 2px 2px 2px;
+}
+.addstaff-dropdowns {
+  height: 40px;
+}
+.addstaff-mname {
+  margin-top: -10px;
+}
+.addstaff-state {
+  margin-top: -30px !important;
+}
+@media (max-width: 876px) {
+  .addstaffpopup {
+    height: max-content;
+    width: 55%;
+    bottom: 24%;
+    background-color: #f0f0f0;
+    position: fixed;
+    right: 23%;
+    border-radius: 20px;
+    align-items: center;
+    padding: 4%;
+    color: #000000;
+    overflow: hidden;
+    transition: 0.5s;
+    box-shadow: 0px 2px 2px 2px;
+  }
+}
+
+@media (max-width: 675px) {
+  .addstaffpopup {
+    height: max-content;
+    width: 76%;
+    bottom: 11%;
+    background-color: #f0f0f0;
+    position: fixed;
+    right: 12%;
+    border-radius: 20px;
+    align-items: center;
+    padding: 4%;
+    color: #000000;
+    overflow: hidden;
+    transition: 0.5s;
+    box-shadow: 0px 2px 2px 2px;
+  }
+}
+.addstaffsalarypopup {
+  height: 70%;
+  width: 36%;
+  bottom: 15%;
+  background-color: #f0f0f0;
+  position: fixed;
+  right: 35%;
+  border-radius: 20px;
+  align-items: center;
+  padding: 1%;
+  color: #000000;
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: 0px 2px 2px 2px;
+}
+@media only screen and (min-width: 601px) and (max-width: 876px) {
+  .addstaffsalarypopup {
+    height: max-content;
+    width: 80%;
+    bottom: 19%;
+    background-color: #f0f0f0;
+    position: fixed;
+    right: 9%;
+    border-radius: 20px;
+    align-items: center;
+    padding: 2%;
+    color: #000000;
+    overflow: hidden;
+    transition: 0.5s;
+    box-shadow: 0px 2px 2px 2px;
+  }
+  .t-addstaff-country {
+    width: 100%;
+  }
+  .t-addstaff-emptaxid {
+    margin-top: -8px;
+  }
+  .t-addstaff-access-btn {
+    margin-top: 5px;
+  }
+  .t-addstaff-desg-dropdown {
+    width: 100%;
+  }
+  .t-addstaff-reporting-dropdown {
+    margin-top: 5px;
+    margin-left: 5px !important;
+  }
+  .t-addstaff-selectcurrency-amount {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .t-addstaff-create-new-temp-btn {
+    margin-top: 10px;
+    padding-left: -10px;
+  }
+  .t-addstaff-reportingto-expenseapprover {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .t-zip {
+    margin-top: 15px;
+  }
+}
+@media (max-width: 675px) {
+  .addstaffsalarypopup {
+    height: max-content;
+    width: 97%;
+    bottom: 11%;
+    background-color: #f0f0f0;
+    position: fixed;
+    right: 1.5%;
+    border-radius: 20px;
+    align-items: center;
+    padding: 3%;
+    color: #000000;
+    overflow: hidden;
+    transition: 0.5s;
+    box-shadow: 0px 2px 2px 2px;
+  }
+}
+
+.uploadclick {
+  background-color: rgb(127, 240, 127);
+  color: #000;
+  border: none;
+  width: 160px;
+  height: 48px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.documentchoose {
+  width: 290px;
+}
+.previewImg {
+  width: 180px;
+  height: 180px;
+  border-radius: 999px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.viewProfileImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.selecttempBtn {
+  background-color: var(--CreateButtonColor);
+  color: var(--backgroundColor);
+  border: none;
+  padding: 8px;
+  border-radius: var(--ButtonBorderRadius);
+  width: max-content;
+  min-width: 100px;
+  margin-left: 10px;
+}
+
+.customizeBtn {
+  border: none;
+  background: var(--CancleButtonColor);
+  width: 250px;
+  height: 40px;
+  border-radius: 8px;
+  color: #ffffff;
+  margin-top: 8px;
+}
+
+.CountryInputbox1 {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  min-width: 140px;
+  padding: 6px;
+  border-bottom: 3px solid #6d9886;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+@media (max-width: 576px) {
+  .salarytypeInput {
+    width: 38vh;
+  }
+  .selecttempBtn {
+    margin-left: 0px;
+  }
+}
+.CountryInputbox1:focus {
+  outline: none;
+}
+
+.CountryInputbox1::placeholder {
+  color: #89919e;
+}
+
+.vactionbox {
+  width: 250px !important;
+}
+
+.ReactFlagsSelect-module_selectBtn__19wW7 {
+  border: none !important;
+  padding-bottom: 0% !important;
+}
+
+.scrolladdstaff {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 80%;
+  max-width: 100%;
+  padding: 10px;
+}
+
+.scrolladdstaff::-webkit-scrollbar {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.scrolladdstaff::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 18px;
+  border: 3px solid white;
+  height: 200px !important;
+}
+
+.spaceing {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-around;
+}
+
+.css-dmmspl-MuiFormGroup-root {
+  flex-direction: row !important;
+}
+
+.tableheadaddstaff {
+  background-color: #6d9886;
+  color: white;
+}
+
+.addstaffhead {
+  background-color: #6d9886;
+  color: white;
+}
+
+.addstafftable {
+  background-color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .addstafftable {
+    background-color: #d9d9d9;
+  }
+}
+
+.tablecssaddstaff {
+  background-color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .tablecssaddstaff {
+    background-color: #d9d9d9;
+  }
+  .addstaff-pemail {
+    margin-top: 15px;
+  }
+  .addstaff-emp-taxid {
+    margin-top: -8px !important;
+  }
+  .addstaff-joindate {
+    margin-top: 8px;
+  }
+  .addstaff-create-new-temp-btn {
+    margin-top: 10px;
+  }
+  .t-addstaff-reporting-dropdown {
+    margin-top: 10px;
+    margin-left: 5px !important;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+}
+
+.error_sty {
+  color: rgb(236, 53, 53);
+}
+
+.addstaffsalarypopup input[type="checkbox"] {
+  height: 50px;
+}
+.currencySymbolHolder {
+  text-align: center;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  /* width: 35px; */
+  padding: 6px;
+  border-bottom: 3px solid #6d9886;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+.popupinp2 {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  width: 100px;
+  padding: 6px;
+  border-bottom: 3px solid #6d9886;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+.addReportingto2 {
+  border: none;
+  padding: 9px;
+  color: white;
+  background-color: #68b984;
+  margin-inline-start: 7px;
+  border-radius: 5px;
+  width: 35px;
+}
+.approval-email{
+  height: 27px;
+  width: 27px;
+}
+.resend-email-btn{
+    background-color: var(--CancleButtonColor);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    height: 38px;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    overflow:hidden;
+    width: auto;
+    max-width: 29px; /** I'm animating max-width because width needs to be auto, and auto can't be animated **/
+    -webkit-transition: max-width 0.5s;
+    transition: max-width 0.5s;
+   word-break: break-all;
+}
+.resend-email-btn:hover{
+  max-width: 280px;
+  background-color: var(--CancleButtonColor);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  height: 38px;
+  border: none;
+  display: inline-flex;
+}
+.verified-text{
+  font-size: 13px;
+  /* padding-bottom: 20px; */
+}
+
+.icon {
+  font-size: 26px;
+    margin-right: 12px;
+    padding: -1px 8px;
+    display: flex;
+    /* align-items: center; */
+    padding-left: 4px;
+    
+}
+
+.text {
+  white-space: nowrap;
+  padding-right: 15px;
+  padding-top: 3px;
+  font-size: smaller;
+  /* padding-bottom: 3px; */
+}

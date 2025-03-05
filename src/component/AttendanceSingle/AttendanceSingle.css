@@ -1,0 +1,403 @@
+.attSingleBox {
+  padding: 20px;
+  border-radius: var(--ButtonBorderRadius);
+  box-shadow: var(--Shadow);
+  width: 70%;
+  margin-inline-start: 80px;
+}
+
+.publicbtn {
+  background-color: #A084DC;
+  color: var(--backgroundColor);
+  border: none;
+  padding: 8px;
+  border-radius: var(--ButtonBorderRadius);
+  width: max-content;
+  min-width: 100px;
+}
+.attendanceBTN-new{
+  background-color: green;
+}
+.publicbtn:hover {
+  background-color: var(--TextDarkColor);
+}
+.sidebox {
+  padding: 10px;
+  background-color: white;
+  border-radius: var(--ButtonBorderRadius);
+  box-shadow: var(--Shadow);
+  margin-top: 20px;
+}
+
+.headingAS {
+  writing-mode: vertical-lr;
+  rotate: 180deg;
+  margin: 0;
+}
+
+.sideRowSty {
+  margin-left: 30px;
+  width: 300px;
+}
+
+.presentBorder {
+  border-left: 5px solid #68b984;
+}
+
+.absentBorder {
+  border-left: 5px solid #ff6464;
+}
+
+.vacationBorder {
+  border-left: 5px solid #acdcee;
+}
+
+.attendanceBtn {
+  background-color: green;
+  border: none;
+  color: white;
+  border-radius: var(--ButtonBorderRadius);
+  box-shadow: var(--Shadow);
+}
+
+.vacationBtn {
+  background-color: rgb(79, 144, 182);
+  border: none;
+  color: white;
+  border-radius: var(--ButtonBorderRadius);
+  box-shadow: var(--Shadow);
+}
+
+.absentText {
+  color: #ff6464;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.VactionText {
+  color: #64a5ff;
+  font-size: larger;
+  font-weight: bold;
+}
+.lateMarkText {
+  color: #68b984;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.presentText {
+  color: #68b984;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.halfDayText {
+  color: #ffd24c;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.popupAttenSingle {
+  width: 26%;
+  top: 35%;
+  background-color: #f0f0f0;
+  position: fixed;
+  left: 37%;
+  border-radius: 20px;
+  align-items: center;
+  padding: 1%;
+  color: #000000;
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: 0px 2px 2px 2px;
+}
+
+.popuptwoAttenSingle {
+  min-width: 30%;
+  top: 25%;
+  background-color: #f0f0f0;
+  position: fixed;
+  right: 45%;
+  left: 35%;
+  border-radius: 20px;
+  align-items: center;
+  padding: 1%;
+  color: #000000;
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: 0px 2px 2px 2px;
+}
+
+.closeIconSty {
+  height: 28px;
+  width: 30px;
+}
+
+.ulListAs {
+  list-style: none;
+}
+
+.listAS::before {
+  content: "🟢";
+  padding-right: 5px;
+  color: #61b33b;
+}
+
+.listAS:nth-child(1):before {
+  content: "🔴";
+  color: #ff6347;
+
+  margin-left: -1rem;
+}
+
+.listAS:nth-child(2):before {
+  content: "🟡";
+  color: #fafa33;
+  margin-left: -1rem;
+}
+
+.listAS:nth-child(3):before {
+  color: #008000;
+  margin-left: -1rem;
+}
+
+.listAS:nth-child(4):before {
+  content: "🔵";
+  color: #9e7bff;
+  margin-left: -1rem;
+}
+
+.sidebtnbox {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.listBox {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: var(--ContainerColor);
+  border-radius: var(--ButtonBorderRadius);
+  box-shadow: var(--Shadow);
+}
+
+.selectInputAsSty {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  min-width: 140px;
+  padding: 6px;
+  border-bottom: 3px solid #6d9886;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+.selVacation {
+  width: 214px;
+}
+
+.selectInputAsSty:focus {
+  outline: none;
+}
+.att-si-present {
+  height: 40px;
+  margin-left: 0px;
+}
+.selectAttpop {
+  height: 40px;
+  width: 240px;
+}
+.att-si-present-pop {
+  width: 240px;
+}
+.att-si-select-half {
+  height: 40px;
+  margin-left: 0;
+  width: 240px;
+}
+
+@media (max-width: 576px) {
+  .attendanceBtn,.vacationBtn,.publicbtn{
+    font-size: 12px;
+  }
+  .popupAttenSingle {
+    width: 100%;
+    scale: 0.85;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    top: 25%;
+  }
+  .br_remove {
+    display: none;
+  }
+  .popuptwoAttenSingle {
+    width: 100%;
+    scale: 0.85;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    top: 5%;
+    position: fixed;
+  }
+
+  .attSingleBox {
+    margin-inline-start: 0px;
+    width: fit-content;
+    margin-top: 0px;
+  }
+
+  .sidebtnbox {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 20px;
+  }
+  .selectAttpop {
+    height: 40px;
+    width: 291px;
+  }
+  .att-si-present {
+    height: 40px;
+    margin-left: 0px;
+    width: 291px;
+  }
+  .att-si-present-pop {
+    width: 291px;
+  }
+  .att-si-select-half {
+    width: 291px;
+  }
+  .selVacation-2 {
+    height: 40px;
+    width: 292px;
+  }
+  .att-single-fullcalender {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 1024px) {
+  .popupAttenSingle {
+    width: 60%;
+    left: 20%;
+    top: 31%;
+    padding: 15px;
+  }
+  .popuptwoAttenSingle {
+    width: 60%;
+    left: 20%;
+    right: 20%;
+    padding: 15px;
+    top: 25%;
+  }
+  .selectAttpop {
+    height: 40px;
+    width: 291px;
+  }
+  .att-si-pop-btn {
+    margin-bottom: 10px;
+  }
+  .att-si-present {
+    height: 40px;
+    margin-left: 0px;
+    width: 291px;
+  }
+  .att-si-present-pop {
+    width: 291px;
+  }
+  .att-si-select-half {
+    width: 291px;
+  }
+  .popup-2-close {
+    margin-top: 8px;
+    margin-right: 5px;
+  }
+  .popup-2-start-date {
+    width: 200px;
+  }
+  .popup-2-end-date {
+    width: 200px;
+  }
+  .popup-2-leave-note {
+    width: 200px;
+  }
+  .selVacation-2 {
+    width: 200px;
+    height: 40px;
+  }
+  .att-single-fullcalender {
+    margin-left: -5px;
+    margin-right: -15px;
+  }
+  .att-single-below-title {
+    margin-top: 40px !important;
+  }
+}
+@media only screen and (min-width: 514px) and (max-width: 1280px) {
+  .popuptwoAttenSingle {
+    width: 38%;
+    top: 19%;
+    scale: 0.85;
+    left: 30%;
+    padding: 14px;
+  }
+  .popupAttenSingle {
+    top: 26%;
+    scale: 0.9;
+    padding: 14px;
+  }
+}
+.fc .fc-day-disabled {
+  background: var(--backgroundColor) !important;
+}
+
+/* Monthly and yearly */
+.checkbox1 {
+  width: 340px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 30px;
+  position: relative;
+  color: black;
+  overflow: hidden;
+  box-shadow: var(--Shadow);
+}
+
+#checkbox1_toggle {
+  display: none;
+}
+
+.checkbox1 .toggle {
+  width: 168px;
+  height: 50px;
+  position: absolute;
+  border-radius: 30px;
+  left: 5px;
+  cursor: pointer;
+  background: #acdcee;
+  transition: 0.4s;
+}
+
+.checkbox1 .slide {
+  width: 300px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.checkbox1 .slide .text {
+  font-size: 16px;
+  font-weight: 600;
+  z-index: 100;
+  cursor: pointer;
+  /* margin-left: 38px; */
+}
+
+.check:checked + .checkbox1 .slide .toggle {
+  transform: translateX(160px);
+  background: #acdcee;
+}
+.checkbox_show {
+  display: none !important;
+}

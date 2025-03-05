@@ -1,0 +1,41 @@
+.BtnBoxemp {
+  display: flex;
+  justify-content: center;
+}
+.ReverseButtonHeader {
+  background-color: transparent;
+  border-radius: var(--ButtonBorderRadius);
+  border: 3px solid var(--CreateButtonColor);
+  margin-inline-end: 15px;
+  padding: 8px;
+  min-width: 170px;
+}
+.ReverseButtonHeader:hover {
+  background-color: var(--TextDarkColor);
+  color: white;
+  border: 3px solid var(--TextDarkColor);
+}
+@media (max-width: 876px) {
+  .ReverseButtonHeader {
+    margin-bottom: 10px;
+    height: 70px;
+  }
+  .BtnBoxemp {
+    display: flex;
+    justify-content: flex-start;
+    scale: 0.9;
+    overflow: scroll !important;
+  }
+}
+@media (max-width: 576px) {
+  .ReverseButtonHeader {
+    margin-bottom: 10px;
+    height: 70px;
+  }
+  .BtnBoxemp {
+    display: flex;
+    justify-content: flex-start;
+    overflow: scroll;
+    scale: 0.9;
+  }
+}

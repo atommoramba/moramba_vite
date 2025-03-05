@@ -1,0 +1,261 @@
+.mainboxcheckboxsty {
+  width: 500px;
+  word-wrap: break-word;
+}
+
+.tab_bar_doc {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.sidebar_text {
+  font-size: medium !important;
+  font-weight: 600 !important;
+  color: #9da8abf1 !important;
+}
+
+.active_tab_sty {
+  background-color: #d8e5e9 !important;
+}
+
+.tab_doc {
+  background-color: var(--TextDarkColor) !important;
+  border-radius: 10px !important;
+  list-style: none !important;
+}
+
+.document_text {
+  margin-left: -39px;
+}
+
+.sty_cmpdoc {
+  width: 90%;
+  margin-left: 35px;
+}
+
+.hr_sty {
+  height: 2px !important;
+}
+
+input.CheckboxDoc {
+  margin-bottom: 2rem;
+  margin-right: 9px !important;
+  min-width: 2px !important;
+}
+
+.doc_data_scroll {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 50%;
+  max-width: 100%;
+  padding: 10px;
+}
+
+.doc_data_scroll::-webkit-scrollbar {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.doc_data_scroll::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 18px;
+  border: 3px solid white;
+}
+
+#scroll_mobile {
+  width: 100%;
+  background: transparent;
+  height: 360px;
+}
+
+@media (max-width: 600px) {
+  #mob_company {
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+
+  #tab_mobile {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  #active_tab {
+    margin: 2px 3px !important;
+    padding: 1px 1px !important;
+    font-size: small !important;
+  }
+
+  #tabpanel_mob {
+    margin-left: 15px !important;
+  }
+
+  #err_mobile {
+    margin-right: 30px;
+    margin-top: -60px;
+    padding-bottom: 15px;
+  }
+
+  #hrMob {
+    margin-top: 42px !important;
+  }
+
+  #mobcheck {
+    margin-left: -10px;
+    width: 100%;
+  }
+
+  .categ_mob {
+    font-size: smaller;
+    word-wrap: break-word;
+    padding-top: -10px !important;
+  }
+
+  input.CheckboxDoc {
+    margin-left: -1px !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .markmob {
+    margin-right: -20px !important;
+  }
+}
+
+.errtext {
+  color: red;
+  margin-right: 245px;
+}
+
+#err_mobile {
+  margin-top: 10px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .cmpdocright {
+    margin-left: -22px;
+  }
+
+  .cmpdoc-main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .companydoc-input {
+    width: 100%;
+    margin-left: 0px !important;
+  }
+
+  .cmpdoc-main-savebtn {
+    margin-top: 10px !important;
+  }
+
+  .cmpdoc-main-cancelbtn {
+    margin-left: 0px !important;
+    width: max-content;
+    margin-top: 10px;
+  }
+
+  #err_mobile {
+    width: max-content;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .companydoc-input {
+    width: 75%;
+    margin-left: 0px !important;
+  }
+
+  .cmpdoc-main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .cmpdoc-main-savebtn {
+    margin-top: 10px !important;
+  }
+
+  .cmpdoc-main-cancelbtn {
+    margin-left: 0px !important;
+    width: max-content;
+    margin-top: 10px;
+  }
+
+  #err_mobile {
+    width: max-content;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .cmpdoc-main {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .companydoc-input {
+    width: 85%;
+    margin-left: -10px !important;
+  }
+
+  .cmpdoc-main-savebtn {
+    margin-top: 15px;
+    margin-left: -10px !important;
+  }
+
+  .cmpdoc-main-cancelbtn {
+    height: max-content;
+    margin-top: 15px;
+  }
+
+  #err_mobile {
+    width: max-content;
+    margin-left: -10px;
+    margin-right: 0px;
+  }
+}
+
+@media only screen and (min-width: 1039px) and (max-width: 1043px) {
+  #err_mobile {
+    width: max-content;
+    margin-left: -8px !important;
+  }
+}
+
+@media only screen and (min-width: 1044px) and (max-width: 1200px) {
+  #err_mobile {
+    width: max-content;
+    margin-left: 0px !important;
+    margin-top: 15px;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  .cmpdoc-main {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .companydoc-input {
+    width: 85%;
+    margin-left: -10px !important;
+  }
+
+  .cmpdoc-main-savebtn {
+    margin-top: 15px;
+    margin-left: -10px !important;
+  }
+
+  .cmpdoc-main-cancelbtn {
+    height: max-content;
+    margin-top: 15px;
+  }
+
+  #err_mobile {
+    width: max-content;
+    margin-left: -10px;
+    margin-right: 0px;
+  }
+}

@@ -1,0 +1,356 @@
+.bank-account-cards {
+  display: flex;
+}
+
+.DeleteBtn {
+  background-color: #495464;
+}
+.bank-account-card {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #e5d6d6;
+  border-radius: 10px;
+  box-shadow: var(--Shadow);
+  min-width: 290px;
+  margin: 15px;
+  border: 1px solid #393e46;
+}
+
+.bank-account-card-img {
+  height: 80px;
+  width: 80px;
+}
+
+.Crypto-account-card-img {
+  height: 80px;
+  width: 80px;
+}
+
+.bank-account-card-btn {
+  width: max-content;
+  margin-top: 5px;
+}
+
+.bank-details-create {
+  float: right;
+}
+
+.bank-details-crypto-wallets {
+  display: flex;
+  gap: 30px;
+}
+
+.bank-details-crypto-wallet {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #d6e4e5;
+  border-radius: 10px;
+  box-shadow: var(--Shadow);
+  min-width: 290px;
+  margin: 15px;
+  border: 1px solid #393e46;
+}
+.popup_wallet {
+  height: max-content;
+  width: 35%;
+  bottom: 30%;
+  background-color: #f0f0f0;
+  position: fixed;
+  right: 34%;
+  border-radius: 20px;
+  align-items: center;
+  padding: 1%;
+  color: #000000;
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: 0px 2px 2px 2px;
+}
+.popup_bank {
+  height: max-content;
+  width: 35%;
+  bottom: 9%;
+  background-color: #f0f0f0;
+  position: fixed;
+  right: 34%;
+  border-radius: 20px;
+  align-items: center;
+  padding: 1%;
+  color: #000000;
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: 0px 2px 2px 2px;
+}
+.walletinput {
+  width: 210px !important;
+}
+.title_bank {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.popup-wallet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f0f0f0;
+  border: 2px solid #000;
+  box-shadow: 24;
+  padding: 4;
+  width: 38%;
+}
+.errtext-wallet {
+  color: red;
+}
+.close_btn {
+  margin-left: 93% !important;
+  margin-top: -4px !important;
+}
+.popupqr {
+  height: max-content;
+  width: 26%;
+  background-color: #ffffff;
+  position: fixed;
+  right: 38%;
+  border-radius: 20px;
+  bottom: 18%;
+  padding: 1%;
+  color: white;
+  overflow: hidden;
+  transition: 0.5s;
+  border: 1px solid black;
+}
+.bank-popup {
+  top: 12%;
+}
+.delete-popup {
+  top: 44%;
+}
+.qr-popup {
+  top: 12%;
+  width: 28%;
+}
+.qr-popup-qrcode {
+  margin-top: -20px;
+}
+.qr-popup-btns {
+  margin-top: -15px;
+  margin-bottom: 7px;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .crypto-popup {
+    top: 11%;
+    width: 90%;
+    left: 5%;
+    padding: 15px;
+    scale: 0.95;
+  }
+  .crypto-popup-input-wallet {
+    width: 100%;
+  }
+  .crypto-popup-input-wall-address {
+    width: 100%;
+  }
+  .crypto-popup-first-column {
+    margin-left: -15px;
+    margin-top: -18px;
+  }
+  .crypto-popup-second-column {
+    margin-left: -12px;
+  }
+  .crypto-popup-token {
+    height: 40px;
+  }
+  .crypto-popup-network {
+    height: 40px;
+  }
+  .crypto-popup-btns {
+    padding-top: 10px;
+    margin-bottom: -25px;
+  }
+  .bank-popup {
+    top: 15%;
+    width: 90%;
+    left: 5%;
+    padding: 15px;
+  }
+  .delete-popup {
+    top: 33%;
+    width: 90%;
+    left: 5%;
+    padding: 15px;
+  }
+  .bank-popup-scroll {
+    height: 320px;
+    overflow-y: scroll;
+  }
+  .bank-popup-btns {
+    margin-bottom: -35px;
+  }
+  .bank-popup-inputs-labels {
+    padding-top: 15px;
+  }
+  .qr-popup {
+    top: 6%;
+    width: 95%;
+    left: 3%;
+    padding: 15px;
+    scale: 0.85;
+  }
+  .qr-popup-btns {
+    margin-bottom: -20px;
+    margin-top: -15px;
+  }
+  .qr-popup-qrcode {
+    margin-top: -28px;
+  }
+  #qraddress {
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .bank-popup {
+    top: 16%;
+    width: 98%;
+    left: 1%;
+    padding: 19px;
+    scale: 0.95;
+  }
+  .delete-popup {
+    top: 16%;
+    width: 98%;
+    left: 1%;
+    padding: 15px;
+    scale: 0.95;
+  }
+  .bank-popup-btns {
+    margin-bottom: -30px;
+    justify-content: center;
+  }
+  .bank-popup-scroll {
+    padding: 0px 40px;
+  }
+  .crypto-popup {
+    width: 84%;
+    left: 8%;
+    padding: 15px;
+  }
+  .crypto-popup-first-column {
+    /* margin-left: -40px; */
+  }
+  .crypto-popup-token {
+    height: 40px;
+  }
+  .crypto-popup-network {
+    height: 40px;
+  }
+  .crypto-popup-btns {
+    padding-top: 15px;
+    margin-bottom: -20px;
+  }
+  .qr-popup {
+    width: 70% !important;
+    left: 16%;
+    padding: 15px;
+    top: 15%;
+  }
+  .qr-popup-btns {
+    margin-bottom: -16px;
+    margin-top: -10px;
+  }
+  .qr-popup-qrcode {
+    margin-top: -20px;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .bank-popup {
+    top: 16%;
+    width: 76%;
+    left: 12%;
+    padding: 15px;
+    scale: 0.95;
+  }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  .bank-popup {
+    top: 16%;
+    width: 58%;
+    left: 21%;
+    padding: 15px;
+    scale: 0.95;
+  }
+}
+
+@media only screen and (min-width: 514px) and (max-width: 1280px) {
+  .bank-popup {
+    top: 1%;
+    width: 100%;
+    left: 2%;
+    scale: 0.75;
+  }
+  .popup_wallet {
+    top: 25%;
+    width: 54%;
+    scale: 0.95;
+    padding: 2%;
+  }
+}
+@media only screen and (min-width: 862px) and (max-width: 1550px) {
+  .qr-popup {
+    top: 12%;
+    width: 35%;
+    left: 28%;
+    height: 80%;
+    overflow-y: scroll;
+  }
+  .qr-popup::-webkit-scrollbar {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  .qr-popup::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 18px;
+    border: 3px solid white;
+    height: 200px !important;
+  }
+}
+@media only screen and (min-width: 861px) and (max-width: 1250px) {
+  .qr-popup {
+    top: 12%;
+    width: 43%;
+    left: 28%;
+    height: 80%;
+    overflow-y: scroll;
+  }
+  .qr-popup::-webkit-scrollbar {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  .qr-popup::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 18px;
+    border: 3px solid white;
+    height: 200px !important;
+  }
+}
+@media only screen and (min-width: 448px) and (max-width: 1100px) {
+  .qr-popup {
+    top: 12%;
+    width: 51%;
+    left: 28%;
+    height: 80%;
+    overflow-y: scroll;
+  }
+  .qr-popup::-webkit-scrollbar {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  .qr-popup::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 18px;
+    border: 3px solid white;
+    height: 200px !important;
+  }
+}

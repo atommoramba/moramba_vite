@@ -1,0 +1,34 @@
+.hd-wallet {
+  margin-top: 50px;
+}
+.hd-wallet-row-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.hd-wallet-key-col {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.hd-wallet-key-col1 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.hd-wallet-index-number {
+  min-width: 60px;
+}
+.hd-wallet-table {
+  overflow-x: hidden;
+
+  /* width: 100%; */
+}
+@media (max-width:1872px) {
+  .hd-wallet-table {
+    overflow-x: scroll;
+    background: red;
+  }
+}

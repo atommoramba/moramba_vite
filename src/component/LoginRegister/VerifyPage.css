@@ -1,0 +1,31 @@
+
+.thumb-icon-sty{
+    background-color: var(--CreateButtonColor);
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    margin-left: 41%;
+}
+.thumb-sty{
+    height: 40px;
+    width: 40px;
+    color: #fff;
+    margin-top: 10px;
+}
+.thumb-notverified{
+    height: 40px;
+    width: 40px;
+    color: #fff;
+    margin-top: 14px;
+}
+.thumb-icon-sty-notverified{
+    background-color: var(--CancleButtonColor);
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    margin-left: 41%;
+}
+.resetpassword{
+    height: 60px;
+    width: 60px;
+}

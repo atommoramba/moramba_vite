@@ -1,0 +1,85 @@
+.profileImg {
+  width: 180px;
+  height: 180px;
+  border-radius: 999px;
+  background: #6d9886;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.upgradeBtn {
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  width: max-content;
+  min-width: 100px;
+  background-color: #ffde00;
+}
+
+.goldtext {
+  font-weight: 500;
+  font-size: 19px;
+}
+
+.freetext {
+  color: red;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.clickBtn {
+  border: none;
+  padding: 3px;
+  border-radius: 8px;
+  width: max-content;
+  min-width: 100px;
+  border-color: #e8ecfa;
+  border: 2px solid #6d9886;
+}
+
+.CompanyLogoProfile {
+  width: 150px;
+  height: 150px;
+  margin-top: 10px;
+  border-radius: 9999px;
+  outline-color: var(--ActiveBtnTextColor);
+  outline-style: solid;
+}
+
+@media (max-width: 876px) {
+  #profiledetail {
+    margin-left: 10%;
+  }
+  #btnmobcss {
+    margin-top: 12px;
+  }
+}
+@media (max-width: 675px) {
+  .clickBtn {
+    min-width: 70px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  #profiledetail {
+    margin-left: 0px;
+  }
+  .company-profile-address {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .company-profile-address {
+    font-size: 18px;
+  }
+  #profiledetail {
+    margin-left: 0px;
+  }
+}
+@media (max-width: 576px) {
+  .plantext {
+    font-size: large;
+    font-weight: 600;
+  }
+}

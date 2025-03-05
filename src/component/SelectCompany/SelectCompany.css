@@ -1,0 +1,71 @@
+.MainTxt {
+  color: var(--TextDarkColor);
+}
+.Searchbar {
+  border: 1px solid #e5e5e5;
+  border-radius: var(--ButtonBorderRadius);
+  padding: 3px;
+}
+.CompanyBox {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: var(--SelectCompanyBox);
+  border-radius: 10px;
+  box-shadow: var(--Shadow);
+  min-width: 270px;
+  min-height: 200px;
+  margin: 3px;
+}
+.CompanyLogo {
+  width: 90px;
+  height: 90px;
+  border-radius: 9999px !important;
+  outline-color: var(--ActiveBtnTextColor);
+  outline-style: solid !important;
+}
+.mainBox {
+  display: flex;
+  justify-content: center;
+}
+.Box {
+  display: flex;
+  padding: 10px;
+  gap: 30px;
+}
+.scroll_comp {
+  border-radius: 0.7rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  overflow: auto;
+}
+.scroll_comp::-webkit-scrollbar {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.scroll_comp::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 18px;
+  border: 3px solid white;
+  height: 200px !important;
+}
+.swipecss {
+  color: #908b8b;
+  display: none;
+}
+@media (max-width: 675px) {
+  .swipecss {
+    padding-top: 7px;
+    color: #908b8b;
+    display: block;
+  }
+}
+@media (max-width: 675px) {
+  #mobilesearch {
+    justify-content: center;
+    width: 60%;
+  }
+}
+.CmpName {
+  color: var(--CmpText) !important;
+}

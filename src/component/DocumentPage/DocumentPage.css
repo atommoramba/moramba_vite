@@ -1,0 +1,283 @@
+.doc_box1 {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  background-color: #e5d6d6;
+  border-radius: 10px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 1.1em;
+  min-width: 290px;
+}
+.font_position {
+  margin-left: -40px;
+}
+.document_icon {
+  width: 50px;
+  height: 50px;
+  margin-left: 151px !important;
+}
+.title_side {
+  margin-left: 80% !important;
+}
+.input_side {
+  margin-left: 20px;
+}
+.wrap-text {
+  white-space: nowrap;
+}
+.cnclbtn {
+  width: 11px;
+}
+.createbtn_doc {
+  background-color: #d97857;
+  color: var(--backgroundColor);
+  border: none;
+  padding: 4px;
+  border-radius: var(--ButtonBorderRadius);
+  width: max-content;
+  min-width: 95px;
+  margin-left: 7px;
+  margin-right: 4px;
+}
+.createbtn_doc:disabled {
+  background-color: #d97857;
+  color: rgb(255 255 255);
+  opacity: 0.7;
+}
+.createbtn_doc:disabled:hover{
+  cursor: not-allowed;
+}
+.upload_file {
+  margin-left: 200px;
+}
+.scroll_comp1 {
+  border-radius: 0.7rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  overflow: auto;
+  height: max-content;
+  padding-top: 0.5rem;
+  margin-left: 24px;
+}
+.scroll_comp1::-webkit-scrollbar {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.scroll_comp1::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 18px;
+  border: 3px solid white;
+  height: 200px !important;
+}
+.img_add {
+  height: 100%;
+  width: 18%;
+  position: fixed;
+  top: 79px;
+  right: 0;
+  background-color: #ebe7e7;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 1.1em;
+  transition: 0.5s;
+  padding-top: 60px;
+  border-left: 1px solid grey;
+}
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 100px;
+  left: 0;
+  background-color: #111;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+@media (max-width: 600px) {
+  #inputmob {
+    margin-left: -20%;
+  }
+  #input_boxmob {
+    width: 20px !important;
+  }
+  #doc_boxmob {
+    width: 100%;
+  }
+  .err-file-upload{
+    justify-items: flex-end;
+      margin-left: 1px;
+      width: 30%;
+  }
+  #mobtitle {
+    margin-bottom: -48px;
+  }
+  #imgMob {
+    margin-left: 22%;
+  }
+  #textMob {
+    margin-left: 20px;
+  }
+}
+.file_name_sty {
+  white-space: initial;
+  height: 78px;
+
+  overflow: auto;
+  font-size: 14px;
+}
+.not-upload_file {
+  white-space: initial;
+  height: 78px;
+
+  overflow: auto;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 28px;
+}
+.upload-old {
+  background: #f5f5f5;
+  border-radius: 3px;
+  padding: 25px;
+  height: 98px;
+  border-style: dotted;
+  border-color: #a39a9a;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-left: 63px !important;
+  padding-top: 35px !important;
+}
+.upload-old-emp {
+  background: #f5f5f5;
+  border-radius: 3px;
+  padding: 25px;
+  height: 98px;
+  border-style: dotted;
+  border-color: #a39a9a;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-left: 63px !important;
+  padding-top: 35px !important;
+}
+.doc_name {
+  white-space: initial;
+  height: 65px;
+  width: 248px;
+  overflow: auto;
+  overflow-x: hidden;
+  padding-top: 12px;
+  text-align: center;
+  padding-top: 14px;
+  left: 21px;
+  margin-left: 52px;
+}
+.downlodbtn {
+  background-color: #198754;
+}
+.docbg {
+  background-color: #c6e0e5;
+}
+.profileImg {
+  width: 130px;
+  height: 130px;
+  border-radius: 90px;
+  outline-style: solid;
+  margin-inline-end: 20px;
+  margin-left: 4%;
+}
+.profileImg_sty {
+  height: 130px;
+  border-radius: 90px;
+  margin-bottom: -29px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .docpage-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 60px;
+    margin-top: 15px;
+    scale: 0.85;
+  }
+  .err-file-upload{
+    justify-items: flex-end;
+      margin-left: 1px !important;
+      width: 60% !important;
+  }
+  .document_icon{
+    margin-left: 88px !important;
+  }
+  .doc_name{
+    margin-left: 0px !important;
+  }
+  .docpage-inputs-btn {
+    margin-left: 0px !important;
+  }
+  .docpage-inputs-file {
+    min-width: 102%;
+  }
+  .docpage-scrollcomp-1 {
+    margin-left: 0px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 600px) {
+  .docpage-inputs {
+    margin-top: 15px;
+    scale: 0.85;
+  }
+  .err-file-upload{
+    justify-items: flex-end;
+      margin-left: 1px;
+      width: 30%;
+  }
+  .docpage-inputs-file {
+    min-width: 55%;
+  }
+  
+  .docpage-scrollcomp-1 {
+    margin-left: 0px;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  #textMob {
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1027px) {
+  .docpage-inputs {
+    scale: 0.9;
+    display: flex;
+  }
+  .docpage-inputs-file {
+    min-width: 66%;
+  }
+}
+.uploaded-file-div {
+  background: #e5f3f3;
+  border-radius: 3px;
+  padding: 6px;
+  height: 98px;
+  border-style: dotted;
+  border-color: #a39a9a;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.uploaded-file-div-emp {
+  background: #e5f3f3;
+  border-radius: 3px;
+  padding: 6px;
+  height: 98px;
+  border-style: dotted;
+  border-color: #a39a9a;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.err-file-upload{
+  justify-items: flex-end;
+    width: 18%;
+    margin-left: 68%;
+}

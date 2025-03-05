@@ -1,0 +1,107 @@
+.receivetransaction-search .lauwcj {
+  width: 280px;
+}
+.apply-btn {
+  background: #6d9886;
+  color: var(--backgroundColor);
+  border: none;
+  padding: 3px;
+  border-radius: var(--ButtonBorderRadius);
+  width: max-content;
+  min-width: 80px;
+  font-size: medium;
+}
+.apply-btn:hover {
+  scale: 1.1;
+}
+.apply-popup {
+  height: 50%;
+  width: 47.5%;
+  bottom: 35%;
+  background-color: #f0f0f0;
+  position: fixed;
+  right: 26.5%;
+  border-radius: 20px;
+  align-items: center;
+  padding: 1%;
+  color: #000000;
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: 0px 2px 2px 2px;
+}
+.nickname-popup {
+  height: 30%;
+  width: 35%;
+  bottom: 40%;
+  background-color: #f0f0f0;
+  position: fixed;
+  right: 32%;
+  border-radius: 20px;
+  align-items: center;
+  padding: 1%;
+  color: #000000;
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: 0px 2px 2px 2px;
+}
+.status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.status.success {
+  color: #008000;
+}
+
+.status.paid {
+  color: #008000;
+}
+
+.status.partially-paid {
+  color: #ff8800;
+}
+
+
+
+.status.paid {
+    color: #008000;
+    font-weight: bold;
+  }
+  
+  .status.partially-paid {
+    color: #FF8800;
+    font-weight: bold;
+  }
+  
+  .status.success {
+    color: #008000;
+    font-weight: bold;
+  }
+  
+  .pendingamountsty{
+    color: #C60000;
+    font-weight: bold;
+  }
+  .editbtn-receivetrans{
+    background-color: #FBD200;
+    color: #000000;
+    border: none;
+    padding: 2%;
+    border-radius: 5px;
+    width: 80px;
+  }
+  .rec-curency-input{
+    width: 40px !important;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    min-width: 40px;
+    padding: 6px;
+    border-bottom: 3px solid #6d9886;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  }
+  .rec-wallet-add{
+    width: 100%;
+  }

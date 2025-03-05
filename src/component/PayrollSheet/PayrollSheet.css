@@ -1,0 +1,217 @@
+.PayrollBox {
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.unloacksty {
+  padding: 8px !important;
+}
+.paidButton {
+  filter: blur(0.6px);
+  border: 3px solid green !important;
+  background: transparent !important;
+  color: black !important;
+}
+.unpaidButton {
+  background: #495464;
+  color: var(--backgroundColor);
+  border: none;
+  padding: 3px;
+  border-radius: var(--ButtonBorderRadius);
+  width: max-content;
+  min-width: 80px;
+  font-size: medium;
+}
+.popupPayRoll {
+  height: max-content;
+  min-width: 75%;
+  bottom: 10%;
+  top: 11%;
+  background-color: #ffffff;
+  position: fixed;
+  right: 35%;
+  left: 14%;
+  border-radius: 20px;
+  align-items: center;
+  padding: 1%;
+  color: #000000;
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: 0px 2px 2px 2px;
+}
+.popupqrpayroll {
+  height: max-content;
+  min-width: 35%;
+  bottom: 55%;
+  top: 30%;
+  background-color: #ffffff;
+  position: fixed;
+  right: 33%;
+  left: 33%;
+  border-radius: 20px;
+  align-items: center;
+  padding: 1%;
+  color: #000000;
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: 0px 2px 2px 2px;
+}
+.payrollScroll{
+  margin-left: 30px;
+  background: transparent;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  height: 300px !important;
+}
+.popupTwoPayRoll {
+  min-width: 30%;
+  min-height: 20%;
+  bottom: 25%;
+  top: 35%;
+  background-color: #f0f0f0;
+  position: fixed;
+  right: 45%;
+  left: 35%;
+  border-radius: 20px;
+  align-items: center;
+  padding: 1%;
+  color: #000000;
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: 0px 2px 2px 2px;
+}
+.secPopupBox {
+  min-height: 200px;
+}
+.tableSty {
+  border: 1px solid black;
+  margin: 10px;
+  width: 95%;
+}
+.aerrosty {
+  font-size: 30px;
+  margin-top: 115px;
+}
+.tableHeadSty {
+  border: 1px solid black;
+  background-color: #6d9886;
+  color: white;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.tableHeadSty2 {
+  border: 1px solid black;
+  background-color: #6d9886;
+  color: white;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.tableDataSty {
+  border: 1px solid black;
+  text-align: center;
+}
+.scrollClass {
+  height: 70%;
+  overflow: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+.EditViewBtn {
+  background: #495464;
+  color: var(--backgroundColor);
+  border: none;
+  padding: 3px;
+  border-radius: var(--ButtonBorderRadius);
+  width: max-content;
+  min-width: 80px;
+  font-size: medium;
+}
+.SearchPayrollShet {
+  border: 1px solid black;
+  border-radius: 7px;
+  padding: 5px;
+}
+.absentborder {
+  border-bottom: 3px solid #df0a0a;
+}
+.statusType {
+  padding-top: 0;
+  margin-left: 10px;
+}
+.PayrollHeadBox {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.payroll-popup-2 {
+  height: 400px;
+  top: 30%;
+}
+.payroll-popup-2-height {
+  height: 40px;
+}
+.payroll-popup-2-hday {
+  margin-left: -17px;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .payroll-popup-calender {
+    width: 100%;
+    left: 0%;
+    padding: 15px;
+    top: 21%;
+    height: 510px;
+    scale: 0.9;
+  }
+  .payroll-popup-2 {
+    width: 90%;
+    left: 5%;
+    padding: 15px;
+    height: 400px;
+    top: 25%;
+  }
+  .payroll-popup-2-height {
+    height: 40px;
+  }
+  .payroll-popup-2-hday {
+    margin-left: -17px;
+  }
+  .popupqrpayroll{
+    min-width: 65%;
+    /* right: 20%; */
+    left: 18%;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .payroll-popup-calender {
+    width: 80%;
+    left: 10%;
+    padding: 15px;
+  }
+  .payroll-popup-calender-btns {
+    margin-top: 36px;
+  }
+  .payroll-popup-2 {
+    width: 50%;
+    left: 25%;
+    padding: 15px;
+    height: 400px;
+    top: 32%;
+  }
+  .payroll-popup-2-btns {
+    padding-bottom: 50px;
+  }
+  .payroll-popup-2-height {
+    height: 40px;
+  }
+  .payroll-popup-2-hday {
+    margin-left: -17px;
+  }
+  .payroll-popup-2-status-heading {
+    padding-right: 5px;
+  }
+}
+.PayrollDate {
+  width: 100px !important;
+}

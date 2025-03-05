@@ -1,0 +1,86 @@
+.csb {
+  display: flex;
+}
+.csb-1 {
+  width: 25%;
+  padding: 0px 10px;
+  margin-top: 40px;
+}
+.csb-11 {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding-top: 4px;
+  margin-left: -10px !important;
+}
+.csb-111 {
+  margin-top: 6px;
+}
+.salarytital {
+  border-radius: 15px;
+  background-color: #f0fbff;
+}
+.salaryinput {
+  width: 245px;
+  border-radius: 6px;
+  background-color: white;
+  border: none;
+}
+.createinput {
+  width: 250px;
+}
+.create-sal-breakdown-dropdowns {
+  height: 40px;
+}
+@media only screen and (min-width:320px) and (max-width:480px) {
+  .csb {
+    display: flex;
+    flex-direction: column;
+  }
+  .csb-1 {
+    width: 100%;
+    padding: 0px 10px;
+    margin-top: 25px;
+    padding-left: 20px;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .create-sal-inputs-parent-div {
+    display: flex;
+    flex-direction: column;
+  }
+  .csb {
+    display: flex;
+    flex-direction: column;
+  }
+  .csb-1 {
+    width: 100%;
+    padding: 0px 10px;
+    margin-top: 25px;
+    padding-left: 20px;
+  }
+}
+@media only screen and (min-width:769px) and (max-width:1000px) {
+  .csb {
+    display: flex;
+    flex-direction: column;
+  }
+  .csb-1 {
+    width: 100%;
+    padding: 0px 10px;
+    margin-top: 25px;
+    padding-left: 20px;
+  }
+}
+@media only screen and (min-width:1001px) and (max-width:1200px) {
+  .csb {
+    display: flex;
+    flex-direction: column;
+  }
+  .csb-1 {
+    width: 100%;
+    padding: 0px 10px;
+    margin-top: 25px;
+    padding-left: 20px;
+  }
+}

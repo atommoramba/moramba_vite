@@ -1,0 +1,141 @@
+.textAreaField {
+  width: 300px;
+  height: 80px;
+}
+.DateDiv {
+  margin-inline-end: 15px;
+}
+.inaddress {
+  width: 300px;
+  word-wrap: break-word;
+}
+.InvoiceBox {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.capitalize {
+    text-transform: capitalize;
+}
+.errInvoice {
+  color: red;
+  margin-right: 223px !important;
+}
+.invoicetable-datatable {
+  padding: 0px 15px 0px 15px;
+}
+.create-invoice-temp-right {
+  margin-top: 45px;
+}
+.create-invoice-temp-left {
+  margin-left: 20px;
+}
+.amountword {
+  width: 500px;
+}
+
+@media (min-width: 1001px) {
+  .create-invoice-temp-addcat {
+    display: flex;
+    align-items: center;
+  }
+  .create-invoice-btn-save {
+    margin-top: -3px !important;
+  }
+  .create-invoice-btn-cancel {
+    margin-top: -3px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .textAreaField {
+    width: auto;
+  }
+  .DateDiv {
+    margin-inline-end: auto;
+  }
+  .InvoiceBox {
+    display: grid;
+  }
+  .create-invoice-temp-left {
+    margin-left: 0;
+  }
+  .amountword {
+    width: fit-content !important;
+  }
+  #err_Invoice1{
+    margin-right: 100px !important;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .invoicetable-datatable {
+    padding: 0px 7px 0px 7px;
+  }
+  .invoicetable-view-btn {
+    scale: 0.79;
+  }
+  .invoicetable-searchbar {
+    width: 45% !important;
+  }
+  .errInvoice{
+    margin-right: 100px !important;
+  }
+}
+@media (max-width: 876px) {
+  #err_Invoice1{
+    margin-left: 33px;
+  }
+  .wall_address{
+    word-break: break-word;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1000px) {
+  .invoicetable-datatable {
+    padding: 0px 10px 0px 10px;
+  }
+  .create-invoice-temp-left {
+    width: 95%;
+  }
+  .create-invoice-temp-right {
+    width: 100%;
+  }
+  #err_Invoice1{
+    margin-right: 80px;
+  }
+  .wall_address{
+    word-break: break-word;
+  }
+}
+
+.billinput {
+  width: 170px;
+}
+.invoicePhoto {
+  margin-top: -20px;
+  margin-left: 6px;
+  width: 75px;
+  height: 72px;
+  border-radius: 9999px !important;
+  margin-inline-end: 30px;
+}
+.tital_billcolor {
+  color: #6a6a6a;
+}
+
+.scrollTableviewbill {
+  overflow-y: hidden;
+}
+.inaddressamount {
+  margin-left: auto;
+  width: 250px;
+  word-wrap: break-word;
+}
+.tableabcd {
+  margin-right: 23px !important;
+}
+.titalbill {
+  margin-top: -20px !important;
+}

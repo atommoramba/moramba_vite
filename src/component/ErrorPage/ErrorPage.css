@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.errorpage {
+  height: 100% !important;
+  padding: 20px;
+}
+.headingTxt {
+  font-size: 68px;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+.subtext {
+  font-family: "Poppins", sans-serif;
+  font-size: 38px;
+}
+.errorpera {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  width: 75%;
+}
+.errorbtn {
+  background-color: #ff6d7e;
+  color: white;
+  padding: 12px;
+  width: 200px;
+  border: none;
+  border-radius: 30px;
+}
+@media only screen and (min-width: 320px) and (max-width: 500px) {
+  #mobimg{
+    display: none;
+  }
+}

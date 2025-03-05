@@ -1,0 +1,200 @@
+.Register-main-box {
+  background-color: #fff;
+  border-radius: 15px;
+  min-height: 620px;
+  height: max-content;
+  width: 676px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-top: -15px !important;
+}
+.register-main {
+  background-color: #d2f4f2;
+  height: 100%;
+  width: 100%;
+  padding-inline: 20px;
+  padding-block-end: 20px;
+}
+.register-form {
+  margin-top: 25px;
+}
+.Register-input {
+  background-color: #fff;
+  border-radius: 5px;
+  min-width: 296px;
+  width: 20px;
+  height: 50px;
+  border: none;
+  padding-inline-start: 15px;
+}
+.countryInputRegister {
+  background-color: #fff !important;
+  border-radius: 5px !important;
+  min-width: 220px !important;
+  height: 50px !important;
+  border: none !important;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em !important;
+  padding-inline-start: 15px;
+  padding-block-start: 5px;
+}
+.Otp-box-popup {
+  height: max-content;
+  width: 26%;
+  min-width: 300px;
+  background-color: #ffffff;
+  position: fixed;
+  right: 38%;
+  border-radius: 20px;
+  bottom: 40%;
+  padding: 20px;
+  color: white;
+  overflow: hidden;
+  transition: 0.5s;
+  border: 1px solid black;
+}
+.bgblur1 {
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+}
+.errconfirmPass {
+  width: 220px;
+}
+.reg-pass-inputs{
+  padding-right: 45px;
+}
+.regErr-p{
+  color:red;
+  text-align: center;
+  margin-bottom: -10px;
+  /* margin-top: 8px; */
+  font-weight: 500;
+  font-size: 20px;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .Register-main-box {
+    margin-top: 0px;
+    scale: 1;
+    margin-bottom: 40px;
+  }
+  .logo_text {
+    scale: 0.8;
+  }
+  .sign-up-btn {
+    scale: 0.9;
+  }
+  .mobile-sign-up-btn {
+    scale: 0.9;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 600px) {
+  
+  .Register-main-box {
+    margin-top: 0px;
+    scale: 1;
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+
+  .Register-main-box {
+    margin-top: 0px;
+    scale: 1;
+    max-width: 550px !important;
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1000px) {
+  .login-main {
+    height: 100vh !important;
+  }
+  .Register-main-box {
+    margin-top: 0px;
+    scale: 1;
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (min-width: 1001px) and (max-width: 1200px) {
+  .login-main {
+    height: 100vh !important;
+  }
+  .Register-main-box {
+    margin-top: 0px;
+    scale: 1;
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .Register-main-box {
+    width: 95%;
+  }
+  .Otp-box-popup {
+    right: 15%;
+  }
+}
+.eyebtnReg {
+  border: none;
+  background-color: transparent;
+  margin-left: -38px !important;
+}
+.textPartnerID {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #0085e4;
+}
+.ErrorTextRegister {
+  color: red;
+  animation: animate 2.5s linear infinite;
+}
+
+@media  screen and (max-width: 1600px) {
+  /* insert styles here */
+  #login-bg {
+    display: none !important;
+}
+.Register-main-box {
+  background-color: #fff;
+  border-radius: 15px;
+  min-height: 420px !important;
+  height: max-content;
+  width: 840px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-top: -50px !important;
+  padding: 0.5% 3%!important;
+}
+.partneridtext{
+  margin-top: 0px !important;
+}
+.creatingtextresponsive{
+  margin-top: -20px;
+}
+.login-main{
+  height: 100vh !important;
+}
+}
+
+@media  screen and (max-width: 1280px) {
+  .login-main{
+    background-color: transparent !important;
+  }
+}
+@media only screen and (min-device-width: 480px) and (max-device-width: 800px) {
+  .login-main{
+    background-color: #d2f4f2 !important;
+  }
+}
+@media only screen and (min-device-width: 640px) and (max-device-width: 960px) {
+  .login-main{
+    background-color: #d2f4f2 !important;
+  }
+}
+/* @media only screen and (device-width: 320px) and (orientation: portrait) {
+  .login-main{
+    background-color: #d2f4f2 !important;
+  }
+} */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .login-main{
+    background-color: #d2f4f2 !important;
+    height: max-content !important;
+  }
+}

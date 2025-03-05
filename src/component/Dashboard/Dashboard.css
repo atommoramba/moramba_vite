@@ -1,0 +1,166 @@
+.GreetingImages {
+  height: 90px;
+}
+.DashboardCmpBox {
+  padding: 20px;
+  margin-bottom: 10px;
+  width: auto;
+  background-color: var(--ContainerColor);
+  border-radius: 10px;
+  box-shadow: var(--Shadow);
+  min-width: 150px;
+  min-height: 200px;
+  margin: 3px;
+}
+.cmpname{
+  overflow-wrap: break-word;
+}
+.WalletButton {
+  background-color: var(--backgroundColor);
+  color: #000;
+  border: none;
+  padding: 8px;
+  border-radius: var(--ButtonBorderRadius);
+  width: max-content;
+  min-width: 100px;
+}
+.WalletButton:hover {
+  background-color: var(--CreateButtonColor);
+  color: #000;
+}
+.MonthlyPaymentBox {
+  padding: 20px;
+  width: auto;
+  background-color: var(--ContainerColor);
+  border-radius: 10px;
+  box-shadow: var(--Shadow);
+  min-width: 150px;
+  background-image: url("../../assets/img/LineGraph.svg");
+  color: #000;
+}
+.TableContainer {
+  background-color: var(--ContainerColor);
+  border-radius: var(--ButtonBorderRadius);
+  box-shadow: var(--Shadow);
+  margin-top: 3px;
+}
+.TableButtonsHolder {
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 576px) {
+  .TableButtonsHolder {
+    display: grid;
+  }
+  .ReverseButton {
+    margin-bottom: 10px;
+  }
+  .searchbarbox {
+    width: 70% !important;
+  }
+  .dashboard-createbtn {
+    margin-top: 10px;
+  }
+  .AllButton {
+    width: 90% !important;
+  }
+}
+.ReverseButton {
+  background-color: transparent;
+  border-radius: var(--ButtonBorderRadius);
+  border: 3px solid var(--CreateButtonColor);
+  margin-inline-end: 15px;
+  padding: 8px;
+}
+.ReverseButton:hover {
+  background-color: var(--TextDarkColor);
+  color: white;
+  border: 3px solid var(--TextDarkColor);
+}
+.scrollTableDashbaord {
+  overflow-x: auto;
+}
+
+@media (max-width: 876px) {
+  .TableButtonsHolder {
+    display: grid;
+  }
+  .ReverseButton {
+    margin-bottom: 10px;
+  }
+  .scrollTableDashbaord {
+    overflow-x: scroll;
+  }
+ 
+}
+@media ((min-width:766px) and (max-width: 1303px) ){
+  .pending-count{
+    margin-top: -67px !important;
+    margin-left: 9px !important;
+  }
+}
+@media (max-width: 481px) {
+  .scrollTableDashbaord {
+    overflow-x: scroll;
+  }
+}
+.DashboardTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.DashboardTable td,
+th {
+  border-top: 1px solid #ecf0f1;
+  padding: 12px;
+}
+
+.DashboardTable td {
+  border-left: 1px solid #ecf0f1;
+  border-right: 1px solid #ecf0f1;
+  background-color: #ffffff;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.DashboardTable th {
+  background-color: #6d9886;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.pending-btn{
+  background-color: transparent;
+    border-radius: var(--ButtonBorderRadius);
+    border: 3px solid var(--CreateButtonColor);
+    margin-inline-end: 15px;
+    padding: 4px 7px;
+}
+.active-employee{
+  background-color: var(--TextDarkColor);
+  border-radius: var(--ButtonBorderRadius);
+  border: 3px solid var(--TextDarkColor);;
+  margin-inline-end: 15px;
+  padding: 4px 7px;
+  color: white;
+}
+  
+.pending-count{
+  position: absolute;
+  /* top: 296px; */
+  /* right: -10px; */
+  padding: 0px 10px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  scale: 0.8;
+  margin-top: -13px;
+  margin-left: -1px;
+}
+.btnsave-dashboard{
+  border: none;
+  border-radius: var(--ButtonBorderRadius);
+  background: var(--SaveButtonColor);
+  min-width: 80px;
+  padding: 3px;
+  color: var(--backgroundColor);
+}
