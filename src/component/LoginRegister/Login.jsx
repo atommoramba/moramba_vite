@@ -457,7 +457,8 @@ function LoginV3() {
           </div>
         </div>
         <div className="text-center loginPromotext text-muted">
-          Product of Atom, A Delaware Corporation.
+          Digital Expeditions Inc Delaware, USA
+          {/* Product of Atom, A Delaware Corporation. */}
         </div>
       </main>
       <ToastContainer />
