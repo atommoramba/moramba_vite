@@ -24,6 +24,7 @@ import { useDispatch } from "react-redux";
 import { getCompany } from "../../redux/selectCompanySlice";
 import Cookie from "js-cookie";
 import { CountryCodewithEmoji } from "../../utils/data";
+import dayjs from "dayjs";
 
 function RegisterComp() {
   const dispatch = useDispatch();
