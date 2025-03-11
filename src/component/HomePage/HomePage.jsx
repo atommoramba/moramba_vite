@@ -8,7 +8,7 @@ import loanImg from "../../assets/img/Loan_icn.png";
 import benefits from "../../assets/img/benefits_icon.png";
 import moreImg from "../../assets/img/more-features-icon.png";
 import { Link } from "react-router-dom";
-console.log("vite project")
+console.log("vite project");
 function HomePage() {
   const HomeCarddData = [
     {
@@ -94,6 +94,10 @@ function HomePage() {
               <Link to={"/upgradplan"}>
                 <button className="seeplanBtn">View Plan</button>
               </Link>
+              <div className="text-center mt-4 text-muted">
+                Digital Expeditions Inc Delaware, USA
+                {/* Product of Atom, A Delaware Corporation. */}
+              </div>
             </center>
           </div>
         </div>
