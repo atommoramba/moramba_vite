@@ -18,26 +18,30 @@ function HdWallet() {
       // Generate mnemonic
       const newMnemonic = bip39.generateMnemonic();
       setMnemonic(newMnemonic);
-
+  
       // Create seed from mnemonic
       const seed = bip39.mnemonicToSeedSync(newMnemonic);
-
-      // Create master HD node
-      const masterNode = ethers.utils.HDNode.fromSeed(seed);
-      console.log(masterNode);
-
+  
+      // Create master HD node (Ethers v6)
+      const masterNode = ethers.HDNodeWallet.fromSeed(seed);
+      console.log("Master Node:", masterNode);
+  
       // Set master keys
       setMasterPrivateKey(masterNode.privateKey);
       setMasterPublicKey(masterNode.publicKey);
       setMasterAddress(masterNode.address);
-
+  
       const derivedKeys = [];
-
+  
       // Derive child keys using the master node
       for (let i = 0; i < 5; i++) {
         const path = `m/44'/60'/0'/0/${i}`;
-        const childNode = masterNode.derivePath(path);
-
+        
+        // Derive the child node using the correct method
+        const childNode = masterNode.derivePath(path); // Correct method in Ethers v6
+        
+        console.log(`Child Node ${i + 1}:`, childNode);
+  
         derivedKeys.push({
           index: i + 1,
           privateKey: childNode.privateKey,
@@ -45,12 +49,14 @@ function HdWallet() {
           address: childNode.address,
         });
       }
-
+  
+      console.log("Derived Keys:", derivedKeys);
       setKeys(derivedKeys);
     } catch (error) {
       console.error("Error generating keys:", error);
     }
   };
+  
 
   return (
     <div className="hd-wallet p-3">
@@ -115,43 +121,42 @@ function HdWallet() {
           )}
           <br />
           {keys.length > 0 && (
-            <div className="overflow-x-auto ">
-              <div className="hd-wallet-table">
-                <table className="min-w-full border-collapse border border-gray-300">
-                  <thead>
-                    <tr className="bg-gray-100">
-                      <th className="hd-wallet-index-number border border-gray-300 p-2">
-                        No.
-                      </th>
-                      <th className="border border-gray-300 p-2">
-                        Private Key
-                      </th>
-                      <th className="border border-gray-300 p-2">Public Key</th>
-                      <th className="border border-gray-300 p-2">Address</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {keys.map((key) => (
-                      <tr key={key.index}>
-                        <td className="hd-wallet-index-number border border-gray-300 p-2 text-center">
-                          {key.index}
-                        </td>
-                        <td className="border border-gray-300 p-2 break-all font-mono text-sm">
-                          {key.privateKey}
-                        </td>
-                        <td className="border border-gray-300 p-2 break-all font-mono text-sm">
-                          {key.publicKey}
-                        </td>
-                        <td className="border border-gray-300 p-2 break-all font-mono text-sm">
-                          {key.address}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          )}
+  <div className="overflow-x-auto ">
+    <div className="hd-wallet-table">
+      <table className="min-w-full border-collapse border border-gray-300">
+        <thead>
+          <tr className="bg-gray-100">
+            <th className="hd-wallet-index-number border border-gray-300 p-2">
+              No.
+            </th>
+            <th className="border border-gray-300 p-2">Private Key</th>
+            <th className="border border-gray-300 p-2">Public Key</th>
+            <th className="border border-gray-300 p-2">Address</th>
+          </tr>
+        </thead>
+        <tbody>
+          {keys.map((key) => (
+            <tr key={key.index}>
+              <td className="hd-wallet-index-number border border-gray-300 p-2 text-center">
+                {key.index}
+              </td>
+              <td className="border border-gray-300 p-2 break-all font-mono text-sm">
+                {key.privateKey}
+              </td>
+              <td className="border border-gray-300 p-2 break-all font-mono text-sm">
+                {key.publicKey}
+              </td>
+              <td className="border border-gray-300 p-2 break-all font-mono text-sm">
+                {key.address}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+)}
+
         </center>
       </div>
     </div>
