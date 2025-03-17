@@ -552,12 +552,12 @@ function Dashboard() {
       doc.querySelector("string[name='text_edit']")?.textContent
     );
     setText_pending(
-      doc.querySelector("string[name='textpendingemp']")?.textContent
+      doc.querySelector("string[name='textpendingemp']")?.textContent || "Pending Employee Request"
         
     );
     setText_currentemp(
       doc.querySelector("string[name='text_currentemp']")
-        ?.textContent
+        ?.textContent || "Current Employee"
     );
     setText_resendver(
       doc.querySelector("string[name='text_resendver']")?.textContent
