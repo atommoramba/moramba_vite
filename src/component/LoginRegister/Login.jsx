@@ -266,6 +266,7 @@ function LoginV3() {
             sessionStorage.setItem("AdminFName", res.data.firstname);
             sessionStorage.setItem("AdminLName", res.data.lastname);
             sessionStorage.setItem("token", res.data.token);
+            sessionStorage.setItem("Email", res.data.email);
             // ----------------------
             if (rememberMe) {
               Cookie.set("username", res.data.firstname + res.data.lastname);

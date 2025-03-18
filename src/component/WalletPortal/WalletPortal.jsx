@@ -23,10 +23,13 @@ import axios from "axios";
 import Cookie from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import { getCheckbalance } from "../../redux/CheckBalanceSlice";
-import { Divider } from "@mui/material";
+import { Divider, Tooltip } from "@mui/material";
 import { Ethereum_REGEX, UPIID_REGEX } from "../../utils/Validation";
 import { ToastContainer } from "react-toastify";
 import Loader from "../../utils/Loader";
+import { ethers } from "ethers";
+import * as bip39 from "bip39";
+import { IoCopy } from "react-icons/io5";
 
 const WalletPortal = () => {
   //Redux code
@@ -156,6 +159,10 @@ const WalletPortal = () => {
   const navigate = useNavigate();
   const [IsLoading, setIsLoading] = useState(true);
   const [IsLoading1, setIsLoading1] = useState(true);
+
+  // Create HD Wallet
+  const [iscreatehdwallet, setIscreatehdwallet] = useState(false);
+  const [showhdwallet, setShowhdwallet] = useState(false);
   const setCountyData = (d) => {
     var countryName = countriesList[d];
     setCountry(countryName);
@@ -904,13 +911,219 @@ const WalletPortal = () => {
   //     navigate("/");
   //   }
   // });
+  const [openeventcopiedtooltip, setOpeneventcopiedtooltip] = useState(false);
+  const [privatekey, setprivatekey] = useState("");
+  const [importWallet, setimportWallet] = useState(false);
+  const [keys, setKeys] = useState([]);
+  const [mnemonic, setMnemonic] = useState([]);
+  const [masterPrivateKey, setMasterPrivateKey] = useState("");
+  const [masterPublicKey, setMasterPublicKey] = useState("");
+  const [masterAddress, setMasterAddress] = useState("");
+  const [walletdetails, setWalletdetails] = useState(false);
+  const [walletData, setWalletData] = useState([]);
+  const [openprivatekey, setOpenprivatekey] = useState(false);
+  const [getAllData, setgetAllData] = useState([]);
 
+  const generateKeys = async () => {
+    setIscreatehdwallet(true);
+    setimportWallet(false);
+    try {
+      const bip39 = await import("bip39");
+      const newMnemonic = bip39.generateMnemonic();
+      // setMnemonic(newMnemonic);
+      const seed = bip39.mnemonicToSeedSync(newMnemonic);
+      const masterWallet = ethers.HDNodeWallet.fromSeed(seed);
+
+      const masterPrivateKey = masterWallet.privateKey;
+      const masterPublicKey = masterWallet.publicKey;
+      const masterAddress = masterWallet.address;
+
+      let walletData = [];
+
+      let globalDebitIndex = 0;
+      let globalCreditIndex = 0;
+
+      let debitWallets = [];
+      let creditWallets = [];
+
+      // for (let d = 0; d < 1; d++) {
+      const debitWallet = masterWallet.derivePath(
+        `m/44'/60'/0'/0/${globalDebitIndex}`
+      );
+      debitWallets.push({
+        index: globalDebitIndex,
+        privateKey: debitWallet.privateKey,
+        publicKey: debitWallet.publicKey,
+        address: debitWallet.address,
+      });
+      //   globalDebitIndex++;
+      // }
+
+      // for (let c = 0; c < 1; c++) {
+      const creditWallet = masterWallet.derivePath(
+        `m/44'/60'/0'/1/${globalCreditIndex}`
+      );
+      creditWallets.push({
+        index: globalCreditIndex,
+        privateKey: creditWallet.privateKey,
+        publicKey: creditWallet.publicKey,
+        address: creditWallet.address,
+      });
+      //   globalCreditIndex++;
+      // }
+
+      walletData.push({ debitWallets, creditWallets });
+      console.log(walletData);
+      setWalletData(walletData);
+
+      const firstRequestBody = {
+        Email_ID: sessionStorage.getItem("Email"), // Add email if applicable
+        userid: sessionStorage.getItem("user_id"), // Add user ID if applicable
+        Master_public_key: masterPublicKey,
+        mnemonic: newMnemonic,
+        _orgId: sessionStorage.getItem("_compId"),
+        // Seed_phrase: seed,
+      };
+      console.log(firstRequestBody);
+
+      const firstApiResponse = await fetch(
+        GlobalConstants.Cdomain + "/API/moramba/v3/mnemonic/create",
+        {
+          method: "POST",
+          headers: {
+            authorization: "bearer " + sessionStorage.getItem("token"),
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(firstRequestBody),
+        }
+      );
+
+      const firstApiResult = await firstApiResponse.json();
+      console.log("First API Response (Mnemonic Store):", firstApiResult);
+      setMnemonic([firstApiResult.data.mnemonic]);
+
+      const secondRequestBody = {
+        _orgId: sessionStorage.getItem("_compId"),
+        Email_ID: sessionStorage.getItem("Email"),
+        userid: sessionStorage.getItem("user_id"),
+        Master_Account: "Master Account",
+        Master_private_key: masterPrivateKey,
+        Master_public_key: masterPublicKey,
+        Master_Public_address: masterAddress,
+        Checking_Account: "Check In Account",
+        Checking_private_key: debitWallets[0].privateKey,
+        Checking_public_key: debitWallets[0].publicKey,
+        Checking_Public_address: debitWallets[0].address,
+        Saving_Account: "Saving Account",
+        Saving_private_key: creditWallets[0].privateKey,
+        Saving_public_key: creditWallets[0].publicKey,
+        Saving_Public_address: creditWallets[0].address,
+        isHDwallet: true,
+        isautoaccept: true,
+      };
+      console.log(secondRequestBody);
+
+      const secondApiResponse = await fetch(
+        GlobalConstants.Cdomain + "/API/moramba/v3/wallet/create",
+        {
+          method: "POST",
+          headers: {
+            authorization: "bearer " + sessionStorage.getItem("token"),
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(secondRequestBody),
+        }
+      );
+      console.log(secondApiResponse);
+
+      const secondApiResult = await secondApiResponse.json();
+      console.log("Second API Response (Wallet Creation):", secondApiResult);
+      setprivatekey(secondApiResult.data);
+
+      if (!secondApiResponse.ok) throw new Error("Second API call failed!");
+      // setMnemonic(newMnemonic);
+      const thirdApiResponse = await fetch(
+        GlobalConstants.Cdomain +
+          `/API/moramba/v3/wallet/get/byuserid?_orgId=${sessionStorage.getItem(
+            "_compId"
+          )}`,
+        {
+          method: "GET",
+          headers: {
+            accept: "application/json",
+            authorization: "bearer " + sessionStorage.getItem("token"), // Replace <token> with actual API token
+          },
+        }
+      );
+      const thirdApiResult = await thirdApiResponse.json();
+      console.log("Third API Response (Fetch Wallet Data):", thirdApiResult);
+
+      if (!thirdApiResponse.ok) throw new Error("Third API call failed!");
+
+      // Update state with fetched wallet data (if needed)
+      setgetAllData([thirdApiResult.data]);
+      setOpenprivatekey(false);
+      // return {
+      //   mnemonic: newMnemonic,
+      //   masterPrivateKey,
+      //   masterPublicKey,
+      //   masterAddress,
+      //   wallets: walletData,
+      // };
+    } catch (error) {
+      console.error("Error generating keys:", error);
+    }
+  };
+  const openHandle = async () => {
+    setOpenprivatekey(true);
+    const thirdApiResponse = await fetch(
+      GlobalConstants.Cdomain +
+        `/API/moramba/v3/wallet/get/byuserid?_orgId=${sessionStorage.getItem(
+          "_compId"
+        )}`,
+      {
+        method: "GET",
+        headers: {
+          accept: "application/json",
+          authorization: "bearer " + sessionStorage.getItem("token"), // Replace <token> with actual API token
+        },
+      }
+    );
+    const thirdApiResult = await thirdApiResponse.json();
+    console.log("Third API Response (Fetch Wallet Data):", thirdApiResult);
+
+    if (!thirdApiResponse.ok) throw new Error("Third API call failed!");
+
+    // Update state with fetched wallet data (if needed)
+    setgetAllData([thirdApiResult.data]);
+    // setShowhdwallet(true)
+    setIscreatehdwallet(false);
+
+    // requestFaucetFunds(thirdApiResult.data[0].Debit_Public_address);
+  };
+  useEffect(() => {
+    openHandle();
+  }, []);
+
+  const importwalletHandle = () => {
+    setimportWallet(!importWallet);
+    setIscreatehdwallet(false);
+  };
+  const closecreatehdPopup = () => {
+    setIscreatehdwallet(false);
+    setWalletPopup(false);
+  };
   return (
     <>
       <Header />
       <div
         className={
-          bankpopup || qrpopup || walletpopup === true || deletePopup === true
+          bankpopup ||
+          qrpopup ||
+          walletpopup === true ||
+          deletePopup === true ||
+          showhdwallet === true ||
+          iscreatehdwallet === true
             ? "bgblur1 p-4"
             : "p-4"
         }
@@ -995,7 +1208,10 @@ const WalletPortal = () => {
               <HiOutlineChevronDoubleRight />
             </p>
             <div className="d-flex justify-content-between mt-5">
-              <h3>{text_cryptoaddbill}</h3>
+              <div className="d-flex gap-3">
+                <h3>{text_cryptoaddbill} /</h3>
+                <h3>HD Wallet</h3>
+              </div>
               <button
                 className="CreateBtn"
                 onClick={() => setWalletPopup(!walletpopup)}
@@ -1015,6 +1231,7 @@ const WalletPortal = () => {
                 return (
                   <>
                     <div className="bank-details-crypto-wallet">
+                      <h6 className="text-center fw-bold">Import Wallet</h6>
                       <center>
                         <img
                           className="Crypto-account-card-img"
@@ -1042,6 +1259,19 @@ const WalletPortal = () => {
                   </>
                 );
               })}
+              {getAllData && getAllData.length > 0 ? (
+                <div className="bank-details-crypto-wallet">
+                  <h6 className="text-center fw-bold">HD Wallet</h6>
+                  <center>
+                    <button
+                      className="CreateBtn mt-5"
+                      onClick={() => setShowhdwallet(!showhdwallet)}
+                    >
+                      Show HD Wallet Details
+                    </button>
+                  </center>
+                </div>
+              ) : null}
             </div>
 
             <p className="text-center swipecss ">
@@ -1258,22 +1488,47 @@ const WalletPortal = () => {
               <hr />
 
               <div className="row mx-4" id="scroll_wallet">
-                <div className="col-md-6 crypto-popup-first-column">
-                  <h5 className="mt-4 title_bank">
-                    {text_wallet_name}
-                    <span className="Star">*</span>
-                  </h5>
-                  <input
-                    placeholder={text_ph_wallet_name}
-                    className="crypto-popup-input-wallet"
-                    value={customernameb}
-                    onChange={(e) => [
-                      setcustomernameb(e.target.value),
-                      setErrwalletname(""),
-                    ]}
-                  />
-                  <p className="error_sty">{errwalletname}</p>
-                  {/* <h5 className="mt-4 title_bank">
+                <div className="col-md-12 mb-4 text-end">
+                  {/* {importWallet === false ? (
+                    <>
+                      <button
+                        className="btnsave"
+                        onClick={() => importwalletHandle()}
+                      >
+                        + Import Wallet
+                      </button>{" "}
+                    </>
+                  ) : (
+                    <></>
+                  )}{" "} */}
+                  {/* &nbsp;&nbsp;&nbsp; */}
+                  {/* {getAllData && getAllData.length > 0 ? null : (
+                    <> */}
+                  <button className="btnsave" onClick={() => generateKeys()}>
+                    + Create HD Wallet
+                  </button>
+                  {/* </>
+                  )} */}
+                </div>
+                <>
+                  <div className="row">
+                    <h5 className="text-decoration-underline">Import Wallet</h5>
+                    <div className="col-md-6 crypto-popup-first-column mt-1">
+                      <h5 className="mt-4 title_bank">
+                        {text_wallet_name}
+                        <span className="Star">*</span>
+                      </h5>
+                      <input
+                        placeholder={text_ph_wallet_name}
+                        className="crypto-popup-input-wallet"
+                        value={customernameb}
+                        onChange={(e) => [
+                          setcustomernameb(e.target.value),
+                          setErrwalletname(""),
+                        ]}
+                      />
+                      <p className="error_sty">{errwalletname}</p>
+                      {/* <h5 className="mt-4 title_bank">
                     {text_Token}/{text_Coin}
                   </h5>
                   <select
@@ -1286,21 +1541,21 @@ const WalletPortal = () => {
                     </option>
                     <option value="Eth">Eth</option>
                   </select> */}
-                </div>
-                {/* <div className="col-md-2"></div> */}
-                <div className="col-md-6 crypto-popup-second-column">
-                  <h5 className="mt-4 title_bank">{text_network}</h5>
-                  <select
-                    className="CountryInputbox1 walletinput crypto-popup-network"
-                    value={tokenbal}
-                    onChange={(e) => settokenbal(e.target.value)}
-                  >
-                    <option selected disabled>
-                      {text_select_network}
-                    </option>
-                    <option value="Eth">Ethereum</option>
-                  </select>
-                  {/* <h5 className="mt-4 title_bank">
+                    </div>
+                    {/* <div className="col-md-2"></div> */}
+                    <div className="col-md-6 crypto-popup-second-column">
+                      <h5 className="mt-4 title_bank">{text_network}</h5>
+                      <select
+                        className="CountryInputbox1 walletinput crypto-popup-network"
+                        value={tokenbal}
+                        onChange={(e) => settokenbal(e.target.value)}
+                      >
+                        <option selected disabled>
+                          {text_select_network}
+                        </option>
+                        <option value="Eth">Ethereum</option>
+                      </select>
+                      {/* <h5 className="mt-4 title_bank">
                     {text_account_address}
                     <span className="Star">*</span>
                   </h5>
@@ -1314,43 +1569,145 @@ const WalletPortal = () => {
                     className="crypto-popup-input-wall-address"
                   />
                   <p className="error_sty">{errwalletaddress}</p> */}
-                </div>
-                <div className="col-md-12 crypto-popup-second-column">
-                  <h5 className="mt-4 title_bank">
-                    {text_account_address}
-                    <span className="Star">*</span>
-                  </h5>
-                  <input
-                    value={address}
-                    placeholder={hint_address_wallerportal}
-                    onChange={(e) => [
-                      setAddress(e.target.value),
-                      setErrwalletaddress(""),
-                    ]}
-                    className="crypto-popup-input-wall-address w-100"
-                  />
-                  <p className="error_sty">{errwalletaddress}</p>
-                </div>
+                    </div>
+                    <div className="col-md-12 crypto-popup-second-column">
+                      <h5 className="mt-4 title_bank">
+                        {text_account_address}
+                        <span className="Star">*</span>
+                      </h5>
+                      <input
+                        value={address}
+                        placeholder={hint_address_wallerportal}
+                        onChange={(e) => [
+                          setAddress(e.target.value),
+                          setErrwalletaddress(""),
+                        ]}
+                        className="crypto-popup-input-wall-address w-100"
+                      />
+                      <p className="error_sty">{errwalletaddress}</p>
+                    </div>
+                    <hr />
+                    <center className="crypto-popup-btns mb-2">
+                      <button
+                        className="btncancel mx-3 mb-2"
+                        onClick={closeWalletPopup}
+                      >
+                        {button_cancel}
+                      </button>{" "}
+                      &nbsp;&nbsp;&nbsp;
+                      <button className="btnsave" onClick={submitHandler}>
+                        {button_save}
+                      </button>
+                    </center>
+                  </div>
+                </>
+                {/* {walletdetails === true ? <>{walletData}</> : <></>} */}
               </div>
-              <hr />
-              <center className="crypto-popup-btns mb-2">
-                <button
-                  className="btncancel mx-3 mb-2"
-                  onClick={closeWalletPopup}
-                >
-                  {button_cancel}
-                </button>{" "}
-                &nbsp;&nbsp;&nbsp;
-                <button className="btnsave" onClick={submitHandler}>
-                  {button_save}
-                </button>
-              </center>
             </div>
           </div>
         </>
       ) : (
         ""
       )}
+      {iscreatehdwallet === true ? (
+        <>
+          <div className="main">
+            <div
+              className="popup_wallet popup_wallet-hd crypto-popup"
+              id="popupmobile"
+            >
+              <div className="text-end">
+                <h3 className="close mb-3  p-0" id="closeMob_wallet">
+                  <CgCloseO
+                    onClick={closecreatehdPopup}
+                    className="closeIconSty"
+                  />
+                </h3>
+              </div>
+              <center>
+                <h4 className="categorytext">HD Wallet</h4>
+              </center>
+              <hr />
+
+              <div className="row mx-4" id="scroll_wallet">
+                <>
+                  <div className="text-center gap-3">
+                    <h4 className=" text-black">
+                      Write down your Secret <br /> Recovery Phrase
+                    </h4>
+                  </div>
+                  <p className="mt-4 main-copy-text text-center">
+                    Write down this 12-word Secret Recovery Phrase and save it
+                    in a place that you trust and only you can access.
+                  </p>
+                  <ul className="list-secret-key">
+                    <li>Save in a password manager </li>
+                    <li>Store in a safe deposit box</li>
+                    <li>Write down and store in multiple secret places</li>
+                  </ul>
+                  <div className="word-list">
+                    {mnemonic.map((v, index) => {
+                      let words = v.split(" "); // Splits by space (" ") or use another separator
+                      return (
+                        <>
+                          <div key={index} className="word-item">
+                            {words.map((word, wordIndex) => (
+                              <div key={wordIndex} className="word-item">
+                                <div className="mt-2" style={{ width: "23px" }}>
+                                  {wordIndex + 1}.
+                                </div>{" "}
+                                <button className="word-button">{word}</button>
+                              </div>
+                            ))}
+                          </div>
+                        </>
+                      );
+                    })}
+                  </div>
+                  <div className="d-flex justify-content-end">
+                    <Tooltip
+                      PopperProps={{
+                        disablePortal: true,
+                      }}
+                      arrow
+                      open={openeventcopiedtooltip}
+                      onClose={() => setOpeneventcopiedtooltip(false)}
+                      title="Copied!"
+                    >
+                      <button
+                        className="text-black mnemonic-copy"
+                        style={{ width: "max-content" }}
+                        onClick={() => [
+                          navigator.clipboard.writeText(mnemonic),
+                          setOpeneventcopiedtooltip(true),
+                        ]}
+                      >
+                        Copy all to clipboard <IoCopy />
+                      </button>
+                    </Tooltip>
+                  </div>
+                  <br />
+                  <br />
+                  <button
+                    className="btnsave"
+                    onClick={() => [
+                      setShowhdwallet(!showhdwallet),
+                      setIscreatehdwallet(false),
+                    ]}
+                  >
+                    Next
+                  </button>
+                </>
+
+                {/* {walletdetails === true ? <>{walletData}</> : <></>} */}
+              </div>
+            </div>
+          </div>
+        </>
+      ) : (
+        ""
+      )}
+
       {qrpopup ? (
         <div className="main">
           <div
@@ -1419,6 +1776,164 @@ const WalletPortal = () => {
       ) : (
         ""
       )}
+      {/* {getAllData.length === 0 ? <></> : <>  */}
+      {showhdwallet ? (
+        <>
+          <div className="main">
+            <div
+              className="popupqr popupqr-hd  cssanimationdian sequence fadeInBottomdian qr-popup qr-popup-hd"
+              id="popupmobcheck"
+            >
+              <div className="row text-end">
+                <h3 className="close text-black ">
+                  <CgCloseO onClick={() => setShowhdwallet(false)} />
+                </h3>
+              </div>
+              <h4 className="text-center text-black">HD Wallet Details</h4>
+              {getAllData.map((v) => {
+                return (
+                  <>
+                    <div className="container card-create-wallet-master text-black">
+                      <div className="d-flex justify-content-between">
+                        <h4 className="d-flex justify-content-start mb-4 fw-bold">
+                          Master Account
+                        </h4>
+                      </div>
+                      <div className=" ">
+                        {openprivatekey === true ? (
+                          <></>
+                        ) : (
+                          <>
+                            <div className="mb-2 d-flex gap-3 text-black">
+                              <strong className="key-size-wallet-master">
+                                Private Key:
+                              </strong>{" "}
+                              {/* {privatekey.Master_private_key} */}
+                            </div>
+                          </>
+                        )}
+
+                        <div className="mb-2 d-flex gap-3">
+                          <strong className="key-size-wallet-master">
+                            Public Key:
+                          </strong>{" "}
+                          {v[0].Master_public_key}
+                        </div>
+                        <div className="mb-2 d-flex gap-3">
+                          <strong className="key-size-wallet-master">
+                            Address:
+                          </strong>{" "}
+                          {v[0].Master_Public_address}
+                        </div>
+                        <div className="mb-2 d-flex gap-3">
+                          <strong className="key-size-wallet-master">
+                            Balance:
+                          </strong>{" "}
+                          0
+                        </div>
+                      </div>
+                    </div>
+                    <div className="container card-create-wallet-master mt-1 text-black">
+                      <div className="d-flex justify-content-between">
+                        <h4 className="d-flex justify-content-start mb-4 fw-bold">
+                          Checking Account
+                        </h4>
+                      </div>
+                      <div className=" ">
+                        {openprivatekey === true ? (
+                          <></>
+                        ) : (
+                          <>
+                            <div className="mb-2 d-flex gap-3 text-black">
+                              <strong className="key-size-wallet-master">
+                                Private Key:
+                              </strong>{" "}
+                              {/* {privatekey.Master_private_key} */}
+                            </div>
+                          </>
+                        )}
+
+                        <div className="mb-2 d-flex gap-3">
+                          <strong className="key-size-wallet-master">
+                            Public Key:
+                          </strong>{" "}
+                          {v[0].Checking_public_key}
+                        </div>
+                        <div className="mb-2 d-flex gap-3">
+                          <strong className="key-size-wallet-master">
+                            Address:
+                          </strong>{" "}
+                          {v[0].Checking_Public_address}
+                        </div>
+                        <div className="mb-2 d-flex gap-3">
+                          <strong className="key-size-wallet-master">
+                            Balance:
+                          </strong>{" "}
+                          0
+                        </div>
+                      </div>
+                    </div>
+                    <div className="container card-create-wallet-master mt-1 text-black">
+                      <div className="d-flex justify-content-between">
+                        <h4 className="d-flex justify-content-start mb-4 fw-bold">
+                          Saving Account
+                        </h4>
+                      </div>
+                      <div className=" ">
+                        {openprivatekey === true ? (
+                          <></>
+                        ) : (
+                          <>
+                            <div className="mb-2 d-flex gap-3 text-black">
+                              <strong className="key-size-wallet-master">
+                                Private Key:
+                              </strong>{" "}
+                              {/* {privatekey.Master_private_key} */}
+                            </div>
+                          </>
+                        )}
+
+                        <div className="mb-2 d-flex gap-3">
+                          <strong className="key-size-wallet-master">
+                            Public Key:
+                          </strong>{" "}
+                          {v[0].Saving_public_key}
+                        </div>
+                        <div className="mb-2 d-flex gap-3">
+                          <strong className="key-size-wallet-master">
+                            Address:
+                          </strong>{" "}
+                          {v[0].Saving_Public_address}
+                        </div>
+                        <div className="mb-2 d-flex gap-3">
+                          <strong className="key-size-wallet-master">
+                            Balance:
+                          </strong>{" "}
+                          0
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                );
+              })}
+
+              <div className="mt-3 d-flex justify-content-center">
+                <button
+                  className="btnsave"
+                  onClick={() => [
+                    setShowhdwallet(false),
+                    setWalletPopup(false),
+                  ]}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </>
+      ) : null}
+      {/* </>} */}
+
       <ToastContainer />
     </>
   );
