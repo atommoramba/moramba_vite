@@ -2442,11 +2442,13 @@ function AddstaffWIP() {
       doc.querySelector("string[name='title_eee_employee']")?.textContent
     );
     setText_Gender(
-      doc.querySelector("string[name='text_gender']")?.textContent
+      doc.querySelector("string[name='text_gender']")?.textContent || "Gender"
     );
-    setText_male(doc.querySelector("string[name='text_male']")?.textContent);
+    setText_male(
+      doc.querySelector("string[name='text_male']")?.textContent || "Male"
+    );
     setText_female(
-      doc.querySelector("string[name='text_female']")?.textContent
+      doc.querySelector("string[name='text_female']")?.textContent || "Female"
     );
     setText_request(
       doc.querySelector("string[name='text_request']")?.textContent
