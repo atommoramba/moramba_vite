@@ -1808,7 +1808,7 @@ const WalletPortal = () => {
                               <strong className="key-size-wallet-master">
                                 Private Key:
                               </strong>{" "}
-                              {/* {privatekey.Master_private_key} */}
+                              {privatekey.Master_private_key}
                             </div>
                           </>
                         )}
@@ -1848,7 +1848,7 @@ const WalletPortal = () => {
                               <strong className="key-size-wallet-master">
                                 Private Key:
                               </strong>{" "}
-                              {/* {privatekey.Master_private_key} */}
+                              {privatekey.Master_private_key}
                             </div>
                           </>
                         )}
@@ -1888,7 +1888,7 @@ const WalletPortal = () => {
                               <strong className="key-size-wallet-master">
                                 Private Key:
                               </strong>{" "}
-                              {/* {privatekey.Master_private_key} */}
+                              {privatekey.Master_private_key}
                             </div>
                           </>
                         )}
