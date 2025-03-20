@@ -24,12 +24,17 @@ function Timesheet() {
     var xml = localStorage.getItem(GlobalConstants.session_lang_xml);
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
-    setText_sheet(doc.querySelector("string[name='text_sheet']")?.textContent);
+    setText_sheet(
+      doc.querySelector("string[name='text_sheet']")?.textContent ||
+        "Time Sheet"
+    );
     setText_radio_daily(
-      doc.querySelector("string[name='text_radio_daily']")?.textContent
+      doc.querySelector("string[name='text_radio_daily']")?.textContent ||
+        "Daily"
     );
     setText_radio_weekly(
-      doc.querySelector("string[name='text_radio_weekly']")?.textContent
+      doc.querySelector("string[name='text_radio_weekly']")?.textContent ||
+        "Weekly"
     );
   };
   useEffect(() => {

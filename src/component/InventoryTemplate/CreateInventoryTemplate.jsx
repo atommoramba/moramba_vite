@@ -8,14 +8,12 @@ import { CgCloseO } from "react-icons/cg";
 import { errorToast, infoToast, successToast } from "../../utils/Helper";
 import { ToastContainer } from "react-toastify";
 import { GlobalConstants } from "../../utils/GlobalConstants";
-import dayjs from 'dayjs'
+import dayjs from "dayjs";
 
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { getInventoryTemplate } from "../../redux/InventoryTemplateSlice";
 import Cookie from "js-cookie";
-
-
 
 function CreateInventoryTemplate() {
   const navigate = useNavigate();
@@ -58,7 +56,7 @@ function CreateInventoryTemplate() {
   );
   const [text_DataType, setText_DataType] = useState("Data Type");
   const [text_defualt_fields, setText_defualt_fields] =
-  useState("Default Fields");
+    useState("Default Fields");
   const [text_customField, setText_customField] = useState("Custom Fields");
   //variable
   const [popupData, setPopupData] = useState([]);
@@ -284,82 +282,75 @@ function CreateInventoryTemplate() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_temp_name(
-      doc.querySelector("string[name='text_temp_name']")?.textContent
-        
+      doc.querySelector("string[name='text_temp_name']")?.textContent ||
+        "Template Name"
     );
     setText_add_new_category(
-      doc.querySelector("string[name='text_add_new_category']")
-        ?.textContent
+      doc.querySelector("string[name='text_add_new_category']")?.textContent ||
+        "Add New Category"
     );
     setText_temp_name(
-      doc.querySelector("string[name='text_temp_name']")?.textContent
-        
+      doc.querySelector("string[name='text_temp_name']")?.textContent ||
+        "Template Name"
     );
     setSalaryBreakupTypeEffectiveDateHead(
-      doc.querySelector(
-        "string[name='salaryBreakupTypeEffectiveDateHead']",
-        doc
-      )?.textContent
+      doc.querySelector("string[name='salaryBreakupTypeEffectiveDateHead']")
+        ?.textContent || "Effective Date"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
-        
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
-        
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setInventoryvalcate(
-      doc.querySelector("string[name='inventoryvalcate']")
-        ?.textContent
+      doc.querySelector("string[name='inventoryvalcate']")?.textContent ||
+        "Please Enter Category!"
     );
     setText_date(
-      doc.querySelector("string[name='text_date']")?.textContent
+      doc.querySelector("string[name='text_date']")?.textContent || "Date"
     );
     setTypetext(
-      doc.querySelector("string[name='typetext']")?.textContent
+      doc.querySelector("string[name='typetext']")?.textContent || "text"
     );
     setTypenumber(
-      doc.querySelector("string[name='typenumber']")?.textContent
-        
+      doc.querySelector("string[name='typenumber']")?.textContent || "number"
     );
     setTypefile(
-      doc.querySelector("string[name='typefile']")?.textContent
+      doc.querySelector("string[name='typefile']")?.textContent || "file"
     );
     setText_enter_category(
-      doc.querySelector("string[name='text_enter_category']")
-        ?.textContent
+      doc.querySelector("string[name='text_enter_category']")?.textContent ||
+        "Enter category"
     );
     setText_enter_template(
-      doc.querySelector("string[name='text_Enter_template']")
-        ?.textContent
+      doc.querySelector("string[name='text_Enter_template']")?.textContent ||
+        "Enter Template Name"
     );
     setCategoryText(
-      doc.querySelector("string[name='categoryText']")?.textContent
-        
+      doc.querySelector("string[name='categoryText']")?.textContent ||
+        "Category"
     );
-    setAddBtn(
-      doc.querySelector("string[name='addBtn']")?.textContent
-    );
+    setAddBtn(doc.querySelector("string[name='addBtn']")?.textContent || "Add");
     setText_err_template(
-      doc.querySelector("string[name='text_err_template']")
-        ?.textContent
+      doc.querySelector("string[name='text_err_template']")?.textContent ||
+        "Please Enter Template Name"
     );
     setText_create_inventoryTemp(
       doc.querySelector("string[name='text_create_inventoryTemp']")
-        ?.textContent
+        ?.textContent || "Create Inventory Template"
     );
     setText_DataType(
-      doc.querySelector("string[name='text_DataType']")?.textContent
-        
+      doc.querySelector("string[name='text_DataType']")?.textContent ||
+        "Data Type"
     );
     setText_defualt_fields(
-      doc.querySelector("string[name='text_defualt_fields']")?.textContent
-        
+      doc.querySelector("string[name='text_defualt_fields']")?.textContent ||
+        "Default Fields"
     );
     setText_customField(
-      doc.querySelector("string[name='text_customField']")?.textContent
-        
+      doc.querySelector("string[name='text_customField']")?.textContent ||
+        "Custom Fields"
     );
   };
   useEffect(() => {

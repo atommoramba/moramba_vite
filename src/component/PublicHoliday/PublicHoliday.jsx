@@ -379,51 +379,68 @@ function PublicHoliday() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setcreate_button(
-      doc.querySelector("string[name='create_button']")?.textContent
+      doc.querySelector("string[name='create_button']")?.textContent ||
+        "+ Create New Calendar"
     );
-    setText_Sno(doc.querySelector("string[name='text_Sno']")?.textContent);
+    setText_Sno(
+      doc.querySelector("string[name='text_Sno']")?.textContent || "Sr No"
+    );
     setApprove_name(
-      doc.querySelector("string[name='approve_name']")?.textContent
+      doc.querySelector("string[name='approve_name']")?.textContent || "Name"
     );
-    setText_edit(doc.querySelector("string[name='text_edit']")?.textContent);
+    setText_edit(
+      doc.querySelector("string[name='text_edit']")?.textContent || "Edit"
+    );
     setText_delete(
-      doc.querySelector("string[name='text_delete']")?.textContent
+      doc.querySelector("string[name='text_delete']")?.textContent || "Delete"
     );
     settext_view_add(
-      doc.querySelector("string[name='text_view_add']")?.textContent
+      doc.querySelector("string[name='text_view_add']")?.textContent ||
+        "View & Add"
     );
     setText_Holiday_search_ph(
-      doc.querySelector("string[name='text_Holiday_search_ph']")?.textContent
+      doc.querySelector("string[name='text_Holiday_search_ph']")?.textContent ||
+        "Search Holiday Here..."
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setText_update(
-      doc.querySelector("string[name='text_update']")?.textContent
+      doc.querySelector("string[name='text_update']")?.textContent || "Update"
     );
     setText_selCountry(
-      doc.querySelector("string[name='text_selCountry']")?.textContent
+      doc.querySelector("string[name='text_selCountry']")?.textContent ||
+        "Select Country"
     );
-    setText_year(doc.querySelector("string[name='text_year']")?.textContent);
+    setText_year(
+      doc.querySelector("string[name='text_year']")?.textContent || "Year"
+    );
     setText_description(
-      doc.querySelector("string[name='text_description']")?.textContent
+      doc.querySelector("string[name='text_description']")?.textContent ||
+        "Description"
     );
     setText_description_ph(
-      doc.querySelector("string[name='text_description']")?.textContent
+      doc.querySelector("string[name='text_description']")?.textContent ||
+        "Enter Description"
     );
     settext_base_calender(
-      doc.querySelector("string[name='txt_base_calender']")?.textContent
+      doc.querySelector("string[name='txt_base_calender']")?.textContent ||
+        "Choose base calendar"
     );
     seTtext_update_calender(
-      doc.querySelector("string[name='text_update_calender']")?.textContent
+      doc.querySelector("string[name='text_update_calender']")?.textContent ||
+        "Update Base Calendar"
     );
     settext_public_hol(
-      doc.querySelector("string[name='text_public_hol']")?.textContent
+      doc.querySelector("string[name='text_public_hol']")?.textContent ||
+        "Public Holiday"
     );
-    setbtn_view(doc.querySelector("string[name='btn_view']")?.textContent);
+    setbtn_view(
+      doc.querySelector("string[name='btn_view']")?.textContent || "View"
+    );
   };
   useEffect(() => {
     try {

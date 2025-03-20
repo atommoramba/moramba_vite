@@ -191,19 +191,21 @@ function CompanyDoc() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setText_company_documents(
-      doc.querySelector("string[name='text_company_documents']")?.textContent
+      doc.querySelector("string[name='text_company_documents']")?.textContent ||
+        "Company Document"
     );
     setInventoryvalcate(
-      doc.querySelector("string[name='inventoryvalcate']")?.textContent
+      doc.querySelector("string[name='inventoryvalcate']")?.textContent ||
+        "Please Enter Category!"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setText_create(
-      doc.querySelector("string[name='text_create']")?.textContent
+      doc.querySelector("string[name='text_create']")?.textContent || "Create"
     );
     // setText_mark_all(
     //   doc.querySelector("string[name='text_mark_all']")?.textContent
@@ -211,7 +213,8 @@ function CompanyDoc() {
     // );
 
     setText_enter_category(
-      doc.querySelector("string[name='text_enter_category']")?.textContent
+      doc.querySelector("string[name='text_enter_category']")?.textContent ||
+        "Enter category"
     );
   };
   useEffect(() => {

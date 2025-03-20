@@ -59,19 +59,24 @@ function AppraisalPage() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setText_appraisal(
-      doc.querySelector("string[name='text_appraisal']")?.textContent
+      doc.querySelector("string[name='text_appraisal']")?.textContent ||
+        "Appraisal"
     );
     setAppraisalListHeading(
-      doc.querySelector("string[name='appraisalListHeading']")?.textContent
+      doc.querySelector("string[name='appraisalListHeading']")?.textContent ||
+        "Appraisal List"
     );
     setSalaryhistory(
-      doc.querySelector("string[name='Salaryhistory']")?.textContent
+      doc.querySelector("string[name='Salaryhistory']")?.textContent ||
+        "Salary History"
     );
     setText_my_history(
-      doc.querySelector("string[name='text_my_history']")?.textContent
+      doc.querySelector("string[name='text_my_history']")?.textContent ||
+        "My History"
     );
     setAppraisalHistory(
-      doc.querySelector("string[name='appraisalHistory']")?.textContent
+      doc.querySelector("string[name='appraisalHistory']")?.textContent ||
+        "Appraisal History"
     );
   };
   useEffect(() => {

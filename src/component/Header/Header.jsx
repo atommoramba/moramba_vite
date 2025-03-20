@@ -554,97 +554,128 @@ function Header({ url }) {
       const doc = parser.parseFromString(xml, "text/xml");
 
       setHeaderBack(
-        doc.querySelector("string[name='headerback']")?.textContent
+        doc.querySelector("string[name='headerback']")?.textContent || "Back"
       );
       setheaderLogOut(
-        doc.querySelector("string[name='headerLogOut']")?.textContent
+        doc.querySelector("string[name='headerLogOut']")?.textContent ||
+          "Logout"
       );
       settext_language(
-        doc.querySelector("string[name='text_language']")?.textContent
+        doc.querySelector("string[name='text_language']")?.textContent ||
+          "Language"
       );
       setText_document(
-        doc.querySelector("string[name='text_document']")?.textContent
+        doc.querySelector("string[name='text_document']")?.textContent ||
+          "Documents"
       );
       settitle_loan(
-        doc.querySelector("string[name='title_loan']")?.textContent
+        doc.querySelector("string[name='title_loan']")?.textContent || "Loan"
       );
       setText_report(
-        doc.querySelector("string[name='text_report']")?.textContent
+        doc.querySelector("string[name='text_report']")?.textContent || "Report"
       );
       setText_salary_detail(
-        doc.querySelector("string[name='text_salary_detail']")?.textContent
+        doc.querySelector("string[name='text_salary_detail']")?.textContent ||
+          "Salary Details"
       );
       setText_appraisal(
-        doc.querySelector("string[name='text_appraisal']")?.textContent
+        doc.querySelector("string[name='text_appraisal']")?.textContent ||
+          "Appraisal"
       );
       setText_custom_doc(
-        doc.querySelector("string[name='text_custom_doc']")?.textContent
+        doc.querySelector("string[name='text_custom_doc']")?.textContent ||
+          "Custom Document"
       );
       setText_create_temp(
-        doc.querySelector("string[name='text_create_temp']")?.textContent
+        doc.querySelector("string[name='text_create_temp']")?.textContent ||
+          "Manage Template"
       );
-      setTextHome(doc.querySelector("string[name='textHome']")?.textContent);
+      setTextHome(
+        doc.querySelector("string[name='textHome']")?.textContent || "Home"
+      );
       setTextDashboard(
-        doc.querySelector("string[name='textDashboard']")?.textContent
+        doc.querySelector("string[name='textDashboard']")?.textContent ||
+          "Dashboard"
       );
       setTextTimeSheet(
-        doc.querySelector("string[name='textTimeSheet']")?.textContent
+        doc.querySelector("string[name='textTimeSheet']")?.textContent ||
+          "Timesheet"
       );
       setText_attend_single(
-        doc.querySelector("string[name='text_attend_single']")?.textContent
+        doc.querySelector("string[name='text_attend_single']")?.textContent ||
+          "Attendance Single"
       );
       setApproval_text(
-        doc.querySelector("string[name='approval_text']")?.textContent
+        doc.querySelector("string[name='approval_text']")?.textContent ||
+          "Approval Request"
       );
       setText_vendor(
-        doc.querySelector("string[name='text_vendor']")?.textContent
+        doc.querySelector("string[name='text_vendor']")?.textContent || "Vendor"
       );
       setText_customer(
-        doc.querySelector("string[name='text_customer']")?.textContent
+        doc.querySelector("string[name='text_customer']")?.textContent ||
+          "Customer"
       );
       setCpmapny_featuretext(
-        doc.querySelector("string[name='cpmapny_featuretext']")?.textContent
+        doc.querySelector("string[name='cpmapny_featuretext']")?.textContent ||
+          "Company Features"
       );
       setText_selecttheme(
-        doc.querySelector("string[name='text_selecttheme']")?.textContent
+        doc.querySelector("string[name='text_selecttheme']")?.textContent ||
+          "Select Theme"
       );
       setText_light(
-        doc.querySelector("string[name='text_light']")?.textContent
+        doc.querySelector("string[name='text_light']")?.textContent || "Light"
       );
-      setText_dark(doc.querySelector("string[name='text_dark']")?.textContent);
+      setText_dark(
+        doc.querySelector("string[name='text_dark']")?.textContent || "Dark"
+      );
       setText_f_name(
-        doc.querySelector("string[name='text_f_name']")?.textContent
+        doc.querySelector("string[name='text_f_name']")?.textContent ||
+          "First Name"
       );
       setText_L_name(
-        doc.querySelector("string[name='text_L_name']")?.textContent
+        doc.querySelector("string[name='text_L_name']")?.textContent ||
+          "Last Name"
       );
       setText_hint_email(
-        doc.querySelector("string[name='text_hint_email']")?.textContent
+        doc.querySelector("string[name='text_hint_email']")?.textContent ||
+          "Email"
       );
-      setText_edit(doc.querySelector("string[name='text_edit']")?.textContent);
+      setText_edit(
+        doc.querySelector("string[name='text_edit']")?.textContent || "Edit"
+      );
       setText_edit_admin(
-        doc.querySelector("string[name='text_edit_admin']")?.textContent
+        doc.querySelector("string[name='text_edit_admin']")?.textContent ||
+          "Admin Profile"
       );
       setText_Avilablebenefits(
-        doc.querySelector("string[name='text_Avilablebenefits']")?.textContent
+        doc.querySelector("string[name='text_Avilablebenefits']")
+          ?.textContent || "Available Benefits"
       );
       setText_testmodule(
-        doc.querySelector("string[name='text_testmodule']")?.textContent
+        doc.querySelector("string[name='text_testmodule']")?.textContent ||
+          "Test Module"
       );
       setText_empfeatures(
-        doc.querySelector("string[name='text_empfeatures']")?.textContent
+        doc.querySelector("string[name='text_empfeatures']")?.textContent ||
+          "Employee Features"
       );
       setSalarybreakup_header(
-        doc.querySelector("string[name='salarybreakup_header']")?.textContent
+        doc.querySelector("string[name='salarybreakup_header']")?.textContent ||
+          "Salary Breakup Template"
       );
       setMy_benifit(
-        doc.querySelector("string[name='my_benifit']")?.textContent
+        doc.querySelector("string[name='my_benifit']")?.textContent ||
+          "My Benefits"
       );
       setTds_salary(
-        doc.querySelector("string[name='Tds_salary']")?.textContent
+        doc.querySelector("string[name='Tds_salary']")?.textContent ||
+          "TDS on Salary"
       );
       settext_holiday(
-        doc.querySelector("string[name='text_holiday']")?.textContent
+        doc.querySelector("string[name='text_holiday']")?.textContent ||
+          "Holidays"
       );
       // setText_eng(
       //   doc.querySelector("string[name='text_eng']").firstChild
@@ -700,10 +731,11 @@ function Header({ url }) {
       //     .data
       // );
       setText_inbox(
-        doc.querySelector("string[name='text_inbox']")?.textContent
+        doc.querySelector("string[name='text_inbox']")?.textContent || "Inbox"
       );
       setText_company_documents(
-        doc.querySelector("string[name='text_company_documents']")?.textContent
+        doc.querySelector("string[name='text_company_documents']")
+          ?.textContent || "Upload Company Documents"
       );
     } catch (ert) {}
   };

@@ -375,104 +375,124 @@ function MyCustomeBenefits() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setText_benefitName(
-      doc.querySelector("string[name='text_benefitName']")?.textContent
+      doc.querySelector("string[name='text_benefitName']")?.textContent ||
+        "Benefit Name"
     );
     setext_Price(
-      doc.querySelector("string[name='text_price']")?.textContent
+      doc.querySelector("string[name='text_price']")?.textContent || "Price"
     );
     setText_benefit_name(
-      doc.querySelector("string[name='text_benefit_name']")?.textContent
+      doc.querySelector("string[name='text_benefit_name']")?.textContent ||
+        "Enter Benefit Name"
     );
     setText_add_new_benefts(
-      doc.querySelector("string[name='text_add_new_benefits']")
-        ?.textContent
+      doc.querySelector("string[name='text_add_new_benefits']")?.textContent ||
+        "Add New Benefits"
     );
     setText_End_Date(
-      doc.querySelector("string[name='text_End_Date']")?.textContent
+      doc.querySelector("string[name='text_End_Date']")?.textContent ||
+        "End Date"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setText_start_date(
-      doc.querySelector("string[name='text_start_date']")?.textContent
+      doc.querySelector("string[name='text_start_date']")?.textContent ||
+        "Start Date"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setText_edit(
-      doc.querySelector("string[name='text_edit']")?.textContent
+      doc.querySelector("string[name='text_edit']")?.textContent || "Edit"
     );
     setText_currency(
-      doc.querySelector("string[name='text_currency']")?.textContent
+      doc.querySelector("string[name='text_currency']")?.textContent ||
+        "Select Currency"
     );
     setText_update(
-      doc.querySelector("string[name='text_update']")?.textContent
+      doc.querySelector("string[name='text_update']")?.textContent || "Update"
     );
     setText_description(
-      doc.querySelector("string[name='text_description']")?.textContent
+      doc.querySelector("string[name='text_description']")?.textContent ||
+        "Description"
     );
     setText_empcontribution(
-      doc.querySelector("string[name='text_empcontribution']")?.textContent
+      doc.querySelector("string[name='text_empcontribution']")?.textContent ||
+        "Employee Contribution"
     );
     setText_cmpcontribution(
-      doc.querySelector("string[name='text_cmpcontribution']")?.textContent
+      doc.querySelector("string[name='text_cmpcontribution']")?.textContent ||
+        "Company Contribution"
     );
     setText_selCountry(
-      doc.querySelector("string[name='text_selCountry']")?.textContent
+      doc.querySelector("string[name='text_selCountry']")?.textContent ||
+        "Select Country"
     );
     settext_BenefitProvider(
-      doc.querySelector("string[name='text_BenefitProvider']")?.textContent
+      doc.querySelector("string[name='text_BenefitProvider']")?.textContent ||
+        "Benefit Provider"
     );
     setText_description_ph(
-      doc.querySelector("string[name='text_description_ph']")?.textContent
+      doc.querySelector("string[name='text_description_ph']")?.textContent ||
+        "Enter Description"
     );
     settext_Benefitname(
-      doc.querySelector("string[name='text_Benefitname']")?.textContent
+      doc.querySelector("string[name='text_Benefitname']")?.textContent ||
+        "Please Add Benefit Name"
     );
     settext_BenefitProvider1(
-      doc.querySelector("string[name='text_BenefitProvider1']")
-        ?.textContent
+      doc.querySelector("string[name='text_BenefitProvider1']")?.textContent ||
+        "Please Add Benefit Provider"
     );
     settext_addprice(
-      doc.querySelector("string[name='text_addprice']")?.textContent
+      doc.querySelector("string[name='text_addprice']")?.textContent ||
+        "Please Add Price"
     );
     setText_description1(
-      doc.querySelector("string[name='text_description1']")?.textContent
+      doc.querySelector("string[name='text_description1']")?.textContent ||
+        "Please Add Description"
     );
     setInvoice_errcurrency(
-      doc.querySelector("string[name='invoice_errcurrency']")?.textContent
+      doc.querySelector("string[name='invoice_errcurrency']")?.textContent ||
+        "Please Select Currency"
     );
     settext_cmpcontro(
-      doc.querySelector("string[name='text_cmpcontro']")?.textContent
+      doc.querySelector("string[name='text_cmpcontro']")?.textContent ||
+        "Please Add Company Contribution"
     );
     settext_Empcontro(
-      doc.querySelector("string[name='text_Empcontro']")?.textContent
+      doc.querySelector("string[name='text_Empcontro']")?.textContent ||
+        "Please Add Employee Contribution"
     );
 
     setText_benefit_provider(
-      doc.querySelector("string[name='text_benefit_provider']")
-        ?.textContent
+      doc.querySelector("string[name='text_benefit_provider']")?.textContent ||
+        "Enter Benefit Provider"
     );
     setText_comp_contribution(
-      doc.querySelector("string[name='text_cmp_contribution']")
-        ?.textContent
+      doc.querySelector("string[name='text_cmp_contribution']")?.textContent ||
+        "Enter Company Contribtion"
     );
     setText_emp_contribution(
-      doc.querySelector("string[name='text_emp_contribution']")
-        ?.textContent
+      doc.querySelector("string[name='text_emp_contribution']")?.textContent ||
+        "Enter Employee Contribution"
     );
     setText_price1(
-      doc.querySelector("string[name='text_price1']")?.textContent
+      doc.querySelector("string[name='text_price1']")?.textContent ||
+        "Enter Price"
     );
     // setText_updatebenefits(
     //   doc.querySelector("string[name='text_updatebenefits']")
     //     ?.textContent
     // );
     setErr_selCountry(
-      doc.querySelector("string[name='err_selCountry']")?.textContent
+      doc.querySelector("string[name='err_selCountry']")?.textContent ||
+        "Please Select Country"
     );
     setText_Ph_selCountry(
-      doc.querySelector("string[name='text_Ph_selCountry']")?.textContent
+      doc.querySelector("string[name='text_Ph_selCountry']")?.textContent ||
+        "Select a Country"
     );
   };
   useEffect(() => {

@@ -475,85 +475,112 @@ function Appraisal() {
 
   const SetLanguageText = () => {
     var xml = localStorage.getItem(GlobalConstants.session_lang_xml);
-   const parser = new DOMParser();
-   const doc = parser.parseFromString(xml, "text/xml");
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(xml, "text/xml");
     // settext_other_appraisal(
     //   doc.querySelector("string[name='text_other_appraisal']")
     //     ?.textContent
     // );
     setText_appraisal(
-      doc.querySelector("string[name='text_appraisal']")?.textContent
+      doc.querySelector("string[name='text_appraisal']")?.textContent ||
+        "Appraisal"
     );
     setText_promote_to(
-      doc.querySelector("string[name='text_promote_to']")?.textContent
+      doc.querySelector("string[name='text_promote_to']")?.textContent ||
+        "Promote To"
     );
     setText_increment_salary(
-      doc.querySelector("string[name='text_increment_salary']")?.textContent
+      doc.querySelector("string[name='text_increment_salary']")?.textContent ||
+        "Increment Salary"
     );
     setText_dateHeader(
-      doc.querySelector("string[name='text_dateHeader']")?.textContent
+      doc.querySelector("string[name='text_dateHeader']")?.textContent || "Date"
     );
     setText_appraisal_category_rating(
       doc.querySelector("string[name='text_appraisal_category_rating']")
-        ?.textContent
+        ?.textContent || "Appraisal Category & Rating"
     );
     setText_Remark_Optional(
-      doc.querySelector("string[name='text_Remarks_Optional']")?.textContent
+      doc.querySelector("string[name='text_Remarks_Optional']")?.textContent ||
+        "Remarks(optional)"
     );
     setText_overall_rating(
-      doc.querySelector("string[name='text_overall_rating']")?.textContent
+      doc.querySelector("string[name='text_overall_rating']")?.textContent ||
+        "Overall Rating"
     );
     setText_done_by(
-      doc.querySelector("string[name='text_done_by']")?.textContent
+      doc.querySelector("string[name='text_done_by']")?.textContent ||
+        "Appraisal Done By"
     );
-    setPopupHead(doc.querySelector("string[name='popupHead']")?.textContent);
-    setCancleBtn(doc.querySelector("string[name='cancleBtn']")?.textContent);
+    setPopupHead(
+      doc.querySelector("string[name='popupHead']")?.textContent ||
+        "Appraisal Category"
+    );
+    setCancleBtn(
+      doc.querySelector("string[name='cancleBtn']")?.textContent || "Cancel"
+    );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setSelectOption(
-      doc.querySelector("string[name='selectOption']")?.textContent
+      doc.querySelector("string[name='selectOption']")?.textContent || "Select"
     );
     setvalidationForPromotTo(
-      doc.querySelector("string[name='validationForPromotTo']")?.textContent
+      doc.querySelector("string[name='validationForPromotTo']")?.textContent ||
+        "Please Select Promote To"
     );
     sethiint_Amount(
-      doc.querySelector("string[name='hiint_Amount']")?.textContent
+      doc.querySelector("string[name='hiint_Amount']")?.textContent ||
+        "Enter Your Amount"
     );
-    setRemark_ph(doc.querySelector("string[name='remark_ph']")?.textContent);
+    setRemark_ph(
+      doc.querySelector("string[name='remark_ph']")?.textContent ||
+        "Enter Rating Remark"
+    );
     setText_err_select_one_category(
       doc.querySelector("string[name='text_err_select_one_category']")
-        ?.textContent
+        ?.textContent || "Please Select At least one Category"
     );
 
-    setAddBtn(doc.querySelector("string[name='addBtn']")?.textContent);
-    setText_edit(doc.querySelector("string[name='text_edit']")?.textContent);
+    setAddBtn(doc.querySelector("string[name='addBtn']")?.textContent || "Add");
+    setText_edit(
+      doc.querySelector("string[name='text_edit']")?.textContent || "Edit"
+    );
     setText_selfappraisal(
-      doc.querySelector("string[name='text_selfappraisal']")?.textContent
+      doc.querySelector("string[name='text_selfappraisal']")?.textContent ||
+        "Self Appraisal"
     );
     setPlease_enter_amount(
-      doc.querySelector("string[name='please_enter_amount']")?.textContent
+      doc.querySelector("string[name='please_enter_amount']")?.textContent ||
+        "Please Enter Amount"
     );
     setAppraisal_ratingtext(
-      doc.querySelector("string[name='appraisal_ratingtext']")?.textContent
+      doc.querySelector("string[name='appraisal_ratingtext']")?.textContent ||
+        "Please Add Atleast One Rating"
     );
     setAppraisal_category(
-      doc.querySelector("string[name='appraisal_category']")?.textContent
+      doc.querySelector("string[name='appraisal_category']")?.textContent ||
+        "Please Add Appraisal Category First"
     );
     setappraisalmember(
-      doc.querySelector("string[name='appraisalmember']")?.textContent
+      doc.querySelector("string[name='appraisalmember']")?.textContent ||
+        "Appraisal Of Team Member"
     );
     setselectmember(
-      doc.querySelector("string[name='selectmember']")?.textContent
+      doc.querySelector("string[name='selectmember']")?.textContent ||
+        "Select Team Member"
     );
     setSelect_employee(
-      doc.querySelector("string[name='select_employee']")?.textContent
+      doc.querySelector("string[name='select_employee']")?.textContent ||
+        "Please Select Employee"
     );
     setText_request(
-      doc.querySelector("string[name='text_request']")?.textContent
+      doc.querySelector("string[name='text_request']")?.textContent ||
+        "Thanks! Your Request Generated Successfully. PleaseContact"
     );
     setText_approval(
-      doc.querySelector("string[name='text_approval']")?.textContent
+      doc.querySelector("string[name='text_approval']")?.textContent ||
+        "For Approval Status"
     );
   };
 

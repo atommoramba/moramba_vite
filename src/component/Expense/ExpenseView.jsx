@@ -136,10 +136,11 @@ function ExpenseView() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setText_expData(
-      doc.querySelector("string[name='text_expData']")?.textContent
+      doc.querySelector("string[name='text_expData']")?.textContent ||
+        "Expense Data"
     );
     setText_export(
-      doc.querySelector("string[name='text_export']")?.textContent
+      doc.querySelector("string[name='text_export']")?.textContent || "Export"
     );
   };
   useEffect(() => {

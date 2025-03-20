@@ -722,72 +722,94 @@ function InventoryCreate() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setText_addInventory(
-      doc.querySelector("string[name='text_addInventory']")?.textContent
+      doc.querySelector("string[name='text_addInventory']")?.textContent ||
+        "Add Inventory Data"
     );
     setText_btn_addInvent(
-      doc.querySelector("string[name='text_btn_addInvent']")?.textContent
+      doc.querySelector("string[name='text_btn_addInvent']")?.textContent ||
+        "Create Inventory"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setText_addnewdata(
-      doc.querySelector("string[name='text_addnewdata']")?.textContent
+      doc.querySelector("string[name='text_addnewdata']")?.textContent ||
+        "Add New Data"
     );
     setDeptIDTextV3(
-      doc.querySelector("string[name='DeptIDTextV3']")?.textContent
+      doc.querySelector("string[name='DeptIDTextV3']")?.textContent ||
+        "Department ID"
     );
     setProjectIDTextv3(
-      doc.querySelector("string[name='ProjectIDTextv3']")?.textContent
+      doc.querySelector("string[name='ProjectIDTextv3']")?.textContent ||
+        "Project ID"
     );
     setCustomerIDTextv3(
-      doc.querySelector("string[name='CustomerIDTextv3']")?.textContent
+      doc.querySelector("string[name='CustomerIDTextv3']")?.textContent ||
+        "Customer ID"
     );
-    setViewtempv3(doc.querySelector("string[name='viewtempv3']")?.textContent);
+    setViewtempv3(
+      doc.querySelector("string[name='viewtempv3']")?.textContent ||
+        "View Template"
+    );
     setText_temp_name(
-      doc.querySelector("string[name='text_temp_name']")?.textContent
+      doc.querySelector("string[name='text_temp_name']")?.textContent ||
+        "Template Name"
     );
     setText_inventory_file_name(
-      doc.querySelector("string[name='text_inventory_file_name']")?.textContent
+      doc.querySelector("string[name='text_inventory_file_name']")
+        ?.textContent || "Inventory File Name"
     );
     setText_date_inventory(
-      doc.querySelector("string[name='text_date_inventory']")?.textContent
+      doc.querySelector("string[name='text_date_inventory']")?.textContent ||
+        "Inventory Date"
     );
     setText_ph_inventory_filename(
-      doc.querySelector("string[name='text_ph_inventory_filename']", doc)
-        ?.textContent
+      doc.querySelector("string[name='text_ph_inventory_filename']")
+        ?.textContent || "Enter Inventory File Name"
     );
     setText_inventory_file_ID(
-      doc.querySelector("string[name='text_inventory_file_ID']")?.textContent
+      doc.querySelector("string[name='text_inventory_file_ID']")?.textContent ||
+        "Inventory File ID"
     );
     setDeptid_textph(
-      doc.querySelector("string[name='deptid_textph']")?.textContent
+      doc.querySelector("string[name='deptid_textph']")?.textContent ||
+        "Enter Department ID"
     );
     setProjectid_textph(
-      doc.querySelector("string[name='projectid_textph']")?.textContent
+      doc.querySelector("string[name='projectid_textph']")?.textContent ||
+        "Enter Project ID"
     );
     setCustomerid_text(
-      doc.querySelector("string[name='customerid_text']")?.textContent
+      doc.querySelector("string[name='customerid_text']")?.textContent ||
+        "Enter Customer ID"
     );
     setView_inventory_text(
-      doc.querySelector("string[name='view_inventory_text']")?.textContent
+      doc.querySelector("string[name='view_inventory_text']")?.textContent ||
+        "View Inventory Template"
     );
     setText_errfilenamev3(
-      doc.querySelector("string[name='text_errfilenamev3']")?.textContent
+      doc.querySelector("string[name='text_errfilenamev3']")?.textContent ||
+        "Please Enter Inventory File Name"
     );
     setTitle_Invenreport(
-      doc.querySelector("string[name='title_Invenreport']")?.textContent
+      doc.querySelector("string[name='title_Invenreport']")?.textContent ||
+        "Inventory Report Template"
     );
     setPreparedby_text(
-      doc.querySelector("string[name='preparedby_text']")?.textContent
+      doc.querySelector("string[name='preparedby_text']")?.textContent ||
+        "Prepared By"
     );
     setInventory_seltemplate(
-      doc.querySelector("string[name='inventory_seltemplate']")?.textContent
+      doc.querySelector("string[name='inventory_seltemplate']")?.textContent ||
+        "Select Inventory Template"
     );
     setInvoice_errcurrency(
-      doc.querySelector("string[name='invoice_errcurrency']")?.textContent
+      doc.querySelector("string[name='invoice_errcurrency']")?.textContent ||
+        "Please Select Currency"
     );
   };
 

@@ -198,44 +198,59 @@ function EmployeeDetail() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_employee_respon(
-      doc.querySelector("string[name='text_employee_respon']")?.textContent
+      doc.querySelector("string[name='text_employee_respon']")?.textContent ||
+        "Transfer responsibilities"
     );
     setText_active(
-      doc.querySelector("string[name='text_active']")?.textContent
+      doc.querySelector("string[name='text_active']")?.textContent || "Active"
     );
     setText_deactive(
-      doc.querySelector("string[name='text_deactive']")?.textContent
+      doc.querySelector("string[name='text_deactive']")?.textContent ||
+        "Deactive"
     );
-    setText_edit(doc.querySelector("string[name='text_edit']")?.textContent);
-    setText_Shift(doc.querySelector("string[name='text_Shift']")?.textContent);
+    setText_edit(
+      doc.querySelector("string[name='text_edit']")?.textContent || "Edit"
+    );
+    setText_Shift(
+      doc.querySelector("string[name='text_Shift']")?.textContent || "Shift"
+    );
     setToolTipTitle(
-      doc.querySelector("string[name='TootTipTitle']")?.textContent
+      doc.querySelector("string[name='TootTipTitle']")?.textContent ||
+        "Employee is Currently Active.Click to Deactive"
     );
     setText_please_active_first(
-      doc.querySelector("string[name='text_please_active_first']")?.textContent
+      doc.querySelector("string[name='text_please_active_first']")
+        ?.textContent || "Please Active Employee First"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setSelect_employee(
-      doc.querySelector("string[name='select_employee']")?.textContent
+      doc.querySelector("string[name='select_employee']")?.textContent ||
+        "Please Select Employee"
     );
 
     setText_emptransfer(
-      doc.querySelector("string[name='text_emptransfer']")?.textContent
+      doc.querySelector("string[name='text_emptransfer']")?.textContent ||
+        "Select Employee to Transfer"
     );
-    setText_Break(doc.querySelector("string[name='text_break']")?.textContent);
+    setText_Break(
+      doc.querySelector("string[name='text_break']")?.textContent || "Break"
+    );
     setVactionLeftText(
-      doc.querySelector("string[name='VactionLeftText']")?.textContent
+      doc.querySelector("string[name='VactionLeftText']")?.textContent ||
+        "Vacation Days Left "
     );
-    text_transfer(
-      doc.querySelector("string[name='setText_transfer']")?.textContent
+    setText_transfer(
+      doc.querySelector("string[name='text_transfer']")?.textContent ||
+        "Transfer"
     );
-    text_responsible(
-      doc.querySelector("string[name='setText_responsible']")?.textContent
+    setText_responsible(
+      doc.querySelector("string[name='text_responsible']")?.textContent ||
+        "'s Responsibilities To"
     );
   };
 

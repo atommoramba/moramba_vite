@@ -195,101 +195,131 @@ function CreateVendor() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setText_vendor_name(
-      doc.querySelector("string[name='text_vendor_name']")?.textContent
+      doc.querySelector("string[name='text_vendor_name']")?.textContent ||
+        "Vendor Name"
     );
     setText_country(
-      doc.querySelector("string[name='text_country']")?.textContent
+      doc.querySelector("string[name='text_country']")?.textContent || "Country"
     );
-    setText_state(doc.querySelector("string[name='text_state']")?.textContent);
+    setText_state(
+      doc.querySelector("string[name='text_state']")?.textContent || "State"
+    );
     setText_zip_code(
-      doc.querySelector("string[name='text_zip_code']")?.textContent
+      doc.querySelector("string[name='text_zip_code']")?.textContent ||
+        "Zip Code"
     );
     setText_hint_zip_code(
-      doc.querySelector("string[name='text_hint_zip_code']")?.textContent
+      doc.querySelector("string[name='text_hint_zip_code']")?.textContent ||
+        "Enter Zip Code"
     );
     setText_bank_name(
-      doc.querySelector("string[name='text_bank_name']")?.textContent
+      doc.querySelector("string[name='text_bank_name']")?.textContent ||
+        "Bank Name"
     );
     setText_bankaccount_number(
-      doc.querySelector("string[name='text_bankaccount_number']")?.textContent
+      doc.querySelector("string[name='text_bankaccount_number']")
+        ?.textContent || "Bank Account Number"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setText_create_vendor(
-      doc.querySelector("string[name='text_create_vendor']")?.textContent
+      doc.querySelector("string[name='text_create_vendor']")?.textContent ||
+        "Create New Vendor"
     );
     setText_crypto_wallet_add(
-      doc.querySelector("string[name='text_crypto_wallet_add']")?.textContent
+      doc.querySelector("string[name='text_crypto_wallet_add']")?.textContent ||
+        "Crypto Wallet Address"
     );
     setText_ph_crypto_wallet_add(
-      doc.querySelector("string[name='text_ph_crypto_wallet_add']")?.textContent
+      doc.querySelector("string[name='text_ph_crypto_wallet_add']")
+        ?.textContent || "Enter Crypto Wallet Address"
     );
     setHint_vendor_name(
-      doc.querySelector("string[name='hint_vendor_name']")?.textContent
+      doc.querySelector("string[name='hint_vendor_name']")?.textContent ||
+        "Enter Vendor Name"
     );
     setText_vendor_email(
-      doc.querySelector("string[name='text_vendor_email']")?.textContent
+      doc.querySelector("string[name='text_vendor_email']")?.textContent ||
+        "Vendor Email"
     );
     setText_Ph_enter_add_v3(
-      doc.querySelector("string[name='text_Ph_enter_add_v3']")?.textContent
+      doc.querySelector("string[name='text_Ph_enter_add_v3']")?.textContent ||
+        "Enter Vendor Address"
     );
     setText_hint_bankacc_number(
-      doc.querySelector("string[name='text_hint_bankacc_number']")?.textContent
+      doc.querySelector("string[name='text_hint_bankacc_number']")
+        ?.textContent || "Enter Bank Account Number"
     );
     setText_hint_bank_name(
-      doc.querySelector("string[name='text_hint_bank_name']")?.textContent
+      doc.querySelector("string[name='text_hint_bank_name']")?.textContent ||
+        "Enter Bank Name"
     );
     setText_hint_email_vendor(
-      doc.querySelector("string[name='text_hint_email_vendor']")?.textContent
+      doc.querySelector("string[name='text_hint_email_vendor']")?.textContent ||
+        "Enter Vendor Email"
     );
     seTtext_address_vendor1(
-      doc.querySelector("string[name='text_address_vendor1']")?.textContent
+      doc.querySelector("string[name='text_address_vendor1']")?.textContent ||
+        "Vendor Address 1"
     );
     seTtext_address_vendor2(
-      doc.querySelector("string[name='text_address_vendor2']")?.textContent
+      doc.querySelector("string[name='text_address_vendor2']")?.textContent ||
+        "Vendor Address 2"
     );
     setText_update(
-      doc.querySelector("string[name='text_update']")?.textContent
+      doc.querySelector("string[name='text_update']")?.textContent || "Update"
     );
     setVendor_errname(
-      doc.querySelector("string[name='vendor_errname']")?.textContent
+      doc.querySelector("string[name='vendor_errname']")?.textContent ||
+        "Please Enter Vendor Name"
     );
     setVendor_erremail(
-      doc.querySelector("string[name='vendor_erremail']")?.textContent
+      doc.querySelector("string[name='vendor_erremail']")?.textContent ||
+        "Please Enter Vendor Email"
     );
     setVendor_erraddress(
-      doc.querySelector("string[name='vendor_erraddress']")?.textContent
+      doc.querySelector("string[name='vendor_erraddress']")?.textContent ||
+        "Please Enter Vendor Address 1"
     );
     setVendor_erraddtwo(
-      doc.querySelector("string[name='vendor_erraddtwo']")?.textContent
+      doc.querySelector("string[name='vendor_erraddtwo']")?.textContent ||
+        "Please Enter Vendor Address 2"
     );
     setText_err_bankname(
-      doc.querySelector("string[name='text_err_bankname']")?.textContent
+      doc.querySelector("string[name='text_err_bankname']")?.textContent ||
+        "Please Enter Bank Name"
     );
     setText_err_accnov3(
-      doc.querySelector("string[name='text_err_accnov3']")?.textContent
+      doc.querySelector("string[name='text_err_accnov3']")?.textContent ||
+        "Please Enter Bank Account Number"
     );
     setVendor_errcryptowall(
-      doc.querySelector("string[name='vendor_errcryptowall']")?.textContent
+      doc.querySelector("string[name='vendor_errcryptowall']")?.textContent ||
+        "Please Enter Crypto Wallet Address"
     );
     setVendor_errzipcode(
-      doc.querySelector("string[name='vendor_errzipcode']")?.textContent
+      doc.querySelector("string[name='vendor_errzipcode']")?.textContent ||
+        "Please Enter Zip Code"
     );
     setText_err_enter_state(
-      doc.querySelector("string[name='text_err_enter_state']")?.textContent
+      doc.querySelector("string[name='text_err_enter_state']")?.textContent ||
+        "Please Select State"
     );
     setText_statev3(
-      doc.querySelector("string[name='text_statev3']")?.textContent
+      doc.querySelector("string[name='text_statev3']")?.textContent ||
+        "Select a State"
     );
     setEnter_valid_email(
-      doc.querySelector("string[name='enter_valid_email']")?.textContent
+      doc.querySelector("string[name='enter_valid_email']")?.textContent ||
+        "Please Enter Valid Email"
     );
     setText_edit_vendor(
-      doc.querySelector("string[name='text_edit_vendor']")?.textContent
+      doc.querySelector("string[name='text_edit_vendor']")?.textContent ||
+        "Edit Vendor"
     );
   };
 

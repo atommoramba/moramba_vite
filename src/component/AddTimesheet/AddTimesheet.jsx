@@ -10,7 +10,6 @@ import Header from "../Header/Header";
 import { useLocation } from "react-router-dom";
 import { GlobalConstants } from "../../utils/GlobalConstants";
 
-
 function AddTimesheet() {
   const data = useLocation();
   const dataValue = data.state !== null ? data.state.data : 0;
@@ -35,20 +34,20 @@ function AddTimesheet() {
 
   const SetLanguageText = () => {
     var xml = localStorage.getItem(GlobalConstants.session_lang_xml);
-     const parser = new DOMParser();
-     const doc = parser.parseFromString(xml, "text/xml");
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(xml, "text/xml");
 
     setText_radio_daily(
-      doc.querySelector("string[name='text_radio_daily']")
-        ?.textContent
+      doc.querySelector("string[name='text_radio_daily']")?.textContent ||
+        "Daily"
     );
     setText_radio_weekly(
-      doc.querySelector("string[name='text_radio_weekly']")
-        ?.textContent
+      doc.querySelector("string[name='text_radio_weekly']")?.textContent ||
+        "Weekly"
     );
     setText_add_timesheet(
-      doc.querySelector("string[name='text_add_timesheet']")
-        ?.textContent
+      doc.querySelector("string[name='text_add_timesheet']")?.textContent ||
+        "Add Time Sheet"
     );
   };
 
@@ -65,7 +64,7 @@ function AddTimesheet() {
     } catch (err) {
       console.log(err);
     }
-  },[]);
+  }, []);
 
   return (
     <>

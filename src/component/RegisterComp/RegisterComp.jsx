@@ -712,116 +712,148 @@ function RegisterComp() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_upload_Profile(
-      doc.querySelector("string[name='text_upload_Profile']")?.textContent
+      doc.querySelector("string[name='text_upload_Profile']")?.textContent ||
+        "Upload Profile"
     );
     settext_unique_business_name(
-      doc.querySelector("string[name='text_unique_business_name']")?.textContent
+      doc.querySelector("string[name='text_unique_business_name']")
+        ?.textContent || "Company Name"
     );
     setText_company_address(
-      doc.querySelector("string[name='text_company_address']")?.textContent
+      doc.querySelector("string[name='text_company_address']")?.textContent ||
+        "Company Address"
     );
     setText_company_name(
-      doc.querySelector("string[name='text_company_name']")?.textContent
+      doc.querySelector("string[name='text_company_name']")?.textContent ||
+        "Enter your Company Name"
     );
     setText_company_enteraddress(
-      doc.querySelector("string[name='text_company_enteraddress']")?.textContent
+      doc.querySelector("string[name='text_company_enteraddress']")
+        ?.textContent || "Enter your Company Address"
     );
-    setText_state(doc.querySelector("string[name='text_state']")?.textContent);
+    setText_state(
+      doc.querySelector("string[name='text_state']")?.textContent || "State"
+    );
     setText_sandwitch_leave(
-      doc.querySelector("string[name='text_sandwitch_leave']")?.textContent
+      doc.querySelector("string[name='text_sandwitch_leave']")?.textContent ||
+        "Sandwich Leaves"
     );
     setText_hint_zip_code(
-      doc.querySelector("string[name='text_hint_zip_code']")?.textContent
+      doc.querySelector("string[name='text_hint_zip_code']")?.textContent ||
+        "Enter Zip Code"
     );
     setText_fiscal_year(
-      doc.querySelector("string[name='text_fiscal_year']")?.textContent
+      doc.querySelector("string[name='text_fiscal_year']")?.textContent ||
+        "Fiscal Year"
     );
     setText_working_days(
-      doc.querySelector("string[name='text_working_days']")?.textContent
+      doc.querySelector("string[name='text_working_days']")?.textContent ||
+        "Working Days"
     );
     setText_monday(
-      doc.querySelector("string[name='text_monday']")?.textContent
+      doc.querySelector("string[name='text_monday']")?.textContent || "Monday"
     );
     setText_tuesday(
-      doc.querySelector("string[name='text_tuesday']")?.textContent
+      doc.querySelector("string[name='text_tuesday']")?.textContent || "Tuesday"
     );
     setText_wednesday(
-      doc.querySelector("string[name='text_wednesday']")?.textContent
+      doc.querySelector("string[name='text_wednesday']")?.textContent ||
+        "Wednesday"
     );
     setText_thursday(
-      doc.querySelector("string[name='text_thursday']")?.textContent
+      doc.querySelector("string[name='text_thursday']")?.textContent ||
+        "Thursday"
     );
 
     setText_friday(
-      doc.querySelector("string[name='text_friday']")?.textContent
+      doc.querySelector("string[name='text_friday']")?.textContent || "Friday"
     );
     setText_saturday(
-      doc.querySelector("string[name='text_saturday']")?.textContent
+      doc.querySelector("string[name='text_saturday']")?.textContent ||
+        "Saturday"
     );
 
     setText_sunday(
-      doc.querySelector("string[name='text_sunday']")?.textContent
+      doc.querySelector("string[name='text_sunday']")?.textContent || "Sunday"
     );
     setText_half_day(
-      doc.querySelector("string[name='text_half_day']")?.textContent
+      doc.querySelector("string[name='text_half_day']")?.textContent ||
+        "Half Day"
     );
     setText_vacations_Enter_days(
-      doc.querySelector("string[name='text_vacations_Enter_days']")?.textContent
+      doc.querySelector("string[name='text_vacations_Enter_days']")
+        ?.textContent || "Enter Vacation Days"
     );
     setText_update(
-      doc.querySelector("string[name='text_update']")?.textContent
+      doc.querySelector("string[name='text_update']")?.textContent || "Update"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setButton_next(
-      doc.querySelector("string[name='button_next']")?.textContent
+      doc.querySelector("string[name='button_next']")?.textContent || "Next"
     );
     settext_addchoosefile(
-      doc.querySelector("string[name='text_addchoosefile']")?.textContent
+      doc.querySelector("string[name='text_addchoosefile']")?.textContent ||
+        "choose file"
     );
     setRegCompTitle(
-      doc.querySelector("string[name='regCompTitle']")?.textContent
+      doc.querySelector("string[name='regCompTitle']")?.textContent ||
+        "Register Company"
     );
     setText_selCountry(
-      doc.querySelector("string[name='text_selCountry']")?.textContent
+      doc.querySelector("string[name='text_selCountry']")?.textContent ||
+        "Select Country"
     );
     setRegCompedit(
-      doc.querySelector("string[name='regCompedit']")?.textContent
+      doc.querySelector("string[name='regCompedit']")?.textContent ||
+        "Edit Company"
     );
     setText_Ph_selCountry(
-      doc.querySelector("string[name='text_Ph_selCountry']")?.textContent
+      doc.querySelector("string[name='text_Ph_selCountry']")?.textContent ||
+        "Select a Country"
     );
     setErr_selCountry(
-      doc.querySelector("string[name='err_selCountry']")?.textContent
+      doc.querySelector("string[name='err_selCountry']")?.textContent ||
+        "Please Select Country"
     );
     setText_statev3(
-      doc.querySelector("string[name='text_statev3']")?.textContent
+      doc.querySelector("string[name='text_statev3']")?.textContent ||
+        "Select a State"
     );
-    setText_Zip(doc.querySelector("string[name='text_Zip']")?.textContent);
+    setText_Zip(
+      doc.querySelector("string[name='text_Zip']")?.textContent || "Zip"
+    );
     setHint_workHours(
-      doc.querySelector("string[name='hint_workHours']")?.textContent
+      doc.querySelector("string[name='hint_workHours']")?.textContent ||
+        "Working Hours Per Day"
     );
     setText_ProVacaDay(
-      doc.querySelector("string[name='text_ProVacaDay']")?.textContent
+      doc.querySelector("string[name='text_ProVacaDay']")?.textContent ||
+        "Provide Vacation Days"
     );
     setText_Postal_v3(
-      doc.querySelector("string[name='text_Postal_v3']")?.textContent
+      doc.querySelector("string[name='text_Postal_v3']")?.textContent ||
+        "Postal Code"
     );
     setCompany_errname(
-      doc.querySelector("string[name='company_errname']")?.textContent
+      doc.querySelector("string[name='company_errname']")?.textContent ||
+        "Please Enter Company Name"
     );
     setCompany_erraddress(
-      doc.querySelector("string[name='company_erraddress']")?.textContent
+      doc.querySelector("string[name='company_erraddress']")?.textContent ||
+        "Please Enter Company Address"
     );
     setText_err_enter_state(
-      doc.querySelector("string[name='text_err_enter_state']")?.textContent
+      doc.querySelector("string[name='text_err_enter_state']")?.textContent ||
+        "Please Select State"
     );
     setText_err_wh1(
-      doc.querySelector("string[name='text_err_wh1']")?.textContent
+      doc.querySelector("string[name='text_err_wh1']")?.textContent ||
+        "Working hours should be between 1 to 24"
     );
   };
   useEffect(() => {

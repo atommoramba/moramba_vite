@@ -198,28 +198,31 @@ function EmployeeDoc() {
     //     ?.textContent
     // );
     setText_employee_doc(
-      doc.querySelector("string[name='text_employee_doc']")?.textContent
+      doc.querySelector("string[name='text_employee_doc']")?.textContent ||
+        "Employee Document"
     );
 
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setText_create(
-      doc.querySelector("string[name='text_create']")?.textContent
+      doc.querySelector("string[name='text_create']")?.textContent || "Create"
     );
     // setText_mark_all(
     //   doc.querySelector("string[name='text_mark_all']")?.textContent
     //
     // );
     setInventoryvalcate(
-      doc.querySelector("string[name='inventoryvalcate']")?.textContent
+      doc.querySelector("string[name='inventoryvalcate']")?.textContent ||
+        "Please Enter Category!"
     );
 
     setText_enter_category(
-      doc.querySelector("string[name='text_enter_category']")?.textContent
+      doc.querySelector("string[name='text_enter_category']")?.textContent ||
+        "Enter category"
     );
   };
   useEffect(() => {

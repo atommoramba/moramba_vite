@@ -451,121 +451,156 @@ function Attendance() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setText_attendanceview(
-      doc.querySelector("string[name='text_attendanceview']")?.textContent
+      doc.querySelector("string[name='text_attendanceview']")?.textContent ||
+        "Attendance View"
     );
 
-    setText_Sno(doc.querySelector("string[name='text_Sno']")?.textContent);
+    setText_Sno(
+      doc.querySelector("string[name='text_Sno']")?.textContent || "Sr No"
+    );
     setText_emp_name(
-      doc.querySelector("string[name='text_emp_name']")?.textContent
+      doc.querySelector("string[name='text_emp_name']")?.textContent ||
+        "Employee Name"
     );
     setText_attendancetype(
-      doc.querySelector("string[name='text_attendancetype']")?.textContent
+      doc.querySelector("string[name='text_attendancetype']")?.textContent ||
+        "Attendance Type"
     );
     setText_present(
-      doc.querySelector("string[name='text_present']")?.textContent
+      doc.querySelector("string[name='text_present']")?.textContent || "Present"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setText_half_day(
-      doc.querySelector("string[name='text_half_day']")?.textContent
+      doc.querySelector("string[name='text_half_day']")?.textContent ||
+        "Half Day"
     );
     setText_absent(
-      doc.querySelector("string[name='text_absent']")?.textContent
+      doc.querySelector("string[name='text_absent']")?.textContent || "Absent"
     );
-    setText_other(doc.querySelector("string[name='text_other']")?.textContent);
+    setText_other(
+      doc.querySelector("string[name='text_other']")?.textContent || "Other"
+    );
     setText_status_type(
-      doc.querySelector("string[name='text_status_type']")?.textContent
+      doc.querySelector("string[name='text_status_type']")?.textContent ||
+        "Status Type"
     );
     // setText_Personal_Timeoff(
     //   doc.querySelector("string[name='text_Personal_Timeoff']")
     //     ?.textContent
     // );
     setText_over_time(
-      doc.querySelector("string[name='text_over_time']")?.textContent
+      doc.querySelector("string[name='text_over_time']")?.textContent ||
+        "OverTime"
     );
     setText_title_working_hrs(
-      doc.querySelector("string[name='text_title_working_hrs']")?.textContent
+      doc.querySelector("string[name='text_title_working_hrs']")?.textContent ||
+        "Working Hours"
     );
     setText_working_hours(
-      doc.querySelector("string[name='text_working_hours']")?.textContent
+      doc.querySelector("string[name='text_working_hours']")?.textContent ||
+        "Enter Working Hours"
     );
     setText_vacation(
-      doc.querySelector("string[name='text_vacation']")?.textContent
+      doc.querySelector("string[name='text_vacation']")?.textContent ||
+        "Vacation"
     );
     setText_remark(
-      doc.querySelector("string[name='text_remark']")?.textContent
+      doc.querySelector("string[name='text_remark']")?.textContent || "Remark"
     );
 
     setAttendanceHeading(
-      doc.querySelector("string[name='attendanceHeading']")?.textContent
+      doc.querySelector("string[name='attendanceHeading']")?.textContent ||
+        "Attendance Sheet"
     );
 
     setText_select_status_type(
-      doc.querySelector("string[name='text_select_status_type']")?.textContent
+      doc.querySelector("string[name='text_select_status_type']")
+        ?.textContent || "Select Status Type"
     );
     setSearchPHText(
-      doc.querySelector("string[name='SearchPHText']")?.textContent
+      doc.querySelector("string[name='SearchPHText']")?.textContent ||
+        "Search Here..."
     );
 
     setLateMark_Text(
-      doc.querySelector("string[name='lateMark_Text']")?.textContent
+      doc.querySelector("string[name='lateMark_Text']")?.textContent ||
+        "Late Mark"
     );
     setText_Full_Day(
-      doc.querySelector("string[name='text_Full_Day']")?.textContent
+      doc.querySelector("string[name='text_Full_Day']")?.textContent ||
+        "Full Day"
     );
-    setLeave_text(doc.querySelector("string[name='leave_text']")?.textContent);
+    setLeave_text(
+      doc.querySelector("string[name='leave_text']")?.textContent || "Leave"
+    );
     setPrivilege_text(
-      doc.querySelector("string[name='privilege_text']")?.textContent
+      doc.querySelector("string[name='privilege_text']")?.textContent ||
+        "Privilege Leave"
     );
     setMaternity_text(
-      doc.querySelector("string[name='maternity_text']")?.textContent
+      doc.querySelector("string[name='maternity_text']")?.textContent ||
+        "Maternity Leave"
     );
     setPaternity_text(
-      doc.querySelector("string[name='paternity_text']")?.textContent
+      doc.querySelector("string[name='paternity_text']")?.textContent ||
+        "Paternity Leave"
     );
     setMarriagevac_text(
-      doc.querySelector("string[name='marriagevac_text']")?.textContent
+      doc.querySelector("string[name='marriagevac_text']")?.textContent ||
+        "Marriage Leave"
     );
     setUnpaidvac_text(
-      doc.querySelector("string[name='unpaidvac_text']")?.textContent
+      doc.querySelector("string[name='unpaidvac_text']")?.textContent ||
+        "Unpaid Leave"
     );
     setMedicalleave_text(
-      doc.querySelector("string[name='medicalleave_text']")?.textContent
+      doc.querySelector("string[name='medicalleave_text']")?.textContent ||
+        "Medical Leave"
     );
     setErrattendance_text(
-      doc.querySelector("string[name='errattendance_text']")?.textContent
+      doc.querySelector("string[name='errattendance_text']")?.textContent ||
+        "Please Select Attendance Type"
     );
     setText_errstatus(
-      doc.querySelector("string[name='text_errstatus']")?.textContent
+      doc.querySelector("string[name='text_errstatus']")?.textContent ||
+        " Please Select Status Type"
     );
     setAddany_test(
-      doc.querySelector("string[name='addany_test']")?.textContent
+      doc.querySelector("string[name='addany_test']")?.textContent ||
+        "Select Any"
     );
     setAtten_medical(
-      doc.querySelector("string[name='atten_medical']")?.textContent
+      doc.querySelector("string[name='atten_medical']")?.textContent ||
+        "Medical"
     );
     setAtten_personal(
-      doc.querySelector("string[name='atten_personal']")?.textContent
+      doc.querySelector("string[name='atten_personal']")?.textContent ||
+        "Personal"
     );
     setText_End_Date(
-      doc.querySelector("string[name='text_End_Date']")?.textContent
+      doc.querySelector("string[name='text_End_Date']")?.textContent ||
+        "End Date"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setText_start_date(
-      doc.querySelector("string[name='text_start_date']")?.textContent
+      doc.querySelector("string[name='text_start_date']")?.textContent ||
+        "Start Date"
     );
 
     setText_groupattendance(
-      doc.querySelector("string[name='text_groupattendance']")?.textContent
+      doc.querySelector("string[name='text_groupattendance']")?.textContent ||
+        "Mark Group Attendance"
     );
     setText_holiday(
-      doc.querySelector("string[name='text_holiday']")?.textContent
+      doc.querySelector("string[name='text_holiday']")?.textContent || "Holiday"
     );
     settext_attendance_type(
-      doc.querySelector("string[name='text_attendance_type']")?.textContent
+      doc.querySelector("string[name='text_attendance_type']")?.textContent ||
+        "Select Attendance Type"
     );
   };
   useEffect(() => {

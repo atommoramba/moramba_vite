@@ -192,42 +192,69 @@ function EmpTDS() {
     var xml = localStorage.getItem(GlobalConstants.session_lang_xml);
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
-    setTds_salary(doc.querySelector("string[name='Tds_salary']")?.textContent);
+    setTds_salary(
+      doc.querySelector("string[name='Tds_salary']")?.textContent ||
+        "TDS on Salary"
+    );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
-    setText_Sno(doc.querySelector("string[name='text_Sno']")?.textContent);
+    setText_Sno(
+      doc.querySelector("string[name='text_Sno']")?.textContent || "Sr No"
+    );
     setText_ducvow(
-      doc.querySelector("string[name='text_ducvow']")?.textContent
+      doc.querySelector("string[name='text_ducvow']")?.textContent ||
+        " Deduction Under Chapter VI-A &Other workings"
     );
-    setText_Dra(doc.querySelector("string[name='text_Dra']")?.textContent);
-    settext_dtbra(doc.querySelector("string[name='text_dtbra']")?.textContent);
-    settext_ta(doc.querySelector("string[name='text_ta']")?.textContent);
-    settext_ud(doc.querySelector("string[name='text_ud']")?.textContent);
-    settext_tdra(doc.querySelector("string[name='text_tdra']")?.textContent);
+    setText_Dra(
+      doc.querySelector("string[name='text_Dra']")?.textContent ||
+        "Documents Received Amount"
+    );
+    settext_dtbra(
+      doc.querySelector("string[name='text_dtbra']")?.textContent ||
+        "Documents To Be Received Amount"
+    );
+    settext_ta(
+      doc.querySelector("string[name='text_ta']")?.textContent || "Total Amount"
+    );
+    settext_ud(
+      doc.querySelector("string[name='text_ud']")?.textContent ||
+        "Upload Document"
+    );
+    settext_tdra(
+      doc.querySelector("string[name='text_tdra']")?.textContent ||
+        "Total Documents Received Amount :"
+    );
     settext_tdtbra(
-      doc.querySelector("string[name='text_tdtbra']")?.textContent
+      doc.querySelector("string[name='text_tdtbra']")?.textContent ||
+        "Total Documents To Be Received Amount :"
     );
     settext_deduction_a(
-      doc.querySelector("string[name='text_deduction_a']")?.textContent
+      doc.querySelector("string[name='text_deduction_a']")?.textContent ||
+        "DEDUCTIONS"
     );
     settext_applicable_amount(
-      doc.querySelector("string[name='text_applicable_amount']")?.textContent
+      doc.querySelector("string[name='text_applicable_amount']")?.textContent ||
+        "APPLICABLE AMOUNT"
     );
     settext_financial_year(
-      doc.querySelector("string[name='text_financial_year']")?.textContent
+      doc.querySelector("string[name='text_financial_year']")?.textContent ||
+        "Financial Year"
     );
     setPlease_enter_amount(
-      doc.querySelector("string[name='please_enter_amount']")?.textContent
+      doc.querySelector("string[name='please_enter_amount']")?.textContent ||
+        "Please Enter Amount"
     );
     setText_request(
-      doc.querySelector("string[name='text_request']")?.textContent
+      doc.querySelector("string[name='text_request']")?.textContent ||
+        "Thanks! Your Request Generated Successfully. PleaseContact"
     );
     setText_approval(
-      doc.querySelector("string[name='text_approval']")?.textContent
+      doc.querySelector("string[name='text_approval']")?.textContent ||
+        "For Approval Status"
     );
   };
   useEffect(() => {

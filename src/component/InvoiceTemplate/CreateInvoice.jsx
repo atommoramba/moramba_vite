@@ -384,106 +384,142 @@ function CreateInvoice() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_invoiceid(
-      doc.querySelector("string[name='text_invoiceid']")?.textContent
+      doc.querySelector("string[name='text_invoiceid']")?.textContent ||
+        "Invoice ID"
     );
     setText_account_holdername(
-      doc.querySelector("string[name='text_account_holdername']")?.textContent
+      doc.querySelector("string[name='text_account_holdername']")
+        ?.textContent || "Created By"
     );
     setText_duedate(
-      doc.querySelector("string[name='text_duedate']")?.textContent
+      doc.querySelector("string[name='text_duedate']")?.textContent ||
+        "Due Date"
     );
     setText_issued(
-      doc.querySelector("string[name='text_issued']")?.textContent
+      doc.querySelector("string[name='text_issued']")?.textContent ||
+        "Issue Date"
     );
     setText_bankab(
-      doc.querySelector("string[name='text_bankab']")?.textContent
+      doc.querySelector("string[name='text_bankab']")?.textContent || "Bank"
     );
     setText_account_number(
-      doc.querySelector("string[name='text_account_number']")?.textContent
+      doc.querySelector("string[name='text_account_number']")?.textContent ||
+        "Account Number"
     );
     setText_ifsc_code(
-      doc.querySelector("string[name='text_ifsc_code']")?.textContent
+      doc.querySelector("string[name='text_ifsc_code']")?.textContent ||
+        "IFSC Code"
     );
     setText_account_address(
-      doc.querySelector("string[name='text_account_address']")?.textContent
+      doc.querySelector("string[name='text_account_address']")?.textContent ||
+        "Wallet Address"
     );
     setHint_account_address_ph(
-      doc.querySelector("string[name='hint_account_address_ph']")?.textContent
+      doc.querySelector("string[name='hint_account_address_ph']")
+        ?.textContent || "Select Wallet Address"
     );
     setText_additem(
-      doc.querySelector("string[name='text_additem']")?.textContent
+      doc.querySelector("string[name='text_additem']")?.textContent ||
+        "Add Item"
     );
     setText_currency(
-      doc.querySelector("string[name='text_currency']")?.textContent
+      doc.querySelector("string[name='text_currency']")?.textContent ||
+        "Select Currency"
     );
     setText_grand_total(
-      doc.querySelector("string[name='text_grand_total']")?.textContent
+      doc.querySelector("string[name='text_grand_total']")?.textContent ||
+        "Grand Total"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setText_select_temp(
-      doc.querySelector("string[name='text_select_temp']")?.textContent
+      doc.querySelector("string[name='text_select_temp']")?.textContent ||
+        " Select Template"
     );
-    setCryptotxt(doc.querySelector("string[name='Cryptotxt']")?.textContent);
+    setCryptotxt(
+      doc.querySelector("string[name='Cryptotxt']")?.textContent || "Crypto"
+    );
     setPaymentMethodTxt(
-      doc.querySelector("string[name='PaymentMethodTxt']")?.textContent
+      doc.querySelector("string[name='PaymentMethodTxt']")?.textContent ||
+        "Payment Method"
     );
     setCreateInvocietext(
-      doc.querySelector("string[name='CreateInvocietext']")?.textContent
+      doc.querySelector("string[name='CreateInvocietext']")?.textContent ||
+        "Create Invoice"
     );
     setText_customer_name(
-      doc.querySelector("string[name='text_customer_name']")?.textContent
+      doc.querySelector("string[name='text_customer_name']")?.textContent ||
+        "Customer Name"
     );
-    setPhCustomer(doc.querySelector("string[name='PhCustomer']")?.textContent);
+    setPhCustomer(
+      doc.querySelector("string[name='PhCustomer']")?.textContent ||
+        "Select Customer"
+    );
     setCustomer_addtext(
-      doc.querySelector("string[name='customer_addtext']")?.textContent
+      doc.querySelector("string[name='customer_addtext']")?.textContent ||
+        "Customer Address"
     );
     setText_select_bank(
-      doc.querySelector("string[name='text_select_bank']")?.textContent
+      doc.querySelector("string[name='text_select_bank']")?.textContent ||
+        "Select Bank"
     );
     setBill_errcustomer(
-      doc.querySelector("string[name='bill_errcustomer']")?.textContent
+      doc.querySelector("string[name='bill_errcustomer']")?.textContent ||
+        "Please Select Customer"
     );
     setInvoice_errcurrency(
-      doc.querySelector("string[name='invoice_errcurrency']")?.textContent
+      doc.querySelector("string[name='invoice_errcurrency']")?.textContent ||
+        "Please Select Currency"
     );
     setInvoice_errtemplate(
-      doc.querySelector("string[name='invoice_errtemplate']")?.textContent
+      doc.querySelector("string[name='invoice_errtemplate']")?.textContent ||
+        "Please Select Template"
     );
     setInvoice_errwalletadd(
-      doc.querySelector("string[name='invoice_errwalletadd']")?.textContent
+      doc.querySelector("string[name='invoice_errwalletadd']")?.textContent ||
+        "Please Select Wallet Address"
     );
     setInvoice_errbank(
-      doc.querySelector("string[name='invoice_errbank']")?.textContent
+      doc.querySelector("string[name='invoice_errbank']")?.textContent ||
+        "Please Select Bank"
     );
-    setText_tax(doc.querySelector("string[name='text_tax']")?.textContent);
+    setText_tax(
+      doc.querySelector("string[name='text_tax']")?.textContent || "Tax"
+    );
     setBilltemp_text(
-      doc.querySelector("string[name='billtemp_text']")?.textContent
+      doc.querySelector("string[name='billtemp_text']")?.textContent ||
+        "Create Template"
     );
     setText_subtotal(
-      doc.querySelector("string[name='text_subtotal']")?.textContent
+      doc.querySelector("string[name='text_subtotal']")?.textContent ||
+        "Sub-Total"
     );
     setText_amountin_word(
-      doc.querySelector("string[name='text_amountin_word']")?.textContent
+      doc.querySelector("string[name='text_amountin_word']")?.textContent ||
+        "Amount In Words"
     );
     setText_upi_id(
-      doc.querySelector("string[name='text_upi_id']")?.textContent
+      doc.querySelector("string[name='text_upi_id']")?.textContent || "UPI ID"
     );
     setText_ibancode(
-      doc.querySelector("string[name='text_ibancode']")?.textContent
+      doc.querySelector("string[name='text_ibancode']")?.textContent ||
+        "IBAN Code"
     );
     setText_abacode(
-      doc.querySelector("string[name='text_abacode']")?.textContent
+      doc.querySelector("string[name='text_abacode']")?.textContent ||
+        "ABA Code"
     );
     setBill_swiftcode(
-      doc.querySelector("string[name='bill_swiftcode']")?.textContent
+      doc.querySelector("string[name='bill_swiftcode']")?.textContent ||
+        "SWIFT Code"
     );
     setText_ifscnum(
-      doc.querySelector("string[name='text_ifscnum']")?.textContent
+      doc.querySelector("string[name='text_ifscnum']")?.textContent ||
+        "IFSC Number"
     );
   };
   useEffect(() => {

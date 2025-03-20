@@ -682,119 +682,169 @@ function LoanDashboard() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_search_ph(
-      doc.querySelector("string[name='text_search_ph']")?.textContent
+      doc.querySelector("string[name='text_search_ph']")?.textContent ||
+        "Search Here..."
     );
     setLoanToEmptxt(
-      doc.querySelector("string[name='LoanToEmptxt']")?.textContent
+      doc.querySelector("string[name='LoanToEmptxt']")?.textContent ||
+        "Loan to Employee"
     );
     setText_receive_emp(
-      doc.querySelector("string[name='text_receive_emp']")?.textContent
+      doc.querySelector("string[name='text_receive_emp']")?.textContent ||
+        "Received from Employee"
     );
-    setHistory(doc.querySelector("string[name='History']")?.textContent);
-    setText_date(doc.querySelector("string[name='text_date']")?.textContent);
+    setHistory(
+      doc.querySelector("string[name='History']")?.textContent || "History"
+    );
+    setText_date(
+      doc.querySelector("string[name='text_date']")?.textContent || "Date"
+    );
     setText_Amount(
-      doc.querySelector("string[name='text_Amount']")?.textContent
+      doc.querySelector("string[name='text_Amount']")?.textContent || "Amount"
     );
     setPHLoanAmount(
-      doc.querySelector("string[name='PHLoanAmount']")?.textContent
+      doc.querySelector("string[name='PHLoanAmount']")?.textContent ||
+        "Enter Loan Amount"
     );
-    setPHLoanDesc(doc.querySelector("string[name='PHLoanDesc']")?.textContent);
+    setPHLoanDesc(
+      doc.querySelector("string[name='PHLoanDesc']")?.textContent ||
+        "Enter Loan Description"
+    );
     setPaymentMethodTxt(
-      doc.querySelector("string[name='PaymentMethodTxt']")?.textContent
+      doc.querySelector("string[name='PaymentMethodTxt']")?.textContent ||
+        "Payment Method"
     );
-    setCashtxt(doc.querySelector("string[name='Cashtxt']")?.textContent);
-    setChequetxt(doc.querySelector("string[name='Chequetxt']")?.textContent);
-    setCryptotxt(doc.querySelector("string[name='Cryptotxt']")?.textContent);
+    setCashtxt(
+      doc.querySelector("string[name='Cashtxt']")?.textContent || "Cash"
+    );
+    setChequetxt(
+      doc.querySelector("string[name='Chequetxt']")?.textContent || "Cheque"
+    );
+    setCryptotxt(
+      doc.querySelector("string[name='Cryptotxt']")?.textContent || "Crypto"
+    );
     setPaymentIDtxt(
-      doc.querySelector("string[name='PaymentIDtxt']")?.textContent
+      doc.querySelector("string[name='PaymentIDtxt']")?.textContent ||
+        "Payment ID"
     );
     setPHPaymentID(
-      doc.querySelector("string[name='PHPaymentID']")?.textContent
+      doc.querySelector("string[name='PHPaymentID']")?.textContent ||
+        "Enter Payment ID"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setTotalLoantxt(
-      doc.querySelector("string[name='TotalLoantxt']")?.textContent
+      doc.querySelector("string[name='TotalLoantxt']")?.textContent ||
+        "Total Loan"
     );
-    setRepaidTxt(doc.querySelector("string[name='RepaidTxt']")?.textContent);
-    setLoanBalTxt(doc.querySelector("string[name='LoanBalTxt']")?.textContent);
+    setRepaidTxt(
+      doc.querySelector("string[name='RepaidTxt']")?.textContent ||
+        "Loan Re-Paid"
+    );
+    setLoanBalTxt(
+      doc.querySelector("string[name='LoanBalTxt']")?.textContent ||
+        "Loan Balance"
+    );
     setText_err_paymentID(
-      doc.querySelector("string[name='text_err_paymentID']")?.textContent
+      doc.querySelector("string[name='text_err_paymentID']")?.textContent ||
+        "Please Enter Payment ID"
     );
     setText_loan_dashboard(
-      doc.querySelector("string[name='text_loan_dashboard']")?.textContent
+      doc.querySelector("string[name='text_loan_dashboard']")?.textContent ||
+        "Loan Dashboard"
     );
-    setText_Sno(doc.querySelector("string[name='text_Sno']")?.textContent);
+    setText_Sno(
+      doc.querySelector("string[name='text_Sno']")?.textContent || "Sr No"
+    );
     setInventoryvalamount_v3(
-      doc.querySelector("string[name='inventoryvalamount_v3']")?.textContent
+      doc.querySelector("string[name='inventoryvalamount_v3']")?.textContent ||
+        "Please Enter Loan Amount"
     );
     setText_description(
-      doc.querySelector("string[name='text_description']")?.textContent
+      doc.querySelector("string[name='text_description']")?.textContent ||
+        "Description"
     );
     setvalpaymentmethod(
-      doc.querySelector("string[name='valpaymentmethod']")?.textContent
+      doc.querySelector("string[name='valpaymentmethod']")?.textContent ||
+        "Select Payment Method"
     );
     setText_anymethodv3(
-      doc.querySelector("string[name='text_anymethodv3']")?.textContent
+      doc.querySelector("string[name='text_anymethodv3']")?.textContent ||
+        "Select Any Method"
     );
     setDescription_optional(
-      doc.querySelector("string[name='description_optional']")?.textContent
+      doc.querySelector("string[name='description_optional']")?.textContent ||
+        "Description (Optional)"
     );
     setText_balance(
-      doc.querySelector("string[name='text_balance']")?.textContent
+      doc.querySelector("string[name='text_balance']")?.textContent || "Balance"
     );
     setText_repaymentAmt(
-      doc.querySelector("string[name='text_repaymentAmt']")?.textContent
+      doc.querySelector("string[name='text_repaymentAmt']")?.textContent ||
+        "Re-Payment Amount(Monthly)"
     );
     setTextDisbursementDate(
-      doc.querySelector("string[name='textDisbursementDate']")?.textContent
+      doc.querySelector("string[name='textDisbursementDate']")?.textContent ||
+        "Disbursement Date"
     );
     setText_laonamount(
-      doc.querySelector("string[name='text_laonamount']")?.textContent
+      doc.querySelector("string[name='text_laonamount']")?.textContent ||
+        "Loan Amount"
     );
     setLoanamountval_v3(
-      doc.querySelector("string[name='loanamountval_v3']")?.textContent
+      doc.querySelector("string[name='loanamountval_v3']")?.textContent ||
+        "Amount should be more than 0"
     );
 
     setText_netsalary(
-      doc.querySelector("string[name='text_netsalary']")?.textContent
+      doc.querySelector("string[name='text_netsalary']")?.textContent ||
+        "Net Salary"
     );
     setText_loanGiven(
-      doc.querySelector("string[name='text_loanGiven']")?.textContent
+      doc.querySelector("string[name='text_loanGiven']")?.textContent ||
+        "Loan Given"
     );
     setText_loanRepayment(
-      doc.querySelector("string[name='text_loanRepayment']")?.textContent
+      doc.querySelector("string[name='text_loanRepayment']")?.textContent ||
+        "Loan Repayment"
     );
     setRepayAmount(
-      doc.querySelector("string[name='RepayAmount']")?.textContent
+      doc.querySelector("string[name='RepayAmount']")?.textContent ||
+        "Enter Re-Payment Amount"
     );
     settext_status(
-      doc.querySelector("string[name='text_status']")?.textContent
+      doc.querySelector("string[name='text_status']")?.textContent || "Status"
     );
     setText_loan_provider(
-      doc.querySelector("string[name='text_loan_provider']")?.textContent
+      doc.querySelector("string[name='text_loan_provider']")?.textContent ||
+        "Loan Provided By"
     );
     setPending_request_text(
-      doc.querySelector("string[name='pending_request_text']")?.textContent
+      doc.querySelector("string[name='pending_request_text']")?.textContent ||
+        "My Pending Request"
     );
     settext_loan_approver(
-      doc.querySelector("string[name='text_loan_approver']")?.textContent
+      doc.querySelector("string[name='text_loan_approver']")?.textContent ||
+        "Contact LoanApprover:"
     );
     setButton_submit(
-      doc.querySelector("string[name='button_submit']")?.textContent
+      doc.querySelector("string[name='button_submit']")?.textContent || "Submit"
     );
     setText_request(
-      doc.querySelector("string[name='text_request']")?.textContent
+      doc.querySelector("string[name='text_request']")?.textContent ||
+        "Thanks! Your Request Generated Successfully. PleaseContact"
     );
     setText_approval(
-      doc.querySelector("string[name='text_approval']")?.textContent
+      doc.querySelector("string[name='text_approval']")?.textContent ||
+        "For Approval Status"
     );
     setLoanamountval_v4(
-      doc.querySelector("string[name='loanamountval_v4']")?.textContent
+      doc.querySelector("string[name='loanamountval_v4']")?.textContent ||
+        "Repay amount cannot be greater than loan amount"
     );
   };
   useEffect(() => {

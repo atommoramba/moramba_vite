@@ -29,7 +29,8 @@ function ViewInvoiceTemplate() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setInvoicetemp_text(
-      doc.querySelector("string[name='invoicetemp_text']")?.textContent
+      doc.querySelector("string[name='invoicetemp_text']")?.textContent ||
+        " View Invoice Template"
     );
   };
   useEffect(() => {

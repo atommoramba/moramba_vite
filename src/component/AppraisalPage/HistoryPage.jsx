@@ -109,27 +109,37 @@ function HistoryPage() {
     var xml = localStorage.getItem(GlobalConstants.session_lang_xml);
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
-    setMonthText(doc.querySelector("string[name='monthText']")?.textContent);
-    setText_year(doc.querySelector("string[name='text_year']")?.textContent);
-    setbtn_view(doc.querySelector("string[name='btn_view']")?.textContent);
+    setMonthText(
+      doc.querySelector("string[name='monthText']")?.textContent || "Month"
+    );
+    setText_year(
+      doc.querySelector("string[name='text_year']")?.textContent || "Year"
+    );
+    setbtn_view(
+      doc.querySelector("string[name='btn_view']")?.textContent || "View"
+    );
     setText_grosssalary(
-      doc.querySelector("string[name='text_grosssalary']")?.textContent
+      doc.querySelector("string[name='text_grosssalary']")?.textContent ||
+        "Gross Salary"
     );
     setText_earning(
-      doc.querySelector("string[name='text_earning']")?.textContent
+      doc.querySelector("string[name='text_earning']")?.textContent || "Earning"
     );
     setText_totaldeduction(
-      doc.querySelector("string[name='text_totaldeduction']")?.textContent
+      doc.querySelector("string[name='text_totaldeduction']")?.textContent ||
+        "Total deduction"
     );
     setTitle_deduction(
-      doc.querySelector("string[name='title_deduction']")?.textContent
+      doc.querySelector("string[name='title_deduction']")?.textContent ||
+        "Deduction"
     );
     // setText_totalearning(
     //   doc.querySelector("string[name='text_totalearning']")
     //     ?.textContent
     // );
     setText_netsalary(
-      doc.querySelector("string[name='text_netsalary']")?.textContent
+      doc.querySelector("string[name='text_netsalary']")?.textContent ||
+        "Net Salary"
     );
   };
 

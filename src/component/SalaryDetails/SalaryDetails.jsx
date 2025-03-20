@@ -243,80 +243,107 @@ function SalaryDetails() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setText_salary_detail(
-      doc.querySelector("string[name='text_salary_detail']")?.textContent
+      doc.querySelector("string[name='text_salary_detail']")?.textContent ||
+        "Salary Details"
     );
     setText_select_month(
-      doc.querySelector("string[name='text_select_month']")?.textContent
+      doc.querySelector("string[name='text_select_month']")?.textContent ||
+        "Select Month"
     );
     setText_select_year(
-      doc.querySelector("string[name='text_select_year']")?.textContent
+      doc.querySelector("string[name='text_select_year']")?.textContent ||
+        "Select Year"
     );
     setText_download(
-      doc.querySelector("string[name='text_download']")?.textContent
+      doc.querySelector("string[name='text_download']")?.textContent ||
+        "Download"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
-    setText_year(doc.querySelector("string[name='text_year']")?.textContent);
-    setMonthText(doc.querySelector("string[name='monthText']")?.textContent);
+    setText_year(
+      doc.querySelector("string[name='text_year']")?.textContent || "Year"
+    );
+    setMonthText(
+      doc.querySelector("string[name='monthText']")?.textContent || "Month"
+    );
     settext_salary(
-      doc.querySelector("string[name='text_salary']")?.textContent
+      doc.querySelector("string[name='text_salary']")?.textContent || "Salary"
     );
-    setbtn_view(doc.querySelector("string[name='btn_view']")?.textContent);
+    setbtn_view(
+      doc.querySelector("string[name='btn_view']")?.textContent || "View"
+    );
     setTitle_deduction(
-      doc.querySelector("string[name='title_deduction']")?.textContent
+      doc.querySelector("string[name='title_deduction']")?.textContent ||
+        "Deduction"
     );
     setTitle_allowance(
-      doc.querySelector("string[name='title_allowance']")?.textContent
+      doc.querySelector("string[name='title_allowance']")?.textContent ||
+        "Allowance"
     );
     setText_loanpaid(
-      doc.querySelector("string[name='text_loanpaid']")?.textContent
+      doc.querySelector("string[name='text_loanpaid']")?.textContent ||
+        "Loan Paid"
     );
     setText_down_salaryslip(
-      doc.querySelector("string[name='text_down_salaryslip']")?.textContent
+      doc.querySelector("string[name='text_down_salaryslip']")?.textContent ||
+        "Download Salary Slip"
     );
     setText_payable_amount(
-      doc.querySelector("string[name='text_payable_amount']")?.textContent
+      doc.querySelector("string[name='text_payable_amount']")?.textContent ||
+        "Payable Amount"
     );
     setText_payable_salary(
-      doc.querySelector("string[name='text_payable_salary']")?.textContent
+      doc.querySelector("string[name='text_payable_salary']")?.textContent ||
+        "Payable Salary"
     );
-    setText_tax(doc.querySelector("string[name='text_tax']")?.textContent);
+    setText_tax(
+      doc.querySelector("string[name='text_tax']")?.textContent || "Tax"
+    );
     setText_grosssalary(
-      doc.querySelector("string[name='text_grosssalary']")?.textContent
+      doc.querySelector("string[name='text_grosssalary']")?.textContent ||
+        "Gross Salary"
     );
     setText_present(
-      doc.querySelector("string[name='text_present']")?.textContent
+      doc.querySelector("string[name='text_present']")?.textContent || "Present"
     );
     setText_present_days(
-      doc.querySelector("string[name='text_present_days']")?.textContent
+      doc.querySelector("string[name='text_present_days']")?.textContent ||
+        "Present Days"
     );
     setText_Amount(
-      doc.querySelector("string[name='text_Amount']")?.textContent
+      doc.querySelector("string[name='text_Amount']")?.textContent || "Amount"
     );
     setText_earning(
-      doc.querySelector("string[name='text_earning']")?.textContent
+      doc.querySelector("string[name='text_earning']")?.textContent || "Earning"
     );
     setText_netsalary(
-      doc.querySelector("string[name='text_netsalary']")?.textContent
+      doc.querySelector("string[name='text_netsalary']")?.textContent ||
+        "Net Salary"
     );
     setText_grosssalary(
-      doc.querySelector("string[name='text_grosssalary']")?.textContent
+      doc.querySelector("string[name='text_grosssalary']")?.textContent ||
+        "Gross Salary"
     );
     setText_totaldeduction(
-      doc.querySelector("string[name='text_totaldeduction']")?.textContent
+      doc.querySelector("string[name='text_totaldeduction']")?.textContent ||
+        "Total deduction"
     );
     setText_selectdate(
-      doc.querySelector("string[name='text_selectdate']")?.textContent
+      doc.querySelector("string[name='text_selectdate']")?.textContent ||
+        "Select Date"
     );
     setText_salary_type(
-      doc.querySelector("string[name='text_salary_type']")?.textContent
+      doc.querySelector("string[name='text_salary_type']")?.textContent ||
+        "Salary Type"
     );
     setText_start_date(
-      doc.querySelector("string[name='text_start_date']")?.textContent
+      doc.querySelector("string[name='text_start_date']")?.textContent ||
+        "Start Date"
     );
     setText_End_Date(
-      doc.querySelector("string[name='text_End_Date']")?.textContent
+      doc.querySelector("string[name='text_End_Date']")?.textContent ||
+        "End Date"
     );
   };
   useEffect(() => {

@@ -431,31 +431,37 @@ function DocumentPage() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setText_download(
-      doc.querySelector("string[name='text_download']")?.textContent
+      doc.querySelector("string[name='text_download']")?.textContent ||
+        "Download"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setText_document(
-      doc.querySelector("string[name='text_document']")?.textContent
+      doc.querySelector("string[name='text_document']")?.textContent ||
+        "Documents"
     );
     setText_upload(
-      doc.querySelector("string[name='text_upload']")?.textContent
+      doc.querySelector("string[name='text_upload']")?.textContent || "Upload"
     );
     SetpopUP_description(
-      doc.querySelector("string[name='popUP_description']")?.textContent
+      doc.querySelector("string[name='popUP_description']")?.textContent ||
+        "Your file is already uploaded on"
     );
     SetpopUp_desc_second(
-      doc.querySelector("string[name='popUp_desc_second']")?.textContent
+      doc.querySelector("string[name='popUp_desc_second']")?.textContent ||
+        "and name is"
     );
     setText_uploaded(
-      doc.querySelector("string[name='text_uploaded']")?.textContent
+      doc.querySelector("string[name='text_uploaded']")?.textContent ||
+        "Uploaded"
     );
     setText_errUpload_file(
-      doc.querySelector("string[name='text_errUpload_file']")?.textContent
+      doc.querySelector("string[name='text_errUpload_file']")?.textContent ||
+        "Please Select File First"
     );
   };
   useEffect(() => {

@@ -278,55 +278,75 @@ function CreateSubscriptionTemplate() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_temp_name(
-      doc.querySelector("string[name='text_temp_name']")?.textContent
+      doc.querySelector("string[name='text_temp_name']")?.textContent ||
+        "Template Name"
     );
     setText_add_new_category(
-      doc.querySelector("string[name='text_add_new_category']")?.textContent
+      doc.querySelector("string[name='text_add_new_category']")?.textContent ||
+        "Add New Category"
     );
     setText_temp_name(
-      doc.querySelector("string[name='text_temp_name']")?.textContent
+      doc.querySelector("string[name='text_temp_name']")?.textContent ||
+        "Template Name"
     );
     setSalaryBreakupTypeEffectiveDateHead(
       doc.querySelector("string[name='salaryBreakupTypeEffectiveDateHead']")
-        ?.textContent
+        ?.textContent || "Effective Date"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setInventoryvalcate(
-      doc.querySelector("string[name='inventoryvalcate']")?.textContent
+      doc.querySelector("string[name='inventoryvalcate']")?.textContent ||
+        "Please Enter Category!"
     );
-    setText_date(doc.querySelector("string[name='text_date']")?.textContent);
-    setTypetext(doc.querySelector("string[name='typetext']")?.textContent);
-    setTypenumber(doc.querySelector("string[name='typenumber']")?.textContent);
-    setTypefile(doc.querySelector("string[name='typefile']")?.textContent);
+    setText_date(
+      doc.querySelector("string[name='text_date']")?.textContent || "Date"
+    );
+    setTypetext(
+      doc.querySelector("string[name='typetext']")?.textContent || "text"
+    );
+    setTypenumber(
+      doc.querySelector("string[name='typenumber']")?.textContent || "number"
+    );
+    setTypefile(
+      doc.querySelector("string[name='typefile']")?.textContent || "file"
+    );
     setText_enter_category(
-      doc.querySelector("string[name='text_enter_category']")?.textContent
+      doc.querySelector("string[name='text_enter_category']")?.textContent ||
+        "Enter category"
     );
     setText_enter_template(
-      doc.querySelector("string[name='text_Enter_template']")?.textContent
+      doc.querySelector("string[name='text_Enter_template']")?.textContent ||
+        "Enter Template Name"
     );
     setCategoryText(
-      doc.querySelector("string[name='categoryText']")?.textContent
+      doc.querySelector("string[name='categoryText']")?.textContent ||
+        "Category"
     );
-    setAddBtn(doc.querySelector("string[name='addBtn']")?.textContent);
+    setAddBtn(doc.querySelector("string[name='addBtn']")?.textContent || "Add");
     setText_subscription_subTemp(
-      doc.querySelector("string[name='text_subscription_subTemp']")?.textContent
+      doc.querySelector("string[name='text_subscription_subTemp']")
+        ?.textContent || "Create Subscription Template"
     );
     setText_DataType(
-      doc.querySelector("string[name='text_DataType']")?.textContent
+      doc.querySelector("string[name='text_DataType']")?.textContent ||
+        "Data Type"
     );
     setText_err_template(
-      doc.querySelector("string[name='text_err_template']")?.textContent
+      doc.querySelector("string[name='text_err_template']")?.textContent ||
+        "Please Enter Template Name"
     );
     setText_defualt_fields(
-      doc.querySelector("string[name='text_defualt_fields']")?.textContent
+      doc.querySelector("string[name='text_defualt_fields']")?.textContent ||
+        "Default Fields"
     );
     setText_customField(
-      doc.querySelector("string[name='text_customField']")?.textContent
+      doc.querySelector("string[name='text_customField']")?.textContent ||
+        "Custom Fields"
     );
   };
   useEffect(() => {

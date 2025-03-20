@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 import "../PayrollSheet/PayrollSheet.css";
 import { useNavigate } from "react-router-dom";
 import FilterComponent from "../../utils/FilterComponent";
-import dayjs from 'dayjs'
+import dayjs from "dayjs";
 
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import SearchIcon from "@mui/icons-material/Search";
@@ -112,9 +112,12 @@ function PayrollSheet() {
 
   const [text_editDeductionof, settext_editDeductionof] =
     useState("Edit Deduction of ");
-    const [text_update_salary_info,setText_update_salary_info] = useState ("Please update SalaryInfo");
-const [text_enternewvalue,setText_enternewvalue] = useState("Enter New Value");
-const [text_enterloan,setText_enterloan] = useState("Enter Loan");
+  const [text_update_salary_info, setText_update_salary_info] = useState(
+    "Please update SalaryInfo"
+  );
+  const [text_enternewvalue, setText_enternewvalue] =
+    useState("Enter New Value");
+  const [text_enterloan, setText_enterloan] = useState("Enter Loan");
   //Language Variables End
 
   const [popup, setPopup] = useState(false);
@@ -842,166 +845,159 @@ const [text_enterloan,setText_enterloan] = useState("Enter Loan");
 
   const SetLanguageText = () => {
     var xml = localStorage.getItem(GlobalConstants.session_lang_xml);
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(xml, "text/xml");
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(xml, "text/xml");
 
     setText_selCountry(
-      doc.querySelector("string[name='text_selCountry']")
-        ?.textContent
+      doc.querySelector("string[name='text_selCountry']")?.textContent ||
+        "Select Country"
     );
     setText_download(
-      doc.querySelector("string[name='text_download']")?.textContent
-        
+      doc.querySelector("string[name='text_download']")?.textContent ||
+        "Download"
     );
     setText_Sno(
-      doc.querySelector("string[name='text_Sno']")?.textContent
+      doc.querySelector("string[name='text_Sno']")?.textContent || "Sr No"
     );
     setTxtPayrollHeading(
-      doc.querySelector("string[name='TxtPayrollHeading']")
-        ?.textContent
+      doc.querySelector("string[name='TxtPayrollHeading']")?.textContent ||
+        "Payroll Sheet"
     );
     setText_emp_name(
-      doc.querySelector("string[name='text_emp_name']")?.textContent
-        
+      doc.querySelector("string[name='text_emp_name']")?.textContent ||
+        "Employee Name"
     );
     setText_grosssalary(
-      doc.querySelector("string[name='text_grosssalary']")
-        ?.textContent
+      doc.querySelector("string[name='text_grosssalary']")?.textContent ||
+        "Gross Salary"
     );
     settext_status(
-      doc.querySelector("string[name='text_status']")?.textContent
-        
+      doc.querySelector("string[name='text_status']")?.textContent || "Status"
     );
     setTitle_deduction(
-      doc.querySelector("string[name='title_deduction']")
-        ?.textContent
+      doc.querySelector("string[name='title_deduction']")?.textContent ||
+        "Deduction"
     );
     setText_pf(
-      doc.querySelector("string[name='text_pf']")?.textContent
+      doc.querySelector("string[name='text_pf']")?.textContent || "pf"
     );
     setText_esic(
-      doc.querySelector("string[name='text_esic']")?.textContent
+      doc.querySelector("string[name='text_esic']")?.textContent || "ESIC"
     );
     setText_pt(
-      doc.querySelector("string[name='text_pt']")?.textContent
+      doc.querySelector("string[name='text_pt']")?.textContent || "PT"
     );
     setText_tds(
-      doc.querySelector("string[name='text_tds']")?.textContent
+      doc.querySelector("string[name='text_tds']")?.textContent || "TDS"
     );
     setText_loan(
-      doc.querySelector("string[name='text_loan']")?.textContent
+      doc.querySelector("string[name='text_loan']")?.textContent || "LOAN"
     );
     setText_totaldeduction(
-      doc.querySelector("string[name='text_totaldeduction']")
-        ?.textContent
+      doc.querySelector("string[name='text_totaldeduction']")?.textContent ||
+        "TOTAL DEDUCTION	"
     );
 
     setText_netsalary(
-      doc.querySelector("string[name='text_netsalary']")?.textContent
-        
+      doc.querySelector("string[name='text_netsalary']")?.textContent ||
+        "Net Salary"
     );
     setPayroll_paid(
-      doc.querySelector("string[name='payroll_paid']")?.textContent
-        
+      doc.querySelector("string[name='payroll_paid']")?.textContent || "Paid"
     );
 
     setText_unpaid(
-      doc.querySelector("string[name='text_unpaid']")?.textContent
-        
+      doc.querySelector("string[name='text_unpaid']")?.textContent || "Unpaid"
     );
 
     setText_tax(
-      doc.querySelector("string[name='text_tax']")?.textContent
+      doc.querySelector("string[name='text_tax']")?.textContent || "Tax"
     );
     setText_refresh(
-      doc.querySelector("string[name='text_refresh']")?.textContent
-        
+      doc.querySelector("string[name='text_refresh']")?.textContent || "Refresh"
     );
     settext_pay(
-      doc.querySelector("string[name='text_pay']")?.textContent
+      doc.querySelector("string[name='text_pay']")?.textContent || "Pay"
     );
     setText_edit(
-      doc.querySelector("string[name='text_edit']")?.textContent
+      doc.querySelector("string[name='text_edit']")?.textContent || "Edit"
     );
     setSearchPHText(
-      doc.querySelector("string[name='SearchPHText']")?.textContent
-        
+      doc.querySelector("string[name='SearchPHText']")?.textContent ||
+        "Search Employee Here..."
     );
     setErrattendance_text(
-      doc.querySelector("string[name='errattendance_text']")
-        ?.textContent
+      doc.querySelector("string[name='errattendance_text']")?.textContent ||
+        "Please Select Attendance Type"
     );
     setButton_next(
-      doc.querySelector("string[name='button_next']")?.textContent
-        
+      doc.querySelector("string[name='button_next']")?.textContent || "Next"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
-        
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
-        
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setButton_previous(
-      doc.querySelector("string[name='button_previous']")
-        ?.textContent
+      doc.querySelector("string[name='button_previous']")?.textContent ||
+        "Previous"
     );
     // setSalaryType(
     //   doc.querySelector("string[name='salaryType']")?.textContent
-    //     
+    //
     // );
     setOutstanding_loan(
-      doc.querySelector("string[name='outstanding_loan']")
-        ?.textContent
+      doc.querySelector("string[name='outstanding_loan']")?.textContent ||
+        "Outstanding Loan"
     );
     setText_fetchpayroll(
-      doc.querySelector("string[name='text_fetchpayroll']")
-        ?.textContent
+      doc.querySelector("string[name='text_fetchpayroll']")?.textContent ||
+        "Fetch Payroll"
     );
     setText_paybledays(
-      doc.querySelector("string[name='text_paybledays']")
-        ?.textContent
+      doc.querySelector("string[name='text_paybledays']")?.textContent ||
+        "Payable Days"
     );
     setText_Currency(
-      doc.querySelector("string[name='text_Currency']")?.textContent
-        
+      doc.querySelector("string[name='text_Currency']")?.textContent ||
+        "Currency"
     );
     settext_editDeductionof(
-      doc.querySelector("string[name='text_editDeductionof']")
-        ?.textContent
+      doc.querySelector("string[name='text_editDeductionof']")?.textContent ||
+        "Edit Deduction of "
     );
     setText_radio_monthly(
-      doc.querySelector("string[name='text_radio_monthly']")
-        ?.textContent
+      doc.querySelector("string[name='text_radio_monthly']")?.textContent ||
+        "Monthly"
     );
     setText_bi_weekly2(
-      doc.querySelector("string[name='settext_bi_monthly2']")
-        ?.textContent
+      doc.querySelector("string[name='settext_bi_monthly2']")?.textContent ||
+        "Bi Weekly(Total Pay Check Every Week)"
     );
     setText_radio_weekly(
-      doc.querySelector("string[name='text_radio_weekly']")
-        ?.textContent
+      doc.querySelector("string[name='text_radio_weekly']")?.textContent ||
+        "Weekly"
     );
     setText_bi_monthly2(
-      doc.querySelector("string[name='settext_bi_monthly2']")
-        ?.textContent
+      doc.querySelector("string[name='settext_bi_monthly2']")?.textContent ||
+        "Bi Monthly(Pay Check Twice a Month)"
     );
     setText_clitoref(
-      doc.querySelector("string[name='settext_clitoref']")
-        ?.textContent
+      doc.querySelector("string[name='settext_clitoref']")?.textContent ||
+        "Click Refresh"
     );
     setText_update_salary_info(
       doc.querySelector("string[name='text_update_salary_info']")
-        ?.textContent
+        ?.textContent || "Please update SalaryInfo"
     );
     setText_enternewvalue(
-      doc.querySelector("string[name='text_enternewvalue']")
-        ?.textContent
+      doc.querySelector("string[name='text_enternewvalue']")?.textContent ||
+        "Enter New Value"
     );
     setText_enterloan(
-      doc.querySelector("string[name='text_enterloan']")
-        ?.textContent
+      doc.querySelector("string[name='text_enterloan']")?.textContent ||
+        "Enter Loan"
     );
   };
 
@@ -1206,7 +1202,9 @@ const [text_enterloan,setText_enterloan] = useState("Enter Loan");
   const SymbolToText = (symbol, idx) => {
     var currencySymbol = symbol;
     setTimeout(() => {
-      var test = CountryCodewithEmoji.filter((e) => e?.abbreviation === currencySymbol);
+      var test = CountryCodewithEmoji.filter(
+        (e) => e?.abbreviation === currencySymbol
+      );
       document.getElementById("currency" + idx).innerText =
         test[0]?.abbreviation;
     }, 500);

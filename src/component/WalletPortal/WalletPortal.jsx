@@ -743,156 +743,198 @@ const WalletPortal = () => {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_create(
-      doc.querySelector("string[name='text_create']")?.textContent
+      doc.querySelector("string[name='text_create']")?.textContent || "Create"
     );
     setText_account_number(
-      doc.querySelector("string[name='text_account_number']")?.textContent
+      doc.querySelector("string[name='text_account_number']")?.textContent ||
+        "Account Number"
     );
     setText_country(
-      doc.querySelector("string[name='text_country']")?.textContent
+      doc.querySelector("string[name='text_country']")?.textContent || "Country"
     );
     setText_qr_code(
-      doc.querySelector("string[name='text_qr_code']")?.textContent
+      doc.querySelector("string[name='text_qr_code']")?.textContent || "QR Code"
     );
     setText_balance(
-      doc.querySelector("string[name='text_balance']")?.textContent
+      doc.querySelector("string[name='text_balance']")?.textContent || "Balance"
     );
     setText_cryptoaddbill(
-      doc.querySelector("string[name='text_cryptoaddbill']")?.textContent
+      doc.querySelector("string[name='text_cryptoaddbill']")?.textContent ||
+        "Crypto Wallet"
     );
     setText_account_address(
-      doc.querySelector("string[name='text_account_address']")?.textContent
+      doc.querySelector("string[name='text_account_address']")?.textContent ||
+        "Wallet Address"
     );
     setText_bank_name(
-      doc.querySelector("string[name='text_bank_name']")?.textContent
+      doc.querySelector("string[name='text_bank_name']")?.textContent ||
+        "Bank Name"
     );
     setHint_bank_name(
-      doc.querySelector("string[name='hint_bank_name']")?.textContent
+      doc.querySelector("string[name='hint_bank_name']")?.textContent ||
+        "Enter Your Bank Name"
     );
     setText_ifsc_code(
-      doc.querySelector("string[name='text_ifsc_code']")?.textContent
+      doc.querySelector("string[name='text_ifsc_code']")?.textContent ||
+        "IFSC Code"
     );
     setHint_ifsc_code(
-      doc.querySelector("string[name='hint_ifsc_code']")?.textContent
+      doc.querySelector("string[name='hint_ifsc_code']")?.textContent ||
+        "Enter Your IFSC Code"
     );
     setText_swift_code(
-      doc.querySelector("string[name='text_swift_code']")?.textContent
+      doc.querySelector("string[name='text_swift_code']")?.textContent ||
+        "Swift Code"
     );
     setHint_swift_code(
-      doc.querySelector("string[name='hint_swift_code']")?.textContent
+      doc.querySelector("string[name='hint_swift_code']")?.textContent ||
+        "Enter Your Swift Code"
     );
     setText_aba_code(
-      doc.querySelector("string[name='text_aba_code']")?.textContent
+      doc.querySelector("string[name='text_aba_code']")?.textContent ||
+        "ABA Code(USA)"
     );
     setHint_aba_code(
-      doc.querySelector("string[name='hint_aba_code']")?.textContent
+      doc.querySelector("string[name='hint_aba_code']")?.textContent ||
+        "Enter Your ABA Code"
     );
     setText_iban_code(
-      doc.querySelector("string[name='text_iban_code']")?.textContent
+      doc.querySelector("string[name='text_iban_code']")?.textContent ||
+        "IBAN Code(Europe)"
     );
     setHint_iban_code(
-      doc.querySelector("string[name='hint_iban_code']")?.textContent
+      doc.querySelector("string[name='hint_iban_code']")?.textContent ||
+        "Enter Your IBAN Code"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setText_update(
-      doc.querySelector("string[name='text_update']")?.textContent
+      doc.querySelector("string[name='text_update']")?.textContent || "Update"
     );
     setText_delete(
-      doc.querySelector("string[name='text_delete']")?.textContent
+      doc.querySelector("string[name='text_delete']")?.textContent || "Delete"
     );
     setText_err_bankname(
-      doc.querySelector("string[name='text_err_bankname']")?.textContent
+      doc.querySelector("string[name='text_err_bankname']")?.textContent ||
+        "Please Enter Bank Name"
     );
     setText_bankaccount_number(
-      doc.querySelector("string[name='text_bankaccount_number']")?.textContent
+      doc.querySelector("string[name='text_bankaccount_number']")
+        ?.textContent || "Bank Account Number"
     );
     setHint_bankaccount_number(
-      doc.querySelector("string[name='hint_bankaccount_number']")?.textContent
+      doc.querySelector("string[name='hint_bankaccount_number']")
+        ?.textContent || "Enter Your Bank Account Number"
     );
     setText_nick_name(
-      doc.querySelector("string[name='text_nick_name']")?.textContent
+      doc.querySelector("string[name='text_nick_name']")?.textContent ||
+        "Bank Nick Name"
     );
     setText_bank_add(
-      doc.querySelector("string[name='text_bank_add']")?.textContent
+      doc.querySelector("string[name='text_bank_add']")?.textContent ||
+        "Bank Address"
     );
     setText_upi_id(
-      doc.querySelector("string[name='text_upi_id']")?.textContent
+      doc.querySelector("string[name='text_upi_id']")?.textContent || "UPI ID"
     );
     setText_checkbaldeposit(
-      doc.querySelector("string[name='text_checkbaldeposit']")?.textContent
+      doc.querySelector("string[name='text_checkbaldeposit']")?.textContent ||
+        "Deposit"
     );
     setText_drop_eth(
-      doc.querySelector("string[name='text_drop_eth']")?.textContent
+      doc.querySelector("string[name='text_drop_eth']")?.textContent || "Eth"
     );
     setText_network(
-      doc.querySelector("string[name='text_network']")?.textContent
+      doc.querySelector("string[name='text_network']")?.textContent || "Network"
     );
     setText_download(
-      doc.querySelector("string[name='text_download']")?.textContent
+      doc.querySelector("string[name='text_download']")?.textContent ||
+        "Download"
     );
     setText_wallet_name(
-      doc.querySelector("string[name='text_wallet_name']")?.textContent
+      doc.querySelector("string[name='text_wallet_name']")?.textContent ||
+        "Wallet Name"
     );
     setText_ph_wallet_name(
-      doc.querySelector("string[name='text_ph_wallet_name']")?.textContent
+      doc.querySelector("string[name='text_ph_wallet_name']")?.textContent ||
+        "Enter Wallet Name"
     );
     settext_select_token(
-      doc.querySelector("string[name='text_select_token']")?.textContent
+      doc.querySelector("string[name='text_select_token']")?.textContent ||
+        "Select Token"
     );
     setText_select_network(
-      doc.querySelector("string[name='text_select_network']")?.textContent
+      doc.querySelector("string[name='text_select_network']")?.textContent ||
+        "Select Network"
     );
     setText_BankAcc(
-      doc.querySelector("string[name='text_BankAcc']")?.textContent
+      doc.querySelector("string[name='text_BankAcc']")?.textContent ||
+        "Bank Accounts"
     );
     setText_manage(
-      doc.querySelector("string[name='text_manage']")?.textContent
+      doc.querySelector("string[name='text_manage']")?.textContent || "Manage"
     );
     setTitle_BankDetail(
-      doc.querySelector("string[name='title_BankDetail']")?.textContent
+      doc.querySelector("string[name='title_BankDetail']")?.textContent ||
+        "Company Bank Details"
     );
-    setText_Token(doc.querySelector("string[name='text_Token']")?.textContent);
-    setText_Coin(doc.querySelector("string[name='text_Coin']")?.textContent);
+    setText_Token(
+      doc.querySelector("string[name='text_Token']")?.textContent || "Token"
+    );
+    setText_Coin(
+      doc.querySelector("string[name='text_Coin']")?.textContent || "Coin"
+    );
     setHint_WP_bank_add(
-      doc.querySelector("string[name='hint_WP_bank_add']")?.textContent
+      doc.querySelector("string[name='hint_WP_bank_add']")?.textContent ||
+        "Enter Your Bank Address"
     );
     setHint_WP_upi_id(
-      doc.querySelector("string[name='hint_WP_upi_id']")?.textContent
+      doc.querySelector("string[name='hint_WP_upi_id']")?.textContent ||
+        "Enter Your UPI ID"
     );
     setHint_WP_nick_name(
-      doc.querySelector("string[name='hint_WP_nick_name']")?.textContent
+      doc.querySelector("string[name='hint_WP_nick_name']")?.textContent ||
+        "Enter Your Bank Nick Name"
     );
     setHint_address_wallerportal(
-      doc.querySelector("string[name='hint_address_wallerportal']")?.textContent
+      doc.querySelector("string[name='hint_address_wallerportal']")
+        ?.textContent || "Enter Wallet Address"
     );
     setWallet_text_delete(
-      doc.querySelector("string[name='wallet_text_delete']")?.textContent
+      doc.querySelector("string[name='wallet_text_delete']")?.textContent ||
+        "Are you sure to permanently delete this details"
     );
     setWallet_seemore(
-      doc.querySelector("string[name='wallet_seemore']")?.textContent
+      doc.querySelector("string[name='wallet_seemore']")?.textContent ||
+        "Swipe to See More"
     );
     setText_err_walletname(
-      doc.querySelector("string[name='text_err_walletname']")?.textContent
+      doc.querySelector("string[name='text_err_walletname']")?.textContent ||
+        "Please Enter Wallet Name"
     );
     setText_err_walletaddress(
-      doc.querySelector("string[name='text_err_walletaddress']")?.textContent
+      doc.querySelector("string[name='text_err_walletaddress']")?.textContent ||
+        "Please Enter Wallet Address"
     );
     setText_err_accnov3(
-      doc.querySelector("string[name='text_err_accnov3']")?.textContent
+      doc.querySelector("string[name='text_err_accnov3']")?.textContent ||
+        "Please Enter Bank Account Number"
     );
     setWalleterr_text(
-      doc.querySelector("string[name='walleterr_text']")?.textContent
+      doc.querySelector("string[name='walleterr_text']")?.textContent ||
+        "Enter Valid Address"
     );
     setText_err_upiid(
-      doc.querySelector("string[name='text_err_upiid']")?.textContent
+      doc.querySelector("string[name='text_err_upiid']")?.textContent ||
+        "Please Enter Upi ID"
     );
     settext_valid_upiid(
-      doc.querySelector("string[name='text_valid_upiid']")?.textContent
+      doc.querySelector("string[name='text_valid_upiid']")?.textContent ||
+        "Please Enter Valid Upi ID"
     );
   };
 

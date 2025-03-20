@@ -89,16 +89,20 @@ export default function GeneralDoc() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_company_doc(
-      doc.querySelector("string[name='text_company_doc']")?.textContent
+      doc.querySelector("string[name='text_company_doc']")?.textContent ||
+        "Company Document"
     );
     setText_employee_doc(
-      doc.querySelector("string[name='text_employee_doc']")?.textContent
+      doc.querySelector("string[name='text_employee_doc']")?.textContent ||
+        "Employee Document"
     );
     setText_appraisal_v3(
-      doc.querySelector("string[name='text_appraisal_v3']")?.textContent
+      doc.querySelector("string[name='text_appraisal_v3']")?.textContent ||
+        "Appraisal Category"
     );
     setText_Designationtype_v3(
-      doc.querySelector("string[name='text_Designationtype_v3']")?.textContent
+      doc.querySelector("string[name='text_Designationtype_v3']")
+        ?.textContent || "Designation Type"
     );
   };
   useEffect(() => {

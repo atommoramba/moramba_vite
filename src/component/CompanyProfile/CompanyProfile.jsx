@@ -56,30 +56,41 @@ function CompanyProfile() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_company_profile(
-      doc.querySelector("string[name='text_company_profile']")?.textContent
+      doc.querySelector("string[name='text_company_profile']")?.textContent ||
+        "Company Profile"
     );
     setText_admin_name(
-      doc.querySelector("string[name='text_admin_name']")?.textContent
+      doc.querySelector("string[name='text_admin_name']")?.textContent ||
+        "Contact Admin"
     );
-    setText_edit(doc.querySelector("string[name='text_edit']")?.textContent);
+    setText_edit(
+      doc.querySelector("string[name='text_edit']")?.textContent || "Edit"
+    );
     setText_upgrade_plan(
-      doc.querySelector("string[name='text_upgrade_plan']")?.textContent
+      doc.querySelector("string[name='text_upgrade_plan']")?.textContent ||
+        "Upgrade Plan"
     );
     setText_employee(
-      doc.querySelector("string[name='text_employee']")?.textContent
+      doc.querySelector("string[name='text_employee']")?.textContent ||
+        "Employee"
     );
     setText_current_plan(
-      doc.querySelector("string[name='text_current_plan']")?.textContent
+      doc.querySelector("string[name='text_current_plan']")?.textContent ||
+        "Current Plan"
     );
     setText_company_documents(
-      doc.querySelector("string[name='text_company_documents']")?.textContent
+      doc.querySelector("string[name='text_company_documents']")?.textContent ||
+        "Company Documents"
     );
-    setbtn_view(doc.querySelector("string[name='btn_view']")?.textContent);
+    setbtn_view(
+      doc.querySelector("string[name='btn_view']")?.textContent || "View"
+    );
     setText_profile(
-      doc.querySelector("string[name='text_profile']")?.textContent
+      doc.querySelector("string[name='text_profile']")?.textContent || "Profile"
     );
     setText_one_year_plan(
-      doc.querySelector("string[name='text_one_year_plan']")?.textContent
+      doc.querySelector("string[name='text_one_year_plan']")?.textContent ||
+        "1 Year Free Plan"
     );
   };
 

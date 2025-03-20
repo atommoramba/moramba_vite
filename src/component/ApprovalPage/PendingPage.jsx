@@ -806,89 +806,118 @@ function PendingPage() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setSearchPHText(
-      doc.querySelector("string[name='SearchPHText']")?.textContent
+      doc.querySelector("string[name='SearchPHText']")?.textContent ||
+        "Search Here..."
     );
-    setText_Sno(doc.querySelector("string[name='text_Sno']")?.textContent);
+    setText_Sno(
+      doc.querySelector("string[name='text_Sno']")?.textContent || "Sr No"
+    );
     setApprove_name(
-      doc.querySelector("string[name='approve_name']")?.textContent
+      doc.querySelector("string[name='approve_name']")?.textContent || "Name"
     );
-    setText_date(doc.querySelector("string[name='text_date']")?.textContent);
+    setText_date(
+      doc.querySelector("string[name='text_date']")?.textContent || "Date"
+    );
     settext_status(
-      doc.querySelector("string[name='text_status']")?.textContent
+      doc.querySelector("string[name='text_status']")?.textContent || "Status"
     );
-    setbtn_view(doc.querySelector("string[name='btn_view']")?.textContent);
+    setbtn_view(
+      doc.querySelector("string[name='btn_view']")?.textContent || "View"
+    );
     setVactionreq_text(
-      doc.querySelector("string[name='vactionreq_text']")?.textContent
+      doc.querySelector("string[name='vactionreq_text']")?.textContent ||
+        "Vacation Requests"
     );
     setTimesheetreq_text(
-      doc.querySelector("string[name='timesheetreq_text']")?.textContent
+      doc.querySelector("string[name='timesheetreq_text']")?.textContent ||
+        "Time Sheet Requests"
     );
     setAppraisalreq_text(
-      doc.querySelector("string[name='appraisalreq_text']")?.textContent
+      doc.querySelector("string[name='appraisalreq_text']")?.textContent ||
+        "Appraisal Requests"
     );
     setProfileupdate_text(
-      doc.querySelector("string[name='profileupdate_text']")?.textContent
+      doc.querySelector("string[name='profileupdate_text']")?.textContent ||
+        "Profile Update Requests"
     );
     setApprove_rejtext(
-      doc.querySelector("string[name='approve_rejtext']")?.textContent
+      doc.querySelector("string[name='approve_rejtext']")?.textContent ||
+        "Reject"
     );
     setApprovepen_text(
-      doc.querySelector("string[name='approvepen_text']")?.textContent
+      doc.querySelector("string[name='approvepen_text']")?.textContent ||
+        "Approve"
     );
     setApprove_note(
-      doc.querySelector("string[name='approve_note']")?.textContent
+      doc.querySelector("string[name='approve_note']")?.textContent || "Note"
     );
     setApprovereq_text(
-      doc.querySelector("string[name='approvereq_text']")?.textContent
+      doc.querySelector("string[name='approvereq_text']")?.textContent ||
+        "View Request"
     );
     setApproved_req(
-      doc.querySelector("string[name='approved_req']")?.textContent
+      doc.querySelector("string[name='approved_req']")?.textContent ||
+        "Request For"
     );
     setText_description(
-      doc.querySelector("string[name='text_description']")?.textContent
+      doc.querySelector("string[name='text_description']")?.textContent ||
+        "Description"
     );
     setText_hours_of_working(
-      doc.querySelector("string[name='text_hours_of_working']")?.textContent
+      doc.querySelector("string[name='text_hours_of_working']")?.textContent ||
+        "Hours of Working"
     );
     setText_btnclickhere(
-      doc.querySelector("string[name='text_btnclickhere']")?.textContent
+      doc.querySelector("string[name='text_btnclickhere']")?.textContent ||
+        "Click here"
     );
     setText_pro_details(
-      doc.querySelector("string[name='text_pro_details']")?.textContent
+      doc.querySelector("string[name='text_pro_details']")?.textContent ||
+        "Project Details"
     );
     setText_expensereq(
-      doc.querySelector("string[name='text_expensereq']")?.textContent
+      doc.querySelector("string[name='text_expensereq']")?.textContent ||
+        "Expense Requests"
     );
     setText_loanrequest(
-      doc.querySelector("string[name='text_loanrequest']")?.textContent
+      doc.querySelector("string[name='text_loanrequest']")?.textContent ||
+        "Loan Requests"
     );
     setText_requestpen(
-      doc.querySelector("string[name='text_requestpen']")?.textContent
+      doc.querySelector("string[name='text_requestpen']")?.textContent ||
+        "Request"
     );
     setText_reportgenerated(
-      doc.querySelector("string[name='text_reportgenerated']")?.textContent
+      doc.querySelector("string[name='text_reportgenerated']")?.textContent ||
+        "New Expense Report Generated"
     );
     setText_promoted(
-      doc.querySelector("string[name='text_promoted']")?.textContent
+      doc.querySelector("string[name='text_promoted']")?.textContent ||
+        "Promoted To"
     );
 
     setNewSalaryText(
-      doc.querySelector("string[name='newSalaryText']")?.textContent
+      doc.querySelector("string[name='newSalaryText']")?.textContent ||
+        "New Salary"
     );
     setTextDisbursementDate(
-      doc.querySelector("string[name='textDisbursementDate']")?.textContent
+      doc.querySelector("string[name='textDisbursementDate']")?.textContent ||
+        "Disbursement Date"
     );
     setText_Amount(
-      doc.querySelector("string[name='text_Amount']")?.textContent
+      doc.querySelector("string[name='text_Amount']")?.textContent || "Amount"
     );
     setText_disbursment(
-      doc.querySelector("string[name='text_disbursment']")?.textContent
+      doc.querySelector("string[name='text_disbursment']")?.textContent ||
+        "Disbursement"
     );
     setDisbursement_req(
-      doc.querySelector("string[name='disbursement_req']")?.textContent
+      doc.querySelector("string[name='disbursement_req']")?.textContent ||
+        "Disbursement Requests"
     );
     setText_tds_req(
-      doc.querySelector("string[name='text_tds_req']")?.textContent
+      doc.querySelector("string[name='text_tds_req']")?.textContent ||
+        "TDS Request"
     );
   };
   useEffect(() => {

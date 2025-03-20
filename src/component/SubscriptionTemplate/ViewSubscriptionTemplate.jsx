@@ -22,13 +22,15 @@ function ViewSubscriptionTemplate() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setSubscription_viewv3(
-      doc.querySelector("string[name='subscription_viewv3']")?.textContent
+      doc.querySelector("string[name='subscription_viewv3']")?.textContent ||
+        "View Subscription Template"
     );
     setText_temp_name(
-      doc.querySelector("string[name='text_temp_name']")?.textContent
+      doc.querySelector("string[name='text_temp_name']")?.textContent ||
+        "Template Name"
     );
     setText_go_back(
-      doc.querySelector("string[name='text_go_back']")?.textContent
+      doc.querySelector("string[name='text_go_back']")?.textContent || "Go Back"
     );
   };
   const navigate = useNavigate();

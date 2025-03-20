@@ -160,25 +160,34 @@ function InventoryList() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setText_inventoryList(
-      doc.querySelector("string[name='text_inventoryList']")?.textContent
+      doc.querySelector("string[name='text_inventoryList']")?.textContent ||
+        "Create Inventory List"
     );
     setText_search_template_here(
-      doc.querySelector("string[name='text_search_template_here']")?.textContent
+      doc.querySelector("string[name='text_search_template_here']")
+        ?.textContent || "Search Template Here..."
     );
     setText_inventoryData(
-      doc.querySelector("string[name='text_inventoryData']")?.textContent
+      doc.querySelector("string[name='text_inventoryData']")?.textContent ||
+        "Inventory Data"
     );
     setText_fileName(
-      doc.querySelector("string[name='text_fileName']")?.textContent
+      doc.querySelector("string[name='text_fileName']")?.textContent ||
+        "File Name"
     );
     setText_fileId(
-      doc.querySelector("string[name='text_fileId']")?.textContent
+      doc.querySelector("string[name='text_fileId']")?.textContent || "File ID"
     );
     setText_createdon(
-      doc.querySelector("string[name='text_createdon']")?.textContent
+      doc.querySelector("string[name='text_createdon']")?.textContent ||
+        "Created on"
     );
-    setText_srno(doc.querySelector("string[name='text_srno']")?.textContent);
-    setbtn_view(doc.querySelector("string[name='btn_view']")?.textContent);
+    setText_srno(
+      doc.querySelector("string[name='text_srno']")?.textContent || "Sr no"
+    );
+    setbtn_view(
+      doc.querySelector("string[name='btn_view']")?.textContent || "View"
+    );
   };
   useEffect(() => {
     try {

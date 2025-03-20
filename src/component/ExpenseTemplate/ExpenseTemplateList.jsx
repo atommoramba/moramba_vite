@@ -197,32 +197,42 @@ function ExpenseTemplateList() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_search_template_here(
-      doc.querySelector("string[name='text_search_template_here']")?.textContent
+      doc.querySelector("string[name='text_search_template_here']")
+        ?.textContent || "Search Template Here..."
     );
     setText_create(
-      doc.querySelector("string[name='text_create']")?.textContent
+      doc.querySelector("string[name='text_create']")?.textContent || "Create"
     );
     setText_temp_name(
-      doc.querySelector("string[name='text_temp_name']")?.textContent
+      doc.querySelector("string[name='text_temp_name']")?.textContent ||
+        "Template Name"
     );
     setSalaryBreakupTypeEffectiveDateHead(
       doc.querySelector("string[name='salaryBreakupTypeEffectiveDateHead']")
-        ?.textContent
+        ?.textContent || "Effective Date"
     );
-    setText_edit(doc.querySelector("string[name='text_edit']")?.textContent);
+    setText_edit(
+      doc.querySelector("string[name='text_edit']")?.textContent || "Edit"
+    );
     setText_active(
-      doc.querySelector("string[name='text_active']")?.textContent
+      doc.querySelector("string[name='text_active']")?.textContent || "Active"
     );
-    setbtn_view(doc.querySelector("string[name='btn_view']")?.textContent);
+    setbtn_view(
+      doc.querySelector("string[name='btn_view']")?.textContent || "View"
+    );
     setText_deactive(
-      doc.querySelector("string[name='text_deactive']")?.textContent
+      doc.querySelector("string[name='text_deactive']")?.textContent ||
+        "Deactive"
     );
     settext_status(
-      doc.querySelector("string[name='text_status']")?.textContent
+      doc.querySelector("string[name='text_status']")?.textContent || "Status"
     );
-    setText_Sno(doc.querySelector("string[name='text_Sno']")?.textContent);
+    setText_Sno(
+      doc.querySelector("string[name='text_Sno']")?.textContent || "Sr No"
+    );
     setTitle_ExpTemp(
-      doc.querySelector("string[name='title_ExpTemp']")?.textContent
+      doc.querySelector("string[name='title_ExpTemp']")?.textContent ||
+        "Expense Templates"
     );
   };
   useEffect(() => {

@@ -139,10 +139,11 @@ function InventoryView() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setText_inventoryData(
-      doc.querySelector("string[name='text_inventoryData']")?.textContent
+      doc.querySelector("string[name='text_inventoryData']")?.textContent ||
+        "Inventory Data"
     );
     setText_export(
-      doc.querySelector("string[name='text_export']")?.textContent
+      doc.querySelector("string[name='text_export']")?.textContent || "Export"
     );
   };
   useEffect(() => {

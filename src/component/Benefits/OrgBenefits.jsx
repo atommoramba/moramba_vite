@@ -265,38 +265,49 @@ function OrgBenefits() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_benefitName(
-      doc.querySelector("string[name='text_benefitName']")?.textContent
+      doc.querySelector("string[name='text_benefitName']")?.textContent ||
+        "Benefit Name"
     );
     settext_selected_type(
-      doc.querySelector("string[name='text_selected_type']")?.textContent
+      doc.querySelector("string[name='text_selected_type']")?.textContent ||
+        "Selected Type :"
     );
-    setext_Price(doc.querySelector("string[name='text_price']")?.textContent);
+    setext_Price(
+      doc.querySelector("string[name='text_price']")?.textContent || "Price"
+    );
     setText_End_Date(
-      doc.querySelector("string[name='text_End_Date']")?.textContent
+      doc.querySelector("string[name='text_End_Date']")?.textContent ||
+        "End Date"
     );
     setText_comp_contribution(
-      doc.querySelector("string[name='text_cmp_contribution']")?.textContent
+      doc.querySelector("string[name='text_cmp_contribution']")?.textContent ||
+        "Enter Company Contribtion"
     );
     setText_start_date(
-      doc.querySelector("string[name='text_start_date']")?.textContent
+      doc.querySelector("string[name='text_start_date']")?.textContent ||
+        "Start Date"
     );
     setText_description(
-      doc.querySelector("string[name='text_description']")?.textContent
+      doc.querySelector("string[name='text_description']")?.textContent ||
+        "Description"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setText_empcontribution(
-      doc.querySelector("string[name='text_empcontribution']")?.textContent
+      doc.querySelector("string[name='text_empcontribution']")?.textContent ||
+        "Employee Contribution"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setText_cmpcontribution(
-      doc.querySelector("string[name='text_cmpcontribution']")?.textContent
+      doc.querySelector("string[name='text_cmpcontribution']")?.textContent ||
+        "Company Contribution"
     );
     setButton_previous(
-      doc.querySelector("string[name='button_previous']")?.textContent
+      doc.querySelector("string[name='button_previous']")?.textContent ||
+        "Previous"
     );
   };
   useEffect(() => {

@@ -2121,325 +2121,432 @@ function AddstaffWIP() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_hint_join_date(
-      doc.querySelector("string[name='text_hint_join_date']")?.textContent
+      doc.querySelector("string[name='text_hint_join_date']")?.textContent ||
+        "Join Date"
     );
     seText_designation(
-      doc.querySelector("string[name='text_designation']")?.textContent
+      doc.querySelector("string[name='text_designation']")?.textContent ||
+        "Designation"
     );
     seText_role_type(
-      doc.querySelector("string[name='text_role_type']")?.textContent
+      doc.querySelector("string[name='text_role_type']")?.textContent ||
+        "Role Type"
     );
     seText_radio_full_time(
-      doc.querySelector("string[name='text_radio_full_time']")?.textContent
+      doc.querySelector("string[name='text_radio_full_time']")?.textContent ||
+        "Full Time"
     );
     setText_radio_part_time(
-      doc.querySelector("string[name='text_radio_part_time']")?.textContent
+      doc.querySelector("string[name='text_radio_part_time']")?.textContent ||
+        "Part Time"
     );
     setText_radio_salaried(
-      doc.querySelector("string[name='text_radio_salaried']")?.textContent
+      doc.querySelector("string[name='text_radio_salaried']")?.textContent ||
+        "Salaried"
     );
     setText_radio_non_salaried(
-      doc.querySelector("string[name='text_radio_non_salaried']")?.textContent
+      doc.querySelector("string[name='text_radio_non_salaried']")
+        ?.textContent || "Non Salaried"
     );
     setText_bi_weekly2(
-      doc.querySelector("string[name='text_bi_weekly2']")?.textContent
+      doc.querySelector("string[name='text_bi_weekly2']")?.textContent ||
+        "Bi Weekly(Total Pay Check Every Week)"
     );
     setText_bi_monthly2(
-      doc.querySelector("string[name='settext_bi_monthly2']")?.textContent
+      doc.querySelector("string[name='settext_bi_monthly2']")?.textContent ||
+        "Bi Monthly(Pay Check Twice a Month)"
     );
     setText_radio_monthly(
-      doc.querySelector("string[name='text_radio_monthly']")?.textContent
+      doc.querySelector("string[name='text_radio_monthly']")?.textContent ||
+        "Monthly"
     );
     setText_radio_weekly(
-      doc.querySelector("string[name='text_radio_weekly']")?.textContent
+      doc.querySelector("string[name='text_radio_weekly']")?.textContent ||
+        "Weekly"
     );
     setText_hint_tax_id(
-      doc.querySelector("string[name='text_hint_tax_id']")?.textContent
+      doc.querySelector("string[name='text_hint_tax_id']")?.textContent ||
+        "Employee Tax ID"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
 
     setText_salary_type(
-      doc.querySelector("string[name='text_salary_type']")?.textContent
+      doc.querySelector("string[name='text_salary_type']")?.textContent ||
+        "Salary Type"
     );
     setTitle_ddd_employee(
-      doc.querySelector("string[name='title_ddd_employee']")?.textContent
+      doc.querySelector("string[name='title_ddd_employee']")?.textContent ||
+        "Add Employee"
     );
     setText_f_name(
-      doc.querySelector("string[name='text_f_name']")?.textContent
+      doc.querySelector("string[name='text_f_name']")?.textContent ||
+        "First Name"
     );
     setText_enter_first_name(
-      doc.querySelector("string[name='text_enter_first_name']")?.textContent
+      doc.querySelector("string[name='text_enter_first_name']")?.textContent ||
+        "Enter First Name"
     );
     setText_M_name(
-      doc.querySelector("string[name='text_M_name']")?.textContent
+      doc.querySelector("string[name='text_M_name']")?.textContent ||
+        "Middle Name"
     );
     setText_hint_M_name(
-      doc.querySelector("string[name='text_hint_M_name']")?.textContent
+      doc.querySelector("string[name='text_hint_M_name']")?.textContent ||
+        "Enter Middle Name"
     );
     setText_L_name(
-      doc.querySelector("string[name='text_L_name']")?.textContent
+      doc.querySelector("string[name='text_L_name']")?.textContent ||
+        "Last Name"
     );
     setText_hint_L_name(
-      doc.querySelector("string[name='text_hint_L_name']")?.textContent
+      doc.querySelector("string[name='text_hint_L_name']")?.textContent ||
+        "Enter Last Name"
     );
     seTtext_address_1(
-      doc.querySelector("string[name='text_address_1']")?.textContent
+      doc.querySelector("string[name='text_address_1']")?.textContent ||
+        "Address 1"
     );
     seTtext_address_2(
-      doc.querySelector("string[name='text_address_2']")?.textContent
+      doc.querySelector("string[name='text_address_2']")?.textContent ||
+        "Address 2"
     );
     seTtext_hint_address_1(
-      doc.querySelector("string[name='text_hint_address_1']")?.textContent
+      doc.querySelector("string[name='text_hint_address_1']")?.textContent ||
+        "Enter Street 1"
     );
     seTtext_hint_address_2(
-      doc.querySelector("string[name='text_hint_address_2']")?.textContent
+      doc.querySelector("string[name='text_hint_address_2']")?.textContent ||
+        "Enter Street 2"
     );
     setText_country(
-      doc.querySelector("string[name='text_country']")?.textContent
+      doc.querySelector("string[name='text_country']")?.textContent || "Country"
     );
-    setText_state(doc.querySelector("string[name='text_state']")?.textContent);
+    setText_state(
+      doc.querySelector("string[name='text_state']")?.textContent || "State"
+    );
 
     setText_zip_code(
-      doc.querySelector("string[name='text_zip_code']")?.textContent
+      doc.querySelector("string[name='text_zip_code']")?.textContent ||
+        "Zip Code"
     );
     setText_hint_zip_code(
-      doc.querySelector("string[name='text_hint_zip_code']")?.textContent
+      doc.querySelector("string[name='text_hint_zip_code']")?.textContent ||
+        "Enter Zip Code"
     );
 
-    setText_phone(doc.querySelector("string[name='text_phone']")?.textContent);
+    setText_phone(
+      doc.querySelector("string[name='text_phone']")?.textContent ||
+        "Personal Phone Number"
+    );
     setText_telephone(
-      doc.querySelector("string[name='text_telephone']")?.textContent
+      doc.querySelector("string[name='text_telephone']")?.textContent ||
+        "Company Telephone Number"
     );
     setText_Emerangecy_no(
-      doc.querySelector("string[name='text_Emerangecy_no']")?.textContent
+      doc.querySelector("string[name='text_Emerangecy_no']")?.textContent ||
+        "Emergency Contact Number"
     );
     setText_bank_name(
-      doc.querySelector("string[name='text_bank_name']")?.textContent
+      doc.querySelector("string[name='text_bank_name']")?.textContent ||
+        "Bank Name"
     );
     setHint_bank_name(
-      doc.querySelector("string[name='hint_bank_name']")?.textContent
+      doc.querySelector("string[name='hint_bank_name']")?.textContent ||
+        "Enter Your Bank Name"
     );
     setText_account_number(
-      doc.querySelector("string[name='text_account_number']")?.textContent
+      doc.querySelector("string[name='text_account_number']")?.textContent ||
+        "Account Number"
     );
     setHint_account_number(
-      doc.querySelector("string[name='hint_account_number']")?.textContent
+      doc.querySelector("string[name='hint_account_number']")?.textContent ||
+        "Enter Your Account Number"
     );
     setText_ifsc_code(
-      doc.querySelector("string[name='text_ifsc_code']")?.textContent
+      doc.querySelector("string[name='text_ifsc_code']")?.textContent ||
+        "IFSC Code"
     );
     setHint_ifsc_code(
-      doc.querySelector("string[name='hint_ifsc_code']")?.textContent
+      doc.querySelector("string[name='hint_ifsc_code']")?.textContent ||
+        "Enter Your IFSC Code"
     );
     setText_swift_code(
-      doc.querySelector("string[name='text_swift_code']")?.textContent
+      doc.querySelector("string[name='text_swift_code']")?.textContent ||
+        "Swift Code"
     );
     setHint_swift_code(
-      doc.querySelector("string[name='hint_swift_code']")?.textContent
+      doc.querySelector("string[name='hint_swift_code']")?.textContent ||
+        "Enter Your Swift Code"
     );
     setText_aba_code(
-      doc.querySelector("string[name='text_aba_code']")?.textContent
+      doc.querySelector("string[name='text_aba_code']")?.textContent ||
+        "ABA Code(USA)"
     );
     setHint_aba_code(
-      doc.querySelector("string[name='hint_aba_code']")?.textContent
+      doc.querySelector("string[name='hint_aba_code']")?.textContent ||
+        "Enter Your ABA Code"
     );
     setText_iban_code(
-      doc.querySelector("string[name='text_iban_code']")?.textContent
+      doc.querySelector("string[name='text_iban_code']")?.textContent ||
+        "IBAN Code(Europe)"
     );
     setHint_iban_code(
-      doc.querySelector("string[name='hint_iban_code']")?.textContent
+      doc.querySelector("string[name='hint_iban_code']")?.textContent ||
+        "Enter Your IBAN Code"
     );
     setText_id_number(
-      doc.querySelector("string[name='text_id_number']")?.textContent
+      doc.querySelector("string[name='text_id_number']")?.textContent ||
+        "Employee ID Number"
     );
     setText_hint_taxid_number(
-      doc.querySelector("string[name='text_hint_taxid_number']")?.textContent
+      doc.querySelector("string[name='text_hint_taxid_number']")?.textContent ||
+        "Enter Your Tax ID"
     );
-    setText_dob(doc.querySelector("string[name='text_dob']")?.textContent);
+    setText_dob(
+      doc.querySelector("string[name='text_dob']")?.textContent ||
+        "Date Of Birth"
+    );
     setText_merital_status(
-      doc.querySelector("string[name='text_merital_status']")?.textContent
+      doc.querySelector("string[name='text_merital_status']")?.textContent ||
+        "Marital Status"
     );
     setText_status_maried(
-      doc.querySelector("string[name='text_status_maried']")?.textContent
+      doc.querySelector("string[name='text_status_maried']")?.textContent ||
+        "Married"
     );
     setText_status_single(
-      doc.querySelector("string[name='text_status_single']")?.textContent
+      doc.querySelector("string[name='text_status_single']")?.textContent ||
+        "Single"
     );
     setText_ReportingTo(
-      doc.querySelector("string[name='text_reportingTo']")?.textContent
+      doc.querySelector("string[name='text_reportingTo']")?.textContent ||
+        "Reporting To"
     );
     setText_ExpenseApprove(
-      doc.querySelector("string[name='text_ExpenseApprove']")?.textContent
+      doc.querySelector("string[name='text_ExpenseApprove']")?.textContent ||
+        "Expense Approver"
     );
     setText_TimesheetApprove(
-      doc.querySelector("string[name='text_TimesheetApprove']")?.textContent
+      doc.querySelector("string[name='text_TimesheetApprove']")?.textContent ||
+        "TimeSheet Approver"
     );
     setText_VacationApprove(
-      doc.querySelector("string[name='text_VacationApprove']")?.textContent
+      doc.querySelector("string[name='text_VacationApprove']")?.textContent ||
+        "Vacation Approver"
     );
     setText_PurchaseApprove(
-      doc.querySelector("string[name='text_PurchaseApprove']")?.textContent
+      doc.querySelector("string[name='text_PurchaseApprove']")?.textContent ||
+        "Purchase Approver"
     );
     setText_PerformanceAppraiser(
-      doc.querySelector("string[name='text_performanceAppraiser']")?.textContent
+      doc.querySelector("string[name='text_performanceAppraiser']")
+        ?.textContent || "Performance Appraiser"
     );
     setText_currency(
-      doc.querySelector("string[name='text_currency']")?.textContent
+      doc.querySelector("string[name='text_currency']")?.textContent ||
+        "Select Currency"
     );
     setText_Amount(
-      doc.querySelector("string[name='text_Amount']")?.textContent
+      doc.querySelector("string[name='text_Amount']")?.textContent || "Amount"
     );
 
     setText_employee(
-      doc.querySelector("string[name='text_employee']")?.textContent
+      doc.querySelector("string[name='text_employee']")?.textContent ||
+        "Employee"
     );
     setText_role_admin(
-      doc.querySelector("string[name='text_role_admin']")?.textContent
+      doc.querySelector("string[name='text_role_admin']")?.textContent ||
+        "Admin"
     );
     setText_role_superadmin(
-      doc.querySelector("string[name='text_role_superadmin']")?.textContent
+      doc.querySelector("string[name='text_role_superadmin']")?.textContent ||
+        "Super Admin"
     );
     setTitle_salary_breakup(
-      doc.querySelector("string[name='title_salary_breakup']")?.textContent
+      doc.querySelector("string[name='title_salary_breakup']")?.textContent ||
+        "Salary Breakup"
     );
 
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setText_resendemail(
-      doc.querySelector("string[name='text_resendemail']")?.textContent
+      doc.querySelector("string[name='text_resendemail']")?.textContent ||
+        "Resend Email"
     );
     setText_pendingver(
-      doc.querySelector("string[name='text_pendingver']")?.textContent
+      doc.querySelector("string[name='text_pendingver']")?.textContent ||
+        "Pending Verification"
     );
     setText_company_email(
-      doc.querySelector("string[name='text_company_email']")?.textContent
+      doc.querySelector("string[name='text_company_email']")?.textContent ||
+        "Company Email"
     );
     setText_customizemonthsalary(
-      doc.querySelector("string[name='text_customizemonthsalary']")?.textContent
+      doc.querySelector("string[name='text_customizemonthsalary']")
+        ?.textContent || "Customize Monthly Salary"
     );
     settext_fileName(
-      doc.querySelector("string[name='text_fileName']")?.textContent
+      doc.querySelector("string[name='text_fileName']")?.textContent ||
+        "File Name"
     );
     settext_upload(
-      doc.querySelector("string[name='text_upload']")?.textContent
+      doc.querySelector("string[name='text_upload']")?.textContent || "Upload"
     );
     setText_earning(
-      doc.querySelector("string[name='text_earning']")?.textContent
+      doc.querySelector("string[name='text_earning']")?.textContent || "Earning"
     );
     setText_grosssalary(
-      doc.querySelector("string[name='text_grosssalary']")?.textContent
+      doc.querySelector("string[name='text_grosssalary']")?.textContent ||
+        "Gross Salary"
     );
     setText_totaldeduction(
-      doc.querySelector("string[name='text_totaldeduction']")?.textContent
+      doc.querySelector("string[name='text_totaldeduction']")?.textContent ||
+        "Total deduction"
     );
     setText_salarybreakuptemp(
-      doc.querySelector("string[name='text_salarybreakuptemp']")?.textContent
+      doc.querySelector("string[name='text_salarybreakuptemp']")?.textContent ||
+        "Select Salary Breakup Template"
     );
     setText_createtemp(
-      doc.querySelector("string[name='text_createtemp']")?.textContent
+      doc.querySelector("string[name='text_createtemp']")?.textContent ||
+        "Create New Template"
     );
     setTitle_allowance(
-      doc.querySelector("string[name='title_allowance']")?.textContent
+      doc.querySelector("string[name='title_allowance']")?.textContent ||
+        "Allowance"
     );
     setTitle_deduction(
-      doc.querySelector("string[name='title_deduction']")?.textContent
+      doc.querySelector("string[name='title_deduction']")?.textContent ||
+        "Deduction"
     );
-    setText_tax(doc.querySelector("string[name='text_tax']")?.textContent);
+    setText_tax(
+      doc.querySelector("string[name='text_tax']")?.textContent || "Tax"
+    );
     setText_personal_email(
-      doc.querySelector("string[name='text_personal_email']")?.textContent
+      doc.querySelector("string[name='text_personal_email']")?.textContent ||
+        "Personal Email"
     );
     settext_addchoosefile(
-      doc.querySelector("string[name='text_addchoosefile']")?.textContent
+      doc.querySelector("string[name='text_addchoosefile']")?.textContent ||
+        "choose file"
     );
     setText_salarystatus(
-      doc.querySelector("string[name='text_salarystatus']")?.textContent
+      doc.querySelector("string[name='text_salarystatus']")?.textContent ||
+        "Salary Status"
     );
     setText_select(
-      doc.querySelector("string[name='text_select']")?.textContent
+      doc.querySelector("string[name='text_select']")?.textContent || "Select"
     );
     setText_JobStatus(
-      doc.querySelector("string[name='text_JobStatus']")?.textContent
+      doc.querySelector("string[name='text_JobStatus']")?.textContent ||
+        "Job Status"
     );
     setComp_text_telephone(
-      doc.querySelector("string[name='comp_text_telephone']")?.textContent
+      doc.querySelector("string[name='comp_text_telephone']")?.textContent ||
+        "Enter Company Telephone Number"
     );
     setPersnalphoneph_text(
-      doc.querySelector("string[name='persnalphoneph_text']")?.textContent
+      doc.querySelector("string[name='persnalphoneph_text']")?.textContent ||
+        "Enter Personal Phone Number"
     );
     setEmergencycontctph_text(
-      doc.querySelector("string[name='emergencycontctph_text']")?.textContent
+      doc.querySelector("string[name='emergencycontctph_text']")?.textContent ||
+        "Enter Emergency Contact Number"
     );
     setText_err_roletype(
-      doc.querySelector("string[name='text_err_roletype']")?.textContent
+      doc.querySelector("string[name='text_err_roletype']")?.textContent ||
+        "Please Select Role Type"
     );
     setText_err_designation(
-      doc.querySelector("string[name='text_err_designation']")?.textContent
+      doc.querySelector("string[name='text_err_designation']")?.textContent ||
+        "Please Select Designation"
     );
     setText_err_salarytype(
-      doc.querySelector("string[name='text_err_salarytype']")?.textContent
+      doc.querySelector("string[name='text_err_salarytype']")?.textContent ||
+        "Please Select Salary Type"
     );
     setProfileapprove_text(
-      doc.querySelector("string[name='profileapprove_text']")?.textContent
+      doc.querySelector("string[name='profileapprove_text']")?.textContent ||
+        "Please Select Profile Approver"
     );
     setText_err_crypto_currency(
-      doc.querySelector("string[name='text_err_crypto_currency']")?.textContent
+      doc.querySelector("string[name='text_err_crypto_currency']")
+        ?.textContent || "Please Select Currency"
     );
     setText_err_firstnamev3(
-      doc.querySelector("string[name='text_err_firstnamev3']")?.textContent
+      doc.querySelector("string[name='text_err_firstnamev3']")?.textContent ||
+        "Please Enter First Name"
     );
     setText_err_lastnamev3(
-      doc.querySelector("string[name='text_err_lastnamev3']")?.textContent
+      doc.querySelector("string[name='text_err_lastnamev3']")?.textContent ||
+        "Please Enter Last Name"
     );
     setAddprofile_approvetext(
-      doc.querySelector("string[name='addprofile_approvetext']")?.textContent
+      doc.querySelector("string[name='addprofile_approvetext']")?.textContent ||
+        "Profile Approver"
     );
     settds_approvertext(
-      doc.querySelector("string[name='addtds_approvertext']")?.textContent
+      doc.querySelector("string[name='addtds_approvertext']")?.textContent ||
+        "TDS Approver"
     );
     setAddany_test(
-      doc.querySelector("string[name='addany_test']")?.textContent
+      doc.querySelector("string[name='addany_test']")?.textContent ||
+        "Select Any"
     );
     setText_statev3(
-      doc.querySelector("string[name='text_statev3']")?.textContent
+      doc.querySelector("string[name='text_statev3']")?.textContent ||
+        "Select a State"
     );
     setAddpro_picture(
-      doc.querySelector("string[name='addpro_picture']")?.textContent
+      doc.querySelector("string[name='addpro_picture']")?.textContent ||
+        "Upload Profile Picture"
     );
     setText_netsalary(
-      doc.querySelector("string[name='text_netsalary']")?.textContent
+      doc.querySelector("string[name='text_netsalary']")?.textContent ||
+        "Net Salary"
     );
     setText_addperemail(
-      doc.querySelector("string[name='text_addperemail']")?.textContent
+      doc.querySelector("string[name='text_addperemail']")?.textContent ||
+        "Enter Your Personal Email"
     );
     setText_addcompemail(
-      doc.querySelector("string[name='text_addcompemail']")?.textContent
+      doc.querySelector("string[name='text_addcompemail']")?.textContent ||
+        "Enter Your Company Email"
     );
     setText_loanapprover(
-      doc.querySelector("string[name='text_loanapprover']")?.textContent
+      doc.querySelector("string[name='text_loanapprover']")?.textContent ||
+        "Loan Approver"
     );
     setEnter_valid_email(
-      doc.querySelector("string[name='enter_valid_email']")?.textContent
+      doc.querySelector("string[name='enter_valid_email']")?.textContent ||
+        "Please Enter Valid Email"
     );
     setText_effectiveform(
-      doc.querySelector("string[name='text_effectiveform']")?.textContent
+      doc.querySelector("string[name='text_effectiveform']")?.textContent ||
+        "Salary Effective From"
     );
     setAppraisal_duedate(
-      doc.querySelector("string[name='appraisal_duedate']")?.textContent
+      doc.querySelector("string[name='appraisal_duedate']")?.textContent ||
+        "Appraisal Due Date"
     );
     setText_provided_Annualday(
-      doc.querySelector("string[name='text_provided_Annualday']")?.textContent
+      doc.querySelector("string[name='text_provided_Annualday']")
+        ?.textContent || "Provided Annual Vacation Days"
     );
     setCompanyemail_val(
-      doc.querySelector("string[name='companyemail_val']")?.textContent
+      doc.querySelector("string[name='companyemail_val']")?.textContent ||
+        "Please Enter Company Email"
     );
     setPersonalemail_val(
-      doc.querySelector("string[name='personalemail_val']")?.textContent
+      doc.querySelector("string[name='personalemail_val']")?.textContent ||
+        "Please Enter Personal Email"
     );
     setTitle_eee_employee(
-      doc.querySelector("string[name='title_eee_employee']")?.textContent
+      doc.querySelector("string[name='title_eee_employee']")?.textContent ||
+        "Edit Employee"
     );
     setText_Gender(
       doc.querySelector("string[name='text_gender']")?.textContent || "Gender"
@@ -2451,10 +2558,12 @@ function AddstaffWIP() {
       doc.querySelector("string[name='text_female']")?.textContent || "Female"
     );
     setText_request(
-      doc.querySelector("string[name='text_request']")?.textContent
+      doc.querySelector("string[name='text_request']")?.textContent ||
+        "Thanks! Your Request Generated Successfully. PleaseContact"
     );
     setText_approval(
-      doc.querySelector("string[name='text_approval']")?.textContent
+      doc.querySelector("string[name='text_approval']")?.textContent ||
+        "For Approval Status"
     );
   };
   useEffect(() => {

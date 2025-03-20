@@ -37,13 +37,16 @@ function Report() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_expenser(
-      doc.querySelector("string[name='text_expenser']")?.textContent
+      doc.querySelector("string[name='text_expenser']")?.textContent ||
+        "Expense Report"
     );
     setText_inventoryData(
-      doc.querySelector("string[name='text_inventoryData']")?.textContent
+      doc.querySelector("string[name='text_inventoryData']")?.textContent ||
+        "Inventory Data"
     );
     setText_subscriptionData(
-      doc.querySelector("string[name='text_subscriptionData']")?.textContent
+      doc.querySelector("string[name='text_subscriptionData']")?.textContent ||
+        "Subscription Data"
     );
   };
   useEffect(() => {

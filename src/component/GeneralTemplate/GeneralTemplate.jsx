@@ -41,19 +41,24 @@ function GeneralTemplate() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_invoice_template(
-      doc.querySelector("string[name='text_invoice_template']")?.textContent
+      doc.querySelector("string[name='text_invoice_template']")?.textContent ||
+        "Invoice Template"
     );
     setText_bill_template(
-      doc.querySelector("string[name='text_bill_template']")?.textContent
+      doc.querySelector("string[name='text_bill_template']")?.textContent ||
+        "Bill Template"
     );
     setTitle_ExpTemp(
-      doc.querySelector("string[name='title_ExpTemp']")?.textContent
+      doc.querySelector("string[name='title_ExpTemp']")?.textContent ||
+        "Expense Template"
     );
     setTitle_InvenTemp(
-      doc.querySelector("string[name='title_InvenTemp']")?.textContent
+      doc.querySelector("string[name='title_InvenTemp']")?.textContent ||
+        "Inventory Template"
     );
     setTitle_SubTemp(
-      doc.querySelector("string[name='title_SubTemp']")?.textContent
+      doc.querySelector("string[name='title_SubTemp']")?.textContent ||
+        "Subscription Template"
     );
   };
   useEffect(() => {

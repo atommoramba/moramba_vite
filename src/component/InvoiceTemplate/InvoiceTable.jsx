@@ -125,31 +125,43 @@ function InvoiceTable() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setInvoiceListText(
-      doc.querySelector("string[name='InvoiceListText']")?.textContent
+      doc.querySelector("string[name='InvoiceListText']")?.textContent ||
+        "Invoice List"
     );
-    setText_Sno(doc.querySelector("string[name='text_Sno']")?.textContent);
+    setText_Sno(
+      doc.querySelector("string[name='text_Sno']")?.textContent || "Sr No"
+    );
     setText_create(
-      doc.querySelector("string[name='text_create']")?.textContent
+      doc.querySelector("string[name='text_create']")?.textContent || "Create"
     );
-    setbtn_view(doc.querySelector("string[name='btn_view']")?.textContent);
+    setbtn_view(
+      doc.querySelector("string[name='btn_view']")?.textContent || "View"
+    );
     setText_customer_name(
-      doc.querySelector("string[name='text_customer_name']")?.textContent
+      doc.querySelector("string[name='text_customer_name']")?.textContent ||
+        "Customer Name"
     );
     setText_view_invoice(
-      doc.querySelector("string[name='text_view_invoice']")?.textContent
+      doc.querySelector("string[name='text_view_invoice']")?.textContent ||
+        "View Invoice"
     );
     setText_invoiceid(
-      doc.querySelector("string[name='text_invoiceid']")?.textContent
+      doc.querySelector("string[name='text_invoiceid']")?.textContent ||
+        "Invoice ID"
     );
-    setText_date(doc.querySelector("string[name='text_date']")?.textContent);
+    setText_date(
+      doc.querySelector("string[name='text_date']")?.textContent || "Date"
+    );
     setText_Amount(
-      doc.querySelector("string[name='text_Amount']")?.textContent
+      doc.querySelector("string[name='text_Amount']")?.textContent || "Amount"
     );
     setText_duedate(
-      doc.querySelector("string[name='text_duedate']")?.textContent
+      doc.querySelector("string[name='text_duedate']")?.textContent ||
+        "Due Date"
     );
     setInvoicetext_search(
-      doc.querySelector("string[name='invoicetext_search']")?.textContent
+      doc.querySelector("string[name='invoicetext_search']")?.textContent ||
+        "Search Invoice..."
     );
   };
   useEffect(() => {

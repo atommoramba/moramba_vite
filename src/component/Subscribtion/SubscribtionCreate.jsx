@@ -112,82 +112,106 @@ function SubscribtionCreate() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setText_addsubscription(
-      doc.querySelector("string[name='text_addsubscription']")?.textContent
+      doc.querySelector("string[name='text_addsubscription']")?.textContent ||
+        "Add Subscription Data"
     );
     setText_subscriptionfile(
-      doc.querySelector("string[name='text_subscriptionfile']")?.textContent
+      doc.querySelector("string[name='text_subscriptionfile']")?.textContent ||
+        "Subscription File Name"
     );
     setText_subscriptionid(
-      doc.querySelector("string[name='text_subscriptionid']")?.textContent
+      doc.querySelector("string[name='text_subscriptionid']")?.textContent ||
+        "Subscription File ID"
     );
     setText_btn_addSubscription(
-      doc.querySelector("string[name='text_btn_addSubscription']")?.textContent
+      doc.querySelector("string[name='text_btn_addSubscription']")
+        ?.textContent || "Create Subscription"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setText_ph_fileID(
-      doc.querySelector("string[name='text_ph_fileID']")?.textContent
+      doc.querySelector("string[name='text_ph_fileID']")?.textContent ||
+        "Enter File ID"
     );
     setDeptIDTextV3(
-      doc.querySelector("string[name='DeptIDTextV3']")?.textContent
+      doc.querySelector("string[name='DeptIDTextV3']")?.textContent ||
+        "Department ID"
     );
     setProjectIDTextv3(
-      doc.querySelector("string[name='ProjectIDTextv3']")?.textContent
+      doc.querySelector("string[name='ProjectIDTextv3']")?.textContent ||
+        "Project ID"
     );
     setCustomerIDTextv3(
-      doc.querySelector("string[name='CustomerIDTextv3']")?.textContent
+      doc.querySelector("string[name='CustomerIDTextv3']")?.textContent ||
+        "Customer ID"
     );
     setUpdate_data(
-      doc.querySelector("string[name='update_data']")?.textContent
+      doc.querySelector("string[name='update_data']")?.textContent ||
+        "Update Data"
     );
     setText_update(
-      doc.querySelector("string[name='text_update']")?.textContent
+      doc.querySelector("string[name='text_update']")?.textContent || "Update"
     );
 
     setText_addnewdata(
-      doc.querySelector("string[name='text_addnewdata']")?.textContent
+      doc.querySelector("string[name='text_addnewdata']")?.textContent ||
+        "Add New Data"
     );
-    setViewtempv3(doc.querySelector("string[name='viewtempv3']")?.textContent);
+    setViewtempv3(
+      doc.querySelector("string[name='viewtempv3']")?.textContent ||
+        "View Template"
+    );
     setText_temp_name(
-      doc.querySelector("string[name='text_temp_name']")?.textContent
+      doc.querySelector("string[name='text_temp_name']")?.textContent ||
+        "Template Name"
     );
     setText_subscription_filename(
       doc.querySelector("string[name='text_subscription_filename']")
-        ?.textContent
+        ?.textContent || "Enter Subscription File Name"
     );
     setText_date_subscription(
-      doc.querySelector("string[name='text_date_subscription']")?.textContent
+      doc.querySelector("string[name='text_date_subscription']")?.textContent ||
+        "Subscription Date"
     );
     setText_errsubscfile(
-      doc.querySelector("string[name='text_errsubscfile']")?.textContent
+      doc.querySelector("string[name='text_errsubscfile']")?.textContent ||
+        "Please Enter Subscription File Name"
     );
     setSubscription_viewv3(
-      doc.querySelector("string[name='subscription_viewv3']")?.textContent
+      doc.querySelector("string[name='subscription_viewv3']")?.textContent ||
+        "View Subscription Template"
     );
     setDeptid_textph(
-      doc.querySelector("string[name='deptid_textph']")?.textContent
+      doc.querySelector("string[name='deptid_textph']")?.textContent ||
+        "Enter Department ID"
     );
     setProjectid_textph(
-      doc.querySelector("string[name='projectid_textph']")?.textContent
+      doc.querySelector("string[name='projectid_textph']")?.textContent ||
+        "Enter Project ID"
     );
     setCustomerid_text(
-      doc.querySelector("string[name='customerid_text']")?.textContent
+      doc.querySelector("string[name='customerid_text']")?.textContent ||
+        "Enter Customer ID"
     );
     setSubacription_reportv3(
-      doc.querySelector("string[name='subacription_reportv3']")?.textContent
+      doc.querySelector("string[name='subacription_reportv3']")?.textContent ||
+        "Subscription Report Template"
     );
     setPreparedby_text(
-      doc.querySelector("string[name='preparedby_text']")?.textContent
+      doc.querySelector("string[name='preparedby_text']")?.textContent ||
+        "Prepared By"
     );
     setSubscription_seltemp(
-      doc.querySelector("string[name='subscription_seltemp']")?.textContent
+      doc.querySelector("string[name='subscription_seltemp']")?.textContent ||
+        "Select Subscription Template"
     );
     setInvoice_errcurrency(
-      doc.querySelector("string[name='invoice_errcurrency']")?.textContent
+      doc.querySelector("string[name='invoice_errcurrency']")?.textContent ||
+        "Please Select Currency"
     );
   };
   useEffect(() => {

@@ -28,7 +28,8 @@ function ViewBillTemplate() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setTextbill_temp(
-      doc.querySelector("string[name='textbill_temp']")?.textContent
+      doc.querySelector("string[name='textbill_temp']")?.textContent ||
+        "View Bill Template"
     );
   };
   useEffect(() => {

@@ -23,13 +23,15 @@ function ViewExpenseTemplate() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setView_expense_text(
-      doc.querySelector("string[name='view_expense_text']")?.textContent
+      doc.querySelector("string[name='view_expense_text']")?.textContent ||
+        "View Expense Template"
     );
     setText_temp_name(
-      doc.querySelector("string[name='text_temp_name']")?.textContent
+      doc.querySelector("string[name='text_temp_name']")?.textContent ||
+        "Template Name"
     );
     setText_go_back(
-      doc.querySelector("string[name='text_go_back']")?.textContent
+      doc.querySelector("string[name='text_go_back']")?.textContent || "Go Back"
     );
   };
   useEffect(() => {

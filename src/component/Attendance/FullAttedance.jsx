@@ -173,11 +173,15 @@ function FullAttedance() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_emp_name(
-      doc.querySelector("string[name='text_emp_name']")?.textContent
+      doc.querySelector("string[name='text_emp_name']")?.textContent ||
+        "Employee Name"
     );
-    setText_Sno(doc.querySelector("string[name='text_Sno']")?.textContent);
+    setText_Sno(
+      doc.querySelector("string[name='text_Sno']")?.textContent || "Sr No"
+    );
     setText_fullattenview(
-      doc.querySelector("string[name='text_fullattenview']")?.textContent
+      doc.querySelector("string[name='text_fullattenview']")?.textContent ||
+        "Attendance View of"
     );
   };
   return (

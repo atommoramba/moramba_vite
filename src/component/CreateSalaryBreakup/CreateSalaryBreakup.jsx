@@ -317,50 +317,65 @@ function CreateSalaryBreakup() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_temp_name(
-      doc.querySelector("string[name='text_temp_name']")?.textContent
+      doc.querySelector("string[name='text_temp_name']")?.textContent ||
+        "Template Name"
     );
     setTitle_allowance(
-      doc.querySelector("string[name='title_allowance']")?.textContent
+      doc.querySelector("string[name='title_allowance']")?.textContent ||
+        "Allowance"
     );
     setTitle_deduction(
-      doc.querySelector("string[name='title_deduction']")?.textContent
+      doc.querySelector("string[name='title_deduction']")?.textContent ||
+        "Deduction"
     );
-    setText_tax(doc.querySelector("string[name='text_tax']")?.textContent);
+    setText_tax(
+      doc.querySelector("string[name='text_tax']")?.textContent || "Tax"
+    );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setText_enter_template(
-      doc.querySelector("string[name='text_Enter_template']")?.textContent
+      doc.querySelector("string[name='text_Enter_template']")?.textContent ||
+        "Enter Template Name"
     );
     setText_selCountry(
-      doc.querySelector("string[name='text_selCountry']")?.textContent
+      doc.querySelector("string[name='text_selCountry']")?.textContent ||
+        "Select Country"
     );
     setText_createsalarybreakup(
-      doc.querySelector("string[name='text_createsalarybreakup']")?.textContent
+      doc.querySelector("string[name='text_createsalarybreakup']")
+        ?.textContent || "Create Salary Breakup Template"
     );
     setText_Selstate(
-      doc.querySelector("string[name='text_Selstate']")?.textContent
+      doc.querySelector("string[name='text_Selstate']")?.textContent ||
+        "Select State"
     );
     setText_mandatorysalary(
-      doc.querySelector("string[name='text_mandatorysalary']")?.textContent
+      doc.querySelector("string[name='text_mandatorysalary']")?.textContent ||
+        "Mandatory"
     );
     setText_Ph_selCountry(
-      doc.querySelector("string[name='text_Ph_selCountry']")?.textContent
+      doc.querySelector("string[name='text_Ph_selCountry']")?.textContent ||
+        "Select a Country"
     );
     setText_statev3(
-      doc.querySelector("string[name='text_statev3']")?.textContent
+      doc.querySelector("string[name='text_statev3']")?.textContent ||
+        "Select a State"
     );
     setText_err_enter_state(
-      doc.querySelector("string[name='text_err_enter_state']")?.textContent
+      doc.querySelector("string[name='text_err_enter_state']")?.textContent ||
+        "Please Select State"
     );
     setErr_selCountry(
-      doc.querySelector("string[name='err_selCountry']")?.textContent
+      doc.querySelector("string[name='err_selCountry']")?.textContent ||
+        "Please Select Country"
     );
     setText_err_template(
-      doc.querySelector("string[name='text_err_template']")?.textContent
+      doc.querySelector("string[name='text_err_template']")?.textContent ||
+        "Please Enter Template Name"
     );
   };
 

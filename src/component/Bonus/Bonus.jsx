@@ -70,49 +70,68 @@ function Bonus() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_description(
-      doc.querySelector("string[name='text_description']")?.textContent
+      doc.querySelector("string[name='text_description']")?.textContent ||
+        "Description"
     );
-    setText_date(doc.querySelector("string[name='text_date']")?.textContent);
+    setText_date(
+      doc.querySelector("string[name='text_date']")?.textContent || "Date"
+    );
     setText_Amount(
-      doc.querySelector("string[name='text_Amount']")?.textContent
+      doc.querySelector("string[name='text_Amount']")?.textContent || "Amount"
     );
-    setCancleBtn(doc.querySelector("string[name='cancleBtn']")?.textContent);
+    setCancleBtn(
+      doc.querySelector("string[name='cancleBtn']")?.textContent || "Cancel"
+    );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setText_update(
-      doc.querySelector("string[name='text_update']")?.textContent
+      doc.querySelector("string[name='text_update']")?.textContent || "Update"
     );
     setText_delete(
-      doc.querySelector("string[name='text_delete']")?.textContent
+      doc.querySelector("string[name='text_delete']")?.textContent || "Delete"
     );
-    setText_edit(doc.querySelector("string[name='text_edit']")?.textContent);
-    setText_Sno(doc.querySelector("string[name='text_Sno']")?.textContent);
+    setText_edit(
+      doc.querySelector("string[name='text_edit']")?.textContent || "Edit"
+    );
+    setText_Sno(
+      doc.querySelector("string[name='text_Sno']")?.textContent || "Sr No"
+    );
 
     setText_emp_name(
-      doc.querySelector("string[name='text_emp_name']")?.textContent
+      doc.querySelector("string[name='text_emp_name']")?.textContent ||
+        "Employee Name"
     );
     setPlease_enter_amount(
-      doc.querySelector("string[name='please_enter_amount']")?.textContent
+      doc.querySelector("string[name='please_enter_amount']")?.textContent ||
+        "Please Enter Amount"
     );
     setSelect_employee(
-      doc.querySelector("string[name='select_employee']")?.textContent
+      doc.querySelector("string[name='select_employee']")?.textContent ||
+        "Please Select Employee"
     );
     setText_description_ph(
-      doc.querySelector("string[name='text_description_ph']")?.textContent
+      doc.querySelector("string[name='text_description_ph']")?.textContent ||
+        "Enter Description"
     );
     setText_Currency(
-      doc.querySelector("string[name='text_Currency']")?.textContent
+      doc.querySelector("string[name='text_Currency']")?.textContent ||
+        "Currency"
     );
     setText_SelectEmployee(
-      doc.querySelector("string[name='text_selectEmployee']")?.textContent
+      doc.querySelector("string[name='text_selectEmployee']")?.textContent ||
+        "Select Employee"
     );
     setText_currency(
-      doc.querySelector("string[name='text_currency']")?.textContent
+      doc.querySelector("string[name='text_currency']")?.textContent ||
+        "Select Currency"
     );
-    settextbonus(doc.querySelector("string[name='txtbonus']")?.textContent);
+    settextbonus(
+      doc.querySelector("string[name='txtbonus']")?.textContent || "Bonus"
+    );
     setText_enter_amount(
-      doc.querySelector("string[name='text_enter_amount']")?.textContent
+      doc.querySelector("string[name='text_enter_amount']")?.textContent ||
+        "Enter Amount"
     );
   };
   useEffect(() => {

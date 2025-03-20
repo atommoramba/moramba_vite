@@ -49,22 +49,28 @@ function EmpSelectedBenefits() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setText_personalins(
-      doc.querySelector("string[name='text_personalins']")?.textContent
+      doc.querySelector("string[name='text_personalins']")?.textContent ||
+        "Personal Insurance"
     );
     setText_businessins(
-      doc.querySelector("string[name='text_businessins']")?.textContent
+      doc.querySelector("string[name='text_businessins']")?.textContent ||
+        "Business Insurance"
     );
     setText_foodins(
-      doc.querySelector("string[name='text_foodins']")?.textContent
+      doc.querySelector("string[name='text_foodins']")?.textContent ||
+        "Food Benefits"
     );
     settext_TravelBenefits(
-      doc.querySelector("string[name='text_TravelBenefits']")?.textContent
+      doc.querySelector("string[name='text_TravelBenefits']")?.textContent ||
+        "Travel Benefits"
     );
     settext_Companybenefits(
-      doc.querySelector("string[name='text_Companybenefits']")?.textContent
+      doc.querySelector("string[name='text_Companybenefits']")?.textContent ||
+        "Company Benefits"
     );
     settext_Empselbenefits(
-      doc.querySelector("string[name='text_Empselbenefits']")?.textContent
+      doc.querySelector("string[name='text_Empselbenefits']")?.textContent ||
+        "Employee Selected Benefits"
     );
   };
   useEffect(() => {

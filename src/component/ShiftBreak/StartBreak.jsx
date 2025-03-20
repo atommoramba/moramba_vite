@@ -832,22 +832,28 @@ function StartBreak() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_start_time(
-      doc.querySelector("string[name='text_start_time']")?.textContent
+      doc.querySelector("string[name='text_start_time']")?.textContent ||
+        "Start Time"
     );
     setText_end_time(
-      doc.querySelector("string[name='text_end_time']")?.textContent
+      doc.querySelector("string[name='text_end_time']")?.textContent ||
+        "End Time"
     );
     setText_toal_break_taken(
-      doc.querySelector("string[name='text_toal_break_taken']")?.textContent
+      doc.querySelector("string[name='text_toal_break_taken']")?.textContent ||
+        "Total break taken"
     );
     setBreakStartText(
-      doc.querySelector("string[name='BreakStartText']")?.textContent
+      doc.querySelector("string[name='BreakStartText']")?.textContent ||
+        "Break Start"
     );
     setBreakEndText(
-      doc.querySelector("string[name='BreakEndText']")?.textContent
+      doc.querySelector("string[name='BreakEndText']")?.textContent ||
+        "Break End"
     );
     setBreakNoText(
-      doc.querySelector("string[name='BreakNoText']")?.textContent
+      doc.querySelector("string[name='BreakNoText']")?.textContent ||
+        "Break No."
     );
     // setText_Break(
     //   doc.querySelector("string[name='text_break']")?.textContent

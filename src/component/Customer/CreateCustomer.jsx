@@ -203,101 +203,131 @@ function CreateCustomer() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setText_customer_name(
-      doc.querySelector("string[name='text_customer_name']")?.textContent
+      doc.querySelector("string[name='text_customer_name']")?.textContent ||
+        "Customer Name"
     );
     setHint_customer_name(
-      doc.querySelector("string[name='hint_customer_name']")?.textContent
+      doc.querySelector("string[name='hint_customer_name']")?.textContent ||
+        "Enter Customer Name"
     );
     setText_country(
-      doc.querySelector("string[name='text_country']")?.textContent
+      doc.querySelector("string[name='text_country']")?.textContent || "Country"
     );
-    setText_state(doc.querySelector("string[name='text_state']")?.textContent);
+    setText_state(
+      doc.querySelector("string[name='text_state']")?.textContent || "State"
+    );
     setText_zip_code(
-      doc.querySelector("string[name='text_zip_code']")?.textContent
+      doc.querySelector("string[name='text_zip_code']")?.textContent ||
+        "Zip Code"
     );
     setText_hint_zip_code(
-      doc.querySelector("string[name='text_hint_zip_code']")?.textContent
+      doc.querySelector("string[name='text_hint_zip_code']")?.textContent ||
+        "Enter Zip Code"
     );
     setText_bank_name(
-      doc.querySelector("string[name='text_bank_name']")?.textContent
+      doc.querySelector("string[name='text_bank_name']")?.textContent ||
+        "Bank Name"
     );
     setText_bankaccount_number(
-      doc.querySelector("string[name='text_bankaccount_number']")?.textContent
+      doc.querySelector("string[name='text_bankaccount_number']")
+        ?.textContent || "Bank Account Number"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setText_crypto_wallet_add(
-      doc.querySelector("string[name='text_crypto_wallet_add']")?.textContent
+      doc.querySelector("string[name='text_crypto_wallet_add']")?.textContent ||
+        "Crypto Wallet Address"
     );
     setText_ph_crypto_wallet_add(
-      doc.querySelector("string[name='text_ph_crypto_wallet_add']")?.textContent
+      doc.querySelector("string[name='text_ph_crypto_wallet_add']")
+        ?.textContent || "Enter Crypto Wallet Address"
     );
     setText_create_customer(
-      doc.querySelector("string[name='text_create_customer']")?.textContent
+      doc.querySelector("string[name='text_create_customer']")?.textContent ||
+        "Create New Customer"
     );
     setText_customer_enter_add(
-      doc.querySelector("string[name='text_customer_enter_add']")?.textContent
+      doc.querySelector("string[name='text_customer_enter_add']")
+        ?.textContent || "Enter Customer Address"
     );
     setText_hint_bankacc_number(
-      doc.querySelector("string[name='text_hint_bankacc_number']")?.textContent
+      doc.querySelector("string[name='text_hint_bankacc_number']")
+        ?.textContent || "Enter Bank Account Number"
     );
     setText_hint_bank_name(
-      doc.querySelector("string[name='text_hint_bank_name']")?.textContent
+      doc.querySelector("string[name='text_hint_bank_name']")?.textContent ||
+        "Enter Bank Name"
     );
     seTtext_address_customer1(
-      doc.querySelector("string[name='text_address_customer1']")?.textContent
+      doc.querySelector("string[name='text_address_customer1']")?.textContent ||
+        "Customer Address 1"
     );
     seTtext_address_customer2(
-      doc.querySelector("string[name='text_address_customer2']")?.textContent
+      doc.querySelector("string[name='text_address_customer2']")?.textContent ||
+        "Customer Address 2"
     );
     setText_hint_email_customer(
-      doc.querySelector("string[name='text_hint_email_customer']")?.textContent
+      doc.querySelector("string[name='text_hint_email_customer']")
+        ?.textContent || "Enter Customer Email"
     );
     setText_customer_email(
-      doc.querySelector("string[name='text_customer_email']")?.textContent
+      doc.querySelector("string[name='text_customer_email']")?.textContent ||
+        "Customer Email"
     );
     setText_update(
-      doc.querySelector("string[name='text_update']")?.textContent
+      doc.querySelector("string[name='text_update']")?.textContent || "Update"
     );
     setCustomer_errname(
-      doc.querySelector("string[name='customer_errname']")?.textContent
+      doc.querySelector("string[name='customer_errname']")?.textContent ||
+        "Please Enter Customer Name"
     );
     setCustomer_erremail(
-      doc.querySelector("string[name='customer_erremail']")?.textContent
+      doc.querySelector("string[name='customer_erremail']")?.textContent ||
+        "Please Enter Customer Email"
     );
     setCustomer_erraddress(
-      doc.querySelector("string[name='customer_erraddress']")?.textContent
+      doc.querySelector("string[name='customer_erraddress']")?.textContent ||
+        "Please Enter Customer Address 1"
     );
     setCustomer_erraddtwo(
-      doc.querySelector("string[name='customer_erraddtwo']")?.textContent
+      doc.querySelector("string[name='customer_erraddtwo']")?.textContent ||
+        "Please Enter Customer Address 2!"
     );
     setText_err_bankname(
-      doc.querySelector("string[name='text_err_bankname']")?.textContent
+      doc.querySelector("string[name='text_err_bankname']")?.textContent ||
+        "Please Enter Bank Name"
     );
     setText_err_accnov3(
-      doc.querySelector("string[name='text_err_accnov3']")?.textContent
+      doc.querySelector("string[name='text_err_accnov3']")?.textContent ||
+        "Please Enter Bank Account Number"
     );
     setVendor_errcryptowall(
-      doc.querySelector("string[name='vendor_errcryptowall']")?.textContent
+      doc.querySelector("string[name='vendor_errcryptowall']")?.textContent ||
+        "Please Enter Crypto Wallet Address"
     );
     setVendor_errzipcode(
-      doc.querySelector("string[name='vendor_errzipcode']")?.textContent
+      doc.querySelector("string[name='vendor_errzipcode']")?.textContent ||
+        "Please Enter Zip Code"
     );
     setText_err_enter_state(
-      doc.querySelector("string[name='text_err_enter_state']")?.textContent
+      doc.querySelector("string[name='text_err_enter_state']")?.textContent ||
+        "Please Select State"
     );
     setText_statev3(
-      doc.querySelector("string[name='text_statev3']")?.textContent
+      doc.querySelector("string[name='text_statev3']")?.textContent ||
+        "Select a State"
     );
     setEnter_valid_email(
-      doc.querySelector("string[name='enter_valid_email']")?.textContent
+      doc.querySelector("string[name='enter_valid_email']")?.textContent ||
+        "Please Enter Valid Email"
     );
     sertext_edit_customer(
-      doc.querySelector("string[name='text_edit_customer']")?.textContent
+      doc.querySelector("string[name='text_edit_customer']")?.textContent ||
+        "Edit Customer"
     );
   };
   useEffect(() => {

@@ -161,27 +161,36 @@ function SubscribtionList() {
 
   const SetLanguageText = () => {
     var xml = localStorage.getItem(GlobalConstants.session_lang_xml);
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(xml, "text/xml");
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(xml, "text/xml");
     setText_subscriptionData(
-      doc.querySelector("string[name='text_subscriptionData']")?.textContent
+      doc.querySelector("string[name='text_subscriptionData']")?.textContent ||
+        "Subscription Data"
     );
     setText_fileName(
-      doc.querySelector("string[name='text_fileName']")?.textContent
+      doc.querySelector("string[name='text_fileName']")?.textContent ||
+        "File Name"
     );
     setText_fileId(
-      doc.querySelector("string[name='text_fileId']")?.textContent
+      doc.querySelector("string[name='text_fileId']")?.textContent || "File ID"
     );
     setText_createdon(
-      doc.querySelector("string[name='text_createdon']")?.textContent
+      doc.querySelector("string[name='text_createdon']")?.textContent ||
+        "Created on"
     );
-    setbtn_view(doc.querySelector("string[name='btn_view']")?.textContent);
+    setbtn_view(
+      doc.querySelector("string[name='btn_view']")?.textContent || "View"
+    );
     setCreate_sub_list(
-      doc.querySelector("string[name='create_sub_list']")?.textContent
+      doc.querySelector("string[name='create_sub_list']")?.textContent ||
+        "Create Subscription List"
     );
-    setText_srno(doc.querySelector("string[name='text_srno']")?.textContent);
+    setText_srno(
+      doc.querySelector("string[name='text_srno']")?.textContent || "Sr no"
+    );
     setText_search_template_here(
-      doc.querySelector("string[name='text_search_template_here']")?.textContent
+      doc.querySelector("string[name='text_search_template_here']")
+        ?.textContent || "Search Template Here..."
     );
   };
   useEffect(() => {

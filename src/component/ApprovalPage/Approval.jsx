@@ -26,15 +26,20 @@ function Approval() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setRequests_approve(
-      doc.querySelector("string[name='requests_approve']")?.textContent
+      doc.querySelector("string[name='requests_approve']")?.textContent ||
+        "Requests & Approvals"
     );
     setNew_request(
-      doc.querySelector("string[name='new_request']")?.textContent
+      doc.querySelector("string[name='new_request']")?.textContent ||
+        "New Request"
     );
     setApprovedtext(
-      doc.querySelector("string[name='approvedtext']")?.textContent
+      doc.querySelector("string[name='approvedtext']")?.textContent ||
+        "Approved"
     );
-    setRejecttext(doc.querySelector("string[name='rejecttext']")?.textContent);
+    setRejecttext(
+      doc.querySelector("string[name='rejecttext']")?.textContent || "Rejected"
+    );
   };
   useEffect(() => {
     try {

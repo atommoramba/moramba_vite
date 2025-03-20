@@ -143,12 +143,15 @@ function SubscribtionView() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setText_subscriptionData(
-      doc.querySelector("string[name='text_subscriptionData']")?.textContent
+      doc.querySelector("string[name='text_subscriptionData']")?.textContent ||
+        "Subscription Data"
     );
     setText_export(
-      doc.querySelector("string[name='text_export']")?.textContent
+      doc.querySelector("string[name='text_export']")?.textContent || "Export"
     );
-    setText_Sno(doc.querySelector("string[name='text_Sno']")?.textContent);
+    setText_Sno(
+      doc.querySelector("string[name='text_Sno']")?.textContent || "Sr No"
+    );
   };
   useEffect(() => {
     try {

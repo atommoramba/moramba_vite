@@ -963,40 +963,38 @@ function StartShift() {
 
   const SetLanguageText = () => {
     var xml = localStorage.getItem(GlobalConstants.session_lang_xml);
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(xml, "text/xml");
-
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(xml, "text/xml");
 
     setText_Shift_Start(
-      doc.querySelector("string[name='text_Shift_Start']")
-        ?.textContent
+      doc.querySelector("string[name='text_Shift_Start']")?.textContent ||
+        "Shift Start"
     );
     setText_Shift_end(
-      doc.querySelector("string[name='text_Shift_end']")?.textContent
-        
+      doc.querySelector("string[name='text_Shift_end']")?.textContent ||
+        "Shift End"
     );
     setText_start_time(
-      doc.querySelector("string[name='text_start_time']")
-        ?.textContent
+      doc.querySelector("string[name='text_start_time']")?.textContent ||
+        "Start Time"
     );
     setText_end_time(
-      doc.querySelector("string[name='text_end_time']")?.textContent
-        
+      doc.querySelector("string[name='text_end_time']")?.textContent ||
+        "End Time"
     );
     setText_totalcost(
-      doc.querySelector("string[name='text_totalcost']")?.textContent
-        
+      doc.querySelector("string[name='text_totalcost']")?.textContent || "Total"
     );
     setStartLocationText(
-      doc.querySelector("string[name='StartLocationText']")
-        ?.textContent
+      doc.querySelector("string[name='StartLocationText']")?.textContent ||
+        "Start Location"
     );
     setEndLocationText(
-      doc.querySelector("string[name='EndLocationText']")
-        ?.textContent
+      doc.querySelector("string[name='EndLocationText']")?.textContent ||
+        "End Location"
     );
     setHourText(
-      doc.querySelector("string[name='HourText']")?.textContent
+      doc.querySelector("string[name='HourText']")?.textContent || "Hour"
     );
   };
   useEffect(() => {

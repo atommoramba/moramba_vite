@@ -45,25 +45,31 @@ function CmpSelectedBenefits() {
   };
   const SetLanguageText = () => {
     var xml = localStorage.getItem(GlobalConstants.session_lang_xml);
-     const parser = new DOMParser();
-     const doc = parser.parseFromString(xml, "text/xml");
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(xml, "text/xml");
     setText_personalins(
-      doc.querySelector("string[name='text_personalins']")?.textContent
+      doc.querySelector("string[name='text_personalins']")?.textContent ||
+        "Personal Insurance"
     );
     setText_businessins(
-      doc.querySelector("string[name='text_businessins']")?.textContent
+      doc.querySelector("string[name='text_businessins']")?.textContent ||
+        "Business Insurance"
     );
     setText_foodins(
-      doc.querySelector("string[name='text_foodins']")?.textContent
+      doc.querySelector("string[name='text_foodins']")?.textContent ||
+        "Food Benefits"
     );
     settext_TravelBenefits(
-      doc.querySelector("string[name='text_TravelBenefits']")?.textContent
+      doc.querySelector("string[name='text_TravelBenefits']")?.textContent ||
+        "Travel Benefits"
     );
     settext_Combenefits(
-      doc.querySelector("string[name='text_Combenefits']")?.textContent
+      doc.querySelector("string[name='text_Combenefits']")?.textContent ||
+        "Company Selected Benefits"
     );
     settext_Custombenefits(
-      doc.querySelector("string[name='text_Custombenefits']")?.textContent
+      doc.querySelector("string[name='text_Custombenefits']")?.textContent ||
+        "My Custom Benefits"
     );
   };
   useEffect(() => {

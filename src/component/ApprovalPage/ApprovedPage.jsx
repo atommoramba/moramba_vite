@@ -222,18 +222,24 @@ function ApprovedPage() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setSearchPHText(
-      doc.querySelector("string[name='SearchPHText']")?.textContent
+      doc.querySelector("string[name='SearchPHText']")?.textContent ||
+        "Search Here..."
     );
-    setText_Sno(doc.querySelector("string[name='text_Sno']")?.textContent);
-    setText_date(doc.querySelector("string[name='text_date']")?.textContent);
+    setText_Sno(
+      doc.querySelector("string[name='text_Sno']")?.textContent || "Sr No"
+    );
+    setText_date(
+      doc.querySelector("string[name='text_date']")?.textContent || "Date"
+    );
     settext_status(
-      doc.querySelector("string[name='text_status']")?.textContent
+      doc.querySelector("string[name='text_status']")?.textContent || "Status"
     );
     setApprove_name(
-      doc.querySelector("string[name='approve_name']")?.textContent
+      doc.querySelector("string[name='approve_name']")?.textContent || "Name"
     );
     setApproved_req(
-      doc.querySelector("string[name='approved_req']")?.textContent
+      doc.querySelector("string[name='approved_req']")?.textContent ||
+        "Request For"
     );
   };
   useEffect(() => {

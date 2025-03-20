@@ -153,28 +153,35 @@ function CustomerList() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setText_create(
-      doc.querySelector("string[name='text_create']", doc)?.textContent
+      doc.querySelector("string[name='text_create']", doc)?.textContent ||
+        "Create"
     );
     setText_customer_name(
-      doc.querySelector("string[name='text_customer_name']", doc)?.textContent
+      doc.querySelector("string[name='text_customer_name']", doc)
+        ?.textContent || "Customer Name"
     );
     setText_srno(
-      doc.querySelector("string[name='text_srno']", doc)?.textContent
+      doc.querySelector("string[name='text_srno']", doc)?.textContent ||
+        "Sr no."
     );
     setText_hint_email(
-      doc.querySelector("string[name='text_hint_email']", doc)?.textContent
+      doc.querySelector("string[name='text_hint_email']", doc)?.textContent ||
+        "Email"
     );
     setText_edit(
-      doc.querySelector("string[name='text_edit']", doc)?.textContent
+      doc.querySelector("string[name='text_edit']", doc)?.textContent || "Edit"
     );
     setText_customer_list(
-      doc.querySelector("string[name='text_customer_list']", doc)?.textContent
+      doc.querySelector("string[name='text_customer_list']", doc)
+        ?.textContent || "Customer List"
     );
     setSearch_customer(
-      doc.querySelector("string[name='search_customer']", doc)?.textContent
+      doc.querySelector("string[name='search_customer']", doc)?.textContent ||
+        "Search Customer here..."
     );
     setText_delete(
-      doc.querySelector("string[name='text_delete']", doc)?.textContent
+      doc.querySelector("string[name='text_delete']", doc)?.textContent ||
+        "Delete"
     );
   };
   useEffect(() => {

@@ -348,58 +348,73 @@ function AddDailyTimesheet() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_selectdate(
-      doc.querySelector("string[name='text_selectdate']")?.textContent
+      doc.querySelector("string[name='text_selectdate']")?.textContent ||
+        "Select Date"
     );
     setText_time_in(
-      doc.querySelector("string[name='text_time_in']")?.textContent
+      doc.querySelector("string[name='text_time_in']")?.textContent || "Time In"
     );
     setText_time_out(
-      doc.querySelector("string[name='text_time_out']")?.textContent
+      doc.querySelector("string[name='text_time_out']")?.textContent ||
+        "Time Out"
     );
     setText_select_a_project(
-      doc.querySelector("string[name='text_select_a_project']")?.textContent
+      doc.querySelector("string[name='text_select_a_project']")?.textContent ||
+        "Select a Project"
     );
     setText_addproject(
-      doc.querySelector("string[name='text_addproject']")?.textContent
+      doc.querySelector("string[name='text_addproject']")?.textContent ||
+        "Add Project"
     );
     setText_description(
-      doc.querySelector("string[name='text_description']")?.textContent
+      doc.querySelector("string[name='text_description']")?.textContent ||
+        "Description"
     );
     setText_description_ph(
-      doc.querySelector("string[name='text_description_ph']")?.textContent
+      doc.querySelector("string[name='text_description_ph']")?.textContent ||
+        "Enter Description"
     );
     setText_project_name(
-      doc.querySelector("string[name='text_project_name']")?.textContent
+      doc.querySelector("string[name='text_project_name']")?.textContent ||
+        "Project Name"
     );
     setText_projectname_ph(
-      doc.querySelector("string[name='text_projectname_ph']")?.textContent
+      doc.querySelector("string[name='text_projectname_ph']")?.textContent ||
+        "Enter Project Name"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setText_err_projname(
-      doc.querySelector("string[name='text_err_projname']")?.textContent
+      doc.querySelector("string[name='text_err_projname']")?.textContent ||
+        "Please Enter Project Name"
     );
     setText_clientname(
-      doc.querySelector("string[name='text_clientname']")?.textContent
+      doc.querySelector("string[name='text_clientname']")?.textContent ||
+        "Client Name"
     );
     setText_clientname_ph(
-      doc.querySelector("string[name='text_clientname_ph']")?.textContent
+      doc.querySelector("string[name='text_clientname_ph']")?.textContent ||
+        "Enter Client Name"
     );
     setText_err_client_name(
-      doc.querySelector("string[name='text_err_client_name']")?.textContent
+      doc.querySelector("string[name='text_err_client_name']")?.textContent ||
+        "Please Enter Client Name"
     );
     setAddproject_err(
-      doc.querySelector("string[name='addproject_err']")?.textContent
+      doc.querySelector("string[name='addproject_err']")?.textContent ||
+        "Please Select Project"
     );
     setText_request(
-      doc.querySelector("string[name='text_request']")?.textContent
+      doc.querySelector("string[name='text_request']")?.textContent ||
+        "Thanks! Your Request Generated Successfully. PleaseContact"
     );
     setText_approval(
-      doc.querySelector("string[name='text_approval']")?.textContent
+      doc.querySelector("string[name='text_approval']")?.textContent ||
+        "For Approval Status"
     );
   };
   useEffect(() => {

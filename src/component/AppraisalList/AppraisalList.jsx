@@ -223,34 +223,49 @@ function AppraisalList() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setText_appraisal(
-      doc.querySelector("string[name='text_appraisal']")?.textContent
+      doc.querySelector("string[name='text_appraisal']")?.textContent ||
+        "Appraisal"
     );
     setNewSalaryText(
-      doc.querySelector("string[name='newSalaryText']")?.textContent
+      doc.querySelector("string[name='newSalaryText']")?.textContent ||
+        "New Salary "
     );
-    setbtn_view(doc.querySelector("string[name='btn_view']")?.textContent);
-    setText_date(doc.querySelector("string[name='text_date']")?.textContent);
-    setText_time(doc.querySelector("string[name='text_time']")?.textContent);
+    setbtn_view(
+      doc.querySelector("string[name='btn_view']")?.textContent || "View"
+    );
+    setText_date(
+      doc.querySelector("string[name='text_date']")?.textContent || "Date"
+    );
+    setText_time(
+      doc.querySelector("string[name='text_time']")?.textContent || "Time"
+    );
     setText_promote_to(
-      doc.querySelector("string[name='text_promote_to']")?.textContent
+      doc.querySelector("string[name='text_promote_to']")?.textContent ||
+        "Promote To"
     );
     setText_amount_value(
-      doc.querySelector("string[name='text_amount_value']")?.textContent
+      doc.querySelector("string[name='text_amount_value']")?.textContent ||
+        "Amount value"
     );
     setText_heading_title(
-      doc.querySelector("string[name='text_heading_title']")?.textContent
+      doc.querySelector("string[name='text_heading_title']")?.textContent ||
+        "Appraiser Detail View"
     );
     setText_Remark_Optional(
-      doc.querySelector("string[name='text_Remarks_Optional']")?.textContent
+      doc.querySelector("string[name='text_Remarks_Optional']")?.textContent ||
+        "Remarks(optional)"
     );
     setText_appraisal_category(
-      doc.querySelector("string[name='text_appraisal_category']")?.textContent
+      doc.querySelector("string[name='text_appraisal_category']")
+        ?.textContent || "Appraisal Category & Rating"
     );
     setText_appraisal_givento(
-      doc.querySelector("string[name='text_appraisal_givento']")?.textContent
+      doc.querySelector("string[name='text_appraisal_givento']")?.textContent ||
+        "Appraisal To"
     );
     setText_appraisalview(
-      doc.querySelector("string[name='text_appraisalview']")?.textContent
+      doc.querySelector("string[name='text_appraisalview']")?.textContent ||
+        "Appraisal Detail View"
     );
   };
 

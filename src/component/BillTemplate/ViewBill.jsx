@@ -40,13 +40,15 @@ function ViewBill() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_view_bill(
-      doc.querySelector("string[name='text_view_bill']")?.textContent
+      doc.querySelector("string[name='text_view_bill']")?.textContent ||
+        "View Bill"
     );
     setText_download(
-      doc.querySelector("string[name='text_download']")?.textContent
+      doc.querySelector("string[name='text_download']")?.textContent ||
+        "Download"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
   };
   useEffect(() => {

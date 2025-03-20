@@ -285,41 +285,54 @@ function AddPublicHoliday() {
     var xml = localStorage.getItem(GlobalConstants.session_lang_xml);
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
-    setText_Sno(doc.querySelector("string[name='text_Sno']")?.textContent);
-    setText_date(doc.querySelector("string[name='text_date']")?.textContent);
-    setText_delete(
-      doc.querySelector("string[name='text_delete']")?.textContent
+    setText_Sno(
+      doc.querySelector("string[name='text_Sno']")?.textContent || "Sr No"
     );
-    setText_edit(doc.querySelector("string[name='text_edit']")?.textContent);
+    setText_date(
+      doc.querySelector("string[name='text_date']")?.textContent || "Date"
+    );
+    setText_delete(
+      doc.querySelector("string[name='text_delete']")?.textContent || "Delete"
+    );
+    setText_edit(
+      doc.querySelector("string[name='text_edit']")?.textContent || "Edit"
+    );
     setText_description(
-      doc.querySelector("string[name='text_description']")?.textContent
+      doc.querySelector("string[name='text_description']")?.textContent ||
+        "Description"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setText_update(
-      doc.querySelector("string[name='text_update']")?.textContent
+      doc.querySelector("string[name='text_update']")?.textContent || "Update"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setText_description_ph(
-      doc.querySelector("string[name='text_description_ph']")?.textContent
+      doc.querySelector("string[name='text_description_ph']")?.textContent ||
+        "Enter Description"
     );
     settext_name_holiday(
-      doc.querySelector("string[name='text_name_holiday']")?.textContent
+      doc.querySelector("string[name='text_name_holiday']")?.textContent ||
+        "Name of Holiday"
     );
     settext_public_holiday(
-      doc.querySelector("string[name='text_public_holiday']")?.textContent
+      doc.querySelector("string[name='text_public_holiday']")?.textContent ||
+        "Add Public Holiday"
     );
     settext_holiday_name(
-      doc.querySelector("string[name='text_holiday_name']")?.textContent
+      doc.querySelector("string[name='text_holiday_name']")?.textContent ||
+        "Enter Holiday Name"
     );
     settext_update_holiday(
-      doc.querySelector("string[name='text_update_holiday']")?.textContent
+      doc.querySelector("string[name='text_update_holiday']")?.textContent ||
+        "Update Public Holiday"
     );
     settext_holiday_date(
-      doc.querySelector("string[name='text_holiday_date']")?.textContent
+      doc.querySelector("string[name='text_holiday_date']")?.textContent ||
+        "Date of Holiday"
     );
   };
   useEffect(() => {

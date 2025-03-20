@@ -6,7 +6,7 @@ import "../BillTemplate/BillTemplate.css";
 import axios from "axios";
 import { errorToast, infoToast, successToast } from "../../utils/Helper";
 import { GlobalConstants } from "../../utils/GlobalConstants";
-import dayjs from 'dayjs'
+import dayjs from "dayjs";
 
 import { ToastContainer } from "react-toastify";
 import { useDispatch } from "react-redux";
@@ -15,7 +15,6 @@ import { useSelector } from "react-redux";
 import companyProfile from "../../assets/img/Comany-img.jpg";
 import Cookie from "js-cookie";
 import { Divider } from "@mui/material";
-
 
 function CreateInvoiceTemplate() {
   const navigate = useNavigate();
@@ -156,51 +155,49 @@ function CreateInvoiceTemplate() {
 
   const SetLanguageText = () => {
     var xml = localStorage.getItem(GlobalConstants.session_lang_xml);
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(xml, "text/xml");
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(xml, "text/xml");
     setText_temp_name(
-      doc.querySelector("string[name='text_temp_name']", doc)?.textContent
-        
+      doc.querySelector("string[name='text_temp_name']")?.textContent ||
+        "Template Name"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']", doc)?.textContent
-        
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']", doc)?.textContent
-        
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setText_enter_category(
-      doc.querySelector("string[name='text_enter_category']", doc)
-        ?.textContent
+      doc.querySelector("string[name='text_enter_category']")?.textContent ||
+        "Enter category"
     );
     setText_enter_template(
-      doc.querySelector("string[name='text_Enter_template']", doc)
-        ?.textContent
+      doc.querySelector("string[name='text_Enter_template']")?.textContent ||
+        "Enter Template Name"
     );
     setText_defualt_fields(
-      doc.querySelector("string[name='text_defualt_fields']", doc)
-        ?.textContent
+      doc.querySelector("string[name='text_defualt_fields']")?.textContent ||
+        "Default Fields"
     );
     setInventoryvalcate(
-      doc.querySelector("string[name='inventoryvalcate']", doc)
-        ?.textContent
+      doc.querySelector("string[name='inventoryvalcate']")?.textContent ||
+        "Please Enter Category!"
     );
     setText_add_new_category(
-      doc.querySelector("string[name='text_add_new_category']", doc)
-        ?.textContent
+      doc.querySelector("string[name='text_add_new_category']")?.textContent ||
+        "Add New Category"
     );
     setText_err_template(
-      doc.querySelector("string[name='text_err_template']", doc)
-        ?.textContent
+      doc.querySelector("string[name='text_err_template']")?.textContent ||
+        "Please Enter Template Name"
     );
     setTitle_InvoiceTemplate(
-      doc.querySelector("string[name='title_InvoiceTemplate']", doc)
-        ?.textContent
+      doc.querySelector("string[name='title_InvoiceTemplate']")?.textContent ||
+        "Create Invoice Template"
     );
     setText_customField(
-      doc.querySelector("string[name='text_customField']", doc)
-        ?.textContent
+      doc.querySelector("string[name='text_customField']")?.textContent ||
+        "Custom Fields"
     );
   };
   useEffect(() => {

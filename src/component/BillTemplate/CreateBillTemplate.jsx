@@ -166,37 +166,46 @@ function CreateBillTemplate() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setText_temp_name(
-      doc.querySelector("string[name='text_temp_name']")?.textContent
+      doc.querySelector("string[name='text_temp_name']")?.textContent ||
+        "Template Name"
     );
     setText_enter_template(
-      doc.querySelector("string[name='text_Enter_template']")?.textContent
+      doc.querySelector("string[name='text_Enter_template']")?.textContent ||
+        "Enter Template Name"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setText_defualt_fields(
-      doc.querySelector("string[name='text_defualt_fields']")?.textContent
+      doc.querySelector("string[name='text_defualt_fields']")?.textContent ||
+        "Default Fields"
     );
     setText_enter_category(
-      doc.querySelector("string[name='text_enter_category']")?.textContent
+      doc.querySelector("string[name='text_enter_category']")?.textContent ||
+        "Enter category"
     );
     setText_add_new_category(
-      doc.querySelector("string[name='text_add_new_category']")?.textContent
+      doc.querySelector("string[name='text_add_new_category']")?.textContent ||
+        "Add New Category"
     );
     setText_err_template(
-      doc.querySelector("string[name='text_err_template']")?.textContent
+      doc.querySelector("string[name='text_err_template']")?.textContent ||
+        "Please Enter Template Name"
     );
     setTitle_BillTemplate(
-      doc.querySelector("string[name='title_BillTemplate']")?.textContent
+      doc.querySelector("string[name='title_BillTemplate']")?.textContent ||
+        "Create Bill Template"
     );
     setText_customField(
-      doc.querySelector("string[name='text_customField']")?.textContent
+      doc.querySelector("string[name='text_customField']")?.textContent ||
+        "Custom Fields"
     );
     setInventoryvalcate(
-      doc.querySelector("string[name='inventoryvalcate']")?.textContent
+      doc.querySelector("string[name='inventoryvalcate']")?.textContent ||
+        "Please Enter Category!"
     );
   };
   useEffect(() => {

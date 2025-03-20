@@ -192,26 +192,29 @@ function Appraisaltype() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setText_create(
-      doc.querySelector("string[name='text_create']")?.textContent
+      doc.querySelector("string[name='text_create']")?.textContent || "Create"
     );
     // setText_mark_all(
     //   doc.querySelector("string[name='text_mark_all']")?.textContent
     //
     // );
     setInventoryvalcate(
-      doc.querySelector("string[name='inventoryvalcate']")?.textContent
+      doc.querySelector("string[name='inventoryvalcate']")?.textContent ||
+        "Please Enter Category!"
     );
     setText_enter_category(
-      doc.querySelector("string[name='text_enter_category']")?.textContent
+      doc.querySelector("string[name='text_enter_category']")?.textContent ||
+        "Enter category"
     );
     setText_appraisal_v3(
-      doc.querySelector("string[name='text_appraisal_v3']")?.textContent
+      doc.querySelector("string[name='text_appraisal_v3']")?.textContent ||
+        "Appraisal Category"
     );
   };
   useEffect(() => {

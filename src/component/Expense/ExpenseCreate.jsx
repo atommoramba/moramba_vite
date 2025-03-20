@@ -754,77 +754,102 @@ function ExpenseCreate() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setAddExpenseHead(
-      doc.querySelector("string[name='AddExpenseHead']")?.textContent
+      doc.querySelector("string[name='AddExpenseHead']")?.textContent ||
+        "Add Expense Data"
     );
     setexpenseFileNameText(
-      doc.querySelector("string[name='expenseFileNameText']")?.textContent
+      doc.querySelector("string[name='expenseFileNameText']")?.textContent ||
+        "Expense File Name"
     );
     setexpenseFileIDText(
-      doc.querySelector("string[name='expenseFileIDText']")?.textContent
+      doc.querySelector("string[name='expenseFileIDText']")?.textContent ||
+        "Expense File ID"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
     setText_addnewdata(
-      doc.querySelector("string[name='text_addnewdata']")?.textContent
+      doc.querySelector("string[name='text_addnewdata']")?.textContent ||
+        "Add New Data"
     );
     setText_err_file_name(
-      doc.querySelector("string[name='text_err_file_name']")?.textContent
+      doc.querySelector("string[name='text_err_file_name']")?.textContent ||
+        "Enter Expense File Name"
     );
     setAddExpenseItemV3(
-      doc.querySelector("string[name='AddExpenseItemV3']")?.textContent
+      doc.querySelector("string[name='AddExpenseItemV3']")?.textContent ||
+        "Add Expense Item"
     );
     setExpenseReportDateTextV3(
-      doc.querySelector("string[name='ExpenseReportDateTextV3']")?.textContent
+      doc.querySelector("string[name='ExpenseReportDateTextV3']")
+        ?.textContent || "Expense Report Date"
     );
     setDeptIDTextV3(
-      doc.querySelector("string[name='DeptIDTextV3']")?.textContent
+      doc.querySelector("string[name='DeptIDTextV3']")?.textContent ||
+        "Department ID"
     );
     setProjectIDTextv3(
-      doc.querySelector("string[name='ProjectIDTextv3']")?.textContent
+      doc.querySelector("string[name='ProjectIDTextv3']")?.textContent ||
+        "Project ID"
     );
     setCustomerIDTextv3(
-      doc.querySelector("string[name='CustomerIDTextv3']")?.textContent
+      doc.querySelector("string[name='CustomerIDTextv3']")?.textContent ||
+        "Customer ID"
     );
-    setViewtempv3(doc.querySelector("string[name='viewtempv3']")?.textContent);
+    setViewtempv3(
+      doc.querySelector("string[name='viewtempv3']")?.textContent ||
+        "View Template"
+    );
     setText_temp_name(
-      doc.querySelector("string[name='text_temp_name']")?.textContent
+      doc.querySelector("string[name='text_temp_name']")?.textContent ||
+        "Template Name"
     );
     setDeptid_textph(
-      doc.querySelector("string[name='deptid_textph']")?.textContent
+      doc.querySelector("string[name='deptid_textph']")?.textContent ||
+        "Enter Department ID"
     );
     setProjectid_textph(
-      doc.querySelector("string[name='projectid_textph']")?.textContent
+      doc.querySelector("string[name='projectid_textph']")?.textContent ||
+        "Enter Project ID"
     );
     setCustomerid_text(
-      doc.querySelector("string[name='customerid_text']")?.textContent
+      doc.querySelector("string[name='customerid_text']")?.textContent ||
+        "Enter Customer ID"
     );
     setview_expense_text(
-      doc.querySelector("string[name='view_expense_text']")?.textContent
+      doc.querySelector("string[name='view_expense_text']")?.textContent ||
+        "View Expense Template"
     );
     setErr_expensefile_name(
-      doc.querySelector("string[name='err_expensefile_name']")?.textContent
+      doc.querySelector("string[name='err_expensefile_name']")?.textContent ||
+        "Please Enter Expense File Name"
     );
     setPreparedby_text(
-      doc.querySelector("string[name='preparedby_text']")?.textContent
+      doc.querySelector("string[name='preparedby_text']")?.textContent ||
+        "Prepared By"
     );
     setExpense_seltemplate(
-      doc.querySelector("string[name='expense_seltemplate']")?.textContent
+      doc.querySelector("string[name='expense_seltemplate']")?.textContent ||
+        "Select Expense Template"
     );
     setText_expen_report(
-      doc.querySelector("string[name='text_expen_report']")?.textContent
+      doc.querySelector("string[name='text_expen_report']")?.textContent ||
+        "Expense Report Template"
     );
     setInvoice_errcurrency(
-      doc.querySelector("string[name='invoice_errcurrency']")?.textContent
+      doc.querySelector("string[name='invoice_errcurrency']")?.textContent ||
+        "Please Select Currency"
     );
     setText_request(
-      doc.querySelector("string[name='text_request']")?.textContent
+      doc.querySelector("string[name='text_request']")?.textContent ||
+        "Thanks! Your Request Generated Successfully. PleaseContact"
     );
     setText_approval(
-      doc.querySelector("string[name='text_approval']")?.textContent
+      doc.querySelector("string[name='text_approval']")?.textContent ||
+        "For Approval Status"
     );
   };
   useEffect(() => {

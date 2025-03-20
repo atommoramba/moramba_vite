@@ -172,38 +172,42 @@ function SelectCompany() {
 
   const SetLanguageText = () => {
     var xml = localStorage.getItem(GlobalConstants.session_lang_xml);
-   const parser = new DOMParser();
-   const doc = parser.parseFromString(xml, "text/xml");
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(xml, "text/xml");
 
     setText_create(
-      doc.querySelector("string[name='text_create']")?.textContent
+      doc.querySelector("string[name='text_create']")?.textContent || "Create"
     );
     setTextDashboard(
-      doc.querySelector("string[name='textDashboard']")?.textContent
+      doc.querySelector("string[name='textDashboard']")?.textContent ||
+        "Dashboard"
     );
     setHeyText(
-      doc.querySelector("string[name='HeyText']")?.textContent
+      doc.querySelector("string[name='HeyText']")?.textContent || "Hey"
     );
     setWelcomeBack(
-      doc.querySelector("string[name='WelcomeBackText']")
-        ?.textContent
+      doc.querySelector("string[name='WelcomeBackText']")?.textContent ||
+        "Welcome Back"
     );
     setSelectCmpLine(
-      doc.querySelector("string[name='SelectCmpLine']")?.textContent
+      doc.querySelector("string[name='SelectCmpLine']")?.textContent ||
+        "Please Select The Company And Start Your Day!"
     );
     setSearchPHTextSelectCmp(
-      doc.querySelector("string[name='SearchPHTextSelectCmp']")
-        ?.textContent
+      doc.querySelector("string[name='SearchPHTextSelectCmp']")?.textContent ||
+        "Search Company Here..."
     );
     setText_invitedby(
-      doc.querySelector("string[name='text_invitedby']")?.textContent
+      doc.querySelector("string[name='text_invitedby']")?.textContent ||
+        "Invited By"
     );
     setText_acceptrequest(
-      doc.querySelector("string[name='text_acceptrequest']")
-        ?.textContent
+      doc.querySelector("string[name='text_acceptrequest']")?.textContent ||
+        "Accept Request"
     );
     setCreateCmpLine(
-      doc.querySelector("string[name='CreateCmpLine']")?.textContent
+      doc.querySelector("string[name='CreateCmpLine']")?.textContent ||
+        "Please Create Company And Start Your Day!"
     );
   };
   useEffect(() => {

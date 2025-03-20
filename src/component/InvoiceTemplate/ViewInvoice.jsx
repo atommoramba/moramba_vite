@@ -41,13 +41,15 @@ function ViewInvoice() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_view_invoice(
-      doc.querySelector("string[name='text_view_invoice']")?.textContent
+      doc.querySelector("string[name='text_view_invoice']")?.textContent ||
+        "View Invoice"
     );
     setText_download(
-      doc.querySelector("string[name='text_download']")?.textContent
+      doc.querySelector("string[name='text_download']")?.textContent ||
+        "Download"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']")?.textContent
+      doc.querySelector("string[name='button_cancel']")?.textContent || "Cancel"
     );
   };
   useEffect(() => {

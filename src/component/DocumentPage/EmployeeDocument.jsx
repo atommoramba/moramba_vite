@@ -635,31 +635,40 @@ function EmployeeDocument() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setButton_save(
-      doc.querySelector("string[name='button_save']", doc)?.textContent
+      doc.querySelector("string[name='button_save']", doc)?.textContent ||
+        "Save"
     );
     setText_download(
-      doc.querySelector("string[name='text_download']", doc)?.textContent
+      doc.querySelector("string[name='text_download']", doc)?.textContent ||
+        "Download"
     );
     setButton_cancel(
-      doc.querySelector("string[name='button_cancel']", doc)?.textContent
+      doc.querySelector("string[name='button_cancel']", doc)?.textContent ||
+        "Cancel"
     );
     setText_document(
-      doc.querySelector("string[name='text_document']", doc)?.textContent
+      doc.querySelector("string[name='text_document']", doc)?.textContent ||
+        "Documents"
     );
     SetpopUP_description(
-      doc.querySelector("string[name='popUP_description']", doc)?.textContent
+      doc.querySelector("string[name='popUP_description']", doc)?.textContent ||
+        "Your file is already uploaded on"
     );
     SetpopUp_desc_second(
-      doc.querySelector("string[name='popUp_desc_second']", doc)?.textContent
+      doc.querySelector("string[name='popUp_desc_second']", doc)?.textContent ||
+        "and name is"
     );
     setText_upload(
-      doc.querySelector("string[name='text_upload']", doc)?.textContent
+      doc.querySelector("string[name='text_upload']", doc)?.textContent ||
+        "Upload"
     );
     setText_uploaded(
-      doc.querySelector("string[name='text_uploaded']", doc)?.textContent
+      doc.querySelector("string[name='text_uploaded']", doc)?.textContent ||
+        "Uploaded"
     );
     setText_errUpload_file(
-      doc.querySelector("string[name='text_errUpload_file']", doc)?.textContent
+      doc.querySelector("string[name='text_errUpload_file']", doc)
+        ?.textContent || "Please Select File First"
     );
   };
   useEffect(() => {

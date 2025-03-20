@@ -426,170 +426,159 @@ function Dashboard() {
   // language change handler
   const SetLanguageText = () => {
     var xml = localStorage.getItem(GlobalConstants.session_lang_xml);
-     const parser = new DOMParser();
-     const doc = parser.parseFromString(xml, "text/xml");
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(xml, "text/xml");
 
     setText_employee(
-      doc.querySelector("string[name='text_employee']")?.textContent
-        
+      doc.querySelector("string[name='text_employee']")?.textContent ||
+        "Employee"
     );
     setText_profile(
-      doc.querySelector("string[name='text_profile']")?.textContent
-        
+      doc.querySelector("string[name='text_profile']")?.textContent || "Profile"
     );
     setText_monthly_remaining(
-      doc.querySelector("string[name='text_monthly_remaining']")
-        ?.textContent
+      doc.querySelector("string[name='text_monthly_remaining']")?.textContent ||
+        "Monthly Payment Remaining "
     );
     setTxtPayrollHeading(
-      doc.querySelector("string[name='TxtPayrollHeading']")
-        ?.textContent
+      doc.querySelector("string[name='TxtPayrollHeading']")?.textContent ||
+        "Payroll Sheet"
     );
     setTitle_attendance(
-      doc.querySelector("string[name='title_attendance']")
-        ?.textContent
+      doc.querySelector("string[name='title_attendance']")?.textContent ||
+        "Attendance"
     );
 
     setText_tab_invoice(
-      doc.querySelector("string[name='text_tab_invoice']")
-        ?.textContent
+      doc.querySelector("string[name='text_tab_invoice']")?.textContent ||
+        "Invoice"
     );
     setText_tab_paybill(
-      doc.querySelector("string[name='text_tab_paybill']")
-        ?.textContent
+      doc.querySelector("string[name='text_tab_paybill']")?.textContent ||
+        "Pay Bill"
     );
     setTitle_ddd_employee(
-      doc.querySelector("string[name='title_ddd_employee']")
-        ?.textContent
+      doc.querySelector("string[name='title_ddd_employee']")?.textContent ||
+        "Add Employee"
     );
     setText_emp_name(
-      doc.querySelector("string[name='text_emp_name']")?.textContent
-        
+      doc.querySelector("string[name='text_emp_name']")?.textContent ||
+        "Employee Name"
     );
     settext_salary(
-      doc.querySelector("string[name='text_salary']")?.textContent
-        
+      doc.querySelector("string[name='text_salary']")?.textContent || "Salary"
     );
     setText_radio_monthly(
-      doc.querySelector("string[name='text_radio_monthly']")
-        ?.textContent
+      doc.querySelector("string[name='text_radio_monthly']")?.textContent ||
+        "Monthly"
     );
 
     settext_status(
-      doc.querySelector("string[name='text_status']")?.textContent
-        
+      doc.querySelector("string[name='text_status']")?.textContent || "Status"
     );
     setText_active(
-      doc.querySelector("string[name='text_active']")?.textContent
-        
+      doc.querySelector("string[name='text_active']")?.textContent || "Active"
     );
     setText_deactive(
-      doc.querySelector("string[name='text_deactive']")?.textContent
-        
+      doc.querySelector("string[name='text_deactive']")?.textContent ||
+        "Deactive"
     );
     setbtn_view(
-      doc.querySelector("string[name='btn_view']")?.textContent
+      doc.querySelector("string[name='btn_view']")?.textContent || "View"
     );
     setWalletText(
-      doc.querySelector("string[name='WalletText']")?.textContent
-        
+      doc.querySelector("string[name='WalletText']")?.textContent || "Wallet"
     );
-    setIDText(
-      doc.querySelector("string[name='IDText']")?.textContent
-    );
+    setIDText(doc.querySelector("string[name='IDText']")?.textContent || "ID");
     setJoiningDate(
-      doc.querySelector("string[name='JoiningDateText']")
-        ?.textContent
+      doc.querySelector("string[name='JoiningDateText']")?.textContent ||
+        "Joining Date"
     );
     setViewProfile(
-      doc.querySelector("string[name='ViewProfile']")?.textContent
-        
+      doc.querySelector("string[name='ViewProfile']")?.textContent ||
+        "View Profile"
     );
     setGoodAfterNoonText(
-      doc.querySelector("string[name='GoodAfterNoonText']")
-        ?.textContent
+      doc.querySelector("string[name='GoodAfterNoonText']")?.textContent ||
+        "Good Afternoon"
     );
     setGoodEveningText(
-      doc.querySelector("string[name='GoodEveningText']")
-        ?.textContent
+      doc.querySelector("string[name='GoodEveningText']")?.textContent ||
+        "Good Evening"
     );
     setGoodMoraningText(
-      doc.querySelector("string[name='GoodMorningText']")
-        ?.textContent
+      doc.querySelector("string[name='GoodMorningText']")?.textContent ||
+        "Good Morning"
     );
     setSearchPHTextDashboard(
-      doc.querySelector("string[name='SearchPHTextDashboard']")
-        ?.textContent
+      doc.querySelector("string[name='SearchPHTextDashboard']")?.textContent ||
+        "Search Employee Here..."
     );
     // setDashbord_pay_text(
     //   doc.querySelector("string[name='dashbord_pay_text']")
     //     ?.textContent
     // );
     setButton_next(
-      doc.querySelector("string[name='button_next']")?.textContent
-        
+      doc.querySelector("string[name='button_next']")?.textContent || "Next"
     );
     setButton_previous(
-      doc.querySelector("string[name='button_previous']")
-        ?.textContent
+      doc.querySelector("string[name='button_previous']")?.textContent ||
+        "Previous"
     );
     setText_calculating(
-      doc.querySelector("string[name='text_calculating']")
-        ?.textContent
+      doc.querySelector("string[name='text_calculating']")?.textContent ||
+        "Calculating"
     );
     settextbonus(
-      doc.querySelector("string[name='txtbonus']")?.textContent
+      doc.querySelector("string[name='txtbonus']")?.textContent || "Bonus"
     );
     setText_hint_email(
-      doc.querySelector("string[name='text_hint_email']")
-        ?.textContent
+      doc.querySelector("string[name='text_hint_email']")?.textContent ||
+        "Email"
     );
     setTimesheetpen_text(
-      doc.querySelector("string[name='timesheetpen_text']")
-        ?.textContent
+      doc.querySelector("string[name='timesheetpen_text']")?.textContent ||
+        "Pending"
     );
     setText_edit(
-      doc.querySelector("string[name='text_edit']")?.textContent
+      doc.querySelector("string[name='text_edit']")?.textContent || "Edit"
     );
     setText_pending(
-      doc.querySelector("string[name='textpendingemp']")?.textContent || "Pending Employee Request"
-        
+      doc.querySelector("string[name='textpendingemp']")?.textContent ||
+        "Pending Employee Request"
     );
     setText_currentemp(
-      doc.querySelector("string[name='text_currentemp']")
-        ?.textContent || "Current Employee"
+      doc.querySelector("string[name='text_currentemp']")?.textContent ||
+        "Current Employee"
     );
     setText_resendver(
-      doc.querySelector("string[name='text_resendver']")?.textContent
-        
+      doc.querySelector("string[name='text_resendver']")?.textContent ||
+        "Resend Invitation Link"
     );
     setText_verstatus(
-      doc.querySelector("string[name='text_verstatus']")?.textContent
-        
+      doc.querySelector("string[name='text_verstatus']")?.textContent ||
+        "Verification Status"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
-        
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setText_resendemail(
-      doc.querySelector("string[name='text_resendemail']")
-        ?.textContent
+      doc.querySelector("string[name='text_resendemail']")?.textContent ||
+        "Resend Email"
     );
     setText_accept(
-      doc.querySelector("string[name='text_accept']")?.textContent
-        
+      doc.querySelector("string[name='text_accept']")?.textContent || "Accept"
     );
     setText_dashpopup(
-      doc.querySelector("string[name='text_dashpopup']")?.textContent
-        
+      doc.querySelector("string[name='text_dashpopup']")?.textContent ||
+        setText_dashpopup
     );
     setText_dashsuccess(
-      doc.querySelector("string[name='text_dashsuccess']")
-        ?.textContent
+      doc.querySelector("string[name='text_dashsuccess']")?.textContent ||
+        "Successfully"
     );
     setButton_close(
-      doc.querySelector("string[name='button_close']")?.textContent
-        
+      doc.querySelector("string[name='button_close']")?.textContent || "Close"
     );
   };
   useEffect(() => {

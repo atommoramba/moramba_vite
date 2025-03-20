@@ -178,29 +178,38 @@ function EmpCustomeBenefits() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setText_End_Date(
-      doc.querySelector("string[name='text_End_Date']")?.textContent
+      doc.querySelector("string[name='text_End_Date']")?.textContent ||
+        "End Date"
     );
     setText_start_date(
-      doc.querySelector("string[name='text_start_date']")?.textContent
+      doc.querySelector("string[name='text_start_date']")?.textContent ||
+        "Start Date"
     );
     setButton_save(
-      doc.querySelector("string[name='button_save']")?.textContent
+      doc.querySelector("string[name='button_save']")?.textContent || "Save"
     );
     setText_description(
-      doc.querySelector("string[name='text_description']")?.textContent
+      doc.querySelector("string[name='text_description']")?.textContent ||
+        "Description"
     );
     setText_benefitName(
-      doc.querySelector("string[name='text_benefitName']")?.textContent
+      doc.querySelector("string[name='text_benefitName']")?.textContent ||
+        "Benefit Name"
     );
-    setext_Price(doc.querySelector("string[name='text_price']")?.textContent);
+    setext_Price(
+      doc.querySelector("string[name='text_price']")?.textContent || "Price"
+    );
     setText_empcontribution(
-      doc.querySelector("string[name='text_empcontribution']")?.textContent
+      doc.querySelector("string[name='text_empcontribution']")?.textContent ||
+        "Employee Contribution"
     );
     setText_cmpcontribution(
-      doc.querySelector("string[name='text_cmpcontribution']")?.textContent
+      doc.querySelector("string[name='text_cmpcontribution']")?.textContent ||
+        "Company Contribution"
     );
     settext_BenefitProvider(
-      doc.querySelector("string[name='text_BenefitProvider']")?.textContent
+      doc.querySelector("string[name='text_BenefitProvider']")?.textContent ||
+        "Benefit Provider"
     );
   };
   useEffect(() => {

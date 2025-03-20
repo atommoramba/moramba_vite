@@ -153,24 +153,32 @@ function VendorList() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setText_create(
-      doc.querySelector("string[name='text_create']")?.textContent
+      doc.querySelector("string[name='text_create']")?.textContent || "Create"
     );
     setText_vendor_name(
-      doc.querySelector("string[name='text_vendor_name']")?.textContent
+      doc.querySelector("string[name='text_vendor_name']")?.textContent ||
+        "Vendor Name"
     );
-    setText_srno(doc.querySelector("string[name='text_srno']")?.textContent);
+    setText_srno(
+      doc.querySelector("string[name='text_srno']")?.textContent || "Sr no."
+    );
     setText_hint_email(
-      doc.querySelector("string[name='text_hint_email']")?.textContent
+      doc.querySelector("string[name='text_hint_email']")?.textContent ||
+        "Email"
     );
-    setText_edit(doc.querySelector("string[name='text_edit']")?.textContent);
+    setText_edit(
+      doc.querySelector("string[name='text_edit']")?.textContent || "Edit"
+    );
     setText_vendor_list(
-      doc.querySelector("string[name='text_vendor_list']")?.textContent
+      doc.querySelector("string[name='text_vendor_list']")?.textContent ||
+        "Vendor List"
     );
     setSearch_vendor(
-      doc.querySelector("string[name='search_vendor']")?.textContent
+      doc.querySelector("string[name='search_vendor']")?.textContent ||
+        "Search Vendor here..."
     );
     setText_delete(
-      doc.querySelector("string[name='text_delete']")?.textContent
+      doc.querySelector("string[name='text_delete']")?.textContent || "Delete"
     );
   };
   useEffect(() => {

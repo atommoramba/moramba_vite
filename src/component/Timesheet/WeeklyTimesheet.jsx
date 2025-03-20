@@ -150,31 +150,43 @@ function WeeklyTimesheet() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setText_create(
-      doc.querySelector("string[name='text_create']")?.textContent
+      doc.querySelector("string[name='text_create']")?.textContent || "Create"
     );
     setText_customer_name(
-      doc.querySelector("string[name='text_customer_name']")?.textContent
+      doc.querySelector("string[name='text_customer_name']")?.textContent ||
+        "Customer Name"
     );
     setText_project_name(
-      doc.querySelector("string[name='text_project_name']")?.textContent
+      doc.querySelector("string[name='text_project_name']")?.textContent ||
+        "Project Name"
     );
     setText_description(
-      doc.querySelector("string[name='text_description']")?.textContent
+      doc.querySelector("string[name='text_description']")?.textContent ||
+        "Description"
     );
-    setText_date(doc.querySelector("string[name='text_date']")?.textContent);
-    setText_hrs(doc.querySelector("string[name='text_hrs']")?.textContent);
+    setText_date(
+      doc.querySelector("string[name='text_date']")?.textContent || "Date"
+    );
+    setText_hrs(
+      doc.querySelector("string[name='text_hrs']")?.textContent || "Hours"
+    );
     setApprovedtext(
-      doc.querySelector("string[name='approvedtext']")?.textContent
+      doc.querySelector("string[name='approvedtext']")?.textContent ||
+        "Approved"
     );
     setTimesheetpen_text(
-      doc.querySelector("string[name='timesheetpen_text']")?.textContent
+      doc.querySelector("string[name='timesheetpen_text']")?.textContent ||
+        "Pending"
     );
     setText_status(
-      doc.querySelector("string[name='text_status']")?.textContent
+      doc.querySelector("string[name='text_status']")?.textContent || "Status"
     );
-    setRejecttext(doc.querySelector("string[name='rejecttext']")?.textContent);
+    setRejecttext(
+      doc.querySelector("string[name='rejecttext']")?.textContent || "Rejected"
+    );
     setText_search_ph(
-      doc.querySelector("string[name='text_search_ph']")?.textContent
+      doc.querySelector("string[name='text_search_ph']")?.textContent ||
+        "Search Here..."
     );
   };
   useEffect(() => {

@@ -133,29 +133,39 @@ function BillTable() {
     const doc = parser.parseFromString(xml, "text/xml");
 
     setText_create(
-      doc.querySelector("string[name='text_create']")?.textContent
+      doc.querySelector("string[name='text_create']")?.textContent || "Create"
     );
 
-    setbtn_view(doc.querySelector("string[name='btn_view']")?.textContent);
-    setText_date(doc.querySelector("string[name='text_date']")?.textContent);
+    setbtn_view(
+      doc.querySelector("string[name='btn_view']")?.textContent || "View"
+    );
+    setText_date(
+      doc.querySelector("string[name='text_date']")?.textContent || "Date"
+    );
     setText_Amount(
-      doc.querySelector("string[name='text_Amount']")?.textContent
+      doc.querySelector("string[name='text_Amount']")?.textContent || "Amount"
     );
     setText_vendor_name(
-      doc.querySelector("string[name='text_vendor_name']")?.textContent
+      doc.querySelector("string[name='text_vendor_name']")?.textContent ||
+        "Vendor Name"
     );
     setText_bill_id(
-      doc.querySelector("string[name='text_bill_id']")?.textContent
+      doc.querySelector("string[name='text_bill_id']")?.textContent || "Bill ID"
     );
     setText_view_bill(
-      doc.querySelector("string[name='text_view_bill']")?.textContent
+      doc.querySelector("string[name='text_view_bill']")?.textContent ||
+        "View Bill"
     );
     setBillHeadText(
-      doc.querySelector("string[name='BillHeadText']")?.textContent
+      doc.querySelector("string[name='BillHeadText']")?.textContent ||
+        "Bill List"
     );
-    setText_Sno(doc.querySelector("string[name='text_Sno']")?.textContent);
+    setText_Sno(
+      doc.querySelector("string[name='text_Sno']")?.textContent || "Sr No"
+    );
     setSearch_bill(
-      doc.querySelector("string[name='search_bill']")?.textContent
+      doc.querySelector("string[name='search_bill']")?.textContent ||
+        "Search Bill..."
     );
   };
   useEffect(() => {

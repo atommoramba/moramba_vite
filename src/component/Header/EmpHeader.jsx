@@ -29,26 +29,34 @@ function EmpHeader() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(xml, "text/xml");
     setTitle_attendance(
-      doc.querySelector("string[name='title_attendance']")?.textContent
+      doc.querySelector("string[name='title_attendance']")?.textContent ||
+        "Attendance"
     );
     setText_salary_detail(
-      doc.querySelector("string[name='text_salary_detail']")?.textContent
+      doc.querySelector("string[name='text_salary_detail']")?.textContent ||
+        "Salary Details"
     );
     setTextTimeSheet(
-      doc.querySelector("string[name='textTimeSheet']")?.textContent
+      doc.querySelector("string[name='textTimeSheet']")?.textContent ||
+        "Timesheet"
     );
     setApproval_text(
-      doc.querySelector("string[name='approval_text']")?.textContent
+      doc.querySelector("string[name='approval_text']")?.textContent ||
+        "Approval Request"
     );
     setText_appraisal(
-      doc.querySelector("string[name='text_appraisal']")?.textContent
+      doc.querySelector("string[name='text_appraisal']")?.textContent ||
+        "Appraisal"
     );
     setText_employee_documents(
-      doc.querySelector("string[name='text_employee_documents']")?.textContent
+      doc.querySelector("string[name='text_employee_documents']")
+        ?.textContent || "Employee Document"
     );
-    setText_loan(doc.querySelector("string[name='text_loan']")?.textContent);
+    setText_loan(
+      doc.querySelector("string[name='text_loan']")?.textContent || "Loan"
+    );
     setText_report(
-      doc.querySelector("string[name='text_report']")?.textContent
+      doc.querySelector("string[name='text_report']")?.textContent || "Report"
     );
   };
   return (
