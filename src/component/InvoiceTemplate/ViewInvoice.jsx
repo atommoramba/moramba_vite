@@ -525,7 +525,7 @@ function ViewInvoice() {
               Entity-id: f3dcbffd-f5e9-4475-8d38-00f297863adc,
             </h4>
             <h4 className="fw-bold">Merchant-id:{merchantID}</h4>
-            {loopInvoices.length > 0 ? (
+            {/* {loopInvoices.length > 0 ? (
               loopInvoices.map((invoice, index) => (
                 <div key={index} className="invoice-item card-invoice mt-5">
                   <h4 className="fw-bold">
@@ -548,7 +548,7 @@ function ViewInvoice() {
               ))
             ) : (
               <p>No invoices available.</p>
-            )}
+            )} */}
           </div>
           <div style={styles.container}>
             <h1>API Authentication Token Generator</h1>
