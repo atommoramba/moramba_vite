@@ -1621,7 +1621,7 @@ const WalletPortal = () => {
                           {text_select_network}
                         </option>
                         <option value="Eth">Ethereum</option>
-                        <option value="Sol">Solana</option>
+                        <option value="Sol">Solana (devnet)</option>
                       </select>
                       {/* <h5 className="mt-4 title_bank">
                     {text_account_address}
@@ -1829,7 +1829,7 @@ const WalletPortal = () => {
               {Ethereum_REGEX.test(value) === true ? (
                 <>Ethereum</>
               ) : (
-                <>Solana</>
+                <>Solana (devnet)</>
               )}
             </h5>
             <hr className="text-black" />
