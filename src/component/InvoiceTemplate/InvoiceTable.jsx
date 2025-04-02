@@ -199,10 +199,10 @@ function InvoiceTable() {
           </Link>
         </div>
       </div>
-      <div className="p-1">
+      {/* <div className="p-1">
         <button className="btnsave">Paid</button>{" "}
         <button className="btncancel">Unpaid</button>
-      </div>{" "}
+      </div>{" "} */}
       &nbsp;
       <Divider />
       {IsLoading ? (

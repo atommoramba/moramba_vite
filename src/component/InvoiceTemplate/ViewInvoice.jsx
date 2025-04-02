@@ -518,13 +518,13 @@ function ViewInvoice() {
       ) : (
         <>
           <div className="invoice-list p-4">
-            <h4 className="fw-bold">
+            {/* <h4 className="fw-bold">
               api-key : 0960b2cf-fa44-4949-a716-9055ce9563c2
             </h4>
             <h4 className="fw-bold">
               Entity-id: f3dcbffd-f5e9-4475-8d38-00f297863adc,
             </h4>
-            <h4 className="fw-bold">Merchant-id:{merchantID}</h4>
+            <h4 className="fw-bold">Merchant-id:{merchantID}</h4> */}
             {/* {loopInvoices.length > 0 ? (
               loopInvoices.map((invoice, index) => (
                 <div key={index} className="invoice-item card-invoice mt-5">
