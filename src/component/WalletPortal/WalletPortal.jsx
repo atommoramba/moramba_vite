@@ -30,7 +30,7 @@ import Loader from "../../utils/Loader";
 import { ethers } from "ethers";
 import * as bip39 from "bip39";
 import { IoCopy } from "react-icons/io5";
-
+import { isAddress } from "@solana/addresses";
 const WalletPortal = () => {
   //Redux code
   const dispatch = useDispatch();
@@ -663,13 +663,26 @@ const WalletPortal = () => {
       bankdetailCryptoFromValid = false;
       setErrwalletname(<>*{text_err_walletname}!</>);
     }
-    if (!Ethereum_REGEX.test(address) === true) {
-      bankdetailCryptoFromValid = false;
-      if (address === "") {
+    if (tokenbal === "Eth") {
+      if (!Ethereum_REGEX.test(address) === true) {
         bankdetailCryptoFromValid = false;
-        setErrwalletaddress(<>*{text_err_walletaddress}!</>);
-      } else {
-        setErrwalletaddress(<>*{walleterr_text}!</>);
+        if (address === "") {
+          bankdetailCryptoFromValid = false;
+          setErrwalletaddress(<>*{text_err_walletaddress}!</>);
+        } else {
+          setErrwalletaddress(<>*{walleterr_text}!</>);
+        }
+      }
+    }
+    if (tokenbal === "Sol") {
+      if (isAddress(address) === false) {
+        bankdetailCryptoFromValid = false;
+        if (address === "") {
+          bankdetailCryptoFromValid = false;
+          setErrwalletaddress(<>*{text_err_walletaddress}!</>);
+        } else {
+          setErrwalletaddress(<>*{walleterr_text}!</>);
+        }
       }
     }
     return bankdetailCryptoFromValid;
@@ -712,6 +725,18 @@ const WalletPortal = () => {
           var employeeId = sessionStorage.getItem(
             GlobalConstants.session_current_emp_id
           );
+          insertUpdateBalanceCheck(
+            address,
+            balance,
+            "update",
+            sessionStorage.getItem("_compId"),
+            employeeId,
+            customernameb,
+            {}
+          );
+        }
+        if (s.status === "0") {
+          const balance = "0";
           insertUpdateBalanceCheck(
             address,
             balance,
@@ -1596,6 +1621,7 @@ const WalletPortal = () => {
                           {text_select_network}
                         </option>
                         <option value="Eth">Ethereum</option>
+                        <option value="Sol">Solana</option>
                       </select>
                       {/* <h5 className="mt-4 title_bank">
                     {text_account_address}
@@ -1799,7 +1825,13 @@ const WalletPortal = () => {
             {/* <br /> */}
             {/* <br /> */}
             <h6 className="text-black">{text_network}</h6>
-            <h5 className="text-black">Ethereum</h5>
+            <h5 className="text-black">
+              {Ethereum_REGEX.test(value) === true ? (
+                <>Ethereum</>
+              ) : (
+                <>Solana</>
+              )}
+            </h5>
             <hr className="text-black" />
             <br />
             <center className="qr-popup-btns mb-4">

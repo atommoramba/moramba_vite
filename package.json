@@ -21,6 +21,7 @@
     "@mui/material": "^6.4.5",
     "@radix-ui/react-accordion": "^1.2.3",
     "@reduxjs/toolkit": "^2.6.0",
+    "@solana/addresses": "^2.0.0-experimental.c168e0c",
     "axios": "^1.7.9",
     "bip39": "^3.1.0",
     "bootstrap": "^5.3.3",
@@ -49,6 +50,7 @@
     "react-simple-star-rating": "^5.1.7",
     "react-toastify": "^11.0.5",
     "redux-persist": "^6.0.0",
+    "tweetnacl": "^1.0.3",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
