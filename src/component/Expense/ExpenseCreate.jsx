@@ -973,7 +973,7 @@ function ExpenseCreate() {
             </h4>
             <DatePicker
               selected={ExpenseFileDate}
-              dateFormat="MMM dd,yyyy"
+              dateFormat="MMM DD,YYYY"
               showMonthDropdown
               showYearDropdown
               onChange={(date) => setExpenseFileDate(date)}
