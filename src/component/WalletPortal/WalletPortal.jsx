@@ -25,10 +25,8 @@ import { useNavigate } from "react-router-dom";
 import { getCheckbalance } from "../../redux/CheckBalanceSlice";
 import { Divider, Tooltip } from "@mui/material";
 import { Ethereum_REGEX, UPIID_REGEX } from "../../utils/Validation";
-import { ToastContainer } from "react-toastify";
 import Loader from "../../utils/Loader";
 import { ethers } from "ethers";
-import * as bip39 from "bip39";
 import { IoCopy } from "react-icons/io5";
 import { isAddress } from "@solana/addresses";
 const WalletPortal = () => {
@@ -132,6 +130,7 @@ const WalletPortal = () => {
   const [qrpopup, setQrpopup] = useState(false);
   const [copytext, setCopytext] = useState(false);
   const [value, setValue] = useState("");
+  const [networkType, setNetworkType] = useState("");
   const [back, setBack] = useState("#FFFFFF");
   const [fore, setFore] = useState("#000000");
   const [size, setSize] = useState(256);
@@ -140,6 +139,7 @@ const WalletPortal = () => {
   const [erraccNumber, setErrAccNumber] = useState("");
   const [Errupiid, setErrupiid] = useState("");
   const [errwalletname, setErrwalletname] = useState("");
+  const [errNeworkSelect, setErrNeworkSelect] = useState("");
   const [errwalletaddress, setErrwalletaddress] = useState("");
   const [bankName, setBankName] = useState("");
   const [accNumber, setAccNumber] = useState("");
@@ -571,10 +571,8 @@ const WalletPortal = () => {
     address,
     balance,
     type,
-    orgId,
-    employeeId = "NA",
     cusName,
-    body
+    walletType
   ) => {
     // post method insertupdatecheckbalance
     //var type = "update";
@@ -592,6 +590,7 @@ const WalletPortal = () => {
       _partition: GlobalConstants._partition,
       address: address,
       cusName: cusName,
+      walletType: walletType,
     };
     var apiUrl =
       GlobalConstants.Cdomain +
@@ -608,7 +607,9 @@ const WalletPortal = () => {
       "&employeeId=" +
       u_id +
       "&cusName=" +
-      data.cusName;
+      data.cusName +
+      "&walletType=" +
+      data.walletType;
     let headerConfig = {
       headers: {
         accept: "application/json",
@@ -651,9 +652,7 @@ const WalletPortal = () => {
   };
   const DeleteBalance = (_id) => {
     console.log(value);
-    insertUpdateBalanceCheck(value, "NA", "delete", "NA", "NA", "NA", {
-      _id: _id,
-    });
+    insertUpdateBalanceCheck(value, "NA", "delete", "NA", "NA");
     dispatch(getCheckbalance());
     setQrpopup(false);
   };
@@ -662,6 +661,10 @@ const WalletPortal = () => {
     if (customernameb === "") {
       bankdetailCryptoFromValid = false;
       setErrwalletname(<>*{text_err_walletname}!</>);
+    }
+    if (tokenbal === "") {
+      bankdetailCryptoFromValid === false;
+      setErrNeworkSelect("*Please Select Network");
     }
     if (tokenbal === "Eth") {
       if (!Ethereum_REGEX.test(address) === true) {
@@ -694,69 +697,118 @@ const WalletPortal = () => {
       return;
     }
     if (CryptoWalletValidation()) {
-      var _compId = sessionStorage.getItem("_compId");
-      const request_start_at = performance.now();
-      const employeeId = sessionStorage.getItem("_compId");
-      const orgID = "NA";
-      var apiUrl =
-        GlobalConstants.Cdomain +
-        "/API/moramba/v3/checkbalance?address=" +
-        address +
-        "&employeeId=" +
-        employeeId;
-      let headerConfig = {
-        headers: {
-          accept: "application/json",
-          authorization: "Bearer " + sessionStorage.getItem("token"),
-        },
-      };
-      axios.get(apiUrl, headerConfig).then(function (response) {
-        const request_end_at = performance.now();
-        const request_duration = request_end_at - request_start_at;
-        setcustomernameb("");
-        setselectnetw("");
-        settokenbal("");
-        setAddress("");
-        setErrwalletaddress("");
-        var res = response.data;
-        var s = res.data;
-        if (s.status === "1") {
-          const balance = s.result[0].balance;
-          var employeeId = sessionStorage.getItem(
-            GlobalConstants.session_current_emp_id
-          );
-          insertUpdateBalanceCheck(
-            address,
-            balance,
-            "update",
-            sessionStorage.getItem("_compId"),
-            employeeId,
-            customernameb,
-            {}
-          );
-        }
-        if (s.status === "0") {
-          const balance = "0";
-          insertUpdateBalanceCheck(
-            address,
-            balance,
-            "update",
-            sessionStorage.getItem("_compId"),
-            employeeId,
-            customernameb,
-            {}
-          );
-        }
-        if (response.status === 200) {
-          setWalletPopup(false);
-          console.log(
-            "ID:03201=> " +
-              dayjs.utc(request_duration).format("ss.ms") +
-              " Seconds"
-          );
-        }
-      });
+      if (tokenbal === "Eth") {
+        addEthWallet();
+      } else if (tokenbal === "Sol") {
+        addSolanaWallet();
+      }
     }
+  };
+  const addEthWallet = () => {
+    const request_start_at = performance.now();
+    const employeeId = sessionStorage.getItem("_compId");
+    var apiUrl =
+      GlobalConstants.Cdomain +
+      "/API/moramba/v3/checkbalance?address=" +
+      address +
+      "&employeeId=" +
+      employeeId;
+    let headerConfig = {
+      headers: {
+        accept: "application/json",
+        authorization: "Bearer " + sessionStorage.getItem("token"),
+      },
+    };
+    axios.get(apiUrl, headerConfig).then(function (response) {
+      const request_end_at = performance.now();
+      const request_duration = request_end_at - request_start_at;
+      setcustomernameb("");
+      setselectnetw("");
+      settokenbal("");
+      setAddress("");
+      setErrwalletaddress("");
+      var res = response.data;
+      var s = res.data;
+      if (s.status === "1") {
+        const balance = s.result[0].balance;
+        var employeeId = sessionStorage.getItem(
+          GlobalConstants.session_current_emp_id
+        );
+        insertUpdateBalanceCheck(
+          address,
+          balance,
+          "update",
+          customernameb,
+          "eth"
+        );
+      }
+      if (response.status === 200) {
+        setWalletPopup(false);
+        console.log(
+          "ID:03201=> " +
+            dayjs.utc(request_duration).format("ss.ms") +
+            " Seconds"
+        );
+      }
+    });
+  };
+  const addSolanaWallet = () => {
+    const request_start_at = performance.now();
+    const employeeId = sessionStorage.getItem("_compId");
+    var apiUrl =
+      GlobalConstants.Cdomain +
+      "/API/moramba/v3/solana/checkbalance?address=" +
+      address +
+      "&employeeId=" +
+      employeeId;
+    let headerConfig = {
+      headers: {
+        accept: "application/json",
+        authorization: "Bearer " + sessionStorage.getItem("token"),
+      },
+    };
+    axios.get(apiUrl, headerConfig).then(function (response) {
+      const request_end_at = performance.now();
+      const request_duration = request_end_at - request_start_at;
+      setcustomernameb("");
+      setselectnetw("");
+      settokenbal("");
+      setAddress("");
+      setErrwalletaddress("");
+      var res = response.data;
+      var s = res.data;
+      console.log(res);
+      if (res?.msgcode === "00") {
+        const balance = s.balanceSOL;
+        insertUpdateBalanceCheck(
+          address,
+          balance,
+          "update",
+          customernameb,
+          "sol"
+        );
+      }
+      // if (s.status === "0") {
+      //   const balance = "0";
+      //   insertUpdateBalanceCheck(
+      //     address,
+      //     balance,
+      //     "update",
+      //     sessionStorage.getItem("_compId"),
+      //     employeeId,
+      //     customernameb,
+      //     {}
+      //   );
+      // }
+      if (response.status === 200) {
+        setWalletPopup(false);
+        console.log(
+          "ID:03201=> " +
+            dayjs.utc(request_duration).format("ss.ms") +
+            " Seconds"
+        );
+      }
+    });
   };
   function truncate(string, n) {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
@@ -1317,6 +1369,7 @@ const WalletPortal = () => {
                         className="CreateBtn mt-3"
                         onClick={(e) => [
                           setValue(v?.address),
+                          setNetworkType(v?.walletType),
                           setQrpopup(!qrpopup),
                         ]}
                       >
@@ -1611,18 +1664,25 @@ const WalletPortal = () => {
                     </div>
                     {/* <div className="col-md-2"></div> */}
                     <div className="col-md-6 crypto-popup-second-column">
-                      <h5 className="mt-4 title_bank">{text_network}</h5>
+                      <h5 className="mt-4 title_bank">
+                        {text_network}
+                        <span className="Star">*</span>
+                      </h5>
                       <select
                         className="CountryInputbox1 walletinput crypto-popup-network"
                         value={tokenbal}
-                        onChange={(e) => settokenbal(e.target.value)}
+                        onChange={(e) => [
+                          settokenbal(e.target.value),
+                          setErrNeworkSelect(""),
+                        ]}
                       >
-                        <option selected disabled>
+                        <option selected disabled value="">
                           {text_select_network}
                         </option>
                         <option value="Eth">Ethereum</option>
                         <option value="Sol">Solana (devnet)</option>
                       </select>
+                      <p className="error_sty">{errNeworkSelect}</p>
                       {/* <h5 className="mt-4 title_bank">
                     {text_account_address}
                     <span className="Star">*</span>
@@ -1826,10 +1886,13 @@ const WalletPortal = () => {
             {/* <br /> */}
             <h6 className="text-black">{text_network}</h6>
             <h5 className="text-black">
-              {Ethereum_REGEX.test(value) === true ? (
+              {console.log("networkType", networkType)}
+              {networkType === "eth" ? (
                 <>Ethereum</>
-              ) : (
+              ) : networkType === "sol" ? (
                 <>Solana (devnet)</>
+              ) : (
+                <></>
               )}
             </h5>
             <hr className="text-black" />
@@ -2007,8 +2070,6 @@ const WalletPortal = () => {
         </>
       ) : null}
       {/* </>} */}
-
-      <ToastContainer />
     </>
   );
 };
