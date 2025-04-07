@@ -8,9 +8,23 @@ import { Link, useNavigate } from "react-router-dom";
 import { GlobalConstants } from "../../utils/GlobalConstants";
 import Cookie from "js-cookie";
 import axios from "axios";
-
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import CheckoutPlan from "./CheckoutPlan";
+const stripePromise = loadStripe(
+  "pk_test_51R1kQmDfN3z3aWoRHR30XGH7KFB9omwn1luN0LitaR0WMhVh7hEruB9EYN4uqQpiI5B9fsYGcUVgrjizTjO1AEOe00mlUvbWlD"
+);
 function PlanDetails() {
   const navigate = useNavigate();
+  const [clientSecret, setClientSecret] = useState("");
+
+  const appearance = {
+    theme: "stripe",
+  };
+  const options = {
+    clientSecret,
+    appearance,
+  };
   //variable
   const [isValidPlan, setIsvalidPlan] = useState(false);
   const [planData, setPlanData] = useState([]);
@@ -34,7 +48,6 @@ function PlanDetails() {
   const [text_freePlan, setText_freePlan] = useState("Free Plan");
   const [text_silverPlan, setText_silverPlan] = useState("Silver Plan");
   const [text_goldPlan, setText_goldPlan] = useState("Gold Plan");
-
 
   var currentPath = window.location.pathname;
   // useEffect(() => {
@@ -107,165 +120,230 @@ function PlanDetails() {
         }
       });
   }, []);
+
+  // checkout
+  const checkouthandle = (plan) => {
+    var API_URL =
+      GlobalConstants.Cdomain + "/API/moramba/v4/plan/insert/planpayment";
+
+    let headerConfig = {
+      headers: {
+        authorization: "bearer " + sessionStorage.getItem("token"),
+      },
+    };
+    var data = {
+      _orgId: sessionStorage.getItem("_compId"),
+      owner_id: sessionStorage.getItem("user_id"),
+      plan: plan,
+      start_date: "2025-04-01",
+      end_date: "2025-04-30",
+      currency: "USD",
+      price_paid: 5,
+      modulecode: "01",
+      moduleplancode: "001",
+      secretkey: "28519e21-6620-478a-b8bd-9814d70d6d0f",
+    };
+    axios
+      .post(API_URL, data, headerConfig)
+      .then(function (response) {
+        console.log("check out", response);
+        setClientSecret(response.data.data.client_secret);
+        // if (response.status === 200) {
+
+        // }
+      })
+      .catch(function (error) {
+        if (error.response.status === 427) {
+          sessionStorage.clear();
+          localStorage.clear();
+          setTimeout(() => {
+            navigate("/");
+          }, 1000);
+        } else {
+          errorToast(error.response.data.message);
+        }
+      })
+      .then(function () {});
+  };
+
   return (
     <>
       <Header />
-      {isValidPlan && (
-        <div className="NoAccess">
-          {" "}
-          <h3 className="text-center">{text_upgradeToUse}</h3>
-          <Divider />
-          <div className="mt-3 text-center">
-            <h5>{text_upPlan_msg}</h5>
-          </div>
-          <div className="mt-3 d-flex justify-content-center gap-3">
-            <button className="btncancel" onClick={() => navigate(-1)}>
-              {text_notNow}
-            </button>
-            <button
-              className="CreateBtn"
-              onClick={() => navigate("/upgradplan")}
-            >
-              {text_viewPlan}
-            </button>
-          </div>
-        </div>
-      )}
-      <main
-        className={isValidPlan ? "bgblur1 plan_main" : " plan_main"}
-        id="PlanUpgradePage"
-      >
-        <div id="homepage">
-          <h4 className="text-center mb-5 pt-5 text-decoration-underline">
-            {text_upPlan}
-          </h4>
-          <div className="plancard-main d-flex justify-content-center align-items-center gap-3 mt-5 flex-wrap p-2">
-            {planData.map((v, idx) => {
-              return (
-                <>
-                  <div
-                    className={
-                      v.sr_no === 3
-                        ? "currentplan-box text-center plancard-box"
-                        : "plancard-box text-center"
-                    }
-                    id={idx}
-                  >
-                    {v.plan === "gold" && (
-                      <div className={v.sr_no === 3 ? "ribbon-2" : ""}>
-                        {text_valueForMoney}
-                      </div>
-                    )}
-                    <h2 className={v.sr_no === 3 ? "mb-4" : ""}>
-                      {v.plan.charAt(0).toUpperCase() + v.plan.slice(1)}
-                    </h2>
-
-                    <div className="d-flex align-items-end gap-2 justify-content-center">
-                      <h2>
-                        <span className="fs-5">$</span>
-
-                        {v.price}
-                        <span className="fs-5">
-                          .00{" "}
-                          {v.plan !== "free"
-                            ? "(" +
-                              `${
-                                (v.plan === "silver" ? 164.61 : 411.52) +
-                                " " +
-                                "₹"
-                              }` +
-                              ")"
-                            : ""}
-                        </span>
-                      </h2>
-                    </div>
-
-                    <p className="text-muted fs-6">{v.desc}</p>
-                    {sessionStorage.getItem("username") === null ||
-                    sessionStorage.getItem("token") === null ||
-                    sessionStorage.getItem("token") === undefined ||
-                    sessionStorage.getItem("token") === "" ? (
-                      <>
-                        <Link to="/register">
-                          <button className="plan_btn">
-                            {text_createAccount}
-                          </button>
-                        </Link>
-                      </>
-                    ) : (
-                      <>
-                        <button
-                          className={
-                            v.sr_no === 3 ? "currentPlanBtn" : "plan_btn"
-                          }
-                          onClick={() => PlanUpgraded(v._id, v.price, v.plan)}
-                          disabled={v.plan === "free" ? true : false}
-                        >
-                          {v.sr_no == 3 ? "Current Plan" : "Choose Plan"}
-                        </button>
-                      </>
-                    )}
-                  </div>
-                </>
-              );
-            })}
-          </div>
-          <h3 className="text-center mt-5">
-            <u>{text_planComparison}</u>
-          </h3>
-          <div className="plancard-main d-flex justify-content-center align-items-center gap-3 flex-wrap p-2">
-            <table className="tableStyPlan w-75 ">
-              <tr>
-                <th className="tableHeadStyplan">{text_moduleName}</th>
-                <th className="tableHeadStyplan">{text_freePlan}</th>
-                <th className="tableHeadStyplan">{text_silverPlan}</th>
-                <th className="tableHeadStyplan">{text_goldPlan}</th>
-              </tr>
-              <tbody>
-                {console.log(planModuleData)}
-                {planModuleData.map((v, idx) => {
+      {clientSecret !== "" ? (
+        <>
+          <main className=" plan_main" id="PlanUpgradePage">
+            <div id="homepage">
+              <div className="container mb-5 pt-5 ">
+                <Elements options={options} stripe={stripePromise}>
+                  <CheckoutPlan clientSecret={clientSecret} />
+                </Elements>
+              </div>
+            </div>
+          </main>
+        </>
+      ) : (
+        <>
+          {/* {isValidPlan && (
+            <div className="NoAccess">
+              {" "}
+              <h3 className="text-center">{text_upgradeToUse}</h3>
+              <Divider />
+              <div className="mt-3 text-center">
+                <h5>{text_upPlan_msg}</h5>
+              </div>
+              <div className="mt-3 d-flex justify-content-center gap-3">
+                <button className="btncancel" onClick={() => navigate(-1)}>
+                  {text_notNow}
+                </button>
+                <button
+                  className="CreateBtn"
+                  onClick={() => navigate("/upgradplan")}
+                >
+                  {text_viewPlan}
+                </button>
+              </div>
+            </div>
+          )} */}
+          <main
+            // className={isValidPlan ? "bgblur1 plan_main" : " plan_main"}
+            className="plan_main"
+            id="PlanUpgradePage"
+          >
+            <div id="homepage">
+              <h4 className="text-center mb-5 pt-5 text-decoration-underline">
+                {text_upPlan}
+              </h4>
+              <div className="plancard-main d-flex justify-content-center align-items-center gap-3 mt-5 flex-wrap p-2">
+                {planData.map((v, idx) => {
                   return (
                     <>
-                      <tr>
-                        <td className="tableHeadSty2plan" key={idx}>
-                          {v.module_name}
-                        </td>
+                      <div
+                        className={
+                          v.sr_no === 3
+                            ? "currentplan-box text-center plancard-box"
+                            : "plancard-box text-center"
+                        }
+                        id={idx}
+                      >
+                        {v.plan === "gold" && (
+                          <div className={v.sr_no === 3 ? "ribbon-2" : ""}>
+                            {text_valueForMoney}
+                          </div>
+                        )}
+                        <h2 className={v.sr_no === 3 ? "mb-4" : ""}>
+                          {v.plan.charAt(0).toUpperCase() + v.plan.slice(1)}
+                        </h2>
 
-                        <td className="tableHeadSty2plan">
-                          {v.plan[0] === "free" &&
-                          v.plan[1] === "silver" &&
-                          v.plan[2] === "gold"
-                            ? "✅"
-                            : "❌"}
-                        </td>
-                        <td className="tableHeadSty2plan">
-                          {" "}
-                          {(v.plan[0] === "free" &&
-                            v.plan[1] === "silver" &&
-                            v.plan[2] === "gold") ||
-                          (v.plan[0] === "silver" && v.plan[1] === "gold")
-                            ? "✅"
-                            : "❌"}
-                        </td>
-                        <td className="tableHeadSty2plan">
-                          {" "}
-                          {(v.plan[0] === "free" &&
-                            v.plan[1] === "silver" &&
-                            v.plan[2] === "gold") ||
-                          (v.plan[0] === "silver" && v.plan[1] === "gold") ||
-                          v.plan[0] === "gold"
-                            ? "✅"
-                            : "❌"}
-                        </td>
-                      </tr>
+                        <div className="d-flex align-items-end gap-2 justify-content-center">
+                          <h2>
+                            <span className="fs-5">$</span>
+
+                            {v.price}
+                            <span className="fs-5">
+                              .00{" "}
+                              {v.plan !== "free"
+                                ? "(" +
+                                  `${
+                                    (v.plan === "silver" ? 164.61 : 411.52) +
+                                    " " +
+                                    "₹"
+                                  }` +
+                                  ")"
+                                : ""}
+                            </span>
+                          </h2>
+                        </div>
+
+                        <p className="text-muted fs-6">{v.desc}</p>
+                        {sessionStorage.getItem("username") === null ||
+                        sessionStorage.getItem("token") === null ||
+                        sessionStorage.getItem("token") === undefined ||
+                        sessionStorage.getItem("token") === "" ? (
+                          <>
+                            <Link to="/register">
+                              <button className="plan_btn">
+                                {text_createAccount}
+                              </button>
+                            </Link>
+                          </>
+                        ) : (
+                          <>
+                            <button
+                              className={
+                                v.sr_no === 3 ? "currentPlanBtn" : "plan_btn"
+                              }
+                              // onClick={() => PlanUpgraded(v._id, v.price, v.plan)}
+                              onClick={() => checkouthandle(v.plan)}
+                              disabled={v.plan === "free" ? true : false}
+                            >
+                              {v.sr_no == 3 ? "Current Plan" : "Choose Plan"}
+                            </button>
+                          </>
+                        )}
+                      </div>
                     </>
                   );
                 })}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </main>
+              </div>
+              <h3 className="text-center mt-5">
+                <u>{text_planComparison}</u>
+              </h3>
+              <div className="plancard-main d-flex justify-content-center align-items-center gap-3 flex-wrap p-2">
+                <table className="tableStyPlan w-75 ">
+                  <tr>
+                    <th className="tableHeadStyplan">{text_moduleName}</th>
+                    <th className="tableHeadStyplan">{text_freePlan}</th>
+                    <th className="tableHeadStyplan">{text_silverPlan}</th>
+                    <th className="tableHeadStyplan">{text_goldPlan}</th>
+                  </tr>
+                  <tbody>
+                    {console.log(planModuleData)}
+                    {planModuleData.map((v, idx) => {
+                      return (
+                        <>
+                          <tr>
+                            <td className="tableHeadSty2plan" key={idx}>
+                              {v.module_name}
+                            </td>
+
+                            <td className="tableHeadSty2plan">
+                              {v.plan[0] === "free" &&
+                              v.plan[1] === "silver" &&
+                              v.plan[2] === "gold"
+                                ? "✅"
+                                : "❌"}
+                            </td>
+                            <td className="tableHeadSty2plan">
+                              {" "}
+                              {(v.plan[0] === "free" &&
+                                v.plan[1] === "silver" &&
+                                v.plan[2] === "gold") ||
+                              (v.plan[0] === "silver" && v.plan[1] === "gold")
+                                ? "✅"
+                                : "❌"}
+                            </td>
+                            <td className="tableHeadSty2plan">
+                              {" "}
+                              {(v.plan[0] === "free" &&
+                                v.plan[1] === "silver" &&
+                                v.plan[2] === "gold") ||
+                              (v.plan[0] === "silver" &&
+                                v.plan[1] === "gold") ||
+                              v.plan[0] === "gold"
+                                ? "✅"
+                                : "❌"}
+                            </td>
+                          </tr>
+                        </>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </main>
+        </>
+      )}
 
       <ToastContainer />
     </>

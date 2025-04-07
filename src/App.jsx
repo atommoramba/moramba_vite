@@ -84,312 +84,315 @@ import ViewSubscriptionTemplate from './component/SubscriptionTemplate/ViewSubsc
 import ViewExpenseTemplate from './component/ExpenseTemplate/ViewExpenseTemplate'
 import AddstaffWIP from './component/Addstaff/AddstaffWIP'
 import Attendance from './component/Attendance/Attendance'
+import PlanPaymentStatus from './component/PlanPage/PlanPaymentStatus'
 
 function App() {
 
   return (
     <>
-        <Routes>
-          <Route path="hdwallet" element={<HdWallet />} />
-          <Route path="/" element={<HomePageGuard Comp={HomePage} />} />
-          <Route path="/login" element={<LoginV3 />} />
-          <Route path="/register" element={<RegisterV3 />} />
-          <Route path="forgotpassword" element={<ForgotPassword />} />
-          <Route path="privacypolicy" element={<PrivacyPolicy />} />
-          <Route path="termsofservice" element={<TermsofServices />} />
-          <Route path="consumerprivacy" element={<ConsumerPrivacy />} />
-          <Route path="support" element={<Helppage />} />
-          <Route path="adminlogin" element={<AdminLogin />} />
-          <Route path="admindashboard" element={<AdminDashboard />} />
-          <Route path="*" element={<ErrorPage />} />
-          <Route path="faq" element={<Faq />} />
-          <Route path="upgradplan" element={<PlanDetails />} />
-          <Route path="verify" element={<VerifyPage />} />
-          <Route
-            path="selectcompany"
-            element={<GuardedRoutes Component={SelectCompany} />}
-          />
-          <Route
-            path="companyprofile"
-            element={<GuardedRoutes Component={CompanyProfile} />}
-          />
-          <Route
-            path="approval-request"
-            element={<GuardedRoutes Component={Approval} />}
-          />
-          <Route
-            path="dashboard"
-            element={<GuardedRoutes Component={Dashboard} />}
-          />
-          <Route
-            path="employeedetail"
-            element={<GuardedRoutes Component={EmployeeDetail} />}
-          />
-          <Route
-            path="generaldoc"
-            element={<GuardedRoutes Component={GeneralDoc} />}
-          />
-          <Route
-            path="inventory/template/create"
-            element={<GuardedRoutes Component={CreateInventoryTemplate} />}
-          />
-          <Route
-            path="inventory/template/view"
-            element={<GuardedRoutes Component={ViewInventoryTemplate} />}
-          />
-          <Route
-            path="subscription/template/create"
-            element={<GuardedRoutes Component={CreateSubscriptionTemplate} />}
-          />
-          <Route
-            path="subscription/template/view"
-            element={<GuardedRoutes Component={ViewSubscriptionTemplate} />}
-          />
-          <Route
-            path="expense/template/create"
-            element={<GuardedRoutes Component={CreateExpenseTemplate} />}
-          />
-          <Route
-            path="expense/template/view"
-            element={<GuardedRoutes Component={ViewExpenseTemplate} />}
-          />
-          <Route
-            path="salarybreakup/create"
-            element={<GuardedRoutes Component={CreateSalaryBreakup} />}
-          />
-          <Route
-            path="salarybreakup/list"
-            element={<GuardedRoutes Component={SalaryBreakupList} />}
-          />
-          <Route
-            path="walletportal"
-            element={<GuardedRoutes Component={WalletPortal} />}
-          />
-          <Route
-            path="payrollsheet"
-            element={<GuardedRoutes Component={PayrollSheet} />}
-          />
-          <Route
-            path="registercompany"
-            element={<GuardedRoutes Component={RegisterComp} />}
-          />
-          <Route
-            path="registercompany/edit"
-            element={<GuardedRoutes Component={RegisterComp} />}
-          />
-          <Route
-            path="addstaff"
-            element={<GuardedRoutes Component={AddstaffWIP} />}
-          />
-          <Route
-            path="addstaff/edit"
-            element={<GuardedRoutes Component={AddstaffWIP} />}
-          />
-          <Route
-            path="attendance"
-            element={<GuardedRoutes Component={Attendance} />}
-          />
-          <Route
-            path="full-attendance"
-            element={<GuardedRoutes Component={FullAttedance} />}
-          />
-          <Route
-            path="attendancesingle"
-            element={<GuardedRoutes Component={AttendanceSingle} />}
-          />
-          <Route
-            path="company/all/benefits"
-            element={<GuardedRoutes Component={CompanyAllBenefits} />}
-          />
-          <Route
-            path="org/benefits/:id"
-            element={<GuardedRoutes Component={OrgBenefits} />}
-          />
-          <Route
-            path="employee/benefits/:id"
-            element={<GuardedRoutes Component={EmpBenefits} />}
-          />
-          <Route
-            path="loandashboard"
-            element={<GuardedRoutes Component={LoanDashboard} />}
-          />
-          <Route
-            path="documentpage"
-            element={<GuardedRoutes Component={DocumentPage} />}
-          />
-          <Route
-            path="bill/template/create"
-            element={<GuardedRoutes Component={CreateBillTemplate} />}
-          />
-          <Route
-            path="bill/create"
-            element={<GuardedRoutes Component={CreateBill} />}
-          />
-          <Route
-            path="bill/allbill"
-            element={<GuardedRoutes Component={BillTable} />}
-          />
-          <Route
-            path="bill/allbill/view"
-            element={<GuardedRoutes Component={ViewBill} />}
-          />
-          <Route
-            path="bill/template/view"
-            element={<GuardedRoutes Component={ViewBillTemplate} />}
-          />
-          <Route
-            path="invoice/create"
-            element={<GuardedRoutes Component={CreateInvoice} />}
-          />
-          <Route
-            path="invoice/allinvoice"
-            element={<GuardedRoutes Component={InvoiceTable} />}
-          />
-          <Route
-            path="invoice/allinvoice/view"
-            element={<GuardedRoutes Component={ViewInvoice} />}
-          />
-          <Route
-            path="invoice/template/view"
-            element={<GuardedRoutes Component={ViewInvoiceTemplate} />}
-          />
-          <Route
-            path="invoice/template/create"
-            element={<GuardedRoutes Component={CreateInvoiceTemplate} />}
-          />
-          <Route
-            path="addtimesheet"
-            element={<GuardedRoutes Component={AddTimesheet} />}
-          />
-          <Route
-            path="salary/details"
-            element={<GuardedRoutes Component={SalaryDetails} />}
-          />
-          <Route
-            path="timesheet"
-            element={<GuardedRoutes Component={Timesheet} />}
-          />
-          <Route
-            path="createvendor"
-            element={<GuardedRoutes Component={CreateVendor} />}
-          />
-          <Route
-            path="vendor/edit"
-            element={<GuardedRoutes Component={CreateVendor} />}
-          />
-          <Route
-            path="vendorlist"
-            element={<GuardedRoutes Component={VendorList} />}
-          />
-          <Route
-            path="expense/list"
-            element={<GuardedRoutes Component={ExpenseList} />}
-          />
-          <Route
-            path="expense/create"
-            element={<GuardedRoutes Component={ExpenseCreate} />}
-          />
-          <Route
-            path="expense/view"
-            element={<GuardedRoutes Component={ExpenseView} />}
-          />
-          <Route
-            path="inventory/list"
-            element={<GuardedRoutes Component={InventoryList} />}
-          />
-          <Route
-            path="inventory/create"
-            element={<GuardedRoutes Component={InventoryCreate} />}
-          />
-          <Route
-            path="inventory/view"
-            element={<GuardedRoutes Component={InventoryView} />}
-          />
-          <Route
-            path="subscription/list"
-            element={<GuardedRoutes Component={SubscribtionList} />}
-          />
-          <Route
-            path="subscription/create"
-            element={<GuardedRoutes Component={SubscribtionCreate} />}
-          />
-          <Route
-            path="subscribtion/view"
-            element={<GuardedRoutes Component={SubscribtionView} />}
-          />
-          <Route
-            path="createcustomer"
-            element={<GuardedRoutes Component={CreateCustomer} />}
-          />
-          <Route
-            path="customerlist"
-            element={<GuardedRoutes Component={CustomerList} />}
-          />
-          <Route
-            path="customer/edit"
-            element={<GuardedRoutes Component={CreateCustomer} />}
-          />
-          <Route
-            path="appraisallist"
-            element={<GuardedRoutes Component={AppraisalList} />}
-          />
-          <Route
-            path="appraisalpage"
-            element={<GuardedRoutes Component={AppraisalPage} />}
-          />
-          <Route
-            path="managetemplate"
-            element={<GuardedRoutes Component={GeneralTemplate} />}
-          />
-          <Route path="report" element={<GuardedRoutes Component={Report} />} />
-          <Route
-            path="addprojectmodule"
-            element={<GuardedRoutes Component={AddProjectModule} />}
-          />
-          <Route
-            path="addprojectplan"
-            element={<GuardedRoutes Component={AddProjectPlan} />}
-          />
-          <Route
-            path="employeedocument"
-            element={<GuardedRoutes Component={EmployeeDocument} />}
-          />
+      <Routes>
+        <Route path="hdwallet" element={<HdWallet />} />
+        <Route path="/" element={<HomePageGuard Comp={HomePage} />} />
+        <Route path="/login" element={<LoginV3 />} />
+        <Route path="/register" element={<RegisterV3 />} />
+        <Route path="forgotpassword" element={<ForgotPassword />} />
+        <Route path="privacypolicy" element={<PrivacyPolicy />} />
+        <Route path="termsofservice" element={<TermsofServices />} />
+        <Route path="consumerprivacy" element={<ConsumerPrivacy />} />
+        <Route path="support" element={<Helppage />} />
+        <Route path="adminlogin" element={<AdminLogin />} />
+        <Route path="admindashboard" element={<AdminDashboard />} />
+        <Route path="*" element={<ErrorPage />} />
+        <Route path="faq" element={<Faq />} />
+        <Route path="upgradplan" element={<PlanDetails />} />
+        <Route path="verify" element={<VerifyPage />} />
+        <Route
+          path="selectcompany"
+          element={<GuardedRoutes Component={SelectCompany} />}
+        />
+        <Route
+          path="companyprofile"
+          element={<GuardedRoutes Component={CompanyProfile} />}
+        />
+        <Route
+          path="approval-request"
+          element={<GuardedRoutes Component={Approval} />}
+        />
+        <Route
+          path="dashboard"
+          element={<GuardedRoutes Component={Dashboard} />}
+        />
+        <Route
+          path="employeedetail"
+          element={<GuardedRoutes Component={EmployeeDetail} />}
+        />
+        <Route
+          path="generaldoc"
+          element={<GuardedRoutes Component={GeneralDoc} />}
+        />
+        <Route
+          path="inventory/template/create"
+          element={<GuardedRoutes Component={CreateInventoryTemplate} />}
+        />
+        <Route
+          path="inventory/template/view"
+          element={<GuardedRoutes Component={ViewInventoryTemplate} />}
+        />
+        <Route
+          path="subscription/template/create"
+          element={<GuardedRoutes Component={CreateSubscriptionTemplate} />}
+        />
+        <Route
+          path="subscription/template/view"
+          element={<GuardedRoutes Component={ViewSubscriptionTemplate} />}
+        />
+        <Route
+          path="expense/template/create"
+          element={<GuardedRoutes Component={CreateExpenseTemplate} />}
+        />
+        <Route
+          path="expense/template/view"
+          element={<GuardedRoutes Component={ViewExpenseTemplate} />}
+        />
+        <Route
+          path="salarybreakup/create"
+          element={<GuardedRoutes Component={CreateSalaryBreakup} />}
+        />
+        <Route
+          path="salarybreakup/list"
+          element={<GuardedRoutes Component={SalaryBreakupList} />}
+        />
+        <Route
+          path="walletportal"
+          element={<GuardedRoutes Component={WalletPortal} />}
+        />
+        <Route
+          path="payrollsheet"
+          element={<GuardedRoutes Component={PayrollSheet} />}
+        />
+        <Route
+          path="registercompany"
+          element={<GuardedRoutes Component={RegisterComp} />}
+        />
+        <Route
+          path="registercompany/edit"
+          element={<GuardedRoutes Component={RegisterComp} />}
+        />
+        <Route
+          path="addstaff"
+          element={<GuardedRoutes Component={AddstaffWIP} />}
+        />
+        <Route
+          path="addstaff/edit"
+          element={<GuardedRoutes Component={AddstaffWIP} />}
+        />
+        <Route
+          path="attendance"
+          element={<GuardedRoutes Component={Attendance} />}
+        />
+        <Route
+          path="full-attendance"
+          element={<GuardedRoutes Component={FullAttedance} />}
+        />
+        <Route
+          path="attendancesingle"
+          element={<GuardedRoutes Component={AttendanceSingle} />}
+        />
+        <Route
+          path="company/all/benefits"
+          element={<GuardedRoutes Component={CompanyAllBenefits} />}
+        />
+        <Route
+          path="org/benefits/:id"
+          element={<GuardedRoutes Component={OrgBenefits} />}
+        />
+        <Route
+          path="employee/benefits/:id"
+          element={<GuardedRoutes Component={EmpBenefits} />}
+        />
+        <Route
+          path="loandashboard"
+          element={<GuardedRoutes Component={LoanDashboard} />}
+        />
+        <Route
+          path="documentpage"
+          element={<GuardedRoutes Component={DocumentPage} />}
+        />
+        <Route
+          path="bill/template/create"
+          element={<GuardedRoutes Component={CreateBillTemplate} />}
+        />
+        <Route
+          path="bill/create"
+          element={<GuardedRoutes Component={CreateBill} />}
+        />
+        <Route
+          path="bill/allbill"
+          element={<GuardedRoutes Component={BillTable} />}
+        />
+        <Route
+          path="bill/allbill/view"
+          element={<GuardedRoutes Component={ViewBill} />}
+        />
+        <Route
+          path="bill/template/view"
+          element={<GuardedRoutes Component={ViewBillTemplate} />}
+        />
+        <Route
+          path="invoice/create"
+          element={<GuardedRoutes Component={CreateInvoice} />}
+        />
+        <Route
+          path="invoice/allinvoice"
+          element={<GuardedRoutes Component={InvoiceTable} />}
+        />
+        <Route
+          path="invoice/allinvoice/view"
+          element={<GuardedRoutes Component={ViewInvoice} />}
+        />
+        <Route
+          path="invoice/template/view"
+          element={<GuardedRoutes Component={ViewInvoiceTemplate} />}
+        />
+        <Route
+          path="invoice/template/create"
+          element={<GuardedRoutes Component={CreateInvoiceTemplate} />}
+        />
+        <Route
+          path="addtimesheet"
+          element={<GuardedRoutes Component={AddTimesheet} />}
+        />
+        <Route
+          path="salary/details"
+          element={<GuardedRoutes Component={SalaryDetails} />}
+        />
+        <Route
+          path="timesheet"
+          element={<GuardedRoutes Component={Timesheet} />}
+        />
+        <Route
+          path="createvendor"
+          element={<GuardedRoutes Component={CreateVendor} />}
+        />
+        <Route
+          path="vendor/edit"
+          element={<GuardedRoutes Component={CreateVendor} />}
+        />
+        <Route
+          path="vendorlist"
+          element={<GuardedRoutes Component={VendorList} />}
+        />
+        <Route
+          path="expense/list"
+          element={<GuardedRoutes Component={ExpenseList} />}
+        />
+        <Route
+          path="expense/create"
+          element={<GuardedRoutes Component={ExpenseCreate} />}
+        />
+        <Route
+          path="expense/view"
+          element={<GuardedRoutes Component={ExpenseView} />}
+        />
+        <Route
+          path="inventory/list"
+          element={<GuardedRoutes Component={InventoryList} />}
+        />
+        <Route
+          path="inventory/create"
+          element={<GuardedRoutes Component={InventoryCreate} />}
+        />
+        <Route
+          path="inventory/view"
+          element={<GuardedRoutes Component={InventoryView} />}
+        />
+        <Route
+          path="subscription/list"
+          element={<GuardedRoutes Component={SubscribtionList} />}
+        />
+        <Route
+          path="subscription/create"
+          element={<GuardedRoutes Component={SubscribtionCreate} />}
+        />
+        <Route
+          path="subscribtion/view"
+          element={<GuardedRoutes Component={SubscribtionView} />}
+        />
+        <Route
+          path="createcustomer"
+          element={<GuardedRoutes Component={CreateCustomer} />}
+        />
+        <Route
+          path="customerlist"
+          element={<GuardedRoutes Component={CustomerList} />}
+        />
+        <Route
+          path="customer/edit"
+          element={<GuardedRoutes Component={CreateCustomer} />}
+        />
+        <Route
+          path="appraisallist"
+          element={<GuardedRoutes Component={AppraisalList} />}
+        />
+        <Route
+          path="appraisalpage"
+          element={<GuardedRoutes Component={AppraisalPage} />}
+        />
+        <Route
+          path="managetemplate"
+          element={<GuardedRoutes Component={GeneralTemplate} />}
+        />
+        <Route path="report" element={<GuardedRoutes Component={Report} />} />
+        <Route
+          path="addprojectmodule"
+          element={<GuardedRoutes Component={AddProjectModule} />}
+        />
+        <Route
+          path="addprojectplan"
+          element={<GuardedRoutes Component={AddProjectPlan} />}
+        />
+        <Route
+          path="employeedocument"
+          element={<GuardedRoutes Component={EmployeeDocument} />}
+        />
 
-          <Route
-            path="employee/all/benefits"
-            element={<GuardedRoutes Component={EmpAllBenefits} />}
-          />
-          <Route
-            path="org/selected/benefits"
-            element={<GuardedRoutes Component={CmpSelectedBenefits} />}
-          />
-          <Route
-            path="employee/selected/benefits"
-            element={<GuardedRoutes Component={EmpSelectedBenefits} />}
-          />
-          <Route
-            path="employee/tds"
-            element={<GuardedRoutes Component={EmpTDS} />}
-          />
+        <Route
+          path="employee/all/benefits"
+          element={<GuardedRoutes Component={EmpAllBenefits} />}
+        />
+        <Route
+          path="org/selected/benefits"
+          element={<GuardedRoutes Component={CmpSelectedBenefits} />}
+        />
+        <Route
+          path="employee/selected/benefits"
+          element={<GuardedRoutes Component={EmpSelectedBenefits} />}
+        />
+        <Route
+          path="employee/tds"
+          element={<GuardedRoutes Component={EmpTDS} />}
+        />
 
-          <Route path="bonus" element={<GuardedRoutes Component={Bonus} />} />
-          <Route
-            path="publicholiday"
-            element={<GuardedRoutes Component={PublicHoliday} />}
-          />
-          <Route
-            path="view/holidays"
-            element={<GuardedRoutes Component={AddPublicHoliday} />}
-          />
-          <Route
-            path="noAccess"
-            element={<GuardedRoutes Component={PlanDetails} />}
-          />
-          <Route
-            path="receive-transactions"
-            element={<GuardedRoutes Component={ReceiveTransactions} />}
-          />
-        </Routes>
+        <Route path="bonus" element={<GuardedRoutes Component={Bonus} />} />
+        <Route
+          path="publicholiday"
+          element={<GuardedRoutes Component={PublicHoliday} />}
+        />
+        <Route
+          path="view/holidays"
+          element={<GuardedRoutes Component={AddPublicHoliday} />}
+        />
+        <Route
+          path="noAccess"
+          element={<GuardedRoutes Component={PlanDetails} />}
+        />
+        <Route
+          path="receive-transactions"
+          element={<GuardedRoutes Component={ReceiveTransactions} />}
+        />
+        <Route path="plan-payment-status" 
+        element={<GuardedRoutes Component={PlanPaymentStatus}/>}/>
+      </Routes>
     </>
   );
 }
