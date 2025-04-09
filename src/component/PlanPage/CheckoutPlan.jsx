@@ -59,8 +59,8 @@ function CheckoutPlan() {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        // return_url: "https://www.moramba.com/plan-payment-status",
-        return_url: "http://localhost:5173/plan-payment-status",
+        return_url: "https://www.moramba.com/plan-payment-status",
+        // return_url: "http://localhost:5173/plan-payment-status",
       },
     });
 
